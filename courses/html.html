@@ -36,7 +36,6 @@
                 <button id="theme-toggle" class="theme-toggle">
                     <i class="fas fa-moon"></i>
                 </button>
-                <button class="btn btn-primary">Sign Up</button>
             </div>
         </div>
     </header>
@@ -1969,8 +1968,9 @@ footer {
                 });
             });
             
-            // Add event listener for next lesson button
+            // Add event listeners for navigation buttons
             document.querySelector('.lesson-navigation .btn-primary').addEventListener('click', nextLesson);
+            document.querySelector('.lesson-navigation .btn-secondary').addEventListener('click', prevLesson);
         });
         
         function expandTopic(topic) {

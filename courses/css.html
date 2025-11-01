@@ -36,7 +36,6 @@
                 <button id="theme-toggle" class="theme-toggle">
                     <i class="fas fa-moon"></i>
                 </button>
-                <button class="btn btn-primary">Sign Up</button>
             </div>
         </div>
     </header>
@@ -2975,12 +2974,17 @@ body {
             showLesson(0);
             
             // Add click events to lesson items
+            // Add click events to lesson items
             lessonItems.forEach((item, index) => {
                 item.addEventListener('click', (e) => {
                     e.preventDefault();
                     showLesson(index);
                 });
             });
+            
+            // Add event listeners for navigation buttons
+            document.querySelector('.lesson-navigation .btn-primary').addEventListener('click', nextLesson);
+            document.querySelector('.lesson-navigation .btn-secondary').addEventListener('click', prevLesson);
             
             // Tab switching
             const tabs = document.querySelectorAll('.tab');

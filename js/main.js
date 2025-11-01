@@ -215,21 +215,47 @@ document.addEventListener('DOMContentLoaded', () => {
 // Utility function to handle inline onclick events
 function handleInlineClickEvents() {
     // Handle all onclick attributes for nextLesson
-    const nextButtons = document.querySelectorAll('[onclick*="nextLesson"]');
+    const nextButtons = document.querySelectorAll('[onclick*="nextLesson()"]');
     nextButtons.forEach(button => {
+        const onclickAttr = button.getAttribute('onclick');
         button.removeAttribute('onclick');
-        button.addEventListener('click', nextLesson);
+        // Reattach the inline function as an event listener
+        button.addEventListener('click', () => {
+            // Try to call nextLesson function from the global scope
+            if (typeof nextLesson === 'function') {
+                nextLesson();
+            }
+        });
+    });
+    
+    // Handle all onclick attributes for prevLesson
+    const prevButtons = document.querySelectorAll('[onclick*="prevLesson()"]');
+    prevButtons.forEach(button => {
+        const onclickAttr = button.getAttribute('onclick');
+        button.removeAttribute('onclick');
+        // Reattach the inline function as an event listener
+        button.addEventListener('click', () => {
+            // Try to call prevLesson function from the global scope
+            if (typeof prevLesson === 'function') {
+                prevLesson();
+            }
+        });
     });
     
     // Handle all onclick attributes for runCode
     const runButtons = document.querySelectorAll('[onclick*="runCode"]');
     runButtons.forEach(button => {
-        button.removeAttribute('onclick');
         const onclickAttr = button.getAttribute('onclick');
+        button.removeAttribute('onclick');
         const match = onclickAttr.match(/runCode\('([^']+)'\)/);
         if (match) {
             const lessonId = match[1];
-            button.addEventListener('click', () => runCode(lessonId));
+            button.addEventListener('click', () => {
+                // Try to call runCode function from the global scope
+                if (typeof runCode === 'function') {
+                    runCode(lessonId);
+                }
+            });
         }
     });
 }

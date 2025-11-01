@@ -869,6 +869,10 @@
                     showLesson(index);
                 });
             });
+            
+            // Add event listeners for navigation buttons
+            document.querySelector('.lesson-navigation .btn-primary').addEventListener('click', nextLesson);
+            document.querySelector('.lesson-navigation .btn-secondary').addEventListener('click', prevLesson);
         });
         
         // Run code function for each lesson
