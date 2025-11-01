@@ -94,21 +94,62 @@ const achievements = [
     }
 ];
 
+// Get user ID for personalized data storage
+function getUserId() {
+    // Try to get existing user ID from cookie
+    let userId = getCookie('userId');
+    
+    // If no user ID exists, create a new one
+    if (!userId) {
+        userId = 'user_' + Math.random().toString(36).substr(2, 9) + Date.now().toString(36);
+        // Store user ID in cookie for 365 days
+        setCookie('userId', userId, 365);
+    }
+    
+    return userId;
+}
+
+// Set a cookie
+function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+// Get a cookie
+function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
+
 // Check for unlocked achievements
 function checkAchievements() {
-    const progress = JSON.parse(localStorage.getItem('courseProgress')) || {};
-    const quizScores = JSON.parse(localStorage.getItem('quizScores')) || {};
+    // Get user ID
+    const userId = getUserId();
+    
+    const progress = JSON.parse(localStorage.getItem(userId + '_courseProgress')) || {};
+    const quizScores = JSON.parse(localStorage.getItem(userId + '_quizScores')) || {};
     
     const unlockedAchievements = [];
     
     achievements.forEach(achievement => {
         if (achievement.condition(progress, quizScores)) {
             // Check if already unlocked
-            const unlocked = JSON.parse(localStorage.getItem('unlockedAchievements')) || [];
+            const unlocked = JSON.parse(localStorage.getItem(userId + '_unlockedAchievements')) || [];
             if (!unlocked.includes(achievement.id)) {
                 unlockedAchievements.push(achievement);
                 unlocked.push(achievement.id);
-                localStorage.setItem('unlockedAchievements', JSON.stringify(unlocked));
+                localStorage.setItem(userId + '_unlockedAchievements', JSON.stringify(unlocked));
             }
         }
     });
@@ -151,7 +192,10 @@ function showAchievementNotification(achievement) {
 
 // Get all unlocked achievements
 function getUnlockedAchievements() {
-    const unlocked = JSON.parse(localStorage.getItem('unlockedAchievements')) || [];
+    // Get user ID
+    const userId = getUserId();
+    
+    const unlocked = JSON.parse(localStorage.getItem(userId + '_unlockedAchievements')) || [];
     return achievements.filter(achievement => unlocked.includes(achievement.id));
 }
 

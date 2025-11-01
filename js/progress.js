@@ -1,9 +1,50 @@
 // Progress tracking functionality for courses
 
+// Get user ID for personalized data storage
+function getUserId() {
+    // Try to get existing user ID from cookie
+    let userId = getCookie('userId');
+    
+    // If no user ID exists, create a new one
+    if (!userId) {
+        userId = 'user_' + Math.random().toString(36).substr(2, 9) + Date.now().toString(36);
+        // Store user ID in cookie for 365 days
+        setCookie('userId', userId, 365);
+    }
+    
+    return userId;
+}
+
+// Set a cookie
+function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+// Get a cookie
+function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
+
 // Save lesson progress
 function saveLessonProgress(course, lessonIndex) {
+    // Get user ID
+    const userId = getUserId();
+    
     // Get existing progress or initialize empty array
-    const progress = JSON.parse(localStorage.getItem('courseProgress')) || {};
+    const progress = JSON.parse(localStorage.getItem(userId + '_courseProgress')) || {};
     
     // Initialize course progress if not exists
     if (!progress[course]) {
@@ -15,8 +56,8 @@ function saveLessonProgress(course, lessonIndex) {
         progress[course].push(lessonIndex);
     }
     
-    // Save to localStorage
-    localStorage.setItem('courseProgress', JSON.stringify(progress));
+    // Save to localStorage with user ID prefix
+    localStorage.setItem(userId + '_courseProgress', JSON.stringify(progress));
     
     // Update UI
     updateProgressUI(course, progress[course]);
@@ -24,7 +65,10 @@ function saveLessonProgress(course, lessonIndex) {
 
 // Load lesson progress
 function loadLessonProgress(course) {
-    const progress = JSON.parse(localStorage.getItem('courseProgress')) || {};
+    // Get user ID
+    const userId = getUserId();
+    
+    const progress = JSON.parse(localStorage.getItem(userId + '_courseProgress')) || {};
     return progress[course] || [];
 }
 
@@ -108,9 +152,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Reset progress for a course
 function resetCourseProgress(course) {
-    const progress = JSON.parse(localStorage.getItem('courseProgress')) || {};
+    // Get user ID
+    const userId = getUserId();
+    
+    const progress = JSON.parse(localStorage.getItem(userId + '_courseProgress')) || {};
     delete progress[course];
-    localStorage.setItem('courseProgress', JSON.stringify(progress));
+    localStorage.setItem(userId + '_courseProgress', JSON.stringify(progress));
     
     // Update UI
     updateProgressUI(course, []);
@@ -118,7 +165,10 @@ function resetCourseProgress(course) {
 
 // Get overall progress for all courses
 function getOverallProgress() {
-    const progress = JSON.parse(localStorage.getItem('courseProgress')) || {};
+    // Get user ID
+    const userId = getUserId();
+    
+    const progress = JSON.parse(localStorage.getItem(userId + '_courseProgress')) || {};
     const courseNames = Object.keys(progress);
     
     let totalLessons = 0;
@@ -139,7 +189,10 @@ function getOverallProgress() {
 
 // Get progress for a specific course
 function getCourseProgress(course) {
-    const progress = JSON.parse(localStorage.getItem('courseProgress')) || {};
+    // Get user ID
+    const userId = getUserId();
+    
+    const progress = JSON.parse(localStorage.getItem(userId + '_courseProgress')) || {};
     const completedLessons = progress[course] || [];
     // Assuming 12 lessons per course
     const totalLessons = 12;

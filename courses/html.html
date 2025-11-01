@@ -26,7 +26,6 @@
                     <li><a href="../quiz.html">Quiz</a></li>
                     <li><a href="../courses/projects.html">Projects</a></li>
                     <li><a href="../dashboard.html">Dashboard</a></li>
-                    <li><a href="../profile.html">Profile</a></li>
                     <li><a href="../settings.html">Settings</a></li>
                     <li><a href="../help.html">Help</a></li>
                     <li><a href="../about.html">About</a></li>
@@ -1941,10 +1940,34 @@ footer {
     <script src="../js/editor.js"></script>
     <script src="../js/progress.js"></script>
     <script src="../js/main.js"></script>
+    <script src="../js/user.js"></script>
+</body>
+</html>
     <script>
         // Lesson navigation
         let currentLesson = 0;
         const lessons = document.querySelectorAll('.lesson-section');
+
+        function nextLesson() {
+            if (currentLesson < lessons.length - 1) {
+                lessons[currentLesson].classList.remove('active');
+                currentLesson++;
+                lessons[currentLesson].classList.add('active');
+            }
+        }
+
+        function previousLesson() {
+            if (currentLesson > 0) {
+                lessons[currentLesson].classList.remove('active');
+                currentLesson--;
+                lessons[currentLesson].classList.add('active');
+            }
+        }
+    </script>
+    <script src="../js/main.js"></script>
+    <script src="../js/user.js"></script>
+</body>
+</html>
         const lessonItems = document.querySelectorAll('.lesson-item');
         
         // Expand topic functionality

@@ -53,25 +53,51 @@ Each course includes:
 ## Project Structure
 
 ```
-/Front-End Mastery Hub
-├── courses/           # Individual course pages
-├── css/               # Stylesheets
-├── data/              # JSON data files for courses
-├── js/                # JavaScript files
-├── assets/            # Images and other assets
-├── index.html         # Home page
-├── courses.html       # Course catalog
-├── courses/projects.html      # Mini projects showcase
-├── tutorial.html      # General tutorials
-├── quiz.html          # Quiz platform
-├── dashboard.html     # User dashboard
-├── profile.html       # User profile
-├── settings.html      # User settings
-├── help.html          # Help and support
-├── about.html         # About page
-├── blog.html          # Blog/news
-├── server.py          # Development server
-└── start-server.bat   # Server startup script
+├── index.html          # Home page
+├── courses.html        # Course listings
+├── tutorial.html       # Interactive code editor
+├── quiz.html           # General quiz page
+├── dashboard.html      # User dashboard
+├── settings.html       # User settings
+├── help.html           # Help and documentation
+├── about.html          # About page
+├── blog.html           # Blog page
+├── 404.html            # 404 error page
+├── courses/            # Individual course pages
+│   ├── html.html       # HTML course
+│   ├── css.html        # CSS course
+│   ├── javascript.html # JavaScript course
+│   ├── python.html     # Python course
+│   ├── react.html      # React course
+│   ├── git.html        # Git course
+│   ├── bootstrap.html  # Bootstrap course
+│   ├── webdesign.html  # Web Design course
+│   ├── projects.html   # Projects showcase
+│   └── *-quiz.html     # Course-specific quizzes
+├── css/                # Stylesheets
+│   ├── style.css       # Main stylesheet
+│   └── courses.css     # Course-specific styles
+├── js/                 # JavaScript files
+│   ├── main.js         # Main application logic
+│   ├── editor.js       # Code editor functionality
+│   ├── progress.js     # Progress tracking
+│   ├── achievements.js # Achievement system
+│   ├── quiz.js         # Quiz functionality
+│   ├── data.js         # Course data management
+│   ├── search.js       # Search functionality
+│   └── projects.js     # Projects showcase
+├── data/               # Course content data
+│   ├── html.json       # HTML course content
+│   ├── css.json        # CSS course content
+│   ├── javascript.json # JavaScript course content
+│   ├── python.json     # Python course content
+│   ├── react.json      # React course content
+│   ├── git.json        # Git course content
+│   ├── bootstrap.json  # Bootstrap course content
+│   └── webdesign.json  # Web Design course content
+└── assets/             # Images and other assets
+    ├── images/         # Project images
+    └── favicon.ico     # Website favicon
 ```
 
 ## Development

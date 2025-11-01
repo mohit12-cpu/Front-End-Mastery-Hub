@@ -25,7 +25,6 @@
                     <li><a href="quiz.html">Quiz</a></li>
                     <li><a href="courses/projects.html">Projects</a></li>
                     <li><a href="dashboard.html">Dashboard</a></li>
-                    <li><a href="profile.html">Profile</a></li>
                     <li><a href="settings.html" class="active">Settings</a></li>
                     <li><a href="help.html">Help</a></li>
                     <li><a href="about.html">About</a></li>
@@ -130,12 +129,7 @@
                             </label>
                         </div>
                         
-                        <div class="setting-item">
-                            <label>
-                                <input type="checkbox" id="public-profile">
-                                Make Profile Public
-                            </label>
-                        </div>
+
                     </div>
                     
                     <!-- Data & Storage Settings -->
@@ -160,17 +154,8 @@
                         <h2>Account</h2>
                         
                         <div class="setting-item">
-                            <label for="username">Username</label>
-                            <input type="text" id="username" class="form-control" value="CodeMasterUser">
-                        </div>
-                        
-                        <div class="setting-item">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" class="form-control" value="user@example.com">
-                        </div>
-                        
-                        <div class="setting-item">
-                            <button class="btn btn-primary" id="save-settings">Save Settings</button>
+                            <button class="btn btn-secondary" id="reset-progress">Reset All Progress</button>
+                            <p class="setting-description">This will clear all your saved progress, including completed lessons and quiz scores. This action cannot be undone.</p>
                         </div>
                     </div>
                 </div>
@@ -226,11 +211,12 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/user.js"></script>
     <script>
         // Settings functionality
         document.addEventListener('DOMContentLoaded', () => {
-            // Initialize settings
-            initSettings();
+            // Load saved settings
+            loadSettings();
             
             // Add event listeners for settings menu
             document.querySelectorAll('.settings-menu a').forEach(link => {
@@ -240,19 +226,23 @@
                 });
             });
             
-            // Add event listeners for buttons
+            // Add event listeners for form elements
+            document.getElementById('theme').addEventListener('change', changeTheme);
+            document.getElementById('font-size').addEventListener('change', saveSettings);
+            document.getElementById('animations').addEventListener('change', saveSettings);
+            
+            // Add event listener for reset progress button
+            document.getElementById('reset-progress').addEventListener('click', resetAllProgress);
+            
+            // Add event listeners for action buttons
             document.getElementById('clear-cache').addEventListener('click', clearCache);
             document.getElementById('reset-data').addEventListener('click', resetData);
             document.getElementById('save-settings').addEventListener('click', saveSettings);
-            
-            // Add event listeners for theme selector
-            document.getElementById('theme').addEventListener('change', changeTheme);
         });
         
-        // Initialize settings
-        function initSettings() {
-            // Load saved settings
-            const savedTheme = localStorage.getItem('theme') || 'system';
+        // Load saved settings
+        function loadSettings() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
             const savedFontSize = localStorage.getItem('fontSize') || 'medium';
             const animationsEnabled = localStorage.getItem('animations') !== 'false';
             
@@ -310,6 +300,24 @@
                 localStorage.clear();
                 alert('All data has been reset.');
                 location.reload();
+            }
+        }
+        
+        // Reset all progress
+        function resetAllProgress() {
+            if (confirm('Are you sure you want to reset all your progress? This cannot be undone.')) {
+                // Clear all progress data
+                localStorage.removeItem('courseProgress');
+                localStorage.removeItem('quizScores');
+                localStorage.removeItem('unlockedAchievements');
+                localStorage.removeItem('htmlQuizHistory');
+                localStorage.removeItem('cssQuizHistory');
+                localStorage.removeItem('javascriptQuizHistory');
+                localStorage.removeItem('pythonQuizHistory');
+                localStorage.removeItem('quizHistory');
+                
+                // Show confirmation
+                alert('All progress has been reset.');
             }
         }
         

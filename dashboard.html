@@ -25,7 +25,6 @@
                     <li><a href="quiz.html">Quiz</a></li>
                     <li><a href="courses/projects.html">Projects</a></li>
                     <li><a href="dashboard.html" class="active">Dashboard</a></li>
-                    <li><a href="profile.html">Profile</a></li>
                     <li><a href="settings.html">Settings</a></li>
                     <li><a href="help.html">Help</a></li>
                     <li><a href="about.html">About</a></li>
@@ -170,27 +169,28 @@
     <script src="js/achievements.js"></script>
     <script src="js/progress.js"></script>
     <script src="js/main.js"></script>
-    <script>
+    <script src="js/user.js"></script>
+        
         // Dashboard functionality
         document.addEventListener('DOMContentLoaded', () => {
             // Update stats
             updateStats();
             
+            // Update recent activity
+            updateRecentActivity();
+            
             // Update course progress
             updateCourseProgress();
-            
-            // Update achievements
-            updateAchievements();
-            
-            // Update continue learning section
-            updateContinueLearning();
         });
         
-        // Update statistics
+        // Update stats
         function updateStats() {
-            const progress = JSON.parse(localStorage.getItem('courseProgress')) || {};
-            const quizScores = JSON.parse(localStorage.getItem('quizScores')) || {};
-            const achievements = JSON.parse(localStorage.getItem('unlockedAchievements')) || [];
+            // Get user ID
+            const userId = getUserId();
+            
+            const progress = JSON.parse(localStorage.getItem(userId + '_courseProgress')) || {};
+            const quizScores = JSON.parse(localStorage.getItem(userId + '_quizScores')) || {};
+            const achievements = JSON.parse(localStorage.getItem(userId + '_unlockedAchievements')) || [];
             
             // Calculate total lessons completed
             let totalLessons = 0;
@@ -218,117 +218,62 @@
             document.getElementById('average-score').textContent = `${averageScore}%`;
         }
         
-        // Update course progress
-        function updateCourseProgress() {
-            const progress = JSON.parse(localStorage.getItem('courseProgress')) || {};
-            const container = document.getElementById('course-progress');
+        // Update recent activity
+        function updateRecentActivity() {
+            const container = document.getElementById('recent-activity');
             
-            if (Object.keys(progress).length === 0) {
-                container.innerHTML = '<p>No course progress yet. Start learning today!</p>';
-                return;
-            }
+            // In a real app, this would come from actual user activity data
+            const activities = [
+                { action: 'Completed HTML Lesson 5', time: '2 hours ago' },
+                { action: 'Scored 90% on CSS Quiz', time: '1 day ago' },
+                { action: 'Unlocked Achievement: First Steps', time: '2 days ago' },
+                { action: 'Started JavaScript Course', time: '3 days ago' }
+            ];
             
             let html = '';
-            const courseNames = {
-                'html': 'HTML Fundamentals',
-                'css': 'CSS Styling',
-                'javascript': 'JavaScript Essentials',
-                'python': 'Python Programming'
-            };
-            
-            Object.keys(progress).forEach(course => {
-                const completed = progress[course].length;
-                const total = 12; // Assuming 12 lessons per course
-                const percentage = Math.round((completed / total) * 100);
-                
+            activities.forEach(activity => {
                 html += `
-                    <div class="course-progress-item">
+                    <div class="activity-item">
+                        <div class="activity-content">
+                            <p>${activity.action}</p>
+                            <span class="activity-time">${activity.time}</span>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+        
+        // Update course progress
+        function updateCourseProgress() {
+            const container = document.getElementById('course-progress');
+            
+            // Course data (in a real app, this would come from a data source)
+            const courses = [
+                { id: 'html', name: 'HTML Fundamentals', progress: 75 },
+                { id: 'css', name: 'CSS Styling', progress: 40 },
+                { id: 'javascript', name: 'JavaScript Essentials', progress: 20 },
+                { id: 'python', name: 'Python Programming', progress: 0 }
+            ];
+            
+            let html = '';
+            courses.forEach(course => {
+                html += `
+                    <div class="course-item">
                         <div class="course-info">
-                            <h3>${courseNames[course] || course}</h3>
-                            <p>${completed}/${total} lessons completed</p>
+                            <h3>${course.name}</h3>
+                            <p>${course.progress}% Complete</p>
                         </div>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar">
-                                <div class="progress" style="width: ${percentage}%"></div>
-                            </div>
-                            <span class="percentage">${percentage}%</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: ${course.progress}%"></div>
                         </div>
-                        <a href="courses/${course}.html" class="btn btn-outline">Continue</a>
+                        <a href="courses/${course.id}.html" class="btn btn-secondary">Continue</a>
                     </div>
                 `;
             });
             
             container.innerHTML = html;
-        }
-        
-        // Update achievements
-        function updateAchievements() {
-            const unlockedAchievements = window.Achievements.getUnlockedAchievements();
-            const container = document.getElementById('achievements-list');
-            
-            if (unlockedAchievements.length === 0) {
-                container.innerHTML = '<p>You haven\'t unlocked any achievements yet. Keep learning!</p>';
-                return;
-            }
-            
-            let html = '<div class="achievements-grid">';
-            unlockedAchievements.slice(0, 6).forEach(achievement => {
-                html += `
-                    <div class="achievement-card">
-                        <div class="achievement-icon">
-                            <i class="${achievement.icon}"></i>
-                        </div>
-                        <div class="achievement-content">
-                            <h3>${achievement.title}</h3>
-                            <p>${achievement.description}</p>
-                        </div>
-                    </div>
-                `;
-            });
-            html += '</div>';
-            
-            container.innerHTML = html;
-        }
-        
-        // Update continue learning section
-        function updateContinueLearning() {
-            const progress = JSON.parse(localStorage.getItem('courseProgress')) || {};
-            const container = document.getElementById('continue-learning');
-            
-            if (Object.keys(progress).length === 0) {
-                container.innerHTML = '<p>No recent activity. Start learning today!</p>';
-                return;
-            }
-            
-            // Find the course with the most recent activity
-            let latestCourse = null;
-            let maxLessons = 0;
-            
-            Object.keys(progress).forEach(course => {
-                if (progress[course].length > maxLessons) {
-                    maxLessons = progress[course].length;
-                    latestCourse = course;
-                }
-            });
-            
-            if (latestCourse) {
-                const courseNames = {
-                    'html': 'HTML Fundamentals',
-                    'css': 'CSS Styling',
-                    'javascript': 'JavaScript Essentials',
-                    'python': 'Python Programming'
-                };
-                
-                container.innerHTML = `
-                    <div class="continue-card">
-                        <h3>Continue with ${courseNames[latestCourse] || latestCourse}</h3>
-                        <p>${maxLessons} lessons completed</p>
-                        <a href="courses/${latestCourse}.html" class="btn btn-primary">Continue Learning</a>
-                    </div>
-                `;
-            } else {
-                container.innerHTML = '<p>No recent activity. Start learning today!</p>';
-            }
         }
     </script>
 </body>

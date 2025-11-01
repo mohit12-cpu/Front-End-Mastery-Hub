@@ -485,6 +485,44 @@ const wrongAnswersEl = document.getElementById('wrong-answers');
 const unansweredEl = document.getElementById('unanswered');
 const restartQuizBtn = document.getElementById('restart-quiz');
 
+// Get user ID for personalized data storage
+function getUserId() {
+    // Try to get existing user ID from cookie
+    let userId = getCookie('userId');
+    
+    // If no user ID exists, create a new one
+    if (!userId) {
+        userId = 'user_' + Math.random().toString(36).substr(2, 9) + Date.now().toString(36);
+        // Store user ID in cookie for 365 days
+        setCookie('userId', userId, 365);
+    }
+    
+    return userId;
+}
+
+// Set a cookie
+function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+// Get a cookie
+function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
+
 // Initialize Quiz
 document.addEventListener('DOMContentLoaded', () => {
     // Shuffle questions
@@ -603,6 +641,9 @@ function submitQuiz() {
     const wrongAnswers = shuffledQuestions.length - score - userAnswers.filter(a => a === null).length;
     const unanswered = userAnswers.filter(a => a === null).length;
     
+    // Save quiz score
+    saveQuizScore(score, shuffledQuestions.length);
+    
     // Update result UI
     scoreEl.textContent = score;
     scoreText.textContent = `You scored ${score} out of ${shuffledQuestions.length}`;
@@ -613,6 +654,34 @@ function submitQuiz() {
     // Show result, hide quiz
     document.getElementById('quiz-container').style.display = 'none';
     quizResult.style.display = 'block';
+}
+
+// Save quiz score
+function saveQuizScore(score, total) {
+    // Get user ID
+    const userId = getUserId();
+    
+    // Get existing quiz scores or initialize empty object
+    const quizScores = JSON.parse(localStorage.getItem(userId + '_quizScores')) || {};
+    
+    // Save score with timestamp
+    const quizId = 'general_quiz_' + Date.now();
+    quizScores[quizId] = {
+        score: score,
+        total: total,
+        percentage: Math.round((score / total) * 100),
+        timestamp: new Date().toISOString()
+    };
+    
+    // Save to localStorage with user ID prefix
+    localStorage.setItem(userId + '_quizScores', JSON.stringify(quizScores));
+    
+    // Check for achievements
+    if (typeof Achievements !== 'undefined' && typeof Achievements.checkAchievements === 'function') {
+        setTimeout(() => {
+            Achievements.checkAchievements();
+        }, 1000);
+    }
 }
 
 // Utility function to shuffle an array

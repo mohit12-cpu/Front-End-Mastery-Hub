@@ -725,10 +725,6 @@
         flex: 0 0 auto;
     }
     
-    .profile-container {
-        grid-template-columns: 1fr;
-    }
-    
     .help-container {
         display: flex;
         gap: 30px;
