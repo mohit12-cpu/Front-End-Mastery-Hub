@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "title": "Personal Portfolio",
+    "category": "Beginner",
+    "description": "A responsive profile page using HTML/CSS with modern design principles.",
+    "image": "assets/images/portfolio.png",
+    "tags": ["HTML", "CSS", "Responsive"],
+    "difficulty": "Beginner",
+    "html": "<div id='portfolio-app'><h1>Personal Portfolio</h1><p>A responsive profile page using HTML/CSS with modern design principles.</p></div>",
+    "css": "#portfolio-app { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; } #portfolio-app h1 { color: #333; }",
+    "js": "// Portfolio app loaded"
+  },
+  {
+    "id": 2,
+    "title": "Simple Calculator",
+    "category": "Beginner",
+    "description": "A basic calculator with math functions using HTML, CSS, and JavaScript.",
+    "image": "assets/images/calculator.png",
+    "tags": ["HTML", "CSS", "JavaScript"],
+    "difficulty": "Beginner",
+    "html": "<div id='calculator-app'><h1>Simple Calculator</h1><p>A basic calculator with math functions.</p></div>",
+    "css": "#calculator-app { font-family: Arial, sans-serif; max-width: 400px; margin: 0 auto; padding: 20px; }",
+    "js": "// Calculator app loaded"
+  },
+  {
+    "id": 3,
+    "title": "To-Do List App",
+    "category": "Intermediate",
+    "description": "A CRUD-style app with localStorage for persistent task management.",
+    "image": "assets/images/todo-app.png",
+    "tags": ["HTML", "CSS", "JavaScript", "LocalStorage"],
+    "difficulty": "Intermediate",
+    "html": "<div id='todo-app'><h1>To-Do List App</h1><p>A CRUD-style app with localStorage for persistent task management.</p></div>",
+    "css": "#todo-app { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }",
+    "js": "// To-Do app loaded"
+  },
+  {
+    "id": 4,
+    "title": "Weather App",
+    "category": "Intermediate",
+    "description": "A weather application using the Fetch API to retrieve real-time data.",
+    "image": "assets/images/weather-app.png",
+    "tags": ["HTML", "CSS", "JavaScript", "API", "Fetch"],
+    "difficulty": "Intermediate",
+    "html": "<div id='weather-app'><h1>Weather App</h1><p>A weather application using the Fetch API.</p></div>",
+    "css": "#weather-app { font-family: Arial, sans-serif; max-width: 500px; margin: 0 auto; padding: 20px; }",
+    "js": "// Weather app loaded"
+  },
+  {
+    "id": 5,
+    "title": "Quiz App",
+    "category": "Intermediate",
+    "description": "A randomized quiz application with JavaScript scoring and multiple categories.",
+    "image": "assets/images/quiz-app.png",
+    "tags": ["HTML", "CSS", "JavaScript", "Quiz"],
+    "difficulty": "Intermediate",
+    "html": "<div id='quiz-app'><h1>Quiz App</h1><p>A randomized quiz application with JavaScript scoring.</p></div>",
+    "css": "#quiz-app { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }",
+    "js": "// Quiz app loaded"
+  },
+  {
+    "id": 6,
+    "title": "E-Commerce Product Page",
+    "category": "Advanced",
+    "description": "A responsive product page with grid layout and JS filter system.",
+    "image": "assets/images/ecommerce.png",
+    "tags": ["HTML", "CSS", "JavaScript", "E-commerce"],
+    "difficulty": "Advanced",
+    "html": "<div id='ecommerce-app'><h1>E-Commerce Product Page</h1><p>A responsive product page with grid layout and JS filter system.</p></div>",
+    "css": "#ecommerce-app { font-family: Arial, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; }",
+    "js": "// E-Commerce app loaded"
+  },
+  {
+    "id": 7,
+    "title": "Code Playground",
+    "category": "Advanced",
+    "description": "Live HTML/CSS/JS editor inside website.",
+    "image": "assets/images/playground.png",
+    "tags": ["HTML", "CSS", "JavaScript", "Editor"],
+    "difficulty": "Advanced",
+    "html": "<div id='playground-app'><h1>Code Playground</h1><p>Live HTML/CSS/JS editor inside website.</p></div>",
+    "css": "#playground-app { font-family: Arial, sans-serif; max-width: 1000px; margin: 0 auto; padding: 20px; }",
+    "js": "// Playground app loaded"
+  },
+  {
+    "id": 8,
+    "title": "Notes App",
+    "category": "Advanced",
+    "description": "LocalStorage, search, delete, save functionality.",
+    "image": "assets/images/notes.png",
+    "tags": ["HTML", "CSS", "JavaScript", "LocalStorage"],
+    "difficulty": "Advanced",
+    "html": "<div id='notes-app'><h1>Notes App</h1><p>LocalStorage, search, delete, save functionality.</p></div>",
+    "css": "#notes-app { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }",
+    "js": "// Notes app loaded"
+  },
+  {
+    "id": 9,
+    "title": "Animated Landing Page",
+    "category": "UI Design",
+    "description": "Scroll animations, gradient background.",
+    "image": "assets/images/landing.png",
+    "tags": ["HTML", "CSS", "Animation"],
+    "difficulty": "Intermediate",
+    "html": "<div id='landing-app'><h1>Animated Landing Page</h1><p>Scroll animations, gradient background.</p></div>",
+    "css": "#landing-app { font-family: Arial, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; }",
+    "js": "// Landing page loaded"
+  },
+  {
+    "id": 10,
+    "title": "Glassmorphic Dashboard",
+    "category": "UI Design",
+    "description": "Modern UI with cards and chart placeholders.",
+    "image": "assets/images/dashboard.png",
+    "tags": ["HTML", "CSS", "UI Design"],
+    "difficulty": "Advanced",
+    "html": "<div id='dashboard-app'><h1>Glassmorphic Dashboard</h1><p>Modern UI with cards and chart placeholders.</p></div>",
+    "css": "#dashboard-app { font-family: Arial, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; }",
+    "js": "// Dashboard app loaded"
+  }
+]

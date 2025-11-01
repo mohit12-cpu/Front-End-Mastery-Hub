@@ -1,0 +1,114 @@
+{
+  "course": "Git",
+  "description": "Master Git and GitHub for version control and collaboration.",
+  "lessons": [
+    {
+      "id": 1,
+      "title": "What is Git?",
+      "content": "Understand version control and Git fundamentals."
+    },
+    {
+      "id": 2,
+      "title": "Git Installation & Setup",
+      "content": "Install and configure Git on your system."
+    },
+    {
+      "id": 3,
+      "title": "Basic Commands (init, add, commit, push, clone)",
+      "content": "Learn essential Git commands for daily development."
+    },
+    {
+      "id": 4,
+      "title": "Branching and Merging",
+      "content": "Work with branches to manage different versions of your code."
+    },
+    {
+      "id": 5,
+      "title": "Working with GitHub Repositories",
+      "content": "Collaborate with others using GitHub repositories."
+    },
+    {
+      "id": 6,
+      "title": "Version Control Best Practices",
+      "content": "Follow best practices for effective version control."
+    },
+    {
+      "id": 7,
+      "title": "Mini Project: Manage a Demo Repo",
+      "content": "Create and manage a complete Git repository for a demo project."
+    },
+    {
+      "id": 8,
+      "title": "Branch Management",
+      "content": "Master advanced branch management techniques including feature branches, release branches, and hotfix branches."
+    },
+    {
+      "id": 9,
+      "title": "Merging & Resolving Conflicts",
+      "content": "Learn how to merge branches effectively and resolve merge conflicts when they arise."
+    },
+    {
+      "id": 10,
+      "title": "Working with Remote Repos",
+      "content": "Deep dive into working with remote repositories, including fetching, pulling, and pushing changes."
+    },
+    {
+      "id": 11,
+      "title": "Pull Requests & Collaboration Flow",
+      "content": "Understand the pull request workflow for code review and collaborative development."
+    },
+    {
+      "id": 12,
+      "title": "Git Ignore & Best Practices",
+      "content": "Learn how to use .gitignore files effectively and follow Git best practices for clean repositories."
+    },
+    {
+      "id": 13,
+      "title": "Undo & Reset Commands",
+      "content": "Master Git's undo and reset commands to revert changes and fix mistakes."
+    },
+    {
+      "id": 14,
+      "title": "Mini Project: Simulate Git Workflow Visualization",
+      "content": "Create a visual representation of a complete Git workflow including branching, merging, and collaboration."
+    }
+  ],
+  "quiz": {
+    "title": "Git Final Quiz",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What is Git?",
+        "options": [
+          "A programming language",
+          "A version control system",
+          "A database management system",
+          "A web framework"
+        ],
+        "correct": 1
+      },
+      {
+        "id": 2,
+        "question": "Which command initializes a Git repository?",
+        "options": [
+          "git start",
+          "git init",
+          "git create",
+          "git new"
+        ],
+        "correct": 1
+      },
+      {
+        "id": 3,
+        "question": "Which command is used to stage files for commit?",
+        "options": [
+          "git stage",
+          "git add",
+          "git commit",
+          "git push"
+        ],
+        "correct": 1
+      }
+    ]
+  }
+}

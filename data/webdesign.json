@@ -1,0 +1,140 @@
+{
+  "course": "Web Design",
+  "description": "Master the principles of web design including typography, color theory, layout, and user experience.",
+  "lessons": [
+    {
+      "id": 1,
+      "title": "Introduction to Web Design",
+      "content": "Web design is the process of creating websites that are visually appealing, user-friendly, and functional.",
+      "exampleCode": "/* Key principles of web design */\n.balance { /* Creating visual stability */ }\n.visual-hierarchy { /* Guiding user's eye */ }\n.consistency { /* Uniform design elements */ }\n.usability { /* Easy to use and navigate */ }"
+    },
+    {
+      "id": 2,
+      "title": "Typography Principles",
+      "content": "Typography is the art and technique of arranging type to make written language legible, readable, and appealing.",
+      "exampleCode": "/* Font selection */\n.serif-fonts { font-family: Georgia, serif; } /* Good for print */\n.sans-serif-fonts { font-family: Arial, sans-serif; } /* Good for digital */\n\n/* Typography hierarchy */\nh1 { font-size: 2.5rem; }\nh2 { font-size: 2rem; }\nh3 { font-size: 1.5rem; }\np { font-size: 1rem; line-height: 1.6; }"
+    },
+    {
+      "id": 3,
+      "title": "Color Theory for Web",
+      "content": "Understanding color theory is essential for creating visually appealing and effective web designs.",
+      "exampleCode": "/* Color schemes */\n.monochromatic { background: linear-gradient(to right, #3498db, #5dade2, #85c1e9); }\n.complementary { background: linear-gradient(to right, #3498db, #e74c3c); }\n.analogous { background: linear-gradient(to right, #e74c3c, #e67e22, #f1c40f); }"
+    },
+    {
+      "id": 4,
+      "title": "Layout Patterns",
+      "content": "Understanding common layout patterns helps create effective and user-friendly web designs.",
+      "exampleCode": "/* Z-Pattern Layout */\n.z-pattern {\n  background: conic-gradient(/* Z-shaped visual flow */);\n}\n\n/* F-Pattern Layout */\n.f-pattern {\n  /* Follows natural reading patterns */\n}\n\n/* Grid Layout */\n.grid-layout {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n}"
+    },
+    {
+      "id": 5,
+      "title": "Spacing and White Space",
+      "content": "Proper spacing and use of white space are crucial for creating clean, readable, and visually appealing designs.",
+      "exampleCode": "/* Spacing principles */\n.element {\n  margin-bottom: 30px; /* Visual separation */\n  padding: 20px; /* Content breathing room */\n  line-height: 1.6; /* Text readability */\n}\n\n/* 8-point grid system */\n.spacing-unit { margin: 8px; }\n.spacing-unit-2x { margin: 16px; }\n.spacing-unit-3x { margin: 24px; }"
+    },
+    {
+      "id": 6,
+      "title": "Wireframing and Prototyping",
+      "content": "Wireframing and prototyping are essential steps in the design process that help visualize and test ideas.",
+      "exampleCode": "/* Wireframe structure */\n.header { height: 60px; background: #ddd; }\n.navigation { height: 40px; background: #eee; }\n.content { height: 400px; background: #f5f5f5; }\n.footer { height: 80px; background: #ddd; }"
+    },
+    {
+      "id": 7,
+      "title": "Accessibility and Inclusive Design",
+      "content": "Creating websites that are accessible to everyone, regardless of abilities or disabilities.",
+      "exampleCode": "/* Accessibility considerations */\n.accessible-button {\n  /* Sufficient contrast ratio */\n  color: #fff;\n  background-color: #333;\n  \n  /* Keyboard focus */\n  outline: 2px solid #005fcc;\n  \n  /* ARIA labels */\n  aria-label: \"Submit form\";\n}"
+    },
+    {
+      "id": 8,
+      "title": "Mini Project: Landing Page Wireframe",
+      "content": "Create a complete wireframe for a landing page that incorporates all the design principles you've learned.",
+      "exampleCode": "/* Landing page structure */\n.landing-page {\n  display: grid;\n  grid-template-areas: \n    \"header header\"\n    \"hero hero\"\n    \"features features\"\n    \"testimonials testimonials\"\n    \"cta cta\"\n    \"footer footer\";\n}"
+    },
+    {
+      "id": 9,
+      "title": "Design Tokens & Color Systems",
+      "content": "Learn how to create and implement design tokens and systematic color palettes for consistent design systems.",
+      "exampleCode": "/* Design tokens */\n:root {\n  --color-primary: #3498db;\n  --color-secondary: #2ecc71;\n  --color-danger: #e74c3c;\n  --spacing-xs: 4px;\n  --spacing-sm: 8px;\n  --spacing-md: 16px;\n  --spacing-lg: 24px;\n  --border-radius: 4px;\n  --font-family: 'Inter', sans-serif;\n  --font-size-sm: 0.875rem;\n  --font-size-md: 1rem;\n  --font-size-lg: 1.25rem;\n}"
+    },
+    {
+      "id": 10,
+      "title": "Spacing Scale & Typography Hierarchy",
+      "content": "Create systematic spacing scales and typography hierarchies for consistent and harmonious designs.",
+      "exampleCode": "/* Typography scale */\n.typography-scale {\n  --font-size-1: 0.75rem;      /* 12px */\n  --font-size-2: 0.875rem;     /* 14px */\n  --font-size-3: 1rem;         /* 16px */\n  --font-size-4: 1.125rem;     /* 18px */\n  --font-size-5: 1.25rem;      /* 20px */\n  --font-size-6: 1.5rem;       /* 24px */\n  --font-size-7: 1.875rem;     /* 30px */\n  --font-size-8: 2.25rem;      /* 36px */\n  --font-size-9: 3rem;         /* 48px */\n  --font-size-10: 3.75rem;     /* 60px */\n  --font-size-11: 4.5rem;      /* 72px */\n  --font-size-12: 6rem;        /* 96px */\n}"
+    },
+    {
+      "id": 11,
+      "title": "Dark Mode Design Principles",
+      "content": "Implement dark mode design principles with proper contrast ratios and color considerations for low-light environments.",
+      "exampleCode": "/* Dark mode implementation */\n@media (prefers-color-scheme: dark) {\n  :root {\n    --color-background: #1a1a1a;\n    --color-text: #ffffff;\n    --color-accent: #3498db;\n    --color-border: #333333;\n  }\n  \n  img {\n    filter: brightness(0.8) contrast(1.2);\n  }\n  \n  body {\n    background-color: var(--color-background);\n    color: var(--color-text);\n  }\n}"
+    },
+    {
+      "id": 12,
+      "title": "UI Component Consistency",
+      "content": "Maintain consistency across UI components with design systems and component libraries.",
+      "exampleCode": "/* Component consistency */\n.button {\n  padding: var(--spacing-sm) var(--spacing-md);\n  border-radius: var(--border-radius);\n  font-family: var(--font-family);\n  font-size: var(--font-size-md);\n  border: 1px solid var(--color-border);\n  background: var(--color-background);\n  color: var(--color-text);\n  cursor: pointer;\n  transition: all 0.2s ease;\n}\n\n.button:hover {\n  background: var(--color-accent);\n  color: white;\n  border-color: var(--color-accent);\n}\n\n.button--primary {\n  background: var(--color-primary);\n  color: white;\n  border-color: var(--color-primary);\n}"
+    },
+    {
+      "id": 13,
+      "title": "Wireframing Techniques",
+      "content": "Advanced wireframing techniques for complex layouts and user flows.",
+      "exampleCode": "/* Advanced wireframe structure */\n.dashboard-layout {\n  display: grid;\n  grid-template-areas:\n    \"header header header\"\n    \"sidebar main aside\"\n    \"footer footer footer\";\n  grid-template-columns: 250px 1fr 200px;\n  grid-template-rows: 60px 1fr 40px;\n  min-height: 100vh;\n  gap: var(--spacing-md);\n}\n\n.header { grid-area: header; }\n.sidebar { grid-area: sidebar; }\n.main { grid-area: main; }\n.aside { grid-area: aside; }\n.footer { grid-area: footer; }"
+    },
+    {
+      "id": 14,
+      "title": "Figma/Canva Design Replication",
+      "content": "Learn how to replicate designs from design tools like Figma and Canva in actual code.",
+      "exampleCode": "/* Figma design implementation */\n.card-component {\n  display: flex;\n  flex-direction: column;\n  border-radius: 12px;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n  overflow: hidden;\n  background: white;\n  transition: transform 0.3s ease, box-shadow 0.3s ease;\n}\n\n.card-component:hover {\n  transform: translateY(-4px);\n  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);\n}\n\n.card-image {\n  width: 100%;\n  height: 200px;\n  object-fit: cover;\n}\n\n.card-content {\n  padding: 20px;\n}\n\n.card-title {\n  font-size: 1.25rem;\n  font-weight: 600;\n  margin-bottom: 8px;\n  color: #333;\n}"
+    },
+    {
+      "id": 15,
+      "title": "Usability Testing Basics",
+      "content": "Understand the basics of usability testing to validate your design decisions with real users.",
+      "exampleCode": "/* Usability testing framework */\n.usability-test {\n  display: grid;\n  grid-template-columns: 1fr 300px;\n  gap: 24px;\n}\n\n.test-scenario {\n  background: #f8f9fa;\n  padding: 20px;\n  border-radius: 8px;\n  margin-bottom: 16px;\n}\n\n.test-question {\n  font-weight: 600;\n  margin-bottom: 8px;\n  color: #333;\n}\n\n.test-task {\n  background: white;\n  padding: 16px;\n  border-left: 4px solid #3498db;\n  margin: 12px 0;\n}\n\n.feedback-form {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}"
+    },
+    {
+      "id": 16,
+      "title": "Mini Project: Landing Page UI Design (Static Prototype)",
+      "content": "Create a complete static prototype of a landing page with all modern web design principles applied.",
+      "exampleCode": "/* Landing page prototype */\n.landing-prototype {\n  display: grid;\n  grid-template-areas:\n    \"nav nav nav\"\n    \"hero hero hero\"\n    \"features features features\"\n    \"testimonials testimonials testimonials\"\n    \"pricing pricing pricing\"\n    \"faq faq faq\"\n    \"cta cta cta\"\n    \"footer footer footer\";\n  min-height: 100vh;\n  font-family: 'Inter', sans-serif;\n  color: #333;\n  line-height: 1.6;\n}\n\n.nav {\n  grid-area: nav;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 20px 5%;\n  background: white;\n  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);\n}\n\n.hero {\n  grid-area: hero;\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  color: white;\n  text-align: center;\n  padding: 100px 20px;\n}\n\n.features {\n  grid-area: features;\n  padding: 80px 5%;\n  background: #f8f9fa;\n}\n\n.testimonials {\n  grid-area: testimonials;\n  padding: 80px 5%;\n  background: white;\n}\n\n.footer {\n  grid-area: footer;\n  background: #333;\n  color: white;\n  padding: 40px 5%;\n  text-align: center;\n}"
+    }
+  ],
+  "quiz": {
+    "title": "Web Design Final Quiz",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What are the key principles of web design?",
+        "options": [
+          "Balance, Visual Hierarchy, Consistency, Usability",
+          "Colors, Fonts, Images, Animations",
+          "HTML, CSS, JavaScript, Bootstrap",
+          "Servers, Databases, APIs, Security"
+        ],
+        "correct": 0
+      },
+      {
+        "id": 2,
+        "question": "What is the recommended line height for body text?",
+        "options": [
+          "1.4-1.6 times the font size",
+          "Exactly the font size",
+          "2 times the font size",
+          "0.8 times the font size"
+        ],
+        "correct": 0
+      },
+      {
+        "id": 3,
+        "question": "What is white space in web design?",
+        "options": [
+          "The unmarked area between design elements",
+          "Blank pages in a website",
+          "White background color",
+          "Empty HTML tags"
+        ],
+        "correct": 0
+      }
+    ]
+  }
+}

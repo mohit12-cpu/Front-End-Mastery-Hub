@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - CodeMaster</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/courses.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h2><i class="fas fa-code"></i> CodeMaster</h2>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="tutorial.html">Tutorials</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="courses/projects.html">Projects</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="profile.html" class="active">Profile</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                    <li><a href="help.html">Help</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="btn btn-primary">Sign Up</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> / <span>Profile</span>
+        </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section class="profile">
+        <div class="container">
+            <h1 class="section-title">Your Profile</h1>
+            
+            <div class="profile-container">
+                <!-- Profile Info -->
+                <div class="profile-info">
+                    <div class="profile-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h2 id="user-name">CodeMaster User</h2>
+                    <p class="user-email">user@example.com</p>
+                    <p class="member-since">Member since: <span id="member-date">January 2023</span></p>
+                    
+                    <div class="profile-actions">
+                        <button class="btn btn-primary" id="edit-profile">Edit Profile</button>
+                        <button class="btn btn-secondary" id="reset-progress">Reset Progress</button>
+                    </div>
+                </div>
+                
+                <!-- Profile Stats -->
+                <div class="profile-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="lessons-completed">0</h3>
+                            <p>Lessons Completed</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="courses-completed">0</h3>
+                            <p>Courses Completed</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="achievements-unlocked">0</h3>
+                            <p>Achievements</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="quiz-average">0%</h3>
+                            <p>Average Quiz Score</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recent Activity -->
+                <div class="profile-section">
+                    <h2>Recent Activity</h2>
+                    <div class="activity-feed" id="activity-feed">
+                        <p>No recent activity. Start learning today!</p>
+                    </div>
+                </div>
+                
+                <!-- Achievements -->
+                <div class="profile-section">
+                    <h2>Your Achievements</h2>
+                    <div class="achievements-grid" id="profile-achievements">
+                        <p>You haven't unlocked any achievements yet. Keep learning!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3><i class="fas fa-code"></i> CodeMaster</h3>
+                    <p>Learn to code interactively with our hands-on tutorials and real-time editor.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="tutorial.html">Tutorials</a></li>
+                        <li><a href="quiz.html">Quiz</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Subscribe</h4>
+                    <p>Get the latest updates and news.</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 CodeMaster. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/achievements.js"></script>
+    <script src="js/progress.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Profile functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            // Update profile info
+            updateProfileInfo();
+            
+            // Update stats
+            updateProfileStats();
+            
+            // Update recent activity
+            updateRecentActivity();
+            
+            // Update achievements
+            updateProfileAchievements();
+            
+            // Add event listeners
+            document.getElementById('reset-progress').addEventListener('click', resetAllProgress);
+        });
+        
+        // Update profile information
+        function updateProfileInfo() {
+            // In a real app, this would come from user data
+            document.getElementById('user-name').textContent = 'CodeMaster User';
+            document.getElementById('member-date').textContent = 'January 2023';
+        }
+        
+        // Update profile statistics
+        function updateProfileStats() {
+            const progress = JSON.parse(localStorage.getItem('courseProgress')) || {};
+            const quizScores = JSON.parse(localStorage.getItem('quizScores')) || {};
+            const achievements = JSON.parse(localStorage.getItem('unlockedAchievements')) || [];
+            
+            // Calculate lessons completed
+            let lessonsCompleted = 0;
+            let coursesCompleted = 0;
+            Object.keys(progress).forEach(course => {
+                lessonsCompleted += progress[course].length;
+                if (progress[course].length >= 12) { // Assuming 12 lessons per course
+                    coursesCompleted++;
+                }
+            });
+            
+            // Calculate average quiz score
+            let totalScore = 0;
+            let quizCount = 0;
+            Object.keys(quizScores).forEach(quiz => {
+                totalScore += quizScores[quiz].percentage;
+                quizCount++;
+            });
+            const averageScore = quizCount > 0 ? Math.round(totalScore / quizCount) : 0;
+            
+            // Update UI
+            document.getElementById('lessons-completed').textContent = lessonsCompleted;
+            document.getElementById('courses-completed').textContent = coursesCompleted;
+            document.getElementById('achievements-unlocked').textContent = achievements.length;
+            document.getElementById('quiz-average').textContent = `${averageScore}%`;
+        }
+        
+        // Update recent activity
+        function updateRecentActivity() {
+            // In a real app, this would show actual recent activity
+            const container = document.getElementById('activity-feed');
+            container.innerHTML = '<p>No recent activity. Start learning today!</p>';
+        }
+        
+        // Update profile achievements
+        function updateProfileAchievements() {
+            const unlockedAchievements = window.Achievements.getUnlockedAchievements();
+            const container = document.getElementById('profile-achievements');
+            
+            if (unlockedAchievements.length === 0) {
+                container.innerHTML = '<p>You haven\'t unlocked any achievements yet. Keep learning!</p>';
+                return;
+            }
+            
+            let html = '';
+            unlockedAchievements.forEach(achievement => {
+                html += `
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="${achievement.icon}"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <h3>${achievement.title}</h3>
+                            <p>${achievement.description}</p>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+        
+        // Reset all progress
+        function resetAllProgress() {
+            if (confirm('Are you sure you want to reset all your progress? This cannot be undone.')) {
+                // Clear all progress data
+                localStorage.removeItem('courseProgress');
+                localStorage.removeItem('quizScores');
+                localStorage.removeItem('unlockedAchievements');
+                localStorage.removeItem('htmlQuizHistory');
+                localStorage.removeItem('cssQuizHistory');
+                localStorage.removeItem('javascriptQuizHistory');
+                localStorage.removeItem('pythonQuizHistory');
+                localStorage.removeItem('quizHistory');
+                
+                // Update UI
+                updateProfileStats();
+                updateRecentActivity();
+                updateProfileAchievements();
+                
+                // Show confirmation
+                alert('All progress has been reset.');
+            }
+        }
+    </script>
+</body>
+</html>

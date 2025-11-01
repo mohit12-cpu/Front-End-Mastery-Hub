@@ -1,0 +1,886 @@
+<!-- Lesson 7: JavaScript Components -->
+                <section id="javascript" class="lesson-section" style="display: none;">
+                    <h2>7. JavaScript Components</h2>
+                    <p>Bootstrap includes powerful JavaScript plugins to add interactivity to your components.</p>
+                    
+                    <h3>Modals</h3>
+                    <pre><code class="language-html">&lt;!-- Button trigger modal --&gt;
+&lt;button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"&gt;
+    Launch demo modal
+&lt;/button&gt;
+
+&lt;!-- Modal --&gt;
+&lt;div class="modal fade" id="exampleModal" tabindex="-1"&gt;
+    &lt;div class="modal-dialog"&gt;
+        &lt;div class="modal-content"&gt;
+            &lt;div class="modal-header"&gt;
+                &lt;h5 class="modal-title"&gt;Modal title&lt;/h5&gt;
+                &lt;button type="button" class="btn-close" data-bs-dismiss="modal"&gt;&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class="modal-body"&gt;
+                Modal body text goes here.
+            &lt;/div&gt;
+            &lt;div class="modal-footer"&gt;
+                &lt;button type="button" class="btn btn-secondary" data-bs-dismiss="modal"&gt;Close&lt;/button&gt;
+                &lt;button type="button" class="btn btn-primary"&gt;Save changes&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    
+                    <h3>Carousel</h3>
+                    <pre><code class="language-html">&lt;div id="carouselExample" class="carousel slide"&gt;
+    &lt;div class="carousel-indicators"&gt;
+        &lt;button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"&gt;&lt;/button&gt;
+        &lt;button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"&gt;&lt;/button&gt;
+        &lt;button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2"&gt;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="carousel-inner"&gt;
+        &lt;div class="carousel-item active"&gt;
+            &lt;img src="..." class="d-block w-100" alt="..."&gt;
+        &lt;/div&gt;
+        &lt;div class="carousel-item"&gt;
+            &lt;img src="..." class="d-block w-100" alt="..."&gt;
+        &lt;/div&gt;
+        &lt;div class="carousel-item"&gt;
+            &lt;img src="..." class="d-block w-100" alt="..."&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev"&gt;
+        &lt;span class="carousel-control-prev-icon"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next"&gt;
+        &lt;span class="carousel-control-next-icon"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                    
+                    <h3>Tooltips and Popovers</h3>
+                    <pre><code class="language-html">&lt;!-- Tooltip --&gt;
+&lt;button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-title="Tooltip on top"&gt;
+    Tooltip on top
+&lt;/button&gt;
+
+&lt;!-- Popover --&gt;
+&lt;button type="button" class="btn btn-lg btn-danger" data-bs-toggle="popover" 
+    data-bs-title="Popover title" data-bs-content="Popover body content"&gt;
+    Click to toggle popover
+&lt;/button&gt;</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                            </div>
+                            <button class="btn btn-run" onclick="runCode('javascript')">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-javascript">
+                                <textarea id="html-code-javascript">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Bootstrap JavaScript Components&lt;/title&gt;
+    &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"&gt;
+    &lt;style&gt;
+        body {
+            padding: 20px;
+        }
+        .component-section {
+            margin-bottom: 40px;
+        }
+        .tooltip-demo {
+            margin: 10px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;h1 class="text-center mb-5"&gt;Bootstrap JavaScript Components&lt;/h1&gt;
+        
+        &lt;div class="component-section"&gt;
+            &lt;h2&gt;Modals&lt;/h2&gt;
+            &lt;button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"&gt;
+                Launch Demo Modal
+            &lt;/button&gt;
+            
+            &lt;!-- Modal --&gt;
+            &lt;div class="modal fade" id="exampleModal" tabindex="-1"&gt;
+                &lt;div class="modal-dialog"&gt;
+                    &lt;div class="modal-content"&gt;
+                        &lt;div class="modal-header"&gt;
+                            &lt;h5 class="modal-title"&gt;&lt;i class="fas fa-info-circle"&gt;&lt;/i&gt; Welcome to Bootstrap&lt;/h5&gt;
+                            &lt;button type="button" class="btn-close" data-bs-dismiss="modal"&gt;&lt;/button&gt;
+                        &lt;/div&gt;
+                        &lt;div class="modal-body"&gt;
+                            &lt;p&gt;This is a Bootstrap modal component. Modals are streamlined, but flexible dialog prompts.&lt;/p&gt;
+                            &lt;div class="alert alert-info"&gt;
+                                &lt;strong&gt;Tip:&lt;/strong&gt; You can close this modal by clicking the X, clicking outside, or pressing ESC.
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="modal-footer"&gt;
+                            &lt;button type="button" class="btn btn-secondary" data-bs-dismiss="modal"&gt;Close&lt;/button&gt;
+                            &lt;button type="button" class="btn btn-primary"&gt;Save Changes&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;button type="button" class="btn btn-success ms-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop"&gt;
+                StaticBackdrop Modal
+            &lt;/button&gt;
+            
+            &lt;!-- StaticBackdrop Modal --&gt;
+            &lt;div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"&gt;
+                &lt;div class="modal-dialog"&gt;
+                    &lt;div class="modal-content"&gt;
+                        &lt;div class="modal-header"&gt;
+                            &lt;h5 class="modal-title"&gt;&lt;i class="fas fa-exclamation-triangle"&gt;&lt;/i&gt; Confirmation Required&lt;/h5&gt;
+                            &lt;button type="button" class="btn-close" data-bs-dismiss="modal"&gt;&lt;/button&gt;
+                        &lt;/div&gt;
+                        &lt;div class="modal-body"&gt;
+                            &lt;p&gt;This modal has a static backdrop. Clicking outside or pressing ESC won't close it.&lt;/p&gt;
+                            &lt;p&gt;Are you sure you want to proceed?&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class="modal-footer"&gt;
+                            &lt;button type="button" class="btn btn-secondary" data-bs-dismiss="modal"&gt;Cancel&lt;/button&gt;
+                            &lt;button type="button" class="btn btn-danger"&gt;Confirm&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="component-section"&gt;
+            &lt;h2&gt;Carousel&lt;/h2&gt;
+            &lt;div id="carouselExample" class="carousel slide" data-bs-ride="carousel"&gt;
+                &lt;div class="carousel-indicators"&gt;
+                    &lt;button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"&gt;&lt;/button&gt;
+                    &lt;button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"&gt;&lt;/button&gt;
+                    &lt;button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2"&gt;&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div class="carousel-inner"&gt;
+                    &lt;div class="carousel-item active"&gt;
+                        &lt;div class="d-flex align-items-center justify-content-center" style="height: 300px; background: linear-gradient(135deg, #6f42c1, #20c997);"&gt;
+                            &lt;div class="text-center text-white"&gt;
+                                &lt;h3&gt;&lt;i class="fas fa-rocket"&gt;&lt;/i&gt; Welcome to Bootstrap&lt;/h3&gt;
+                                &lt;p&gt;Build responsive websites faster&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="carousel-item"&gt;
+                        &lt;div class="d-flex align-items-center justify-content-center" style="height: 300px; background: linear-gradient(135deg, #20c997, #0dcaf0);"&gt;
+                            &lt;div class="text-center text-white"&gt;
+                                &lt;h3&gt;&lt;i class="fas fa-mobile-alt"&gt;&lt;/i&gt; Mobile First&lt;/h3&gt;
+                                &lt;p&gt;Designed for all devices&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="carousel-item"&gt;
+                        &lt;div class="d-flex align-items-center justify-content-center" style="height: 300px; background: linear-gradient(135deg, #0dcaf0, #6f42c1);"&gt;
+                            &lt;div class="text-center text-white"&gt;
+                                &lt;h3&gt;&lt;i class="fas fa-paint-brush"&gt;&lt;/i&gt; Customizable&lt;/h3&gt;
+                                &lt;p&gt;Easy to customize and extend&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev"&gt;
+                    &lt;span class="carousel-control-prev-icon"&gt;&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next"&gt;
+                    &lt;span class="carousel-control-next-icon"&gt;&lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="component-section"&gt;
+            &lt;h2&gt;Tooltips and Popovers&lt;/h2&gt;
+            &lt;div class="d-flex flex-wrap"&gt;
+                &lt;button type="button" class="btn btn-secondary tooltip-demo" data-bs-toggle="tooltip" data-bs-title="Tooltip on top"&gt;
+                    Tooltip on top
+                &lt;/button&gt;
+                &lt;button type="button" class="btn btn-secondary tooltip-demo" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Tooltip on right"&gt;
+                    Tooltip on right
+                &lt;/button&gt;
+                &lt;button type="button" class="btn btn-secondary tooltip-demo" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Tooltip on bottom"&gt;
+                    Tooltip on bottom
+                &lt;/button&gt;
+                &lt;button type="button" class="btn btn-secondary tooltip-demo" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Tooltip on left"&gt;
+                    Tooltip on left
+                &lt;/button&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="mt-4"&gt;
+                &lt;button type="button" class="btn btn-lg btn-danger" data-bs-toggle="popover" 
+                    data-bs-title="Popover title" 
+                    data-bs-content="And here's some amazing content. It's very engaging. Right?"
+                    Click to toggle popover
+                &lt;/button&gt;
+                
+                &lt;button type="button" class="btn btn-lg btn-primary ms-2" data-bs-toggle="popover" 
+                    data-bs-trigger="focus" 
+                    data-bs-title="Focus Triggered" 
+                    data-bs-content="This popover is triggered by focus. Click to toggle."&gt;
+                    Focus Popover
+                &lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="component-section"&gt;
+            &lt;h2&gt;Collapse and Accordion&lt;/h2&gt;
+            &lt;p&gt;
+                &lt;a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"&gt;
+                    Link with href
+                &lt;/a&gt;
+                &lt;button class="btn btn-success ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"&gt;
+                    Button with data-bs-target
+                &lt;/button&gt;
+            &lt;/p&gt;
+            &lt;div class="collapse" id="collapseExample"&gt;
+                &lt;div class="card card-body"&gt;
+                    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="accordion mt-4" id="accordionExample"&gt;
+                &lt;div class="accordion-item"&gt;
+                    &lt;h2 class="accordion-header"&gt;
+                        &lt;button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"&gt;
+                            Accordion Item #1
+                        &lt;/button&gt;
+                    &lt;/h2&gt;
+                    &lt;div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample"&gt;
+                        &lt;div class="accordion-body"&gt;
+                            &lt;strong&gt;This is the first item's accordion body.&lt;/strong&gt; It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element.
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="accordion-item"&gt;
+                    &lt;h2 class="accordion-header"&gt;
+                        &lt;button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"&gt;
+                            Accordion Item #2
+                        &lt;/button&gt;
+                    &lt;/h2&gt;
+                    &lt;div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample"&gt;
+                        &lt;div class="accordion-body"&gt;
+                            &lt;strong&gt;This is the second item's accordion body.&lt;/strong&gt; You can modify any of this with custom CSS or overriding our default variables.
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="accordion-item"&gt;
+                    &lt;h2 class="accordion-header"&gt;
+                        &lt;button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"&gt;
+                            Accordion Item #3
+                        &lt;/button&gt;
+                    &lt;/h2&gt;
+                    &lt;div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample"&gt;
+                        &lt;div class="accordion-body"&gt;
+                            &lt;strong&gt;This is the third item's accordion body.&lt;/strong&gt; It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element.
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // Initialize tooltips
+        const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+        
+        // Initialize popovers
+        const popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+        const popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl);
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-javascript"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 8: Mini Project - Responsive Dashboard -->
+                <section id="project" class="lesson-section" style="display: none;">
+                    <h2>8. Mini Project: Responsive Dashboard</h2>
+                    <p>Build a complete responsive dashboard using Bootstrap components.</p>
+                    
+                    <h3>Project Requirements</h3>
+                    <ul>
+                        <li>Responsive navigation with mobile toggle</li>
+                        <li>Dashboard cards with statistics</li>
+                        <li>Data tables with sorting</li>
+                        <li>Interactive charts (using simple divs for demo)</li>
+                        <li>Form for data entry</li>
+                        <li>Modal dialogs for actions</li>
+                    </ul>
+                    
+                    <h3>Complete Implementation</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                            </div>
+                            <button class="btn btn-run" onclick="runCode('project')">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-project">
+                                <textarea id="html-code-project">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Bootstrap Dashboard&lt;/title&gt;
+    &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"&gt;
+    &lt;style&gt;
+        body {
+            background-color: #f8f9fa;
+        }
+        .sidebar {
+            background: linear-gradient(180deg, #4e73df 0%, #224abe 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .sidebar .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            padding: 0.75rem 1rem;
+            margin: 0.25rem 0;
+            border-radius: 0.375rem;
+            transition: all 0.3s;
+        }
+        .sidebar .nav-link:hover, .sidebar .nav-link.active {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .card-stat {
+            border-left: 4px solid;
+        }
+        .sales-card { border-left-color: #4e73df; }
+        .revenue-card { border-left-color: #1cc88a; }
+        .customers-card { border-left-color: #36b9cc; }
+        .growth-card { border-left-color: #f6c23e; }
+        .chart-placeholder {
+            height: 200px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 0.375rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+        }
+        .notification-badge {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            font-size: 0.6rem;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container-fluid"&gt;
+        &lt;div class="row"&gt;
+            &lt;!-- Sidebar --&gt;
+            &lt;nav class="col-md-3 col-lg-2 d-md-block sidebar collapse"&gt;
+                &lt;div class="position-sticky pt-3"&gt;
+                    &lt;div class="text-center mb-4"&gt;
+                        &lt;h4&gt;&lt;i class="fas fa-chart-line"&gt;&lt;/i&gt; DashPro&lt;/h4&gt;
+                        &lt;p class="text-muted small"&gt;Admin Dashboard&lt;/p&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;ul class="nav flex-column"&gt;
+                        &lt;li class="nav-item"&gt;
+                            &lt;a class="nav-link active" href="#"&gt;
+                                &lt;i class="fas fa-tachometer-alt"&gt;&lt;/i&gt; Dashboard
+                            &lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item"&gt;
+                            &lt;a class="nav-link" href="#"&gt;
+                                &lt;i class="fas fa-chart-bar"&gt;&lt;/i&gt; Analytics
+                            &lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item"&gt;
+                            &lt;a class="nav-link" href="#"&gt;
+                                &lt;i class="fas fa-shopping-cart"&gt;&lt;/i&gt; Orders
+                            &lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item"&gt;
+                            &lt;a class="nav-link" href="#"&gt;
+                                &lt;i class="fas fa-users"&gt;&lt;/i&gt; Customers
+                            &lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item"&gt;
+                            &lt;a class="nav-link" href="#"&gt;
+                                &lt;i class="fas fa-cog"&gt;&lt;/i&gt; Settings
+                            &lt;/a&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/nav&gt;
+            
+            &lt;!-- Main Content --&gt;
+            &lt;main class="col-md-9 ms-sm-auto col-lg-10 px-md-4"&gt;
+                &lt;!-- Header --&gt;
+                &lt;div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"&gt;
+                    &lt;h1 class="h2"&gt;Dashboard&lt;/h1&gt;
+                    &lt;div class="btn-toolbar mb-2 mb-md-0"&gt;
+                        &lt;div class="btn-group me-2"&gt;
+                            &lt;button type="button" class="btn btn-sm btn-outline-secondary"&gt;Share&lt;/button&gt;
+                            &lt;button type="button" class="btn btn-sm btn-outline-secondary"&gt;Export&lt;/button&gt;
+                        &lt;/div&gt;
+                        &lt;button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle"&gt;
+                            &lt;i class="fas fa-calendar"&gt;&lt;/i&gt; This week
+                        &lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;!-- Stats Cards --&gt;
+                &lt;div class="row"&gt;
+                    &lt;div class="col-md-6 col-lg-3 mb-4"&gt;
+                        &lt;div class="card card-stat sales-card h-100"&gt;
+                            &lt;div class="card-body"&gt;
+                                &lt;div class="d-flex justify-content-between"&gt;
+                                    &lt;div&gt;
+                                        &lt;h6 class="text-muted"&gt;Sales&lt;/h6&gt;
+                                        &lt;h3 class="mb-0"&gt;$40,000&lt;/h3&gt;
+                                        &lt;small class="text-success"&gt;&lt;i class="fas fa-arrow-up"&gt;&lt;/i&gt; 12%&lt;/small&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="icon-circle bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;"&gt;
+                                        &lt;i class="fas fa-shopping-cart"&gt;&lt;/i&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class="col-md-6 col-lg-3 mb-4"&gt;
+                        &lt;div class="card card-stat revenue-card h-100"&gt;
+                            &lt;div class="card-body"&gt;
+                                &lt;div class="d-flex justify-content-between"&gt;
+                                    &lt;div&gt;
+                                        &lt;h6 class="text-muted"&gt;Revenue&lt;/h6&gt;
+                                        &lt;h3 class="mb-0"&gt;$21,000&lt;/h3&gt;
+                                        &lt;small class="text-success"&gt;&lt;i class="fas fa-arrow-up"&gt;&lt;/i&gt; 8%&lt;/small&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="icon-circle bg-success text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;"&gt;
+                                        &lt;i class="fas fa-dollar-sign"&gt;&lt;/i&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class="col-md-6 col-lg-3 mb-4"&gt;
+                        &lt;div class="card card-stat customers-card h-100"&gt;
+                            &lt;div class="card-body"&gt;
+                                &lt;div class="d-flex justify-content-between"&gt;
+                                    &lt;div&gt;
+                                        &lt;h6 class="text-muted"&gt;Customers&lt;/h6&gt;
+                                        &lt;h3 class="mb-0"&gt;1,240&lt;/h3&gt;
+                                        &lt;small class="text-danger"&gt;&lt;i class="fas fa-arrow-down"&gt;&lt;/i&gt; 2%&lt;/small&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="icon-circle bg-info text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;"&gt;
+                                        &lt;i class="fas fa-users"&gt;&lt;/i&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class="col-md-6 col-lg-3 mb-4"&gt;
+                        &lt;div class="card card-stat growth-card h-100"&gt;
+                            &lt;div class="card-body"&gt;
+                                &lt;div class="d-flex justify-content-between"&gt;
+                                    &lt;div&gt;
+                                        &lt;h6 class="text-muted"&gt;Growth&lt;/h6&gt;
+                                        &lt;h3 class="mb-0"&gt;32%&lt;/h3&gt;
+                                        &lt;small class="text-success"&gt;&lt;i class="fas fa-arrow-up"&gt;&lt;/i&gt; 5%&lt;/small&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="icon-circle bg-warning text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;"&gt;
+                                        &lt;i class="fas fa-chart-line"&gt;&lt;/i&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;!-- Charts and Tables --&gt;
+                &lt;div class="row"&gt;
+                    &lt;div class="col-md-8 mb-4"&gt;
+                        &lt;div class="card"&gt;
+                            &lt;div class="card-header d-flex justify-content-between align-items-center"&gt;
+                                &lt;h5 class="mb-0"&gt;&lt;i class="fas fa-chart-bar"&gt;&lt;/i&gt; Sales Overview&lt;/h5&gt;
+                                &lt;div class="dropdown"&gt;
+                                    &lt;button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"&gt;
+                                        Filter
+                                    &lt;/button&gt;
+                                    &lt;ul class="dropdown-menu"&gt;
+                                        &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Today&lt;/a&gt;&lt;/li&gt;
+                                        &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;This Week&lt;/a&gt;&lt;/li&gt;
+                                        &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;This Month&lt;/a&gt;&lt;/li&gt;
+                                    &lt;/ul&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="card-body"&gt;
+                                &lt;div class="chart-placeholder"&gt;
+                                    &lt;div class="text-center"&gt;
+                                        &lt;i class="fas fa-chart-bar fa-3x mb-3"&gt;&lt;/i&gt;
+                                        &lt;p class="mb-0"&gt;Sales Chart Visualization&lt;/p&gt;
+                                        &lt;small class="text-muted"&gt;Monthly sales data representation&lt;/small&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class="col-md-4 mb-4"&gt;
+                        &lt;div class="card"&gt;
+                            &lt;div class="card-header"&gt;
+                                &lt;h5 class="mb-0"&gt;&lt;i class="fas fa-bell"&gt;&lt;/i&gt; Notifications&lt;/h5&gt;
+                            &lt;/div&gt;
+                            &lt;div class="card-body"&gt;
+                                &lt;div class="list-group list-group-flush"&gt;
+                                    &lt;a href="#" class="list-group-item list-group-item-action"&gt;
+                                        &lt;div class="d-flex w-100 justify-content-between"&gt;
+                                            &lt;h6 class="mb-1"&gt;New order received&lt;/h6&gt;
+                                            &lt;small class="text-muted"&gt;10 min&lt;/small&gt;
+                                        &lt;/div&gt;
+                                        &lt;p class="mb-1"&gt;Order #12345 has been placed.&lt;/p&gt;
+                                    &lt;/a&gt;
+                                    &lt;a href="#" class="list-group-item list-group-item-action"&gt;
+                                        &lt;div class="d-flex w-100 justify-content-between"&gt;
+                                            &lt;h6 class="mb-1"&gt;Payment processed&lt;/h6&gt;
+                                            &lt;small class="text-muted"&gt;1 hour&lt;/small&gt;
+                                        &lt;/div&gt;
+                                        &lt;p class="mb-1"&gt;Payment for order #12340 completed.&lt;/p&gt;
+                                    &lt;/a&gt;
+                                    &lt;a href="#" class="list-group-item list-group-item-action"&gt;
+                                        &lt;div class="d-flex w-100 justify-content-between"&gt;
+                                            &lt;h6 class="mb-1"&gt;New customer&lt;/h6&gt;
+                                            &lt;small class="text-muted"&gt;2 hours&lt;/small&gt;
+                                        &lt;/div&gt;
+                                        &lt;p class="mb-1"&gt;Customer John Doe registered.&lt;/p&gt;
+                                    &lt;/a&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class="row"&gt;
+                    &lt;div class="col-12 mb-4"&gt;
+                        &lt;div class="card"&gt;
+                            &lt;div class="card-header d-flex justify-content-between align-items-center"&gt;
+                                &lt;h5 class="mb-0"&gt;&lt;i class="fas fa-table"&gt;&lt;/i&gt; Recent Orders&lt;/h5&gt;
+                                &lt;button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addOrderModal"&gt;
+                                    &lt;i class="fas fa-plus"&gt;&lt;/i&gt; Add Order
+                                &lt;/button&gt;
+                            &lt;/div&gt;
+                            &lt;div class="card-body"&gt;
+                                &lt;div class="table-responsive"&gt;
+                                    &lt;table class="table table-striped table-hover"&gt;
+                                        &lt;thead&gt;
+                                            &lt;tr&gt;
+                                                &lt;th&gt;Order ID&lt;/th&gt;
+                                                &lt;th&gt;Customer&lt;/th&gt;
+                                                &lt;th&gt;Product&lt;/th&gt;
+                                                &lt;th&gt;Amount&lt;/th&gt;
+                                                &lt;th&gt;Status&lt;/th&gt;
+                                                &lt;th&gt;Date&lt;/th&gt;
+                                                &lt;th&gt;Actions&lt;/th&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/thead&gt;
+                                        &lt;tbody&gt;
+                                            &lt;tr&gt;
+                                                &lt;td&gt;#12345&lt;/td&gt;
+                                                &lt;td&gt;John Doe&lt;/td&gt;
+                                                &lt;td&gt;Premium Plan&lt;/td&gt;
+                                                &lt;td&gt;$299.00&lt;/td&gt;
+                                                &lt;td&gt;&lt;span class="badge bg-success"&gt;Completed&lt;/span&gt;&lt;/td&gt;
+                                                &lt;td&gt;2023-06-15&lt;/td&gt;
+                                                &lt;td&gt;
+                                                    &lt;button class="btn btn-sm btn-outline-primary"&gt;&lt;i class="fas fa-eye"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                    &lt;button class="btn btn-sm btn-outline-danger ms-1"&gt;&lt;i class="fas fa-trash"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                            &lt;tr&gt;
+                                                &lt;td&gt;#12344&lt;/td&gt;
+                                                &lt;td&gt;Jane Smith&lt;/td&gt;
+                                                &lt;td&gt;Basic Plan&lt;/td&gt;
+                                                &lt;td&gt;$99.00&lt;/td&gt;
+                                                &lt;td&gt;&lt;span class="badge bg-warning"&gt;Pending&lt;/span&gt;&lt;/td&gt;
+                                                &lt;td&gt;2023-06-14&lt;/td&gt;
+                                                &lt;td&gt;
+                                                    &lt;button class="btn btn-sm btn-outline-primary"&gt;&lt;i class="fas fa-eye"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                    &lt;button class="btn btn-sm btn-outline-danger ms-1"&gt;&lt;i class="fas fa-trash"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                            &lt;tr&gt;
+                                                &lt;td&gt;#12343&lt;/td&gt;
+                                                &lt;td&gt;Bob Johnson&lt;/td&gt;
+                                                &lt;td&gt;Enterprise Plan&lt;/td&gt;
+                                                &lt;td&gt;$999.00&lt;/td&gt;
+                                                &lt;td&gt;&lt;span class="badge bg-info"&gt;Processing&lt;/span&gt;&lt;/td&gt;
+                                                &lt;td&gt;2023-06-14&lt;/td&gt;
+                                                &lt;td&gt;
+                                                    &lt;button class="btn btn-sm btn-outline-primary"&gt;&lt;i class="fas fa-eye"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                    &lt;button class="btn btn-sm btn-outline-danger ms-1"&gt;&lt;i class="fas fa-trash"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                            &lt;tr&gt;
+                                                &lt;td&gt;#12342&lt;/td&gt;
+                                                &lt;td&gt;Alice Brown&lt;/td&gt;
+                                                &lt;td&gt;Standard Plan&lt;/td&gt;
+                                                &lt;td&gt;$199.00&lt;/td&gt;
+                                                &lt;td&gt;&lt;span class="badge bg-success"&gt;Completed&lt;/span&gt;&lt;/td&gt;
+                                                &lt;td&gt;2023-06-13&lt;/td&gt;
+                                                &lt;td&gt;
+                                                    &lt;button class="btn btn-sm btn-outline-primary"&gt;&lt;i class="fas fa-eye"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                    &lt;button class="btn btn-sm btn-outline-danger ms-1"&gt;&lt;i class="fas fa-trash"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/tbody&gt;
+                                    &lt;/table&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/main&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Add Order Modal --&gt;
+    &lt;div class="modal fade" id="addOrderModal" tabindex="-1"&gt;
+        &lt;div class="modal-dialog"&gt;
+            &lt;div class="modal-content"&gt;
+                &lt;div class="modal-header"&gt;
+                    &lt;h5 class="modal-title"&gt;&lt;i class="fas fa-plus-circle"&gt;&lt;/i&gt; Add New Order&lt;/h5&gt;
+                    &lt;button type="button" class="btn-close" data-bs-dismiss="modal"&gt;&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div class="modal-body"&gt;
+                    &lt;form&gt;
+                        &lt;div class="mb-3"&gt;
+                            &lt;label for="customerName" class="form-label"&gt;Customer Name&lt;/label&gt;
+                            &lt;input type="text" class="form-control" id="customerName" placeholder="Enter customer name"&gt;
+                        &lt;/div&gt;
+                        &lt;div class="mb-3"&gt;
+                            &lt;label for="productName" class="form-label"&gt;Product&lt;/label&gt;
+                            &lt;select class="form-select" id="productName"&gt;
+                                &lt;option selected&gt;Select a product&lt;/option&gt;
+                                &lt;option value="basic"&gt;Basic Plan - $99&lt;/option&gt;
+                                &lt;option value="standard"&gt;Standard Plan - $199&lt;/option&gt;
+                                &lt;option value="premium"&gt;Premium Plan - $299&lt;/option&gt;
+                                &lt;option value="enterprise"&gt;Enterprise Plan - $999&lt;/option&gt;
+                            &lt;/select&gt;
+                        &lt;/div&gt;
+                        &lt;div class="mb-3"&gt;
+                            &lt;label for="orderAmount" class="form-label"&gt;Amount&lt;/label&gt;
+                            &lt;input type="number" class="form-control" id="orderAmount" placeholder="Enter amount"&gt;
+                        &lt;/div&gt;
+                        &lt;div class="mb-3"&gt;
+                            &lt;label for="orderStatus" class="form-label"&gt;Status&lt;/label&gt;
+                            &lt;select class="form-select" id="orderStatus"&gt;
+                                &lt;option value="pending"&gt;Pending&lt;/option&gt;
+                                &lt;option value="processing"&gt;Processing&lt;/option&gt;
+                                &lt;option value="completed"&gt;Completed&lt;/option&gt;
+                                &lt;option value="cancelled"&gt;Cancelled&lt;/option&gt;
+                            &lt;/select&gt;
+                        &lt;/div&gt;
+                    &lt;/form&gt;
+                &lt;/div&gt;
+                &lt;div class="modal-footer"&gt;
+                    &lt;button type="button" class="btn btn-secondary" data-bs-dismiss="modal"&gt;Close&lt;/button&gt;
+                    &lt;button type="button" class="btn btn-primary"&gt;Add Order&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // Initialize tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-project"></iframe>
+                    </div>
+                </section>
+            </div>
+            
+            <div class="lesson-footer">
+                <div class="lesson-navigation">
+                    <button class="btn btn-secondary" disabled><i class="fas fa-arrow-left"></i> Previous</button>
+                    <button class="btn btn-primary" onclick="nextLesson()">Next <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3><i class="fas fa-code"></i> CodeMaster</h3>
+                    <p>Learn to code interactively with our hands-on tutorials and real-time editor.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../courses.html">Courses</a></li>
+                        <li><a href="../tutorial.html">Tutorials</a></li>
+                        <li><a href="../quiz.html">Quiz</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="../about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Subscribe</h4>
+                    <p>Get the latest updates and news.</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 CodeMaster. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="../js/editor.js"></script>
+    <script src="../js/progress.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        // Lesson navigation
+        let currentLesson = 0;
+        const lessons = document.querySelectorAll('.lesson-section');
+        const lessonItems = document.querySelectorAll('.lesson-item');
+        
+        function showLesson(index) {
+            // Hide all lessons
+            lessons.forEach(lesson => {
+                lesson.style.display = 'none';
+            });
+            
+            // Show current lesson
+            if (lessons[index]) {
+                lessons[index].style.display = 'block';
+            }
+            
+            // Update sidebar
+            lessonItems.forEach((item, i) => {
+                if (i === index) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+            
+            // Update progress
+            const progressPercent = ((index + 1) / lessons.length) * 100;
+            document.querySelector('.progress').style.width = `${progressPercent}%`;
+            document.querySelector('.progress-text').textContent = `${index + 1}/${lessons.length} lessons completed`;
+            
+            // Update navigation buttons
+            const prevBtn = document.querySelector('.lesson-navigation .btn-secondary');
+            const nextBtn = document.querySelector('.lesson-navigation .btn-primary');
+            
+            if (index === 0) {
+                prevBtn.disabled = true;
+            } else {
+                prevBtn.disabled = false;
+                prevBtn.onclick = () => prevLesson();
+            }
+            
+            if (index === lessons.length - 1) {
+                nextBtn.innerHTML = 'Complete Course <i class="fas fa-check"></i>';
+            } else {
+                nextBtn.innerHTML = 'Next <i class="fas fa-arrow-right"></i>';
+                nextBtn.onclick = () => nextLesson();
+            }
+            
+            currentLesson = index;
+        }
+        
+        function nextLesson() {
+            if (currentLesson < lessons.length - 1) {
+                showLesson(currentLesson + 1);
+            }
+        }
+        
+        function prevLesson() {
+            if (currentLesson > 0) {
+                showLesson(currentLesson - 1);
+            }
+        }
+        
+        // Initialize first lesson
+        document.addEventListener('DOMContentLoaded', () => {
+            showLesson(0);
+            
+            // Add click events to lesson items
+            lessonItems.forEach((item, index) => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showLesson(index);
+                });
+            });
+        });
+        
+        // Run code function for each lesson
+        function runCode(lessonId) {
+            const htmlCode = document.getElementById('html-code-' + lessonId).value;
+            const previewFrame = document.getElementById('preview-frame-' + lessonId);
+            const previewDocument = previewFrame.contentDocument || previewFrame.contentWindow.document;
+            
+            previewDocument.open();
+            previewDocument.write('<!DOCTYPE html><html><head><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><style>body {padding: 20px;font-family: Arial, sans-serif;}</style></head><body>' + htmlCode + '<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"><\/script></body></html>');
+            previewDocument.close();
+        }
+    </script>
+</body>
+</html>

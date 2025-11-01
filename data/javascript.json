@@ -1,0 +1,229 @@
+{
+  "course": "JavaScript",
+  "description": "Bring your websites to life with interactive JavaScript programming.",
+  "lessons": [
+    {
+      "id": 1,
+      "title": "Introduction to JavaScript",
+      "content": "Learn the basics of JavaScript and how to include it in your web pages."
+    },
+    {
+      "id": 2,
+      "title": "Variables and Data Types",
+      "content": "Understand JavaScript variables and data types."
+    },
+    {
+      "id": 3,
+      "title": "Functions, Loops, and Conditionals",
+      "content": "Master control structures in JavaScript."
+    },
+    {
+      "id": 4,
+      "title": "Arrays and Objects",
+      "content": "Work with arrays and objects to store and manipulate data."
+    },
+    {
+      "id": 5,
+      "title": "DOM Manipulation",
+      "content": "Modify HTML and CSS using the Document Object Model."
+    },
+    {
+      "id": 6,
+      "title": "Events and Event Handling",
+      "content": "Respond to user interactions with event handlers."
+    },
+    {
+      "id": 7,
+      "title": "Form Validation",
+      "content": "Validate user input in forms with JavaScript."
+    },
+    {
+      "id": 8,
+      "title": "ES6 Features",
+      "content": "Learn modern JavaScript features introduced in ES6."
+    },
+    {
+      "id": 9,
+      "title": "LocalStorage and JSON",
+      "content": "Store data locally in the browser using LocalStorage."
+    },
+    {
+      "id": 10,
+      "title": "Fetch API and Async",
+      "content": "Retrieve data from servers using the Fetch API."
+    },
+    {
+      "id": 11,
+      "title": "Error Handling and Debugging",
+      "content": "Handle errors gracefully and debug JavaScript code."
+    },
+    {
+      "id": 12,
+      "title": "Mini Project: Quiz App",
+      "content": "Build a complete quiz application using JavaScript."
+    },
+    {
+      "id": 13,
+      "title": "ES6+ Features (Destructuring, Spread, Modules)",
+      "content": "Master advanced ES6+ features for modern JavaScript development."
+    },
+    {
+      "id": 14,
+      "title": "DOM Traversal & Event Delegation",
+      "content": "Navigate the DOM efficiently and implement event delegation."
+    },
+    {
+      "id": 15,
+      "title": "LocalStorage, SessionStorage, Cookies",
+      "content": "Understand different client-side storage mechanisms."
+    },
+    {
+      "id": 16,
+      "title": "API Calls with Fetch and Async/Await",
+      "content": "Make asynchronous API calls with modern JavaScript techniques."
+    },
+    {
+      "id": 17,
+      "title": "JSON Parsing and Manipulation",
+      "content": "Work with JSON data effectively in JavaScript."
+    },
+    {
+      "id": 18,
+      "title": "Classes and Object-Oriented JS",
+      "content": "Implement object-oriented programming concepts in JavaScript."
+    },
+    {
+      "id": 19,
+      "title": "JavaScript Modules and Imports",
+      "content": "Organize code with JavaScript modules and import/export statements."
+    },
+    {
+      "id": 20,
+      "title": "Error Handling and Debugging",
+      "content": "Advanced techniques for handling errors and debugging JavaScript."
+    },
+    {
+      "id": 21,
+      "title": "Regular Expressions (RegEx)",
+      "content": "Use regular expressions for pattern matching and text manipulation."
+    },
+    {
+      "id": 22,
+      "title": "Mini Project: To-Do App",
+      "content": "Build a complete to-do application with advanced JavaScript features."
+    },
+    {
+      "id": 23,
+      "title": "Mini Project: Calculator",
+      "content": "Create a functional calculator using JavaScript."
+    },
+    {
+      "id": 24,
+      "title": "Mini Project: Quiz App",
+      "content": "Enhance the quiz app with advanced JavaScript features."
+    },
+    {
+      "id": 25,
+      "title": "Mini Project: Weather App (Fetch API demo)",
+      "content": "Build a weather application that fetches real data from an API."
+    },
+    {
+      "id": 26,
+      "title": "Closures, Hoisting, and Scope",
+      "content": "Understand advanced JavaScript concepts like closures, variable hoisting, and scope chains."
+    },
+    {
+      "id": 27,
+      "title": "Promises and Async/Await (Deep Dive)",
+      "content": "Master asynchronous JavaScript with a deep dive into Promises and async/await patterns."
+    },
+    {
+      "id": 28,
+      "title": "Event Loop and Execution Context",
+      "content": "Learn how JavaScript's event loop and execution context work to handle asynchronous operations."
+    },
+    {
+      "id": 29,
+      "title": "Modules and Imports/Exports",
+      "content": "Organize your codebase using JavaScript modules with import/export syntax for better maintainability."
+    },
+    {
+      "id": 30,
+      "title": "DOM Traversal and Mutation Observer",
+      "content": "Navigate the DOM efficiently and use MutationObserver to watch for DOM changes."
+    },
+    {
+      "id": 31,
+      "title": "Debouncing & Throttling",
+      "content": "Implement performance optimization techniques like debouncing and throttling for event handlers."
+    },
+    {
+      "id": 32,
+      "title": "Custom Events",
+      "content": "Create and dispatch custom events for better component communication in your applications."
+    },
+    {
+      "id": 33,
+      "title": "Error Handling with Try/Catch",
+      "content": "Implement robust error handling strategies using try/catch blocks and error objects."
+    },
+    {
+      "id": 34,
+      "title": "Using APIs (OpenWeather, GitHub, JSONPlaceholder)",
+      "content": "Work with real-world APIs to fetch and manipulate data in your JavaScript applications."
+    },
+    {
+      "id": 35,
+      "title": "Mini Project: Weather Dashboard",
+      "content": "Build a weather dashboard that fetches data from a real API and displays it with dynamic UI updates."
+    },
+    {
+      "id": 36,
+      "title": "Mini Project: To-Do Manager",
+      "content": "Create an advanced to-do manager with categories, due dates, and local storage persistence."
+    },
+    {
+      "id": 37,
+      "title": "Mini Project: Memory Game",
+      "content": "Develop a complete memory card matching game with animations, scoring, and game state management."
+    }
+  ],
+  "quiz": {
+    "title": "JavaScript Final Quiz",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Which keyword is used to declare a variable in JavaScript?",
+        "options": [
+          "var",
+          "let",
+          "const",
+          "All of the above"
+        ],
+        "correct": 3
+      },
+      {
+        "id": 2,
+        "question": "How do you write 'Hello World' in an alert box?",
+        "options": [
+          "msg('Hello World');",
+          "alertBox('Hello World');",
+          "alert('Hello World');",
+          "msgBox('Hello World');"
+        ],
+        "correct": 2
+      },
+      {
+        "id": 3,
+        "question": "How do you create a function in JavaScript?",
+        "options": [
+          "function myFunction()",
+          "function:myFunction()",
+          "function = myFunction()",
+          "create myFunction()"
+        ],
+        "correct": 0
+      }
+    ]
+  }
+}

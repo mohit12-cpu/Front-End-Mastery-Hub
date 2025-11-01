@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - CodeMaster</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/courses.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h2><i class="fas fa-code"></i> CodeMaster</h2>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html" class="active">Courses</a></li>
+                    <li><a href="tutorial.html">Tutorials</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="courses/projects.html">Projects</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                    <li><a href="help.html">Help</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="btn btn-primary">Sign Up</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> / <span>Courses</span>
+        </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="course-search">
+        <div class="container">
+            <div class="search-container">
+                <input type="text" id="course-search" placeholder="Search courses..." aria-label="Search courses">
+                <button aria-label="Search"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses">
+        <div class="container">
+            <h1 class="section-title">All Courses</h1>
+            <div class="courses-grid" id="courses-container">
+                <!-- Course cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3><i class="fas fa-code"></i> CodeMaster</h3>
+                    <p>Learn to code interactively with our hands-on tutorials and real-time editor.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="tutorial.html">Tutorials</a></li>
+                        <li><a href="quiz.html">Quiz</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Subscribe</h4>
+                    <p>Get the latest updates and news.</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 CodeMaster. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/progress.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Populate courses when data is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Wait a bit for data to load
+            setTimeout(populateCourses, 500);
+        });
+
+        function populateCourses() {
+            const coursesContainer = document.getElementById('courses-container');
+            const courses = [
+                {
+                    id: 'html',
+                    title: 'HTML Fundamentals',
+                    description: 'Learn the building blocks of web development with HTML.',
+                    icon: 'fab fa-html5',
+                    duration: '15 hours',
+                    level: 'Beginner',
+                    link: 'courses/html.html'
+                },
+                {
+                    id: 'css',
+                    title: 'CSS Styling',
+                    description: 'Style your websites with modern CSS techniques.',
+                    icon: 'fab fa-css3-alt',
+                    duration: '20 hours',
+                    level: 'Beginner',
+                    link: 'courses/css.html'
+                },
+                {
+                    id: 'javascript',
+                    title: 'JavaScript Essentials',
+                    description: 'Add interactivity and dynamic features to your sites.',
+                    icon: 'fab fa-js',
+                    duration: '30 hours',
+                    level: 'Intermediate',
+                    link: 'courses/javascript.html'
+                },
+                {
+                    id: 'python',
+                    title: 'Python Programming',
+                    description: 'Learn one of the most versatile programming languages.',
+                    icon: 'fab fa-python',
+                    duration: '35 hours',
+                    level: 'Beginner',
+                    link: 'courses/python.html'
+                },
+                {
+                    id: 'react',
+                    title: 'React Concepts',
+                    description: 'Build modern user interfaces with the popular JavaScript library.',
+                    icon: 'fab fa-react',
+                    duration: '25 hours',
+                    level: 'Intermediate',
+                    link: 'courses/react.html'
+                },
+                {
+                    id: 'git',
+                    title: 'Git & GitHub',
+                    description: 'Master version control and collaboration tools.',
+                    icon: 'fas fa-code-branch',
+                    duration: '10 hours',
+                    level: 'Beginner',
+                    link: 'courses/git.html'
+                },
+                {
+                    id: 'bootstrap',
+                    title: 'Bootstrap Framework',
+                    description: 'Quickly build responsive websites with Bootstrap.',
+                    icon: 'fas fa-bootstrap',
+                    duration: '12 hours',
+                    level: 'Beginner',
+                    link: 'courses/bootstrap.html'
+                },
+                {
+                    id: 'webdesign',
+                    title: 'Web Design Principles',
+                    description: 'Master design fundamentals for creating beautiful websites.',
+                    icon: 'fas fa-paint-brush',
+                    duration: '18 hours',
+                    level: 'Beginner',
+                    link: 'courses/webdesign.html'
+                }
+            ];
+
+            coursesContainer.innerHTML = '';
+
+            courses.forEach(course => {
+                // Get progress from localStorage
+                const progress = getCourseProgress(course.id);
+                
+                const courseCard = document.createElement('div');
+                courseCard.className = 'course-card';
+                courseCard.innerHTML = `
+                    <div class="course-image">
+                        <i class="${course.icon}"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3>${course.title}</h3>
+                        <p>${course.description}</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> ${course.duration}</span>
+                            <span><i class="fas fa-signal"></i> ${course.level}</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: ${progress}%"></div>
+                            </div>
+                            <span class="progress-text">${progress}% Complete</span>
+                        </div>
+                        <a href="${course.link}" class="btn btn-primary">Start Course</a>
+                    </div>
+                `;
+                coursesContainer.appendChild(courseCard);
+            });
+        }
+
+        // Simple search functionality
+        document.getElementById('course-search').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const courseCards = document.querySelectorAll('.course-card');
+            
+            courseCards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

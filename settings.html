@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - CodeMaster</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/courses.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h2><i class="fas fa-code"></i> CodeMaster</h2>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="tutorial.html">Tutorials</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="courses/projects.html">Projects</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="settings.html" class="active">Settings</a></li>
+                    <li><a href="help.html">Help</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="btn btn-primary">Sign Up</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> / <span>Settings</span>
+        </div>
+    </section>
+
+    <!-- Settings Section -->
+    <section class="settings">
+        <div class="container">
+            <h1 class="section-title">Settings</h1>
+            
+            <div class="settings-container">
+                <div class="settings-sidebar">
+                    <ul class="settings-menu">
+                        <li class="active"><a href="#appearance">Appearance</a></li>
+                        <li><a href="#notifications">Notifications</a></li>
+                        <li><a href="#privacy">Privacy</a></li>
+                        <li><a href="#data">Data & Storage</a></li>
+                        <li><a href="#account">Account</a></li>
+                    </ul>
+                </div>
+                
+                <div class="settings-content">
+                    <!-- Appearance Settings -->
+                    <div id="appearance" class="settings-section active">
+                        <h2>Appearance</h2>
+                        
+                        <div class="setting-item">
+                            <label for="theme">Theme</label>
+                            <select id="theme" class="form-control">
+                                <option value="system">System Default</option>
+                                <option value="light">Light</option>
+                                <option value="dark">Dark</option>
+                            </select>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <label for="font-size">Font Size</label>
+                            <select id="font-size" class="form-control">
+                                <option value="small">Small</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="large">Large</option>
+                            </select>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <label>
+                                <input type="checkbox" id="animations" checked>
+                                Enable Animations
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Notifications Settings -->
+                    <div id="notifications" class="settings-section">
+                        <h2>Notifications</h2>
+                        
+                        <div class="setting-item">
+                            <label>
+                                <input type="checkbox" id="email-notifications" checked>
+                                Email Notifications
+                            </label>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <label>
+                                <input type="checkbox" id="quiz-reminders" checked>
+                                Quiz Reminders
+                            </label>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <label>
+                                <input type="checkbox" id="progress-alerts" checked>
+                                Progress Alerts
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Privacy Settings -->
+                    <div id="privacy" class="settings-section">
+                        <h2>Privacy</h2>
+                        
+                        <div class="setting-item">
+                            <label>
+                                <input type="checkbox" id="share-progress">
+                                Share Progress with Community
+                            </label>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <label>
+                                <input type="checkbox" id="public-profile">
+                                Make Profile Public
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Data & Storage Settings -->
+                    <div id="data" class="settings-section">
+                        <h2>Data & Storage</h2>
+                        
+                        <div class="setting-item">
+                            <p><strong>Storage Used:</strong> <span id="storage-used">0 KB</span></p>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <button class="btn btn-secondary" id="clear-cache">Clear Cache</button>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <button class="btn btn-danger" id="reset-data">Reset All Data</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Account Settings -->
+                    <div id="account" class="settings-section">
+                        <h2>Account</h2>
+                        
+                        <div class="setting-item">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" class="form-control" value="CodeMasterUser">
+                        </div>
+                        
+                        <div class="setting-item">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" value="user@example.com">
+                        </div>
+                        
+                        <div class="setting-item">
+                            <button class="btn btn-primary" id="save-settings">Save Settings</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3><i class="fas fa-code"></i> CodeMaster</h3>
+                    <p>Learn to code interactively with our hands-on tutorials and real-time editor.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="tutorial.html">Tutorials</a></li>
+                        <li><a href="quiz.html">Quiz</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Subscribe</h4>
+                    <p>Get the latest updates and news.</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 CodeMaster. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Settings functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize settings
+            initSettings();
+            
+            // Add event listeners for settings menu
+            document.querySelectorAll('.settings-menu a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    showSettingsSection(this.getAttribute('href').substring(1));
+                });
+            });
+            
+            // Add event listeners for buttons
+            document.getElementById('clear-cache').addEventListener('click', clearCache);
+            document.getElementById('reset-data').addEventListener('click', resetData);
+            document.getElementById('save-settings').addEventListener('click', saveSettings);
+            
+            // Add event listeners for theme selector
+            document.getElementById('theme').addEventListener('change', changeTheme);
+        });
+        
+        // Initialize settings
+        function initSettings() {
+            // Load saved settings
+            const savedTheme = localStorage.getItem('theme') || 'system';
+            const savedFontSize = localStorage.getItem('fontSize') || 'medium';
+            const animationsEnabled = localStorage.getItem('animations') !== 'false';
+            
+            // Apply settings
+            document.getElementById('theme').value = savedTheme;
+            document.getElementById('font-size').value = savedFontSize;
+            document.getElementById('animations').checked = animationsEnabled;
+            
+            // Update storage usage display
+            updateStorageUsage();
+        }
+        
+        // Show settings section
+        function showSettingsSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.settings-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Update menu active state
+            document.querySelectorAll('.settings-menu li').forEach(li => {
+                li.classList.remove('active');
+            });
+            event.target.parentElement.classList.add('active');
+        }
+        
+        // Change theme
+        function changeTheme() {
+            const theme = document.getElementById('theme').value;
+            localStorage.setItem('theme', theme);
+            
+            // Apply theme immediately
+            if (theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.body.classList.add('dark-mode');
+                document.getElementById('theme-toggle').innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                document.body.classList.remove('dark-mode');
+                document.getElementById('theme-toggle').innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        }
+        
+        // Clear cache
+        function clearCache() {
+            // In a real app, this would clear actual cache
+            alert('Cache cleared successfully!');
+        }
+        
+        // Reset data
+        function resetData() {
+            if (confirm('Are you sure you want to reset all your data? This cannot be undone.')) {
+                // Clear all localStorage data
+                localStorage.clear();
+                alert('All data has been reset.');
+                location.reload();
+            }
+        }
+        
+        // Save settings
+        function saveSettings() {
+            // Save settings to localStorage
+            localStorage.setItem('fontSize', document.getElementById('font-size').value);
+            localStorage.setItem('animations', document.getElementById('animations').checked);
+            
+            // Show confirmation
+            alert('Settings saved successfully!');
+        }
+        
+        // Update storage usage display
+        function updateStorageUsage() {
+            // Calculate approximate storage usage
+            let totalSize = 0;
+            for (let key in localStorage) {
+                if (localStorage.hasOwnProperty(key)) {
+                    totalSize += localStorage[key].length;
+                }
+            }
+            
+            // Convert to KB
+            const sizeInKB = Math.round(totalSize / 1024);
+            document.getElementById('storage-used').textContent = `${sizeInKB} KB`;
+        }
+    </script>
+</body>
+</html>

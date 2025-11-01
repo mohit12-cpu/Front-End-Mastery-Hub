@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - CodeMaster</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/courses.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h2><i class="fas fa-code"></i> CodeMaster</h2>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="tutorial.html">Tutorials</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="courses/projects.html">Projects</a></li>
+                    <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                    <li><a href="help.html">Help</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="btn btn-primary">Sign Up</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> / <span>Dashboard</span>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard">
+        <div class="container">
+            <h1 class="section-title">Your Learning Dashboard</h1>
+            
+            <!-- Stats Overview -->
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="total-lessons">0</h3>
+                        <p>Lessons Completed</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="total-courses">0</h3>
+                        <p>Courses Started</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="total-achievements">0</h3>
+                        <p>Achievements</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="average-score">0%</h3>
+                        <p>Average Quiz Score</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Progress Overview -->
+            <div class="dashboard-section">
+                <h2>Course Progress</h2>
+                <div class="progress-container" id="course-progress">
+                    <!-- Progress bars will be inserted here by JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Recent Achievements -->
+            <div class="dashboard-section">
+                <h2>Recent Achievements</h2>
+                <div class="achievements-container" id="achievements-list">
+                    <p>You haven't unlocked any achievements yet. Keep learning!</p>
+                </div>
+            </div>
+            
+            <!-- Continue Learning -->
+            <div class="dashboard-section">
+                <h2>Continue Learning</h2>
+                <div class="continue-learning" id="continue-learning">
+                    <p>No recent activity. Start learning today!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3><i class="fas fa-code"></i> CodeMaster</h3>
+                    <p>Learn to code interactively with our hands-on tutorials and real-time editor.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="tutorial.html">Tutorials</a></li>
+                        <li><a href="quiz.html">Quiz</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Subscribe</h4>
+                    <p>Get the latest updates and news.</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 CodeMaster. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/achievements.js"></script>
+    <script src="js/progress.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Dashboard functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            // Update stats
+            updateStats();
+            
+            // Update course progress
+            updateCourseProgress();
+            
+            // Update achievements
+            updateAchievements();
+            
+            // Update continue learning section
+            updateContinueLearning();
+        });
+        
+        // Update statistics
+        function updateStats() {
+            const progress = JSON.parse(localStorage.getItem('courseProgress')) || {};
+            const quizScores = JSON.parse(localStorage.getItem('quizScores')) || {};
+            const achievements = JSON.parse(localStorage.getItem('unlockedAchievements')) || [];
+            
+            // Calculate total lessons completed
+            let totalLessons = 0;
+            let totalCourses = 0;
+            Object.keys(progress).forEach(course => {
+                totalLessons += progress[course].length;
+                if (progress[course].length > 0) {
+                    totalCourses++;
+                }
+            });
+            
+            // Calculate average quiz score
+            let totalScore = 0;
+            let quizCount = 0;
+            Object.keys(quizScores).forEach(quiz => {
+                totalScore += quizScores[quiz].percentage;
+                quizCount++;
+            });
+            const averageScore = quizCount > 0 ? Math.round(totalScore / quizCount) : 0;
+            
+            // Update UI
+            document.getElementById('total-lessons').textContent = totalLessons;
+            document.getElementById('total-courses').textContent = totalCourses;
+            document.getElementById('total-achievements').textContent = achievements.length;
+            document.getElementById('average-score').textContent = `${averageScore}%`;
+        }
+        
+        // Update course progress
+        function updateCourseProgress() {
+            const progress = JSON.parse(localStorage.getItem('courseProgress')) || {};
+            const container = document.getElementById('course-progress');
+            
+            if (Object.keys(progress).length === 0) {
+                container.innerHTML = '<p>No course progress yet. Start learning today!</p>';
+                return;
+            }
+            
+            let html = '';
+            const courseNames = {
+                'html': 'HTML Fundamentals',
+                'css': 'CSS Styling',
+                'javascript': 'JavaScript Essentials',
+                'python': 'Python Programming'
+            };
+            
+            Object.keys(progress).forEach(course => {
+                const completed = progress[course].length;
+                const total = 12; // Assuming 12 lessons per course
+                const percentage = Math.round((completed / total) * 100);
+                
+                html += `
+                    <div class="course-progress-item">
+                        <div class="course-info">
+                            <h3>${courseNames[course] || course}</h3>
+                            <p>${completed}/${total} lessons completed</p>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar">
+                                <div class="progress" style="width: ${percentage}%"></div>
+                            </div>
+                            <span class="percentage">${percentage}%</span>
+                        </div>
+                        <a href="courses/${course}.html" class="btn btn-outline">Continue</a>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+        
+        // Update achievements
+        function updateAchievements() {
+            const unlockedAchievements = window.Achievements.getUnlockedAchievements();
+            const container = document.getElementById('achievements-list');
+            
+            if (unlockedAchievements.length === 0) {
+                container.innerHTML = '<p>You haven\'t unlocked any achievements yet. Keep learning!</p>';
+                return;
+            }
+            
+            let html = '<div class="achievements-grid">';
+            unlockedAchievements.slice(0, 6).forEach(achievement => {
+                html += `
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="${achievement.icon}"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <h3>${achievement.title}</h3>
+                            <p>${achievement.description}</p>
+                        </div>
+                    </div>
+                `;
+            });
+            html += '</div>';
+            
+            container.innerHTML = html;
+        }
+        
+        // Update continue learning section
+        function updateContinueLearning() {
+            const progress = JSON.parse(localStorage.getItem('courseProgress')) || {};
+            const container = document.getElementById('continue-learning');
+            
+            if (Object.keys(progress).length === 0) {
+                container.innerHTML = '<p>No recent activity. Start learning today!</p>';
+                return;
+            }
+            
+            // Find the course with the most recent activity
+            let latestCourse = null;
+            let maxLessons = 0;
+            
+            Object.keys(progress).forEach(course => {
+                if (progress[course].length > maxLessons) {
+                    maxLessons = progress[course].length;
+                    latestCourse = course;
+                }
+            });
+            
+            if (latestCourse) {
+                const courseNames = {
+                    'html': 'HTML Fundamentals',
+                    'css': 'CSS Styling',
+                    'javascript': 'JavaScript Essentials',
+                    'python': 'Python Programming'
+                };
+                
+                container.innerHTML = `
+                    <div class="continue-card">
+                        <h3>Continue with ${courseNames[latestCourse] || latestCourse}</h3>
+                        <p>${maxLessons} lessons completed</p>
+                        <a href="courses/${latestCourse}.html" class="btn btn-primary">Continue Learning</a>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = '<p>No recent activity. Start learning today!</p>';
+            }
+        }
+    </script>
+</body>
+</html>

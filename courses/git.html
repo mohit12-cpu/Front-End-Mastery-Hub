@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Course - CodeMaster</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/courses.css">
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h2><i class="fas fa-code"></i> CodeMaster</h2>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../courses.html">Courses</a></li>
+                    <li><a href="../tutorial.html">Tutorials</a></li>
+                    <li><a href="../quiz.html">Quiz</a></li>
+                    <li><a href="../courses/projects.html">Projects</a></li>
+                    <li><a href="../dashboard.html">Dashboard</a></li>
+                    <li><a href="../profile.html">Profile</a></li>
+                    <li><a href="../settings.html">Settings</a></li>
+                    <li><a href="../help.html">Help</a></li>
+                    <li><a href="../about.html">About</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="btn btn-primary">Sign Up</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">Home</a> / <a href="../courses.html">Courses</a> / <span>Git</span>
+        </div>
+    </section>
+
+    <div class="tutorial-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Git Course</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 0%;"></div>
+                </div>
+                <p class="progress-text">0/9 lessons completed</p>
+            </div>
+            <ul class="lessons-list">
+                <li class="lesson-item active">
+                    <a href="#intro">
+                        <span class="lesson-number">1</span>
+                        <span class="lesson-title">Introduction to Git</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#setup">
+                        <span class="lesson-number">2</span>
+                        <span class="lesson-title">Installation & Setup</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#basics">
+                        <span class="lesson-number">3</span>
+                        <span class="lesson-title">Basic Commands</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#branching">
+                        <span class="lesson-number">4</span>
+                        <span class="lesson-title">Branching and Merging</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#github">
+                        <span class="lesson-number">5</span>
+                        <span class="lesson-title">Working with GitHub</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#bestpractices">
+                        <span class="lesson-number">6</span>
+                        <span class="lesson-title">Version Control Best Practices</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#conflicts">
+                        <span class="lesson-number">7</span>
+                        <span class="lesson-title">Resolving Conflicts</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#project">
+                        <span class="lesson-number">8</span>
+                        <span class="lesson-title">Mini Project: Manage a Demo Repo</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="git-quiz.html">
+                        <span class="lesson-number">9</span>
+                        <span class="lesson-title">Final Quiz</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="tutorial-content">
+            <div class="lesson-header">
+                <h1>Git Course</h1>
+                <div class="lesson-navigation">
+                    <button class="btn btn-secondary" disabled><i class="fas fa-arrow-left"></i> Previous</button>
+                    <button class="btn btn-primary" onclick="nextLesson()">Next <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <div class="lesson-body">
+                <!-- Lesson 1: Introduction to Git -->
+                <section id="intro" class="lesson-section">
+                    <h2>1. Introduction to Git</h2>
+                    <p>Git is a distributed version control system that tracks changes in any set of computer files, usually used for coordinating work among programmers collaboratively developing source code during software development.</p>
+                    
+                    <h3>What is Version Control?</h3>
+                    <p>Version control is a system that records changes to files over time so that you can recall specific versions later.</p>
+                    
+                    <ul>
+                        <li><strong>Backup:</strong> Keep track of all changes to your code</li>
+                        <li><strong>Collaboration:</strong> Work with others on the same project</li>
+                        <li><strong>History:</strong> See who made what changes and when</li>
+                        <li><strong>Branching:</strong> Work on different features simultaneously</li>
+                        <li><strong>Merging:</strong> Combine different versions of your code</li>
+                    </ul>
+                    
+                    <h3>Key Concepts</h3>
+                    <pre><code class="language-bash"># Repository (Repo)
+# A Git repository contains all of your project's files and history
+
+# Commit
+# A snapshot of your project at a specific point in time
+
+# Branch
+# A parallel version of your repository
+
+# Merge
+# Combining changes from different branches</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="bash">Git Commands</button>
+                            </div>
+                            <button class="btn btn-run" onclick="runCode('intro')">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-bash-intro">
+                                <textarea id="bash-code-intro"># This is a simulation of Git commands in the browser
+# In a real terminal, you would run these commands:
+
+# Check Git version
+git --version
+
+# Configure Git
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+
+# Check configuration
+git config --global user.name
+git config --global user.email
+
+# View all configuration
+git config --list</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-intro"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 2: Installation & Setup -->
+                <section id="setup" class="lesson-section" style="display: none;">
+                    <h2>2. Installation & Setup</h2>
+                    <p>Installing Git and setting up your environment is the first step to using version control.</p>
+                    
+                    <h3>Installing Git</h3>
+                    <p><strong>Windows:</strong> Download Git from <a href="https://git-scm.com/download/win">git-scm.com</a></p>
+                    <p><strong>Mac:</strong> Install via Homebrew: <code>brew install git</code></p>
+                    <p><strong>Linux:</strong> Use your package manager: <code>sudo apt install git</code></p>
+                    
+                    <h3>Initial Configuration</h3>
+                    <pre><code class="language-bash"># Set your identity
+git config --global user.name "John Doe"
+git config --global user.email "john@example.com"
+
+# Set your default editor
+git config --global core.editor "code --wait"
+
+# Set default branch name
+git config --global init.defaultBranch main
+
+# Enable color output
+git config --global color.ui auto</code></pre>
+                    
+                    <h3>Verifying Installation</h3>
+                    <pre><code class="language-bash"># Check Git version
+git --version
+
+# Check configuration
+git config --global user.name
+git config --global user.email
+
+# View all settings
+git config --list</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="bash">Git Commands</button>
+                            </div>
+                            <button class="btn btn-run" onclick="runCode('setup')">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-bash-setup">
+                                <textarea id="bash-code-setup"># Git Configuration Commands (Simulation)
+
+# Set user identity
+git config --global user.name "Alice Developer"
+git config --global user.email "alice@example.com"
+
+# Set default editor
+git config --global core.editor "nano"
+
+# Set default branch name
+git config --global init.defaultBranch main
+
+# Enable color output
+git config --global color.ui auto
+
+# Verify settings
+echo "=== Git Configuration ==="
+echo "User Name: $(git config --global user.name)"
+echo "User Email: $(git config --global user.email)"
+echo "Default Editor: $(git config --global core.editor)"
+echo "Default Branch: $(git config --global init.defaultBranch)"</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-setup"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 3: Basic Commands -->
+                <section id="basics" class="lesson-section" style="display: none;">
+                    <h2>3. Basic Commands</h2>
+                    <p>Learn the essential Git commands to start tracking your projects.</p>
+                    
+                    <h3>Creating a Repository</h3>
+                    <pre><code class="language-bash"># Initialize a new Git repository
+git init
+
+# Clone an existing repository
+git clone https://github.com/user/repo.git</code></pre>
+                    
+                    <h3>Tracking Changes</h3>
+                    <pre><code class="language-bash"># Check status of files
+git status
+
+# Add files to staging area
+git add filename.txt
+git add .  # Add all changes
+
+# Commit changes
+git commit -m "Add new feature"
+
+# View commit history
+git log</code></pre>
+                    
+                    <h3>Working with Remotes</h3>
+                    <pre><code class="language-bash"># Add a remote repository
+git remote add origin https://github.com/user/repo.git
+
+# Push changes to remote
+git push origin main
+
+# Pull changes from remote
+git pull origin main
+
+# View remote repositories
+git remote -v</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="bash">Git Commands</button>
+                            </div>
+                            <button class="btn btn-run" onclick="runCode('basics')">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-bash-basics">
+                                <textarea id="bash-code-basics"># Git Basic Commands Simulation
+
+# Simulate creating a new project directory
+echo "Creating project directory..."
+mkdir my-project
+cd my-project
+
+# Initialize Git repository
+echo "Initializing Git repository..."
+git init
+
+# Create some files
+echo "&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My Project&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to My Project&lt;/h1&gt;
+    &lt;p&gt;This is the beginning of something great!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;" > index.html
+
+echo "body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background-color: #f4f4f4;
+}" > style.css
+
+echo "# My Project
+This is a sample project to demonstrate Git basics." > README.md
+
+# Check status
+echo "=== Git Status ==="
+git status
+
+# Add files to staging
+echo "Adding files to staging area..."
+git add index.html style.css README.md
+
+# Check status again
+echo "=== Git Status After Adding Files ==="
+git status
+
+# Commit changes
+echo "Committing changes..."
+git commit -m "Initial commit: Add basic project files"
+
+# View commit history
+echo "=== Commit History ==="
+git log --oneline</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-basics"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 4: Branching and Merging -->
+                <section id="branching" class="lesson-section" style="display: none;">
+                    <h2>4. Branching and Merging</h2>
+                    <p>Branching allows you to work on different features or experiments without affecting the main codebase.</p>
+                    
+                    <h3>Working with Branches</h3>
+                    <pre><code class="language-bash"># View all branches
+git branch
+
+# Create a new branch
+git branch feature-login
+
+# Switch to a branch
+git checkout feature-login
+
+# Create and switch to a new branch (shortcut)
+git checkout -b feature-profile
+
+# Create and switch with newer syntax
+git switch -c feature-dashboard</code></pre>
+                    
+                    <h3>Merging Branches</h3>
+                    <pre><code class="language-bash"># Switch to main branch
+git checkout main
+
+# Merge a branch into current branch
+git merge feature-login
+
+# Delete a branch
+git branch -d feature-login
+
+# Force delete a branch
+git branch -D feature-experimental</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="bash">Git Commands</button>
+                            </div>
+                            <button class="btn btn-run" onclick="runCode('branching')">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-bash-branching">
+                                <textarea id="bash-code-branching"># Git Branching and Merging Simulation
+
+# Create a new repository
+echo "Initializing repository..."
+git init
+
+# Create initial files
+echo "&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Main Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome&lt;/h1&gt;
+    &lt;p&gt;This is the main page.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;" > index.html
+
+git add index.html
+git commit -m "Initial commit"
+
+# View branches
+echo "=== Current Branches ==="
+git branch
+
+# Create and switch to a new branch
+echo "Creating feature-login branch..."
+git checkout -b feature-login
+
+# Make changes in the new branch
+echo "&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Login Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Login&lt;/h1&gt;
+    &lt;form&gt;
+        &lt;input type='text' placeholder='Username'&gt;&lt;br&gt;&lt;br&gt;
+        &lt;input type='password' placeholder='Password'&gt;&lt;br&gt;&lt;br&gt;
+        &lt;button type='submit'&gt;Login&lt;/button&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;" > login.html
+
+git add login.html
+git commit -m "Add login page"
+
+# Switch back to main
+echo "Switching to main branch..."
+git checkout main
+
+# Create another branch
+echo "Creating feature-contact branch..."
+git checkout -b feature-contact
+
+# Make changes in this branch
+echo "&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Contact Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Contact Us&lt;/h1&gt;
+    &lt;p&gt;Email: contact@example.com&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;" > contact.html
+
+git add contact.html
+git commit -m "Add contact page"
+
+# View all branches
+echo "=== All Branches ==="
+git branch
+
+# Switch to main and merge feature-login
+echo "Merging feature-login into main..."
+git checkout main
+git merge feature-login
+
+# Try to merge feature-contact (this would create a merge commit in real Git)
+echo "Merging feature-contact into main..."
+git merge feature-contact
+
+echo "=== Final Repository Status ==="
+echo "Files in current directory:"
+ls -la</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-branching"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 5: Working with GitHub -->
+                <section id="github" class="lesson-section" style="display: none;">
+                    <h2>5. Working with GitHub</h2>
+                    <p>GitHub is a web-based hosting service for version control using Git.</p>
+                    
+                    <h3>Creating a Repository on GitHub</h3>
+                    <ol>
+                        <li>Sign up for a GitHub account at <a href="https://github.com">github.com</a></li>
+                        <li>Click the "New" button to create a repository</li>
+                        <li>Give your repository a name and description</li>
+                        <li>Choose to make it public or private</li>
+                        <li>Initialize with a README if desired</li>
+                    </ol>
+                    
+                    <h3>Connecting Local Repository to GitHub</h3>
+                    <pre><code class="language-bash"># Add remote origin
+git remote add origin https://github.com/username/repository.git
+
+# Push to GitHub
+git push -u origin main
+
+# Clone a repository from GitHub
+git clone https://github.com/username/repository.git</code></pre>
+                    
+                    <h3>Common GitHub Workflows</h3>
+                    <pre><code class="language-bash"># Pull latest changes
+git pull origin main
+
+# Push your changes
+git push origin main
+
+# Create a new branch for a feature
+git checkout -b feature-new-button
+
+# After making changes
+git add .
+git commit -m "Add new button component"
+git push origin feature-new-button
+
+# Create a pull request on GitHub website</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="bash">Git Commands</button>
+                            </div>
+                            <button class="btn btn-run" onclick="runCode('github')">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-bash-github">
+                                <textarea id="bash-code-github"># GitHub Workflow Simulation
+
+# Simulate creating a local repository
+echo "Creating local repository..."
+mkdir github-demo
+cd github-demo
+git init
+
+# Create initial files
+echo "# My GitHub Project
+This is a demo project for GitHub workflow." > README.md
+
+echo "&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;GitHub Demo&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to GitHub Demo&lt;/h1&gt;
+    &lt;p&gt;This project demonstrates GitHub workflow.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;" > index.html
+
+# Add and commit files
+git add .
+git commit -m "Initial commit"
+
+# Simulate connecting to GitHub remote
+echo "Adding GitHub remote..."
+git remote add origin https://github.com/user/github-demo.git
+
+# Simulate pushing to GitHub
+echo "Pushing to GitHub..."
+git push -u origin main
+
+# Simulate making changes
+echo "Making changes to the project..."
+
+echo "&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;GitHub Demo&lt;/title&gt;
+    &lt;style&gt;
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .feature { background: #e7f3ff; padding: 20px; margin: 20px 0; border-radius: 5px; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to GitHub Demo&lt;/h1&gt;
+    &lt;p&gt;This project demonstrates GitHub workflow.&lt;/p&gt;
+    
+    &lt;div class=\"feature\"&gt;
+        &lt;h2&gt;New Feature&lt;/h2&gt;
+        &lt;p&gt;This is a new feature added to the project.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;" > index.html
+
+# Commit and push changes
+git add index.html
+git commit -m "Add new feature styling"
+git push origin main
+
+# Simulate creating a feature branch
+echo "Creating feature branch..."
+git checkout -b feature-documentation
+
+# Add documentation
+echo "# Project Documentation
+## Getting Started
+1. Clone the repository
+2. Install dependencies
+3. Run the project
+
+## Features
+- Feature 1
+- Feature 2
+- Feature 3" > docs.md
+
+git add docs.md
+git commit -m "Add documentation"
+git push origin feature-documentation
+
+echo "=== GitHub Workflow Summary ==="
+echo "Repository created and pushed to GitHub"
+echo "Changes committed and pushed"
+echo "Feature branch created and pushed"
+echo "Ready for pull request on GitHub"</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-github"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 6: Version Control Best Practices -->
+                <section id="bestpractices" class="lesson-section" style="display: none;">
+                    <h2>6. Version Control Best Practices</h2>
+                    <p>Following best practices helps maintain clean, organized, and collaborative codebases.</p>
+                    
+                    <h3>Commit Messages</h3>
+                    <ul>
+                        <li>Use present tense ("Add feature" not "Added feature")</li>
+                        <li>Be concise but descriptive</li>
+                        <li>Limit first line to 50 characters</li>
+                        <li>Use blank line after first line</li>
+                        <li>Explain "what" and "why", not "how"</li>
+                    </ul>
+                    
+                    <h3>Branching Strategies</h3>
+                    <pre><code class="language-bash"># Git Flow (popular branching model)
+main          # Production-ready code
+develop       # Integration branch for features
+feature/*     # Feature development branches
+release/*     # Release preparation branches
+hotfix/*      # Emergency fixes for production</code></pre>
+                    
+                    <h3>Repository Organization</h3>
+                    <ul>
+                        <li>Maintain a clear README.md</li>
+                        <li>Use .gitignore to exclude unnecessary files</li>
+                        <li>Keep commits focused on single changes</li>
+                        <li>Write meaningful commit messages</li>
+                        <li>Use tags for releases</li>
+                    </ul>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="bash">Git Commands</button>
+                            </div>
+                            <button class="btn btn-run" onclick="runCode('bestpractices')">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-bash-bestpractices">
+                                <textarea id="bash-code-bestpractices"># Git Best Practices Simulation
+
+# Create a well-structured repository
+echo "Creating best practices demo repository..."
+mkdir best-practices-demo
+cd best-practices-demo
+git init
+
+# Create a good README
+echo "# Best Practices Demo Project
+
+## Description
+This project demonstrates Git best practices.
+
+## Installation
+\`\`\`bash
+git clone https://github.com/user/best-practices-demo.git
+cd best-practices-demo
+\`\`\`
+
+## Usage
+Open \`index.html\` in your browser.
+
+## Contributing
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a pull request" > README.md
+
+# Create a .gitignore file
+echo "# Dependencies
+node_modules/
+npm-debug.log*
+
+# Build outputs
+dist/
+build/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+Thumbs.db" > .gitignore
+
+# Create initial project files
+echo "&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Best Practices Demo&lt;/title&gt;
+    &lt;link rel='stylesheet' href='styles.css'&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Best Practices Demo&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;p&gt;This project follows Git best practices.&lt;/p&gt;
+    &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;" > index.html
+
+echo "body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #4361ee;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+main {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}" > styles.css
+
+# First commit with good message
+git add .
+git commit -m "Initial commit: Set up project structure with README and .gitignore"
+
+# Make a focused change
+echo "body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #4361ee;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+main {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}" > styles.css
+
+# Commit with descriptive message
+git add styles.css
+git commit -m "Add footer styling to main CSS file"
+
+# Create feature branch for new component
+git checkout -b feature-navigation
+
+# Add navigation component
+echo "&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href='/'&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href='/about'&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href='/contact'&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;" > nav.html
+
+git add nav.html
+git commit -m "Add navigation component HTML structure"
+
+# Show repository status
+echo "=== Repository Status ==="
+echo "Current branch: $(git branch --show-current)"
+echo "Last 3 commits:"
+git log --oneline -3
+echo ""
+echo "Tracked files:"
+git ls-files</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-bestpractices"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 7: Resolving Conflicts -->
+                <section id="conflicts" class="lesson-section" style="display: none;">
+                    <h2>7. Resolving Conflicts</h2>
+                    <p>Conflicts occur when Git cannot automatically merge changes from different branches.</p>
+                    
+                    <h3>When Conflicts Happen</h3>
+                    <ul>
+                        <li>Two people modify the same line of code</li>
+                        <li>One person deletes a file while another modifies it</li>
+                        <li>Changes to the same part of a file in different branches</li>
+                    </ul>
+                    
+                    <h3>Identifying Conflicts</h3>
+                    <pre><code class="language-bash"># When merging and conflict occurs
+git merge feature-branch
+# Auto-merging file.txt
+# CONFLICT (content): Merge conflict in file.txt
+# Automatic merge failed; fix conflicts and then commit the result.</code></pre>
+                    
+                    <h3>Resolving Conflicts</h3>
+                    <pre><code class="language-bash"># Open conflicted file and look for conflict markers
+# &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+# Your changes
+# =======
+# Their changes
+# &gt;&gt;&gt;&gt;&gt;&gt;&gt; branch-name
+
+# Edit the file to resolve conflicts
+# Remove conflict markers and choose/combine changes
+
+# Mark as resolved
+git add conflicted-file.txt
+
+# Complete the merge
+git commit</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="bash">Git Commands</button>
+                            </div>
+                            <button class="btn btn-run" onclick="runCode('conflicts')">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-bash-conflicts">
+                                <textarea id="bash-code-conflicts"># Git Conflict Resolution Simulation
+
+# Create a repository to demonstrate conflicts
+echo "Creating conflict demo repository..."
+mkdir conflict-demo
+cd conflict-demo
+git init
+
+# Create initial file
+echo "# Conflict Demo Project
+
+This project demonstrates how to resolve Git conflicts.
+
+## Features
+- Feature 1
+- Feature 2" > README.md
+
+git add README.md
+git commit -m "Initial commit with README"
+
+# Create main branch changes
+echo "# Conflict Demo Project
+
+This project demonstrates how to resolve Git conflicts.
+
+## Features
+- User authentication
+- Data visualization
+- Reporting dashboard" > README.md
+
+git add README.md
+git commit -m "Update features list on main branch"
+
+# Create feature branch with conflicting changes
+git checkout -b feature-new-section
+
+echo "# Conflict Demo Project
+
+This project demonstrates how to resolve Git conflicts.
+
+## Features
+- User authentication
+- Data export
+- API integration
+
+## New Section
+This is a new section added in the feature branch." > README.md
+
+git add README.md
+git commit -m "Add new section on feature branch"
+
+# Switch back to main and make conflicting change
+git checkout main
+
+echo "# Conflict Demo Project
+
+This project demonstrates how to resolve Git conflicts.
+
+## Features
+- User authentication
+- Data visualization
+- Reporting dashboard
+- Mobile responsive design" > README.md
+
+git add README.md
+git commit -m "Add mobile responsive design to features"
+
+# Try to merge (this would cause a conflict in real Git)
+echo "Attempting to merge feature branch..."
+echo "In real Git, this would create a conflict because both branches"
+echo "modified the same lines in README.md"
+echo ""
+echo "Conflict markers would look like this:"
+echo ""
+echo "&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD"
+echo "# Conflict Demo Project"
+echo ""
+echo "This project demonstrates how to resolve Git conflicts."
+echo ""
+echo "## Features"
+echo "- User authentication"
+echo "- Data visualization"
+echo "- Reporting dashboard"
+echo "- Mobile responsive design"
+echo "======= "
+echo "# Conflict Demo Project"
+echo ""
+echo "This project demonstrates how to resolve Git conflicts."
+echo ""
+echo "## Features"
+echo "- User authentication"
+echo "- Data export"
+echo "- API integration"
+echo ""
+echo "## New Section"
+echo "This is a new section added in the feature branch."
+echo "&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature-new-section"
+
+echo ""
+echo "To resolve the conflict:"
+echo "1. Edit the file to choose which changes to keep"
+echo "2. Remove the conflict markers (&lt;&lt;&lt;&lt;&lt;&lt;&lt;, =======, &gt;&gt;&gt;&gt;&gt;&gt;&gt;)"
+echo "3. Add the resolved file: git add README.md"
+echo "4. Complete the merge: git commit"</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-conflicts"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 8: Mini Project - Manage a Demo Repo -->
+                <section id="project" class="lesson-section" style="display: none;">
+                    <h2>8. Mini Project: Manage a Demo Repo</h2>
+                    <p>Apply all Git concepts by managing a complete demo repository workflow.</p>
+                    
+                    <h3>Project Requirements</h3>
+                    <ul>
+                        <li>Create a new repository with proper structure</li>
+                        <li>Implement branching strategy for features</li>
+                        <li>Make commits with good messages</li>
+                        <li>Resolve any conflicts that arise</li>
+                        <li>Push to remote repository</li>
+                    </ul>
+                    
+                    <h3>Complete Implementation</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="bash">Git Commands</button>
+                            </div>
+                            <button class="btn btn-run" onclick="runCode('project')">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-bash-project">
+                                <textarea id="bash-code-project"># Complete Git Workflow Project
+
+# Initialize the project
+echo "=== Step 1: Initialize Repository ==="
+mkdir todo-app
+cd todo-app
+git init
+echo "# Todo App
+A simple todo application built with HTML, CSS, and JavaScript.
+
+## Features
+- Add todos
+- Mark as complete
+- Delete todos" > README.md
+
+echo "node_modules/
+*.log
+.DS_Store" > .gitignore
+
+git add .
+git commit -m "Initial commit: Project setup with README and .gitignore"
+
+# Create main application files
+echo "&lt;!DOCTYPE html&gt;
+&lt;html lang='en'&gt;
+&lt;head&gt;
+    &lt;meta charset='UTF-8'&gt;
+    &lt;meta name='viewport' content='width=device-width, initial-scale=1.0'&gt;
+    &lt;title&gt;Todo App&lt;/title&gt;
+    &lt;link rel='stylesheet' href='styles.css'&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class='container'&gt;
+        &lt;h1&gt;Todo App&lt;/h1&gt;
+        &lt;form id='todo-form'&gt;
+            &lt;input type='text' id='todo-input' placeholder='Add a new todo...' required&gt;
+            &lt;button type='submit'&gt;Add&lt;/button&gt;
+        &lt;/form&gt;
+        &lt;ul id='todo-list'&gt;&lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;script src='script.js'&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;" > index.html
+
+echo "body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+#todo-form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#todo-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+}
+
+#todo-form button {
+    padding: 10px 20px;
+    background: #4361ee;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.todo-item.completed span {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.delete-btn {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}" > styles.css
+
+echo "// Todo App JavaScript
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('todo-form');
+    const input = document.getElementById('todo-input');
+    const todoList = document.getElementById('todo-list');
+    
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const todoText = input.value.trim();
+        
+        if (todoText) {
+            addTodo(todoText);
+            input.value = '';
+        }
+    });
+    
+    function addTodo(text) {
+        const li = document.createElement('li');
+        li.className = 'todo-item';
+        li.innerHTML = \`
+            &lt;span&gt;\${text}&lt;/span&gt;
+            &lt;div&gt;
+                &lt;button class='delete-btn'&gt;Delete&lt;/button&gt;
+            &lt;/div&gt;
+        \`;
+        
+        const deleteBtn = li.querySelector('.delete-btn');
+        deleteBtn.addEventListener('click', () => {
+            li.remove();
+        });
+        
+        todoList.appendChild(li);
+    }
+});" > script.js
+
+git add .
+git commit -m "Add basic todo app structure and functionality"
+
+# Create feature branch for enhancements
+echo "=== Step 2: Create Feature Branch ==="
+git checkout -b feature-enhancements
+
+# Add completion functionality
+echo "// Todo App JavaScript with Enhancements
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('todo-form');
+    const input = document.getElementById('todo-input');
+    const todoList = document.getElementById('todo-list');
+    
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const todoText = input.value.trim();
+        
+        if (todoText) {
+            addTodo(todoText);
+            input.value = '';
+        }
+    });
+    
+    function addTodo(text) {
+        const li = document.createElement('li');
+        li.className = 'todo-item';
+        li.innerHTML = \`
+            &lt;span&gt;\${text}&lt;/span&gt;
+            &lt;div&gt;
+                &lt;button class='complete-btn'&gt;Complete&lt;/button&gt;
+                &lt;button class='delete-btn'&gt;Delete&lt;/button&gt;
+            &lt;/div&gt;
+        \`;
+        
+        const completeBtn = li.querySelector('.complete-btn');
+        completeBtn.addEventListener('click', () => {
+            li.classList.toggle('completed');
+            completeBtn.textContent = li.classList.contains('completed') ? 'Undo' : 'Complete';
+        });
+        
+        const deleteBtn = li.querySelector('.delete-btn');
+        deleteBtn.addEventListener('click', () => {
+            li.remove();
+        });
+        
+        todoList.appendChild(li);
+    }
+});" > script.js
+
+# Update styles for completion feature
+echo "body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+#todo-form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#todo-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+}
+
+#todo-form button {
+    padding: 10px 20px;
+    background: #4361ee;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.todo-item.completed span {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.complete-btn, .delete-btn {
+    margin-left: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.complete-btn {
+    background: #10b981;
+    color: white;
+}
+
+.delete-btn {
+    background: #ef4444;
+    color: white;
+}" > styles.css
+
+git add script.js styles.css
+git commit -m "Add todo completion functionality"
+
+# Switch to main and make different changes
+echo "=== Step 3: Make Changes on Main Branch ==="
+git checkout main
+
+# Add local storage persistence
+echo "// Todo App JavaScript with Local Storage
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('todo-form');
+    const input = document.getElementById('todo-input');
+    const todoList = document.getElementById('todo-list');
+    
+    // Load todos from localStorage
+    loadTodos();
+    
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const todoText = input.value.trim();
+        
+        if (todoText) {
+            addTodo(todoText);
+            saveTodos();
+            input.value = '';
+        }
+    });
+    
+    function addTodo(text) {
+        const li = document.createElement('li');
+        li.className = 'todo-item';
+        li.innerHTML = \`
+            &lt;span&gt;\${text}&lt;/span&gt;
+            &lt;div&gt;
+                &lt;button class='delete-btn'&gt;Delete&lt;/button&gt;
+            &lt;/div&gt;
+        \`;
+        
+        const deleteBtn = li.querySelector('.delete-btn');
+        deleteBtn.addEventListener('click', () => {
+            li.remove();
+            saveTodos();
+        });
+        
+        todoList.appendChild(li);
+    }
+    
+    function saveTodos() {
+        const todos = [];
+        document.querySelectorAll('.todo-item').forEach(item => {
+            todos.push(item.querySelector('span').textContent);
+        });
+        localStorage.setItem('todos', JSON.stringify(todos));
+    }
+    
+    function loadTodos() {
+        const todos = JSON.parse(localStorage.getItem('todos')) || [];
+        todos.forEach(todo => {
+            addTodo(todo);
+        });
+    }
+});" > script.js
+
+git add script.js
+git commit -m "Add localStorage persistence for todos"
+
+# Try to merge (would create conflict in real Git)
+echo "=== Step 4: Attempt Merge ==="
+echo "In real Git, merging feature-enhancements into main would create a conflict"
+echo "because both branches modified script.js in different ways."
+echo ""
+echo "To resolve:"
+echo "1. git merge feature-enhancements"
+echo "2. Edit script.js to combine both features"
+echo "3. git add script.js"
+echo "4. git commit"
+
+# Show final project structure
+echo "=== Final Project Structure ==="
+echo "Files in project:"
+ls -la
+echo ""
+echo "Git log:"
+git log --oneline --all</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-project"></iframe>
+                    </div>
+                </section>
+            </div>
+            
+            <div class="lesson-footer">
+                <div class="lesson-navigation">
+                    <button class="btn btn-secondary" disabled><i class="fas fa-arrow-left"></i> Previous</button>
+                    <button class="btn btn-primary" onclick="nextLesson()">Next <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3><i class="fas fa-code"></i> CodeMaster</h3>
+                    <p>Learn to code interactively with our hands-on tutorials and real-time editor.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../courses.html">Courses</a></li>
+                        <li><a href="../tutorial.html">Tutorials</a></li>
+                        <li><a href="../quiz.html">Quiz</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="../about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Subscribe</h4>
+                    <p>Get the latest updates and news.</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 CodeMaster. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="../js/editor.js"></script>
+    <script src="../js/progress.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        // Lesson navigation
+        let currentLesson = 0;
+        const lessons = document.querySelectorAll('.lesson-section');
+        const lessonItems = document.querySelectorAll('.lesson-item');
+        
+        function showLesson(index) {
+            // Hide all lessons
+            lessons.forEach(lesson => {
+                lesson.style.display = 'none';
+            });
+            
+            // Show current lesson
+            if (lessons[index]) {
+                lessons[index].style.display = 'block';
+            }
+            
+            // Update sidebar
+            lessonItems.forEach((item, i) => {
+                if (i === index) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+            
+            // Update progress
+            const progressPercent = ((index + 1) / lessons.length) * 100;
+            document.querySelector('.progress').style.width = `${progressPercent}%`;
+            document.querySelector('.progress-text').textContent = `${index + 1}/${lessons.length} lessons completed`;
+            
+            // Update navigation buttons
+            const prevBtn = document.querySelector('.lesson-navigation .btn-secondary');
+            const nextBtn = document.querySelector('.lesson-navigation .btn-primary');
+            
+            if (index === 0) {
+                prevBtn.disabled = true;
+            } else {
+                prevBtn.disabled = false;
+                prevBtn.onclick = () => prevLesson();
+            }
+            
+            if (index === lessons.length - 1) {
+                nextBtn.innerHTML = 'Complete Course <i class="fas fa-check"></i>';
+            } else {
+                nextBtn.innerHTML = 'Next <i class="fas fa-arrow-right"></i>';
+                nextBtn.onclick = () => nextLesson();
+            }
+            
+            currentLesson = index;
+        }
+        
+        function nextLesson() {
+            if (currentLesson < lessons.length - 1) {
+                showLesson(currentLesson + 1);
+            }
+        }
+        
+        function prevLesson() {
+            if (currentLesson > 0) {
+                showLesson(currentLesson - 1);
+            }
+        }
+        
+        // Initialize first lesson
+        document.addEventListener('DOMContentLoaded', () => {
+            showLesson(0);
+            
+            // Add click events to lesson items
+            lessonItems.forEach((item, index) => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showLesson(index);
+                });
+            });
+        });
+        
+        // Run code function for each lesson
+        function runCode(lessonId) {
+            const bashCode = document.getElementById(`bash-code-${lessonId}`).value;
+            const previewFrame = document.getElementById(`preview-frame-${lessonId}`);
+            const previewDocument = previewFrame.contentDocument || previewFrame.contentWindow.document;
+            
+            previewDocument.open();
+            previewDocument.write(`
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <style>
+                        body {
+                            font-family: 'Courier New', monospace;
+                            margin: 20px;
+                            background-color: #1e1e1e;
+                            color: #d4d4d4;
+                            white-space: pre-wrap;
+                        }
+                    </style>
+                </head>
+                <body>${bashCode}</body>
+                </html>
+            `);
+            previewDocument.close();
+        }
+    </script>
+</body>
+</html>

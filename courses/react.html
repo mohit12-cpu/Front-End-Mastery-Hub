@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Course - CodeMaster</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/courses.css">
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h2><i class="fas fa-code"></i> CodeMaster</h2>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../courses.html">Courses</a></li>
+                    <li><a href="../tutorial.html">Tutorials</a></li>
+                    <li><a href="../quiz.html">Quiz</a></li>
+                    <li><a href="../courses/projects.html">Projects</a></li>
+                    <li><a href="../dashboard.html">Dashboard</a></li>
+                    <li><a href="../profile.html">Profile</a></li>
+                    <li><a href="../settings.html">Settings</a></li>
+                    <li><a href="../help.html">Help</a></li>
+                    <li><a href="../about.html">About</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="btn btn-primary">Sign Up</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">Home</a> / <a href="../courses.html">Courses</a> / <span>React</span>
+        </div>
+    </section>
+
+    <div class="tutorial-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>React Course</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 0%;"></div>
+                </div>
+                <p class="progress-text">0/9 lessons completed</p>
+            </div>
+            <ul class="lessons-list">
+                <li class="lesson-item active">
+                    <a href="#intro">
+                        <span class="lesson-number">1</span>
+                        <span class="lesson-title">Introduction to React</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#components">
+                        <span class="lesson-number">2</span>
+                        <span class="lesson-title">Components and Props</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#state">
+                        <span class="lesson-number">3</span>
+                        <span class="lesson-title">State and Events</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#conditional">
+                        <span class="lesson-number">4</span>
+                        <span class="lesson-title">Conditional Rendering</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#lists">
+                        <span class="lesson-number">5</span>
+                        <span class="lesson-title">Lists and Keys</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#jsx">
+                        <span class="lesson-number">6</span>
+                        <span class="lesson-title">JSX Examples</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#virtualdom">
+                        <span class="lesson-number">7</span>
+                        <span class="lesson-title">Virtual DOM</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#project">
+                        <span class="lesson-number">8</span>
+                        <span class="lesson-title">Mini Project: Counter App</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="react-quiz.html">
+                        <span class="lesson-number">9</span>
+                        <span class="lesson-title">Final Quiz</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="tutorial-content">
+            <div class="lesson-header">
+                <h1>React Course</h1>
+                <div class="lesson-navigation">
+                    <button class="btn btn-secondary" disabled><i class="fas fa-arrow-left"></i> Previous</button>
+                    <button class="btn btn-primary" onclick="nextLesson()">Next <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <div class="lesson-body">
+                <!-- Lesson 1: Introduction to React -->
+                <section id="intro" class="lesson-section">
+                    <h2>1. Introduction to React</h2>
+                    <p>React is a popular JavaScript library for building user interfaces. It allows developers to create reusable UI components and manage the state of their applications efficiently.</p>
+                    
+                    <h3>What is React?</h3>
+                    <p>React was developed by Facebook and released in 2013. It's used by many large companies including Instagram, Netflix, and Airbnb.</p>
+                    
+                    <ul>
+                        <li>Component-based architecture</li>
+                        <li>Virtual DOM for efficient rendering</li>
+                        <li>One-way data flow</li>
+                        <li>JSX syntax for writing HTML in JavaScript</li>
+                    </ul>
+                    
+                    <h3>Why Use React?</h3>
+                    <pre><code class="language-javascript">// Traditional JavaScript approach
+document.getElementById('button').addEventListener('click', function() {
+    document.getElementById('message').innerHTML = 'Hello, World!';
+});
+
+// React approach
+function Button() {
+    const [message, setMessage] = useState('Hello, World!');
+    
+    return (
+        &lt;button onClick={() => setMessage('Button clicked!')}>
+            {message}
+        &lt;/button>
+    );
+}</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                            </div>
+                            <button class="btn btn-run" onclick="runCode('intro')">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-intro">
+                                <textarea id="html-code-intro">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;React Introduction&lt;/title&gt;
+    &lt;script src="https://unpkg.com/react@18/umd/react.development.js"&gt;&lt;/script&gt;
+    &lt;script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"&gt;&lt;/script&gt;
+    &lt;script src="https://unpkg.com/@babel/standalone/babel.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="root"&gt;&lt;/div&gt;
+    
+    &lt;script type="text/babel"&gt;
+        function App() {
+            return (
+                &lt;div&gt;
+                    &lt;h1&gt;Welcome to React!&lt;/h1&gt;
+                    &lt;p&gt;This is a simple React component.&lt;/p&gt;
+                &lt;/div&gt;
+            );
+        }
+        
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(&lt;App /&gt;);
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-intro"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 2: Components and Props -->
+                <section id="components" class="lesson-section" style="display: none;">
+                    <h2>2. Components and Props</h2>
+                    <p>Components are the building blocks of React applications. Props (short for properties) are how components communicate with each other.</p>
+                    
+                    <h3>Functional Components</h3>
+                    <pre><code class="language-javascript">function Welcome(props) {
+    return &lt;h1&gt;Hello, {props.name}!&lt;/h1&gt;;
+}
+
+// Using the component
+&lt;Welcome name="Alice" /&gt;
+&lt;Welcome name="Bob" /&gt;</code></pre>
+                    
+                    <h3>Component Composition</h3>
+                    <pre><code class="language-javascript">function App() {
+    return (
+        &lt;div&gt;
+            &lt;Header /&gt;
+            &lt;MainContent /&gt;
+            &lt;Footer /&gt;
+        &lt;/div&gt;
+    );
+}</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                            </div>
+                            <button class="btn btn-run" onclick="runCode('components')">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-components">
+                                <textarea id="html-code-components">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;React Components&lt;/title&gt;
+    &lt;script src="https://unpkg.com/react@18/umd/react.development.js"&gt;&lt;/script&gt;
+    &lt;script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"&gt;&lt;/script&gt;
+    &lt;script src="https://unpkg.com/@babel/standalone/babel.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="root"&gt;&lt;/div&gt;
+    
+    &lt;script type="text/babel"&gt;
+        function Welcome(props) {
+            return &lt;h1&gt;Hello, {props.name}!&lt;/h1&gt;;
+        }
+        
+        function App() {
+            return (
+                &lt;div&gt;
+                    &lt;Welcome name="Alice" /&gt;
+                    &lt;Welcome name="Bob" /&gt;
+                    &lt;Welcome name="Charlie" /&gt;
+                &lt;/div&gt;
+            );
+        }
+        
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(&lt;App /&gt;);
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-components"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 3: State and Events -->
+                <section id="state" class="lesson-section" style="display: none;">
+                    <h2>3. State and Events</h2>
+                    <p>State is how React components manage data that can change over time. Events allow components to respond to user interactions.</p>
+                    
+                    <h3>Using State</h3>
+                    <pre><code class="language-javascript">function Counter() {
+    const [count, setCount] = useState(0);
+    
+    return (
+        &lt;div&gt;
+            &lt;p&gt;Count: {count}&lt;/p&gt;
+            &lt;button onClick={() => setCount(count + 1)}&gt;
+                Increment
+            &lt;/button&gt;
+        &lt;/div&gt;
+    );
+}</code></pre>
+                    
+                    <h3>Handling Events</h3>
+                    <pre><code class="language-javascript">function Form() {
+    const [name, setName] = useState('');
+    
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        alert(`Hello, ${name}!`);
+    };
+    
+    return (
+        &lt;form onSubmit={handleSubmit}&gt;
+            &lt;input 
+                type="text" 
+                value={name} 
+                onChange={(e) => setName(e.target.value)} 
+                placeholder="Enter your name"
+            /&gt;
+            &lt;button type="submit"&gt;Submit&lt;/button&gt;
+        &lt;/form&gt;
+    );
+}</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                            </div>
+                            <button class="btn btn-run" onclick="runCode('state')">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-state">
+                                <textarea id="html-code-state">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;React State and Events&lt;/title&gt;
+    &lt;script src="https://unpkg.com/react@18/umd/react.development.js"&gt;&lt;/script&gt;
+    &lt;script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"&gt;&lt;/script&gt;
+    &lt;script src="https://unpkg.com/@babel/standalone/babel.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="root"&gt;&lt;/div&gt;
+    
+    &lt;script type="text/babel"&gt;
+        function Counter() {
+            const [count, setCount] = React.useState(0);
+            
+            return (
+                &lt;div&gt;
+                    &lt;h2&gt;Counter: {count}&lt;/h2&gt;
+                    &lt;button onClick={() => setCount(count + 1)}&gt;
+                        Increment
+                    &lt;/button&gt;
+                    &lt;button onClick={() => setCount(count - 1)} style={{marginLeft: '10px'}}&gt;
+                        Decrement
+                    &lt;/button&gt;
+                    &lt;button onClick={() => setCount(0)} style={{marginLeft: '10px'}}&gt;
+                        Reset
+                    &lt;/button&gt;
+                &lt;/div&gt;
+            );
+        }
+        
+        function App() {
+            return (
+                &lt;div&gt;
+                    &lt;h1&gt;React State and Events&lt;/h1&gt;
+                    &lt;Counter /&gt;
+                &lt;/div&gt;
+            );
+        }
+        
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(&lt;App /&gt;);
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-state"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 4: Conditional Rendering -->
+                <section id="conditional" class="lesson-section" style="display: none;">
+                    <h2>4. Conditional Rendering</h2>
+                    <p>Conditional rendering allows you to display different components or elements based on certain conditions.</p>
+                    
+                    <h3>Using if Statements</h3>
+                    <pre><code class="language-javascript">function Greeting(props) {
+    const isLoggedIn = props.isLoggedIn;
+    
+    if (isLoggedIn) {
+        return &lt;h1&gt;Welcome back!&lt;/h1&gt;;
+    }
+    return &lt;h1&gt;Please sign up.&lt;/h1&gt;;
+}</code></pre>
+                    
+                    <h3>Using Logical && Operator</h3>
+                    <pre><code class="language-javascript">function Mailbox(props) {
+    const unreadMessages = props.unreadMessages;
+    
+    return (
+        &lt;div&gt;
+            &lt;h1&gt;Hello!&lt;/h1&gt;
+            {unreadMessages.length > 0 && 
+                &lt;h2&gt;
+                    You have {unreadMessages.length} unread messages.
+                &lt;/h2&gt;
+            }
+        &lt;/div&gt;
+    );
+}</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                            </div>
+                            <button class="btn btn-run" onclick="runCode('conditional')">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-conditional">
+                                <textarea id="html-code-conditional">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;React Conditional Rendering&lt;/title&gt;
+    &lt;script src="https://unpkg.com/react@18/umd/react.development.js"&gt;&lt;/script&gt;
+    &lt;script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"&gt;&lt;/script&gt;
+    &lt;script src="https://unpkg.com/@babel/standalone/babel.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="root"&gt;&lt;/div&gt;
+    
+    &lt;script type="text/babel"&gt;
+        function LoginButton(props) {
+            return &lt;button onClick={props.onClick}&gt;Login&lt;/button&gt;;
+        }
+        
+        function LogoutButton(props) {
+            return &lt;button onClick={props.onClick}&gt;Logout&lt;/button&gt;;
+        }
+        
+        function LoginControl() {
+            const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+            
+            const handleLoginClick = () => {
+                setIsLoggedIn(true);
+            };
+            
+            const handleLogoutClick = () => {
+                setIsLoggedIn(false);
+            };
+            
+            let button;
+            if (isLoggedIn) {
+                button = &lt;LogoutButton onClick={handleLogoutClick} /&gt;;
+            } else {
+                button = &lt;LoginButton onClick={handleLoginClick} /&gt;;
+            }
+            
+            return (
+                &lt;div&gt;
+                    &lt;h2&gt;{isLoggedIn ? 'Welcome back!' : 'Please sign in.'}&lt;/h2&gt;
+                    {button}
+                &lt;/div&gt;
+            );
+        }
+        
+        function App() {
+            return (
+                &lt;div&gt;
+                    &lt;h1&gt;Conditional Rendering Example&lt;/h1&gt;
+                    &lt;LoginControl /&gt;
+                &lt;/div&gt;
+            );
+        }
+        
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(&lt;App /&gt;);
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-conditional"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 5: Lists and Keys -->
+                <section id="lists" class="lesson-section" style="display: none;">
+                    <h2>5. Lists and Keys</h2>
+                    <p>React allows you to transform arrays into lists of elements using the map() function.</p>
+                    
+                    <h3>Rendering Lists</h3>
+                    <pre><code class="language-javascript">function NumberList(props) {
+    const numbers = props.numbers;
+    const listItems = numbers.map((number) =>
+        &lt;li key={number.toString()}&gt;
+            {number}
+        &lt;/li&gt;
+    );
+    
+    return (
+        &lt;ul&gt;{listItems}&lt;/ul&gt;
+    );
+}</code></pre>
+                    
+                    <h3>Importance of Keys</h3>
+                    <pre><code class="language-javascript">function TodoList(props) {
+    const todos = props.todos;
+    
+    return (
+        &lt;ul&gt;
+            {todos.map((todo) => 
+                &lt;li key={todo.id}&gt;
+                    {todo.text}
+                &lt;/li&gt;
+            )}
+        &lt;/ul&gt;
+    );
+}</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                            </div>
+                            <button class="btn btn-run" onclick="runCode('lists')">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-lists">
+                                <textarea id="html-code-lists">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;React Lists and Keys&lt;/title&gt;
+    &lt;script src="https://unpkg.com/react@18/umd/react.development.js"&gt;&lt;/script&gt;
+    &lt;script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"&gt;&lt;/script&gt;
+    &lt;script src="https://unpkg.com/@babel/standalone/babel.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="root"&gt;&lt;/div&gt;
+    
+    &lt;script type="text/babel"&gt;
+        function NumberList(props) {
+            const numbers = props.numbers;
+            
+            return (
+                &lt;div&gt;
+                    &lt;h2&gt;Number List:&lt;/h2&gt;
+                    &lt;ul&gt;
+                        {numbers.map((number) =&gt;
+                            &lt;li key={number.toString()}&gt;
+                                {number}
+                            &lt;/li&gt;
+                        )}
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            );
+        }
+        
+        function TodoList() {
+            const [todos, setTodos] = React.useState([
+                {id: 1, text: 'Learn React'},
+                {id: 2, text: 'Build a project'},
+                {id: 3, text: 'Deploy to production'}
+            ]);
+            
+            const [inputValue, setInputValue] = React.useState('');
+            
+            const addTodo = () => {
+                if (inputValue.trim() !== '') {
+                    const newTodo = {
+                        id: Date.now(),
+                        text: inputValue
+                    };
+                    setTodos([...todos, newTodo]);
+                    setInputValue('');
+                }
+            };
+            
+            return (
+                &lt;div&gt;
+                    &lt;h2&gt;Todo List:&lt;/h2&gt;
+                    &lt;div&gt;
+                        &lt;input 
+                            type="text" 
+                            value={inputValue} 
+                            onChange={(e) =&gt; setInputValue(e.target.value)}
+                            placeholder="Add a new todo"
+                        /&gt;
+                        &lt;button onClick={addTodo} style={{marginLeft: '10px'}}&gt;Add&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;ul&gt;
+                        {todos.map((todo) =&gt; 
+                            &lt;li key={todo.id}&gt;
+                                {todo.text}
+                            &lt;/li&gt;
+                        )}
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            );
+        }
+        
+        function App() {
+            const numbers = [1, 2, 3, 4, 5];
+            
+            return (
+                &lt;div&gt;
+                    &lt;h1&gt;Lists and Keys&lt;/h1&gt;
+                    &lt;NumberList numbers={numbers} /&gt;
+                    &lt;TodoList /&gt;
+                &lt;/div&gt;
+            );
+        }
+        
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(&lt;App /&gt;);
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-lists"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 6: JSX Examples -->
+                <section id="jsx" class="lesson-section" style="display: none;">
+                    <h2>6. JSX Examples</h2>
+                    <p>JSX is a syntax extension for JavaScript that looks similar to HTML. It allows you to write HTML-like code in your JavaScript files.</p>
+                    
+                    <h3>JSX Syntax</h3>
+                    <pre><code class="language-javascript">const element = &lt;h1&gt;Hello, world!&lt;/h1&gt;;
+
+const elementWithExpression = &lt;h1&gt;Hello, {name}!&lt;/h1&gt;;
+
+const elementWithAttributes = &lt;div className="container"&gt;Content&lt;/div&gt;;</code></pre>
+                    
+                    <h3>Embedding Expressions</h3>
+                    <pre><code class="language-javascript">function formatName(user) {
+    return user.firstName + ' ' + user.lastName;
+}
+
+const user = {
+    firstName: 'Harper',
+    lastName: 'Perez'
+};
+
+const element = (
+    &lt;h1&gt;
+        Hello, {formatName(user)}!
+    &lt;/h1&gt;
+);</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                            </div>
+                            <button class="btn btn-run" onclick="runCode('jsx')">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-jsx">
+                                <textarea id="html-code-jsx">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;React JSX Examples&lt;/title&gt;
+    &lt;script src="https://unpkg.com/react@18/umd/react.development.js"&gt;&lt;/script&gt;
+    &lt;script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"&gt;&lt;/script&gt;
+    &lt;script src="https://unpkg.com/@babel/standalone/babel.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="root"&gt;&lt;/div&gt;
+    
+    &lt;script type="text/babel"&gt;
+        function formatName(user) {
+            return user.firstName + ' ' + user.lastName;
+        }
+        
+        function getGreeting(user) {
+            if (user) {
+                return &lt;h1&gt;Hello, {formatName(user)}!&lt;/h1&gt;;
+            }
+            return &lt;h1&gt;Hello, Stranger.&lt;/h1&gt;;
+        }
+        
+        const user = {
+            firstName: 'Harper',
+            lastName: 'Perez'
+        };
+        
+        const element = (
+            &lt;div&gt;
+                &lt;h1 className="greeting"&gt;
+                    Hello, {formatName(user)}!
+                &lt;/h1&gt;
+                &lt;p style={{color: 'blue', fontSize: '18px'}}&gt;
+                    Welcome to our React tutorial!
+                &lt;/p&gt;
+                &lt;div&gt;
+                    {getGreeting(user)}
+                    &lt;img 
+                        src="https://via.placeholder.com/150" 
+                        alt="Placeholder" 
+                        style={{border: '2px solid #ccc', borderRadius: '8px'}}
+                    /&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        );
+        
+        function App() {
+            return (
+                &lt;div&gt;
+                    &lt;h1&gt;JSX Examples&lt;/h1&gt;
+                    {element}
+                &lt;/div&gt;
+            );
+        }
+        
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(&lt;App /&gt;);
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-jsx"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 7: Virtual DOM -->
+                <section id="virtualdom" class="lesson-section" style="display: none;">
+                    <h2>7. Virtual DOM</h2>
+                    <p>The Virtual DOM is a programming concept where a virtual representation of the UI is kept in memory and synced with the real DOM by a library such as ReactDOM.</p>
+                    
+                    <h3>How Virtual DOM Works</h3>
+                    <p>1. When the state of an object changes, React creates a new Virtual DOM tree.</p>
+                    <p>2. React compares the new Virtual DOM tree with the previous one (diffing).</p>
+                    <p>3. React calculates the most efficient way to update the real DOM (reconciliation).</p>
+                    <p>4. Only the changed elements are updated in the real DOM.</p>
+                    
+                    <h3>Benefits of Virtual DOM</h3>
+                    <ul>
+                        <li><strong>Performance:</strong> Minimizes direct DOM manipulations</li>
+                        <li><strong>Efficiency:</strong> Only updates what's necessary</li>
+                        <li><strong>Abstraction:</strong> Simplifies UI development</li>
+                        <li><strong>Cross-platform:</strong> Enables React Native and other platforms</li>
+                    </ul>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                            </div>
+                            <button class="btn btn-run" onclick="runCode('virtualdom')">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-virtualdom">
+                                <textarea id="html-code-virtualdom">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;React Virtual DOM&lt;/title&gt;
+    &lt;script src="https://unpkg.com/react@18/umd/react.development.js"&gt;&lt;/script&gt;
+    &lt;script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"&gt;&lt;/script&gt;
+    &lt;script src="https://unpkg.com/@babel/standalone/babel.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="root"&gt;&lt;/div&gt;
+    
+    &lt;script type="text/babel"&gt;
+        function VirtualDOMExample() {
+            const [count, setCount] = React.useState(0);
+            const [items, setItems] = React.useState(['Item 1', 'Item 2', 'Item 3']);
+            
+            const addItem = () => {
+                const newItem = `Item ${items.length + 1}`;
+                setItems([...items, newItem]);
+            };
+            
+            const removeItem = (index) => {
+                const newItems = [...items];
+                newItems.splice(index, 1);
+                setItems(newItems);
+            };
+            
+            return (
+                &lt;div&gt;
+                    &lt;h2&gt;Virtual DOM Demonstration&lt;/h2&gt;
+                    &lt;p&gt;Counter: {count}&lt;/p&gt;
+                    &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
+                        Increment Counter
+                    &lt;/button&gt;
+                    
+                    &lt;h3&gt;List Items (Only these will update when changed):&lt;/h3&gt;
+                    &lt;button onClick={addItem}&gt;Add Item&lt;/button&gt;
+                    &lt;ul&gt;
+                        {items.map((item, index) =&gt; (
+                            &lt;li key={index}&gt;
+                                {item}
+                                &lt;button 
+                                    onClick={() =&gt; removeItem(index)}
+                                    style={{marginLeft: '10px'}}
+                                &gt;
+                                    Remove
+                                &lt;/button&gt;
+                            &lt;/li&gt;
+                        ))}
+                    &lt;/ul&gt;
+                    
+                    &lt;div&gt;
+                        &lt;h3&gt;This content never changes:&lt;/h3&gt;
+                        &lt;p&gt;React only updates the parts that change, not the entire DOM.&lt;/p&gt;
+                        &lt;img 
+                            src="https://via.placeholder.com/200x100/4361ee/ffffff?text=Static+Content" 
+                            alt="Static content"
+                        /&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            );
+        }
+        
+        function App() {
+            return (
+                &lt;div&gt;
+                    &lt;h1&gt;Virtual DOM Example&lt;/h1&gt;
+                    &lt;p&gt;React efficiently updates only the parts of the DOM that change.&lt;/p&gt;
+                    &lt;VirtualDOMExample /&gt;
+                &lt;/div&gt;
+            );
+        }
+        
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(&lt;App /&gt;);
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-virtualdom"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 8: Mini Project - Counter App -->
+                <section id="project" class="lesson-section" style="display: none;">
+                    <h2>8. Mini Project: Counter App</h2>
+                    <p>Build a complete counter application using React concepts you've learned.</p>
+                    
+                    <h3>Project Requirements</h3>
+                    <ul>
+                        <li>Display current count value</li>
+                        <li>Increment button (+1)</li>
+                        <li>Decrement button (-1)</li>
+                        <li>Reset button (set to 0)</li>
+                        <li>Double button (multiply by 2)</li>
+                        <li>History of all operations</li>
+                    </ul>
+                    
+                    <h3>Complete Implementation</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                            </div>
+                            <button class="btn btn-run" onclick="runCode('project')">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-project">
+                                <textarea id="html-code-project">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;React Counter App&lt;/title&gt;
+    &lt;script src="https://unpkg.com/react@18/umd/react.development.js"&gt;&lt;/script&gt;
+    &lt;script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"&gt;&lt;/script&gt;
+    &lt;script src="https://unpkg.com/@babel/standalone/babel.min.js"&gt;&lt;/script&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .counter-app {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .count-display {
+            font-size: 48px;
+            margin: 20px 0;
+            color: #4361ee;
+        }
+        .buttons {
+            margin: 20px 0;
+        }
+        button {
+            background: #4361ee;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #3a56d4;
+        }
+        .history {
+            margin-top: 30px;
+            text-align: left;
+        }
+        .history h3 {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .history-item {
+            padding: 5px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="root"&gt;&lt;/div&gt;
+    
+    &lt;script type="text/babel"&gt;
+        function CounterApp() {
+            const [count, setCount] = React.useState(0);
+            const [history, setHistory] = React.useState([]);
+            
+            const addToHistory = (operation) => {
+                const timestamp = new Date().toLocaleTimeString();
+                setHistory(prevHistory => [
+                    ...prevHistory,
+                    { operation, value: count, timestamp }
+                ]);
+            };
+            
+            const increment = () => {
+                setCount(count + 1);
+                addToHistory('Incremented by 1');
+            };
+            
+            const decrement = () => {
+                setCount(count - 1);
+                addToHistory('Decremented by 1');
+            };
+            
+            const reset = () => {
+                setCount(0);
+                addToHistory('Reset to 0');
+            };
+            
+            const double = () => {
+                setCount(count * 2);
+                addToHistory(`Doubled from ${count} to ${count * 2}`);
+            };
+            
+            return (
+                &lt;div className="counter-app"&gt;
+                    &lt;h1&gt;React Counter App&lt;/h1&gt;
+                    &lt;div className="count-display"&gt;{count}&lt;/div&gt;
+                    
+                    &lt;div className="buttons"&gt;
+                        &lt;button onClick={increment}&gt;+1&lt;/button&gt;
+                        &lt;button onClick={decrement}&gt;-1&lt;/button&gt;
+                        &lt;button onClick={reset}&gt;Reset&lt;/button&gt;
+                        &lt;button onClick={double}&gt;Double&lt;/button&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div className="history"&gt;
+                        &lt;h3&gt;Operation History&lt;/h3&gt;
+                        {history.length === 0 ? (
+                            &lt;p&gt;No operations yet&lt;/p&gt;
+                        ) : (
+                            &lt;div&gt;
+                                {history.map((item, index) =&gt; (
+                                    &lt;div key={index} className="history-item"&gt;
+                                        &lt;strong&gt;{item.timestamp}&lt;/strong&gt;: {item.operation} 
+                                        (value: {item.value})
+                                    &lt;/div&gt;
+                                ))}
+                            &lt;/div&gt;
+                        )}
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            );
+        }
+        
+        function App() {
+            return &lt;CounterApp /&gt;;
+        }
+        
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(&lt;App /&gt;);
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-project"></iframe>
+                    </div>
+                </section>
+            </div>
+            
+            <div class="lesson-footer">
+                <div class="lesson-navigation">
+                    <button class="btn btn-secondary" disabled><i class="fas fa-arrow-left"></i> Previous</button>
+                    <button class="btn btn-primary" onclick="nextLesson()">Next <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3><i class="fas fa-code"></i> CodeMaster</h3>
+                    <p>Learn to code interactively with our hands-on tutorials and real-time editor.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../courses.html">Courses</a></li>
+                        <li><a href="../tutorial.html">Tutorials</a></li>
+                        <li><a href="../quiz.html">Quiz</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="../about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Subscribe</h4>
+                    <p>Get the latest updates and news.</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 CodeMaster. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="../js/editor.js"></script>
+    <script src="../js/progress.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        // Lesson navigation
+        let currentLesson = 0;
+        const lessons = document.querySelectorAll('.lesson-section');
+        const lessonItems = document.querySelectorAll('.lesson-item');
+        
+        function showLesson(index) {
+            // Hide all lessons
+            lessons.forEach(lesson => {
+                lesson.style.display = 'none';
+            });
+            
+            // Show current lesson
+            if (lessons[index]) {
+                lessons[index].style.display = 'block';
+            }
+            
+            // Update sidebar
+            lessonItems.forEach((item, i) => {
+                if (i === index) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+            
+            // Update progress
+            const progressPercent = ((index + 1) / lessons.length) * 100;
+            document.querySelector('.progress').style.width = `${progressPercent}%`;
+            document.querySelector('.progress-text').textContent = `${index + 1}/${lessons.length} lessons completed`;
+            
+            // Update navigation buttons
+            const prevBtn = document.querySelector('.lesson-navigation .btn-secondary');
+            const nextBtn = document.querySelector('.lesson-navigation .btn-primary');
+            
+            if (index === 0) {
+                prevBtn.disabled = true;
+            } else {
+                prevBtn.disabled = false;
+                prevBtn.onclick = () => prevLesson();
+            }
+            
+            if (index === lessons.length - 1) {
+                nextBtn.innerHTML = 'Complete Course <i class="fas fa-check"></i>';
+            } else {
+                nextBtn.innerHTML = 'Next <i class="fas fa-arrow-right"></i>';
+                nextBtn.onclick = () => nextLesson();
+            }
+            
+            currentLesson = index;
+        }
+        
+        function nextLesson() {
+            if (currentLesson < lessons.length - 1) {
+                showLesson(currentLesson + 1);
+            }
+        }
+        
+        function prevLesson() {
+            if (currentLesson > 0) {
+                showLesson(currentLesson - 1);
+            }
+        }
+        
+        // Initialize first lesson
+        document.addEventListener('DOMContentLoaded', () => {
+            showLesson(0);
+            
+            // Add click events to lesson items
+            lessonItems.forEach((item, index) => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showLesson(index);
+                });
+            });
+        });
+        
+        // Run code function for each lesson
+        function runCode(lessonId) {
+            const htmlCode = document.getElementById(`html-code-${lessonId}`).value;
+            const previewFrame = document.getElementById(`preview-frame-${lessonId}`);
+            const previewDocument = previewFrame.contentDocument || previewFrame.contentWindow.document;
+            
+            previewDocument.open();
+            previewDocument.write(`
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <style>
+                        body {
+                            font-family: Arial, sans-serif;
+                            margin: 20px;
+                            background-color: #f5f5f5;
+                        }
+                    </style>
+                </head>
+                <body>
+                    ${htmlCode}
+                </body>
+                </html>
+            `);
+            previewDocument.close();
+        }
+    </script>
+</body>
+</html>

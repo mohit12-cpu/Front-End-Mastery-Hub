@@ -1,0 +1,2411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Course - CodeMaster</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/courses.css">
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h2><i class="fas fa-code"></i> CodeMaster</h2>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../courses.html">Courses</a></li>
+                    <li><a href="../tutorial.html">Tutorials</a></li>
+                    <li><a href="../quiz.html">Quiz</a></li>
+                    <li><a href="../courses/projects.html">Projects</a></li>
+                    <li><a href="../dashboard.html">Dashboard</a></li>
+                    <li><a href="../profile.html">Profile</a></li>
+                    <li><a href="../settings.html">Settings</a></li>
+                    <li><a href="../help.html">Help</a></li>
+                    <li><a href="../about.html">About</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="btn btn-primary">Sign Up</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">Home</a> / <a href="../courses.html">Courses</a> / <span>Python</span>
+        </div>
+    </section>
+
+    <div class="tutorial-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Python Course</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 0%;"></div>
+                </div>
+                <p class="progress-text">0/13 lessons completed</p>
+            </div>
+            <ul class="lessons-list">
+                <li class="lesson-item">
+                    <a href="#intro">
+                        <span class="lesson-number">1</span>
+                        <span class="lesson-title">Introduction to Python</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#syntax">
+                        <span class="lesson-number">2</span>
+                        <span class="lesson-title">Python Syntax and Variables</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#datatypes">
+                        <span class="lesson-number">3</span>
+                        <span class="lesson-title">Data Types and Operators</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#control">
+                        <span class="lesson-number">4</span>
+                        <span class="lesson-title">Control Flow</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#loops">
+                        <span class="lesson-number">5</span>
+                        <span class="lesson-title">Loops</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#functions">
+                        <span class="lesson-number">6</span>
+                        <span class="lesson-title">Functions and Modules</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#datastructures">
+                        <span class="lesson-number">7</span>
+                        <span class="lesson-title">Data Structures</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#filehandling">
+                        <span class="lesson-number">8</span>
+                        <span class="lesson-title">File Handling</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#exceptions">
+                        <span class="lesson-number">9</span>
+                        <span class="lesson-title">Exception Handling</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#oop">
+                        <span class="lesson-number">10</span>
+                        <span class="lesson-title">Object-Oriented Programming</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#libraries">
+                        <span class="lesson-number">11</span>
+                        <span class="lesson-title">Python Libraries</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#project">
+                        <span class="lesson-number">12</span>
+                        <span class="lesson-title">Mini Project: Interactive Guessing Game</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="python-quiz.html">
+                        <span class="lesson-number">13</span>
+                        <span class="lesson-title">Final Quiz</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="tutorial-content">
+            <div class="lesson-header">
+                <h1>Python Course</h1>
+                <div class="lesson-navigation">
+                    <button class="btn btn-secondary" disabled><i class="fas fa-arrow-left"></i> Previous</button>
+                    <button class="btn btn-primary" onclick="nextLesson()">Next <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <div class="lesson-body">
+                <!-- Lesson 1: Introduction to Python -->
+                <section id="intro" class="lesson-section">
+                    <h2>1. Introduction to Python</h2>
+                    <p>Python is a high-level, interpreted programming language known for its simplicity and readability. It emphasizes code readability and allows programmers to express concepts in fewer lines of code than languages like C++ or Java.</p>
+                    
+                    <h3>What is Python?</h3>
+                    <p>Python is a general-purpose programming language that can be used for:</p>
+                    <ul>
+                        <li>Web development (Django, Flask)</li>
+                        <li>Data science and machine learning (Pandas, NumPy, TensorFlow)</li>
+                        <li>Automation and scripting</li>
+                        <li>Desktop applications (Tkinter)</li>
+                        <li>Game development (Pygame)</li>
+                    </ul>
+                    
+                    <h3>Python Features</h3>
+                    <ul>
+                        <li><strong>Easy to learn</strong> - Simple syntax similar to English</li>
+                        <li><strong>Interpreted</strong> - No need to compile code before execution</li>
+                        <li><strong>Cross-platform</strong> - Works on Windows, Mac, Linux</li>
+                        <li><strong>Extensive libraries</strong> - Large standard library and third-party packages</li>
+                        <li><strong>Object-oriented</strong> - Supports OOP concepts</li>
+                    </ul>
+                    
+                    <h3>Sample Python Code</h3>
+                    <pre><code class="language-python"># This is a comment
+print("Hello, World!")
+
+# Variables
+name = "Alice"
+age = 25
+is_student = True
+
+# Print variables
+print("Name:", name)
+print("Age:", age)
+print("Is Student:", is_student)</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="python">Python</button>
+                            </div>
+                            <button class="btn btn-run" onclick="runPythonCode('intro')">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-python-intro">
+                                <textarea id="python-code-intro"># Welcome to Python!
+print("Hello, Python World!")
+
+# Variables
+name = "CodeMaster"
+version = 3.9
+is_awesome = True
+
+# Print information
+print("Learning:", name)
+print("Version:", version)
+print("Is Awesome:", is_awesome)</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <div class="preview-content" id="preview-content-intro">
+                            <p>Click "Run Code" to see the output here.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Lesson 2: Python Syntax and Variables -->
+                <section id="syntax" class="lesson-section" style="display: none;">
+                    <h2>2. Python Syntax and Variables</h2>
+                    <p>Python has a clean and readable syntax that makes it easy to write and understand code.</p>
+                    
+                    <h3>Python Syntax Rules</h3>
+                    <ul>
+                        <li><strong>Indentation</strong> - Python uses indentation to define code blocks instead of braces</li>
+                        <li><strong>Comments</strong> - Use # for single-line comments and ''' ''' for multi-line comments</li>
+                        <li><strong>Statements</strong> - Each line is a statement; no semicolon required</li>
+                        <li><strong>Case-sensitive</strong> - Variables name and Name are different</li>
+                    </ul>
+                    
+                    <h3>Variables</h3>
+                    <pre><code class="language-python"># Variable assignment
+x = 5
+y = "Hello"
+z = 3.14
+
+# Multiple assignment
+a, b, c = 1, 2, 3
+
+# Variable naming rules
+# - Must start with a letter or underscore
+# - Can contain letters, numbers, and underscores
+# - Case-sensitive
+my_variable = "valid"
+_my_variable = "valid"
+myVariable = "valid"
+MY_VARIABLE = "valid"
+
+# Invalid variable names
+# 2myvar = "invalid"  # Cannot start with number
+# my-var = "invalid"  # Hyphens not allowed</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="python">Python</button>
+                            </div>
+                            <button class="btn btn-run" onclick="runPythonCode('syntax')">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-python-syntax">
+                                <textarea id="python-code-syntax"># Python Syntax and Variables
+
+# Variable assignment
+name = "Alice"
+age = 30
+height = 5.6
+is_student = False
+
+# Print variables
+print("Name:", name)
+print("Age:", age)
+print("Height:", height)
+print("Is Student:", is_student)
+
+# Multiple assignment
+x, y, z = 10, 20, 30
+print("x:", x, "y:", y, "z:", z)
+
+# Variable types
+print("Type of name:", type(name))
+print("Type of age:", type(age))
+print("Type of height:", type(height))
+print("Type of is_student:", type(is_student))</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <div class="preview-content" id="preview-content-syntax">
+                            <p>Click "Run Code" to see the output here.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Lesson 3: Data Types and Operators -->
+                <section id="datatypes" class="lesson-section" style="display: none;">
+                    <h2>3. Data Types and Operators</h2>
+                    <p>Python has various built-in data types and operators to manipulate data.</p>
+                    
+                    <h3>Built-in Data Types</h3>
+                    <pre><code class="language-python"># Text Type
+text = "Hello"  # str
+
+# Numeric Types
+integer = 42  # int
+floating = 3.14  # float
+complex_num = 1j  # complex
+
+# Sequence Types
+list_example = ["apple", "banana", "cherry"]  # list
+tuple_example = ("apple", "banana", "cherry")  # tuple
+range_example = range(6)  # range
+
+# Mapping Type
+dict_example = {"name": "John", "age": 36}  # dict
+
+# Set Types
+set_example = {"apple", "banana", "cherry"}  # set
+frozenset_example = frozenset({"apple", "banana", "cherry"})  # frozenset
+
+# Boolean Type
+boolean_example = True  # bool
+
+# Binary Types
+bytes_example = b"Hello"  # bytes
+bytearray_example = bytearray(5)  # bytearray</code></pre>
+                    
+                    <h3>Operators</h3>
+                    <pre><code class="language-python"># Arithmetic Operators
+a, b = 10, 3
+print("Addition:", a + b)  # 13
+print("Subtraction:", a - b)  # 7
+print("Multiplication:", a * b)  # 30
+print("Division:", a / b)  # 3.333...
+print("Modulus:", a % b)  # 1
+print("Exponentiation:", a ** b)  # 1000
+print("Floor division:", a // b)  # 3
+
+# Comparison Operators
+print("Equal:", a == b)  # False
+print("Not equal:", a != b)  # True
+print("Greater than:", a > b)  # True
+print("Less than:", a < b)  # False
+print("Greater or equal:", a >= b)  # True
+print("Less or equal:", a <= b)  # False
+
+# Logical Operators
+x, y = True, False
+print("AND:", x and y)  # False
+print("OR:", x or y)  # True
+print("NOT:", not x)  # False</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="python">Python</button>
+                            </div>
+                            <button class="btn btn-run" onclick="runPythonCode('datatypes')">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-python-datatypes">
+                                <textarea id="python-code-datatypes"># Data Types and Operators
+
+# Numeric operations
+num1 = 20
+num2 = 3
+print("Numbers:", num1, "and", num2)
+print("Addition:", num1 + num2)
+print("Subtraction:", num1 - num2)
+print("Multiplication:", num1 * num2)
+print("Division:", num1 / num2)
+print("Modulus:", num1 % num2)
+print("Power:", num1 ** num2)
+
+# String operations
+first_name = "John"
+last_name = "Doe"
+full_name = first_name + " " + last_name
+print("Full name:", full_name)
+print("Name length:", len(full_name))
+
+# Boolean operations
+is_sunny = True
+is_warm = False
+print("Sunny and warm:", is_sunny and is_warm)
+print("Sunny or warm:", is_sunny or is_warm)
+print("Not sunny:", not is_sunny)</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <div class="preview-content" id="preview-content-datatypes">
+                            <p>Click "Run Code" to see the output here.</p>
+                        </div>
+                    </div>
+                </section>
+
+<!-- Lesson 4: Control Flow -->
+<section id="control" class="lesson-section" style="display: none;">
+    <h2>4. Control Flow</h2>
+    <p>Control flow statements allow you to control the execution flow of your Python programs based on certain conditions.</p>
+    
+    <h3>Conditional Statements</h3>
+    <pre><code class="language-python"># If statement
+x = 10
+if x > 5:
+    print("x is greater than 5")
+
+# If-else statement
+y = 3
+if y % 2 == 0:
+    print("y is even")
+else:
+    print("y is odd")
+
+# If-elif-else statement
+score = 85
+if score >= 90:
+    grade = "A"
+elif score >= 80:
+    grade = "B"
+elif score >= 70:
+    grade = "C"
+elif score >= 60:
+    grade = "D"
+else:
+    grade = "F"
+print(f"Grade: {grade}")
+
+# Nested if statements
+num = 15
+if num > 0:
+    if num % 2 == 0:
+        print("Positive even number")
+    else:
+        print("Positive odd number")
+else:
+    print("Non-positive number")</code></pre>
+    
+    <h3>Logical Operators</h3>
+    <pre><code class="language-python"># and, or, not operators
+age = 25
+has_license = True
+
+# and operator
+if age >= 18 and has_license:
+    print("Can drive")
+
+# or operator
+is_weekend = True
+is_holiday = False
+if is_weekend or is_holiday:
+    print("No work today")
+
+# not operator
+is_raining = False
+if not is_raining:
+    print("It's not raining")
+
+# Combining operators
+username = "admin"
+password = "secret123"
+if (username == "admin" or username == "user") and len(password) >= 8:
+    print("Valid login credentials")</code></pre>
+    
+    <h3>Try It Yourself</h3>
+    <div class="editor-container">
+        <div class="editor-header">
+            <div class="editor-tabs">
+                <button class="tab active" data-tab="python">Python</button>
+            </div>
+            <button class="btn btn-run" onclick="runPythonCode('control')">Run Code <i class="fas fa-play"></i></button>
+        </div>
+        <div class="editor-body">
+            <div class="editor-panel active" id="editor-python-control">
+                <textarea id="python-code-control"># Control Flow Examples
+
+# Example 1: Temperature checker
+temperature = 25
+if temperature > 30:
+    print("It's hot outside!")
+elif temperature > 20:
+    print("Nice weather!")
+elif temperature > 10:
+    print("A bit chilly")
+else:
+    print("It's cold!")
+
+# Example 2: Login system
+users = {"admin": "password123", "user": "mypassword"}
+username = "admin"
+password = "password123"
+
+if username in users and users[username] == password:
+    print("Login successful!")
+else:
+    print("Invalid username or password")
+
+# Example 3: Number classification
+def classify_number(num):
+    if num > 0:
+        if num % 2 == 0:
+            return "Positive even"
+        else:
+            return "Positive odd"
+    elif num < 0:
+        if num % 2 == 0:
+            return "Negative even"
+        else:
+            return "Negative odd"
+    else:
+        return "Zero"
+
+numbers = [5, -4, 0, 12, -7]
+for num in numbers:
+    print(f"{num} is {classify_number(num)}")</textarea>
+            </div>
+        </div>
+    </div>
+    <div class="preview-container">
+        <div class="preview-header">
+            <h3>Output Preview</h3>
+        </div>
+        <div class="preview-content" id="preview-content-control">
+            <p>Click "Run Code" to see the output here.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Lesson 5: Loops -->
+<section id="loops" class="lesson-section" style="display: none;">
+    <h2>5. Loops</h2>
+    <p>Loops allow you to execute a block of code repeatedly, which is essential for processing collections of data and automating repetitive tasks.</p>
+    
+    <h3>While Loops</h3>
+    <pre><code class="language-python"># Basic while loop
+count = 0
+while count < 5:
+    print(f"Count is {count}")
+    count += 1
+
+# While loop with user input
+user_input = ""
+while user_input != "quit":
+    user_input = input("Enter 'quit' to exit: ")
+    print(f"You entered: {user_input}")
+
+# Infinite loop with break
+while True:
+    number = int(input("Enter a number (0 to quit): "))
+    if number == 0:
+        break
+    print(f"Square of {number} is {number**2}")
+
+# Continue statement
+num = 0
+while num < 10:
+    num += 1
+    if num % 2 == 0:
+        continue  # Skip even numbers
+    print(num)  # Print odd numbers</code></pre>
+    
+    <h3>For Loops</h3>
+    <pre><code class="language-python"># For loop with range
+for i in range(5):
+    print(i)  # Prints 0, 1, 2, 3, 4
+
+# For loop with start, stop, step
+for i in range(2, 10, 2):
+    print(i)  # Prints 2, 4, 6, 8
+
+# For loop with lists
+fruits = ["apple", "banana", "orange"]
+for fruit in fruits:
+    print(f"I like {fruit}")
+
+# For loop with strings
+word = "Python"
+for letter in word:
+    print(letter)
+
+# For loop with enumerate
+fruits = ["apple", "banana", "orange"]
+for index, fruit in enumerate(fruits):
+    print(f"{index}: {fruit}")
+
+# For loop with dictionaries
+person = {"name": "Alice", "age": 30, "city": "New York"}
+for key, value in person.items():
+    print(f"{key}: {value}")</code></pre>
+    
+    <h3>Nested Loops</h3>
+    <pre><code class="language-python"># Nested for loops
+for i in range(3):
+    for j in range(2):
+        print(f"i={i}, j={j}")
+
+# Pattern printing
+for i in range(5):
+    for j in range(i + 1):
+        print("*", end="")
+    print()  # New line after each row
+
+# Multiplication table
+for i in range(1, 11):
+    for j in range(1, 11):
+        print(f"{i*j:3}", end=" ")
+    print()</code></pre>
+    
+    <h3>Try It Yourself</h3>
+    <div class="editor-container">
+        <div class="editor-header">
+            <div class="editor-tabs">
+                <button class="tab active" data-tab="python">Python</button>
+            </div>
+            <button class="btn btn-run" onclick="runPythonCode('loops')">Run Code <i class="fas fa-play"></i></button>
+        </div>
+        <div class="editor-body">
+            <div class="editor-panel active" id="editor-python-loops">
+                <textarea id="python-code-loops"># Loop Examples
+
+# Example 1: Sum of numbers
+total = 0
+for i in range(1, 11):
+    total += i
+print(f"Sum of numbers 1-10: {total}")
+
+# Example 2: Find prime numbers
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+print("Prime numbers between 1 and 30:")
+for num in range(1, 31):
+    if is_prime(num):
+        print(num, end=" ")
+print()
+
+# Example 3: Password validation
+attempts = 3
+while attempts > 0:
+    password = input("Enter password: ")
+    if len(password) >= 8:
+        print("Password accepted!")
+        break
+    else:
+        attempts -= 1
+        if attempts > 0:
+            print(f"Password too short. {attempts} attempts left.")
+        else:
+            print("Too many failed attempts. Access denied.")</textarea>
+            </div>
+        </div>
+    </div>
+    <div class="preview-container">
+        <div class="preview-header">
+            <h3>Output Preview</h3>
+        </div>
+        <div class="preview-content" id="preview-content-loops">
+            <p>Click "Run Code" to see the output here.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Lesson 6: Functions and Modules -->
+<section id="functions" class="lesson-section" style="display: none;">
+    <h2>6. Functions and Modules</h2>
+    <p>Functions are reusable blocks of code that perform specific tasks. Modules are files containing Python code that can be imported and used in other programs.</p>
+    
+    <h3>Defining and Calling Functions</h3>
+    <pre><code class="language-python"># Simple function
+def greet():
+    print("Hello, World!")
+
+greet()  # Call the function
+
+# Function with parameters
+def greet_person(name):
+    print(f"Hello, {name}!")
+
+greet_person("Alice")
+greet_person("Bob")
+
+# Function with return value
+def add_numbers(a, b):
+    return a + b
+
+result = add_numbers(5, 3)
+print(f"5 + 3 = {result}")
+
+# Function with default parameters
+def greet_person(name, greeting="Hello"):
+    print(f"{greeting}, {name}!")
+
+greet_person("Alice")  # Uses default greeting
+greet_person("Bob", "Hi")  # Overrides default greeting
+
+# Function with keyword arguments
+def create_profile(name, age, city="Unknown"):
+    print(f"Name: {name}")
+    print(f"Age: {age}")
+    print(f"City: {city}")
+
+create_profile(age=25, name="Charlie")  # Order doesn't matter</code></pre>
+    
+    <h3>Variable Scope</h3>
+    <pre><code class="language-python"># Global and local variables
+global_var = "I'm global"
+
+def my_function():
+    local_var = "I'm local"
+    print(global_var)  # Can access global variables
+    print(local_var)   # Can access local variables
+
+my_function()
+print(global_var)  # Can access global variables
+# print(local_var)  # This would cause an error
+
+# Modifying global variables
+counter = 0
+
+def increment():
+    global counter  # Declare that we want to modify the global variable
+    counter += 1
+
+increment()
+print(counter)  # Output: 1</code></pre>
+    
+    <h3>Modules and Imports</h3>
+    <pre><code class="language-python"># Importing modules
+import math
+print(math.sqrt(16))
+print(math.pi)
+
+# Importing specific functions
+from math import sqrt, ceil
+print(sqrt(25))
+print(ceil(4.2))
+
+# Importing with alias
+import math as m
+print(m.floor(4.8))
+
+# Creating and using custom modules
+# In a separate file called 'my_module.py':
+"""
+def say_hello(name):
+    return f"Hello, {name}!"
+
+def calculate_area(radius):
+    import math
+    return math.pi * radius ** 2
+"""
+
+# In main file:
+# import my_module
+# print(my_module.say_hello("Alice"))
+# print(my_module.calculate_area(5))</code></pre>
+    
+    <h3>Try It Yourself</h3>
+    <div class="editor-container">
+        <div class="editor-header">
+            <div class="editor-tabs">
+                <button class="tab active" data-tab="python">Python</button>
+            </div>
+            <button class="btn btn-run" onclick="runPythonCode('functions')">Run Code <i class="fas fa-play"></i></button>
+        </div>
+        <div class="editor-body">
+            <div class="editor-panel active" id="editor-python-functions">
+                <textarea id="python-code-functions"># Functions and Modules Examples
+
+# Example 1: Calculator functions
+def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+
+def multiply(a, b):
+    return a * b
+
+def divide(a, b):
+    if b != 0:
+        return a / b
+    else:
+        return "Error: Division by zero"
+
+# Calculator program
+print("Simple Calculator")
+num1 = float(input("Enter first number: "))
+operator = input("Enter operator (+, -, *, /): ")
+num2 = float(input("Enter second number: "))
+
+if operator == "+":
+    result = add(num1, num2)
+elif operator == "-":
+    result = subtract(num1, num2)
+elif operator == "*":
+    result = multiply(num1, num2)
+elif operator == "/":
+    result = divide(num1, num2)
+else:
+    result = "Invalid operator"
+
+print(f"Result: {result}")
+
+# Example 2: Temperature converter
+def celsius_to_fahrenheit(celsius):
+    return (celsius * 9/5) + 32
+
+def fahrenheit_to_celsius(fahrenheit):
+    return (fahrenheit - 32) * 5/9
+
+# Convert temperatures
+temps_celsius = [0, 20, 30, 100]
+print("Celsius to Fahrenheit:")
+for temp in temps_celsius:
+    fahrenheit = celsius_to_fahrenheit(temp)
+    print(f"{temp}°C = {fahrenheit}°F")</textarea>
+            </div>
+        </div>
+    </div>
+    <div class="preview-container">
+        <div class="preview-header">
+            <h3>Output Preview</h3>
+        </div>
+        <div class="preview-content" id="preview-content-functions">
+            <p>Click "Run Code" to see the output here.</p>
+        </div>
+    </div>
+</section>
+
+                <!-- Lesson 7: Data Structures -->
+<section id="datastructures" class="lesson-section" style="display: none;">
+    <h2>7. Data Structures</h2>
+    <p>Python provides several built-in data structures to store and organize data efficiently. Understanding these structures is crucial for writing effective Python programs.</p>
+    
+    <h3>Lists</h3>
+    <pre><code class="language-python"># Creating and accessing lists
+fruits = ["apple", "banana", "orange", "grape"]
+print(fruits[0])  # apple
+print(fruits[-1])  # grape (last element)
+
+# List methods
+fruits.append("mango")  # Add to end
+fruits.insert(1, "kiwi")  # Insert at index 1
+fruits.remove("banana")  # Remove first occurrence
+popped_fruit = fruits.pop()  # Remove and return last element
+fruits.sort()  # Sort alphabetically
+print(len(fruits))  # Length of list
+
+# List slicing
+numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(numbers[2:6])  # [2, 3, 4, 5]
+print(numbers[:4])   # [0, 1, 2, 3]
+print(numbers[5:])   # [5, 6, 7, 8, 9]
+print(numbers[::2])  # [0, 2, 4, 6, 8] (every 2nd element)
+
+# List comprehensions
+squares = [x**2 for x in range(10)]
+even_numbers = [x for x in range(20) if x % 2 == 0]
+uppercase_fruits = [fruit.upper() for fruit in fruits]</code></pre>
+    
+    <h3>Tuples</h3>
+    <pre><code class="language-python"># Creating and accessing tuples
+coordinates = (3, 5)
+person = ("Alice", 25, "Engineer")
+
+print(coordinates[0])  # 3
+print(len(person))     # 3
+
+# Tuple unpacking
+x, y = coordinates
+name, age, job = person
+
+# Named tuples (from collections module)
+from collections import namedtuple
+Point = namedtuple('Point', ['x', 'y'])
+p = Point(3, 5)
+print(p.x, p.y)  # 3 5</code></pre>
+    
+    <h3>Dictionaries</h3>
+    <pre><code class="language-python"># Creating and accessing dictionaries
+student = {
+    "name": "Bob",
+    "age": 20,
+    "grades": [85, 92, 78],
+    "major": "Computer Science"
+}
+
+print(student["name"])  # Bob
+print(student.get("age"))  # 20
+print(student.get("gpa", "Not available"))  # Not available (default value)
+
+# Dictionary methods
+student["gpa"] = 3.8  # Add/update key-value pair
+student.update({"year": 3, "advisor": "Dr. Smith"})  # Update multiple pairs
+del student["major"]  # Remove key-value pair
+age = student.pop("age")  # Remove and return value
+
+# Iterating through dictionaries
+for key in student:
+    print(key, student[key])
+
+for key, value in student.items():
+    print(f"{key}: {value}")
+
+# Dictionary comprehensions
+squares = {x: x**2 for x in range(5)}
+even_squares = {x: x**2 for x in range(10) if x % 2 == 0}</code></pre>
+    
+    <h3>Sets</h3>
+    <pre><code class="language-python"># Creating and using sets
+unique_numbers = {1, 2, 3, 4, 5}
+colors = set(["red", "blue", "green", "red"])  # Duplicates removed
+
+# Set operations
+set1 = {1, 2, 3, 4}
+set2 = {3, 4, 5, 6}
+
+union = set1 | set2        # {1, 2, 3, 4, 5, 6}
+intersection = set1 & set2 # {3, 4}
+difference = set1 - set2   # {1, 2}
+symmetric_diff = set1 ^ set2 # {1, 2, 5, 6}
+
+# Set methods
+set1.add(7)
+set1.remove(1)
+print(2 in set1)  # True</code></pre>
+    
+    <h3>Try It Yourself</h3>
+    <div class="editor-container">
+        <div class="editor-header">
+            <div class="editor-tabs">
+                <button class="tab active" data-tab="python">Python</button>
+            </div>
+            <button class="btn btn-run" onclick="runPythonCode('datastructures')">Run Code <i class="fas fa-play"></i></button>
+        </div>
+        <div class="editor-body">
+            <div class="editor-panel active" id="editor-python-datastructures">
+                <textarea id="python-code-datastructures"># Data Structures Examples
+
+# Example 1: Student management system
+students = []
+
+def add_student(name, age, grades):
+    student = {
+        "name": name,
+        "age": age,
+        "grades": grades,
+        "average": sum(grades) / len(grades)
+    }
+    students.append(student)
+
+def find_top_student():
+    if not students:
+        return None
+    return max(students, key=lambda s: s["average"])
+
+# Add some students
+add_student("Alice", 20, [85, 92, 78, 96])
+add_student("Bob", 19, [76, 84, 88, 92])
+add_student("Charlie", 21, [95, 87, 91, 89])
+
+# Find top student
+top_student = find_top_student()
+print(f"Top student: {top_student['name']} with average {top_student['average']:.2f}")
+
+# Example 2: Word frequency counter
+def count_words(text):
+    words = text.lower().split()
+    # Remove punctuation
+    words = [word.strip('.,!?";') for word in words]
+    
+    # Count frequencies using dictionary
+    frequency = {}
+    for word in words:
+        frequency[word] = frequency.get(word, 0) + 1
+    
+    return frequency
+
+text = "Python is great. Python is powerful. Python is easy to learn."
+word_count = count_words(text)
+
+# Sort by frequency
+sorted_words = sorted(word_count.items(), key=lambda x: x[1], reverse=True)
+print("Word frequencies:")
+for word, count in sorted_words:
+    print(f"{word}: {count}")
+
+# Example 3: Unique elements
+numbers = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4]
+unique_numbers = list(set(numbers))
+print(f"Original: {numbers}")
+print(f"Unique: {unique_numbers}")</textarea>
+            </div>
+        </div>
+    </div>
+    <div class="preview-container">
+        <div class="preview-header">
+            <h3>Output Preview</h3>
+        </div>
+        <div class="preview-content" id="preview-content-datastructures">
+            <p>Click "Run Code" to see the output here.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Lesson 8: File Handling -->
+<section id="filehandling" class="lesson-section" style="display: none;">
+    <h2>8. File Handling</h2>
+    <p>File handling in Python allows you to read from and write to files, which is essential for data persistence and working with external data sources.</p>
+    
+    <h3>Reading Files</h3>
+    <pre><code class="language-python"># Reading entire file
+with open("example.txt", "r") as file:
+    content = file.read()
+    print(content)
+
+# Reading line by line
+with open("example.txt", "r") as file:
+    for line in file:
+        print(line.strip())  # strip() removes newline characters
+
+# Reading all lines into a list
+with open("example.txt", "r") as file:
+    lines = file.readlines()
+    print(lines)
+
+# Reading with error handling
+try:
+    with open("nonexistent.txt", "r") as file:
+        content = file.read()
+except FileNotFoundError:
+    print("File not found!")</code></pre>
+    
+    <h3>Writing Files</h3>
+    <pre><code class="language-python"># Writing to a file (overwrites existing content)
+with open("output.txt", "w") as file:
+    file.write("Hello, World!\n")
+    file.write("This is a new line.")
+
+# Writing multiple lines
+lines = ["Line 1\n", "Line 2\n", "Line 3\n"]
+with open("output.txt", "w") as file:
+    file.writelines(lines)
+
+# Appending to a file
+with open("output.txt", "a") as file:
+    file.write("\nThis line is appended.")
+
+# Writing with print function
+with open("output.txt", "w") as file:
+    print("Hello from print!", file=file)
+    print("Another line", file=file)</code></pre>
+    
+    <h3>Working with Different File Types</h3>
+    <pre><code class="language-python"># Working with CSV files
+import csv
+
+# Writing CSV
+data = [
+    ["Name", "Age", "City"],
+    ["Alice", "25", "New York"],
+    ["Bob", "30", "London"],
+    ["Charlie", "35", "Tokyo"]
+]
+
+with open("people.csv", "w", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerows(data)
+
+# Reading CSV
+with open("people.csv", "r") as file:
+    reader = csv.reader(file)
+    for row in reader:
+        print(row)
+
+# Working with JSON files
+import json
+
+# Writing JSON
+data = {
+    "name": "Alice",
+    "age": 25,
+    "hobbies": ["reading", "swimming", "coding"]
+}
+
+with open("data.json", "w") as file:
+    json.dump(data, file, indent=2)
+
+# Reading JSON
+with open("data.json", "r") as file:
+    loaded_data = json.load(file)
+    print(loaded_data)</code></pre>
+    
+    <h3>Try It Yourself</h3>
+    <div class="editor-container">
+        <div class="editor-header">
+            <div class="editor-tabs">
+                <button class="tab active" data-tab="python">Python</button>
+            </div>
+            <button class="btn btn-run" onclick="runPythonCode('filehandling')">Run Code <i class="fas fa-play"></i></button>
+        </div>
+        <div class="editor-body">
+            <div class="editor-panel active" id="editor-python-filehandling">
+                <textarea id="python-code-filehandling"># File Handling Examples
+
+# Example 1: Simple text file operations
+# First, let's create a sample file
+sample_text = """Python is a powerful programming language.
+It is widely used for web development, data science, and automation.
+Python has a simple and readable syntax.
+It supports multiple programming paradigms."""
+
+with open("sample.txt", "w") as file:
+    file.write(sample_text)
+
+# Now read and analyze the file
+try:
+    with open("sample.txt", "r") as file:
+        content = file.read()
+        lines = content.split('\n')
+        words = content.split()
+        
+        print(f"File content:\n{content}")
+        print(f"\nStatistics:")
+        print(f"Lines: {len(lines)}")
+        print(f"Words: {len(words)}")
+        print(f"Characters: {len(content)}")
+        
+        # Find longest line
+        longest_line = max(lines, key=len)
+        print(f"Longest line: {longest_line}")
+        
+except FileNotFoundError:
+    print("File not found!")
+
+# Example 2: Log file analyzer
+log_entries = [
+    "2023-01-01 10:30: INFO - User login successful",
+    "2023-01-01 11:15: ERROR - Database connection failed",
+    "2023-01-01 12:00: INFO - Data processed successfully",
+    "2023-01-01 13:45: WARNING - Low disk space",
+    "2023-01-01 14:30: ERROR - Invalid user input"
+]
+
+# Write log entries to file
+with open("app.log", "w") as file:
+    for entry in log_entries:
+        file.write(entry + "\n")
+
+# Analyze log file
+error_count = 0
+warning_count = 0
+info_count = 0
+
+with open("app.log", "r") as file:
+    for line in file:
+        if "ERROR" in line:
+            error_count += 1
+        elif "WARNING" in line:
+            warning_count += 1
+        elif "INFO" in line:
+            info_count += 1
+
+print(f"\nLog Analysis:")
+print(f"ERROR entries: {error_count}")
+print(f"WARNING entries: {warning_count}")
+print(f"INFO entries: {info_count}")</textarea>
+            </div>
+        </div>
+    </div>
+    <div class="preview-container">
+        <div class="preview-header">
+            <h3>Output Preview</h3>
+        </div>
+        <div class="preview-content" id="preview-content-filehandling">
+            <p>Click "Run Code" to see the output here.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Lesson 9: Exception Handling -->
+<section id="exceptions" class="lesson-section" style="display: none;">
+    <h2>9. Exception Handling</h2>
+    <p>Exception handling allows you to gracefully handle errors and unexpected situations in your Python programs, preventing crashes and providing better user experience.</p>
+    
+    <h3>Basic Exception Handling</h3>
+    <pre><code class="language-python"># Basic try-except
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+
+# Multiple exceptions
+try:
+    number = int(input("Enter a number: "))
+    result = 10 / number
+except ValueError:
+    print("Invalid input! Please enter a number.")
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+
+# Generic exception
+try:
+    # Some risky operation
+    pass
+except Exception as e:
+    print(f"An error occurred: {e}")
+
+# Else and finally clauses
+try:
+    number = int(input("Enter a number: "))
+except ValueError:
+    print("Invalid input!")
+else:
+    print(f"You entered: {number}")  # Executes if no exception
+finally:
+    print("This always executes")  # Always executes</code></pre>
+    
+    <h3>Raising Exceptions</h3>
+    <pre><code class="language-python"># Raising built-in exceptions
+def validate_age(age):
+    if age < 0:
+        raise ValueError("Age cannot be negative")
+    if age > 150:
+        raise ValueError("Age seems unrealistic")
+    return True
+
+try:
+    validate_age(-5)
+except ValueError as e:
+    print(f"Validation error: {e}")
+
+# Creating custom exceptions
+class CustomError(Exception):
+    pass
+
+class AgeValidationError(Exception):
+    def __init__(self, age, message="Invalid age"):
+        self.age = age
+        self.message = message
+        super().__init__(self.message)
+    
+    def __str__(self):
+        return f"{self.message}: {self.age}"
+
+# Using custom exceptions
+try:
+    age = -5
+    if age < 0:
+        raise AgeValidationError(age)
+except AgeValidationError as e:
+    print(e)</code></pre>
+    
+    <h3>Exception Best Practices</h3>
+    <pre><code class="language-python"># Specific exceptions first
+try:
+    # Some code
+    pass
+except ValueError:  # More specific
+    print("Value error")
+except Exception:   # More general
+    print("General error")
+
+# Don't catch exceptions you can't handle
+def process_data(data):
+    try:
+        return int(data) * 2
+    except ValueError:
+        # Log the error and re-raise
+        print(f"Cannot convert {data} to integer")
+        raise  # Re-raise the same exception
+
+# Context managers for resource cleanup
+# Instead of:
+file = open("data.txt")
+try:
+    content = file.read()
+finally:
+    file.close()
+
+# Use:
+with open("data.txt") as file:
+    content = file.read()
+# File automatically closed</code></pre>
+    
+    <h3>Try It Yourself</h3>
+    <div class="editor-container">
+        <div class="editor-header">
+            <div class="editor-tabs">
+                <button class="tab active" data-tab="python">Python</button>
+            </div>
+            <button class="btn btn-run" onclick="runPythonCode('exceptions')">Run Code <i class="fas fa-play"></i></button>
+        </div>
+        <div class="editor-body">
+            <div class="editor-panel active" id="editor-python-exceptions">
+                <textarea id="python-code-exceptions"># Exception Handling Examples
+
+# Example 1: Calculator with error handling
+def safe_calculator():
+    try:
+        num1 = float(input("Enter first number: "))
+        operator = input("Enter operator (+, -, *, /): ")
+        num2 = float(input("Enter second number: "))
+        
+        if operator == "+":
+            result = num1 + num2
+        elif operator == "-":
+            result = num1 - num2
+        elif operator == "*":
+            result = num1 * num2
+        elif operator == "/":
+            if num2 == 0:
+                raise ZeroDivisionError("Cannot divide by zero")
+            result = num1 / num2
+        else:
+            raise ValueError("Invalid operator")
+        
+        print(f"Result: {result}")
+        
+    except ValueError as e:
+        if "could not convert" in str(e):
+            print("Error: Please enter valid numbers")
+        else:
+            print(f"Error: {e}")
+    except ZeroDivisionError as e:
+        print(f"Error: {e}")
+    except Exception as e:
+        print(f"Unexpected error: {e}")
+    finally:
+        print("Calculation attempt completed")
+
+# Run the calculator
+safe_calculator()
+
+# Example 2: List operations with error handling
+def safe_list_operations():
+    my_list = [1, 2, 3, 4, 5]
+    
+    try:
+        index = int(input("Enter index to access: "))
+        value = my_list[index]
+        print(f"Value at index {index}: {value}")
+        
+        # Try to modify
+        new_value = int(input("Enter new value: "))
+        my_list[index] = new_value
+        print(f"Updated list: {my_list}")
+        
+    except IndexError:
+        print("Error: Index out of range")
+    except ValueError:
+        print("Error: Please enter valid integers")
+    except Exception as e:
+        print(f"Unexpected error: {e}")
+
+# Run list operations
+safe_list_operations()
+
+# Example 3: Custom validation function
+def validate_email(email):
+    if "@" not in email:
+        raise ValueError("Email must contain @ symbol")
+    if "." not in email.split("@")[1]:
+        raise ValueError("Email must contain domain")
+    return True
+
+# Test email validation
+emails = ["user@example.com", "invalid-email", "user@", "@domain.com"]
+
+for email in emails:
+    try:
+        validate_email(email)
+        print(f"{email}: Valid")
+    except ValueError as e:
+        print(f"{email}: {e}")</textarea>
+            </div>
+        </div>
+    </div>
+    <div class="preview-container">
+        <div class="preview-header">
+            <h3>Output Preview</h3>
+        </div>
+        <div class="preview-content" id="preview-content-exceptions">
+            <p>Click "Run Code" to see the output here.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Lesson 10: Object-Oriented Programming -->
+<section id="oop" class="lesson-section" style="display: none;">
+    <h2>10. Object-Oriented Programming</h2>
+    <p>Object-Oriented Programming (OOP) is a programming paradigm that organizes code around objects, which are instances of classes. OOP helps create more modular, reusable, and maintainable code.</p>
+    
+    <h3>Classes and Objects</h3>
+    <pre><code class="language-python"># Defining a class
+class Person:
+    # Class attribute
+    species = "Homo sapiens"
+    
+    # Constructor
+    def __init__(self, name, age):
+        # Instance attributes
+        self.name = name
+        self.age = age
+    
+    # Instance method
+    def introduce(self):
+        return f"Hi, I'm {self.name} and I'm {self.age} years old."
+    
+    # Another instance method
+    def have_birthday(self):
+        self.age += 1
+        return f"Happy birthday! I'm now {self.age} years old."
+
+# Creating objects (instances)
+person1 = Person("Alice", 25)
+person2 = Person("Bob", 30)
+
+# Accessing attributes and methods
+print(person1.name)  # Alice
+print(person2.introduce())  # Hi, I'm Bob and I'm 30 years old.
+print(Person.species)  # Homo sapiens
+
+# Modifying attributes
+person1.have_birthday()  # Happy birthday! I'm now 26 years old.</code></pre>
+    
+    <h3>Encapsulation</h3>
+    <pre><code class="language-python"># Private attributes and methods
+class BankAccount:
+    def __init__(self, owner, initial_balance=0):
+        self.owner = owner
+        self._balance = initial_balance  # Protected attribute
+        self.__account_number = self._generate_account_number()  # Private attribute
+    
+    def _generate_account_number(self):  # Protected method
+        import random
+        return random.randint(100000, 999999)
+    
+    def __validate_amount(self, amount):  # Private method
+        return amount > 0
+    
+    def deposit(self, amount):
+        if self.__validate_amount(amount):
+            self._balance += amount
+            return f"Deposited ${amount}. New balance: ${self._balance}"
+        else:
+            return "Invalid amount"
+    
+    def withdraw(self, amount):
+        if self.__validate_amount(amount) and amount <= self._balance:
+            self._balance -= amount
+            return f"Withdrew ${amount}. New balance: ${self._balance}"
+        else:
+            return "Invalid amount or insufficient funds"
+    
+    def get_balance(self):
+        return self._balance
+    
+    # Property decorator for controlled access
+    @property
+    def account_number(self):
+        return self.__account_number
+    
+    @property
+    def balance(self):
+        return self._balance
+
+# Using the BankAccount class
+account = BankAccount("Alice", 1000)
+print(account.deposit(500))  # Deposited $500. New balance: $1500
+print(account.withdraw(200))  # Withdrew $200. New balance: $1300
+print(account.balance)  # 1300
+# print(account.__account_number)  # This would cause an AttributeError</code></pre>
+    
+    <h3>Inheritance</h3>
+    <pre><code class="language-python"># Base class
+class Animal:
+    def __init__(self, name, species):
+        self.name = name
+        self.species = species
+    
+    def make_sound(self):
+        return "Some generic sound"
+    
+    def info(self):
+        return f"{self.name} is a {self.species}"
+
+# Derived classes
+class Dog(Animal):
+    def __init__(self, name, breed):
+        super().__init__(name, "Dog")
+        self.breed = breed
+    
+    # Method overriding
+    def make_sound(self):
+        return "Woof!"
+    
+    # New method
+    def fetch(self):
+        return f"{self.name} is fetching the ball!"
+
+class Cat(Animal):
+    def __init__(self, name, color):
+        super().__init__(name, "Cat")
+        self.color = color
+    
+    # Method overriding
+    def make_sound(self):
+        return "Meow!"
+    
+    # New method
+    def climb(self):
+        return f"{self.name} is climbing a tree!"
+
+# Using inherited classes
+dog = Dog("Buddy", "Golden Retriever")
+cat = Cat("Whiskers", "Orange")
+
+print(dog.info())  # Buddy is a Dog
+print(dog.make_sound())  # Woof!
+print(dog.fetch())  # Buddy is fetching the ball!
+
+print(cat.info())  # Whiskers is a Cat
+print(cat.make_sound())  # Meow!
+print(cat.climb())  # Whiskers is climbing a tree!</code></pre>
+    
+    <h3>Polymorphism</h3>
+    <pre><code class="language-python"># Polymorphism example
+class Shape:
+    def area(self):
+        pass
+    
+    def perimeter(self):
+        pass
+
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+    
+    def area(self):
+        return self.width * self.height
+    
+    def perimeter(self):
+        return 2 * (self.width + self.height)
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+    
+    def area(self):
+        import math
+        return math.pi * self.radius ** 2
+    
+    def perimeter(self):
+        import math
+        return 2 * math.pi * self.radius
+
+# Polymorphism in action
+shapes = [
+    Rectangle(5, 3),
+    Circle(4),
+    Rectangle(2, 8),
+    Circle(3)
+]
+
+for shape in shapes:
+    print(f"Area: {shape.area():.2f}, Perimeter: {shape.perimeter():.2f}")</code></pre>
+    
+    <h3>Try It Yourself</h3>
+    <div class="editor-container">
+        <div class="editor-header">
+            <div class="editor-tabs">
+                <button class="tab active" data-tab="python">Python</button>
+            </div>
+            <button class="btn btn-run" onclick="runPythonCode('oop')">Run Code <i class="fas fa-play"></i></button>
+        </div>
+        <div class="editor-body">
+            <div class="editor-panel active" id="editor-python-oop">
+                <textarea id="python-code-oop"># Object-Oriented Programming Examples
+
+# Example 1: Vehicle class hierarchy
+class Vehicle:
+    def __init__(self, brand, model, year):
+        self.brand = brand
+        self.model = model
+        self.year = year
+        self._mileage = 0
+    
+    def start_engine(self):
+        return f"{self.brand} {self.model} engine started!"
+    
+    def drive(self, miles):
+        self._mileage += miles
+        return f"Drove {miles} miles. Total mileage: {self._mileage}"
+    
+    def get_info(self):
+        return f"{self.year} {self.brand} {self.model}"
+
+class Car(Vehicle):
+    def __init__(self, brand, model, year, doors):
+        super().__init__(brand, model, year)
+        self.doors = doors
+    
+    def honk(self):
+        return "Beep beep!"
+
+class Motorcycle(Vehicle):
+    def __init__(self, brand, model, year, engine_size):
+        super().__init__(brand, model, year)
+        self.engine_size = engine_size
+    
+    def wheelie(self):
+        return "Popping a wheelie!"
+
+# Create vehicles
+car = Car("Toyota", "Camry", 2022, 4)
+motorcycle = Motorcycle("Harley-Davidson", "Street 750", 2021, "750cc")
+
+# Test the vehicles
+print(car.get_info())
+print(car.start_engine())
+print(car.drive(150))
+print(car.honk())
+
+print("\n" + motorcycle.get_info())
+print(motorcycle.start_engine())
+print(motorcycle.drive(200))
+print(motorcycle.wheelie())
+
+# Example 2: Library management system
+class Book:
+    def __init__(self, title, author, isbn):
+        self.title = title
+        self.author = author
+        self.isbn = isbn
+        self.is_borrowed = False
+        self.borrowed_by = None
+    
+    def borrow(self, borrower):
+        if not self.is_borrowed:
+            self.is_borrowed = True
+            self.borrowed_by = borrower
+            return f"{self.title} borrowed by {borrower}"
+        else:
+            return f"{self.title} is already borrowed by {self.borrowed_by}"
+    
+    def return_book(self):
+        if self.is_borrowed:
+            borrower = self.borrowed_by
+            self.is_borrowed = False
+            self.borrowed_by = None
+            return f"{self.title} returned by {borrower}"
+        else:
+            return f"{self.title} was not borrowed"
+    
+    def __str__(self):
+        status = "Borrowed" if self.is_borrowed else "Available"
+        return f"{self.title} by {self.author} ({status})"
+
+# Create books and test borrowing
+book1 = Book("1984", "George Orwell", "978-0451524935")
+book2 = Book("To Kill a Mockingbird", "Harper Lee", "978-0061120084")
+
+print(book1)
+print(book1.borrow("Alice"))
+print(book1)
+print(book2.borrow("Bob"))
+print(book1.return_book())
+print(book1)</textarea>
+            </div>
+        </div>
+    </div>
+    <div class="preview-container">
+        <div class="preview-header">
+            <h3>Output Preview</h3>
+        </div>
+        <div class="preview-content" id="preview-content-oop">
+            <p>Click "Run Code" to see the output here.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Lesson 11: Python Libraries -->
+<section id="libraries" class="lesson-section" style="display: none;">
+    <h2>11. Python Libraries</h2>
+    <p>Python's extensive standard library and vast ecosystem of third-party packages make it a powerful language for various applications. Understanding how to use these libraries is essential for productive Python development.</p>
+    
+    <h3>Standard Library Overview</h3>
+    <pre><code class="language-python"># os - Operating system interface
+import os
+current_dir = os.getcwd()
+print(f"Current directory: {current_dir}")
+files = os.listdir(".")
+print(f"Files in current directory: {files}")
+
+# Create directory
+# os.mkdir("new_directory")
+
+# Path manipulation
+import os.path
+filepath = "/home/user/documents/file.txt"
+print(f"Directory: {os.path.dirname(filepath)}")
+print(f"Filename: {os.path.basename(filepath)}")
+print(f"Exists: {os.path.exists(filepath)}")
+
+# math - Mathematical operations
+import math
+print(f"Pi: {math.pi}")
+print(f"Square root of 16: {math.sqrt(16)}")
+print(f"Sine of 90 degrees: {math.sin(math.radians(90))}")
+print(f"Logarithm of 10: {math.log10(10)}")
+
+# datetime - Date and time operations
+from datetime import datetime, timedelta
+now = datetime.now()
+print(f"Current time: {now}")
+print(f"Today's date: {now.date()}")
+print(f"Current time: {now.time()}")
+
+# Add 7 days
+future_date = now + timedelta(days=7)
+print(f"One week from now: {future_date}")
+
+# random - Random number generation
+import random
+print(f"Random integer (1-10): {random.randint(1, 10)}")
+print(f"Random float (0-1): {random.random()}")
+colors = ["red", "blue", "green", "yellow"]
+print(f"Random color: {random.choice(colors)}")
+random.shuffle(colors)
+print(f"Shuffled colors: {colors}")
+
+# json - JSON handling
+import json
+data = {
+    "name": "Alice",
+    "age": 25,
+    "hobbies": ["reading", "swimming"]
+}
+json_string = json.dumps(data, indent=2)
+print("JSON string:")
+print(json_string)
+
+parsed_data = json.loads(json_string)
+print(f"Parsed name: {parsed_data['name']}")</code></pre>
+    
+    <h3>Popular Third-Party Libraries</h3>
+    <pre><code class="language-python"># requests - HTTP library (install with: pip install requests)
+# import requests
+# response = requests.get("https://api.github.com/users/octocat")
+# if response.status_code == 200:
+#     data = response.json()
+#     print(f"GitHub user: {data['name']}")
+
+# numpy - Numerical computing (install with: pip install numpy)
+# import numpy as np
+# array = np.array([1, 2, 3, 4, 5])
+# print(f"Array: {array}")
+# print(f"Mean: {np.mean(array)}")
+# print(f"Standard deviation: {np.std(array)}")
+
+# matplotlib - Plotting library (install with: pip install matplotlib)
+# import matplotlib.pyplot as plt
+# x = [1, 2, 3, 4, 5]
+# y = [2, 4, 1, 5, 3]
+# plt.plot(x, y)
+# plt.xlabel("X values")
+# plt.ylabel("Y values")
+# plt.title("Sample Plot")
+# plt.show()
+
+# pandas - Data analysis (install with: pip install pandas)
+# import pandas as pd
+# data = {
+#     "Name": ["Alice", "Bob", "Charlie"],
+#     "Age": [25, 30, 35],
+#     "City": ["New York", "London", "Tokyo"]
+# }
+# df = pd.DataFrame(data)
+# print(df)
+# print(df.describe())</code></pre>
+    
+    <h3>Virtual Environments</h3>
+    <pre><code class="language-bash"># Creating a virtual environment
+# python -m venv myenv
+
+# Activating virtual environment (Windows)
+# myenv\Scripts\activate
+
+# Activating virtual environment (macOS/Linux)
+# source myenv/bin/activate
+
+# Installing packages
+# pip install requests numpy pandas
+
+# Listing installed packages
+# pip list
+
+# Creating requirements file
+# pip freeze > requirements.txt
+
+# Installing from requirements file
+# pip install -r requirements.txt
+
+# Deactivating virtual environment
+# deactivate</code></pre>
+    
+    <h3>Try It Yourself</h3>
+    <div class="editor-container">
+        <div class="editor-header">
+            <div class="editor-tabs">
+                <button class="tab active" data-tab="python">Python</button>
+            </div>
+            <button class="btn btn-run" onclick="runPythonCode('libraries')">Run Code <i class="fas fa-play"></i></button>
+        </div>
+        <div class="editor-body">
+            <div class="editor-panel active" id="editor-python-libraries">
+                <textarea id="python-code-libraries"># Python Libraries Examples
+
+# Example 1: File statistics using os and datetime
+import os
+import datetime
+
+def get_file_info(directory="."):
+    """Get information about files in a directory."""
+    if not os.path.exists(directory):
+        print(f"Directory {directory} does not exist")
+        return
+    
+    print(f"Files in directory: {directory}")
+    print("-" * 50)
+    
+    for filename in os.listdir(directory):
+        filepath = os.path.join(directory, filename)
+        if os.path.isfile(filepath):
+            stat_info = os.stat(filepath)
+            size = stat_info.st_size
+            modified_time = datetime.datetime.fromtimestamp(stat_info.st_mtime)
+            
+            print(f"Name: {filename}")
+            print(f"Size: {size} bytes")
+            print(f"Modified: {modified_time}")
+            print("-" * 30)
+
+# Get current directory info
+get_file_info()
+
+# Example 2: Simple math operations and statistics
+import math
+import random
+
+def analyze_numbers(numbers):
+    """Analyze a list of numbers."""
+    print(f"Numbers: {numbers}")
+    print(f"Sum: {sum(numbers)}")
+    print(f"Average: {sum(numbers) / len(numbers):.2f}")
+    print(f"Maximum: {max(numbers)}")
+    print(f"Minimum: {min(numbers)}")
+    print(f"Square root of sum: {math.sqrt(sum(numbers)):.2f}")
+    
+    # Trigonometric example
+    angle = 45
+    print(f"Sin({angle}°): {math.sin(math.radians(angle)):.3f}")
+    print(f"Cos({angle}°): {math.cos(math.radians(angle)):.3f}")
+
+# Analyze a list of random numbers
+random_numbers = [random.randint(1, 100) for _ in range(10)]
+analyze_numbers(random_numbers)
+
+# Example 3: Working with dates
+from datetime import datetime, timedelta
+
+def date_calculator():
+    """Simple date calculator."""
+    today = datetime.now()
+    print(f"Today: {today.strftime('%Y-%m-%d')}")
+    
+    # Calculate future dates
+    for days in [10, 30, 90]:
+        future_date = today + timedelta(days=days)
+        print(f"{days} days from now: {future_date.strftime('%Y-%m-%d')}")
+    
+    # Calculate age
+    birth_date = datetime(1990, 5, 15)
+    age = today.year - birth_date.year
+    if today < birth_date.replace(year=today.year):
+        age -= 1
+    print(f"Age (if born on {birth_date.strftime('%Y-%m-%d')}): {age} years")
+
+date_calculator()
+
+# Example 4: JSON data handling
+import json
+
+def process_student_data():
+    """Process student data in JSON format."""
+    students_json = '''
+    [
+        {"name": "Alice", "age": 20, "grades": [85, 92, 78]},
+        {"name": "Bob", "age": 22, "grades": [76, 84, 88]},
+        {"name": "Charlie", "age": 19, "grades": [95, 87, 91]}
+    ]
+    '''
+    
+    students = json.loads(students_json)
+    
+    print("Student Information:")
+    print("=" * 40)
+    
+    total_students = len(students)
+    total_age = 0
+    all_grades = []
+    
+    for student in students:
+        name = student["name"]
+        age = student["age"]
+        grades = student["grades"]
+        average_grade = sum(grades) / len(grades)
+        
+        total_age += age
+        all_grades.extend(grades)
+        
+        print(f"Name: {name}")
+        print(f"Age: {age}")
+        print(f"Grades: {grades}")
+        print(f"Average: {average_grade:.2f}")
+        print("-" * 30)
+    
+    print(f"Overall Statistics:")
+    print(f"Total Students: {total_students}")
+    print(f"Average Age: {total_age / total_students:.1f}")
+    print(f"Overall Grade Average: {sum(all_grades) / len(all_grades):.2f}")
+
+process_student_data()</textarea>
+            </div>
+        </div>
+    </div>
+    <div class="preview-container">
+        <div class="preview-header">
+            <h3>Output Preview</h3>
+        </div>
+        <div class="preview-content" id="preview-content-libraries">
+            <p>Click "Run Code" to see the output here.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Lesson 12: Mini Project - Guessing Game -->
+<section id="project" class="lesson-section" style="display: none;">
+    <h2>12. Mini Project: Guessing Game</h2>
+    <p>In this lesson, we'll build a complete interactive guessing game using all the Python concepts we've learned. This project will incorporate functions, data structures, file handling, exception handling, and object-oriented programming.</p>
+    
+    <h3>Project Overview</h3>
+    <p>We'll create a number guessing game with the following features:</p>
+    <ul>
+        <li>Random number generation</li>
+        <li>User input validation</li>
+        <li>Attempt tracking</li>
+        <li>Score calculation</li>
+        <li>High score persistence using file handling</li>
+        <li>Multiple difficulty levels</li>
+        <li>Game statistics</li>
+    </ul>
+    
+    <h3>Complete Project Code</h3>
+    <pre><code class="language-python">import random
+import json
+import os
+from datetime import datetime
+
+class GuessingGame:
+    def __init__(self):
+        self.high_scores_file = "high_scores.json"
+        self.high_scores = self.load_high_scores()
+        self.current_score = 0
+        self.games_played = 0
+        self.games_won = 0
+    
+    def load_high_scores(self):
+        """Load high scores from file."""
+        if os.path.exists(self.high_scores_file):
+            try:
+                with open(self.high_scores_file, 'r') as file:
+                    return json.load(file)
+            except (json.JSONDecodeError, IOError):
+                return {}
+        return {}
+    
+    def save_high_scores(self):
+        """Save high scores to file."""
+        try:
+            with open(self.high_scores_file, 'w') as file:
+                json.dump(self.high_scores, file, indent=2)
+        except IOError:
+            print("Could not save high scores to file.")
+    
+    def get_high_score(self, difficulty):
+        """Get high score for a difficulty level."""
+        return self.high_scores.get(difficulty, 0)
+    
+    def update_high_score(self, difficulty, score):
+        """Update high score if current score is better."""
+        current_high = self.get_high_score(difficulty)
+        if score > current_high:
+            self.high_scores[difficulty] = score
+            self.save_high_scores()
+            return True
+        return False
+    
+    def select_difficulty(self):
+        """Let player select difficulty level."""
+        print("\nSelect Difficulty:")
+        print("1. Easy (1-50, 10 attempts)")
+        print("2. Medium (1-100, 7 attempts)")
+        print("3. Hard (1-200, 5 attempts)")
+        
+        while True:
+            try:
+                choice = int(input("Enter choice (1-3): "))
+                if choice == 1:
+                    return 50, 10, "Easy"
+                elif choice == 2:
+                    return 100, 7, "Medium"
+                elif choice == 3:
+                    return 200, 5, "Hard"
+                else:
+                    print("Please enter 1, 2, or 3.")
+            except ValueError:
+                print("Please enter a valid number.")
+    
+    def play_round(self):
+        """Play a single round of the game."""
+        self.games_played += 1
+        max_number, max_attempts, difficulty = self.select_difficulty()
+        
+        # Generate random number
+        secret_number = random.randint(1, max_number)
+        attempts = 0
+        guessed_correctly = False
+        
+        print(f"\nI'm thinking of a number between 1 and {max_number}")
+        print(f"You have {max_attempts} attempts to guess it!")
+        print(f"Current High Score ({difficulty}): {self.get_high_score(difficulty)}")
+        
+        while attempts < max_attempts and not guessed_correctly:
+            try:
+                guess = int(input(f"\nAttempt {attempts + 1}/{max_attempts}. Enter your guess: "))
+                
+                if guess < 1 or guess > max_number:
+                    print(f"Please enter a number between 1 and {max_number}")
+                    continue
+                
+                attempts += 1
+                
+                if guess == secret_number:
+                    guessed_correctly = True
+                    self.games_won += 1
+                    self.current_score = (max_attempts - attempts + 1) * 10
+                    
+                    print(f"\n🎉 Congratulations! You guessed it!")
+                    print(f"The number was {secret_number}")
+                    print(f"It took you {attempts} attempts")
+                    print(f"Your score: {self.current_score}")
+                    
+                    # Update high score
+                    if self.update_high_score(difficulty, self.current_score):
+                        print("🏆 New high score!")
+                    
+                elif guess < secret_number:
+                    print("Too low! Try a higher number.")
+                else:
+                    print("Too high! Try a lower number.")
+                    
+            except ValueError:
+                print("Please enter a valid number.")
+        
+        if not guessed_correctly:
+            print(f"\n😞 Game Over! The number was {secret_number}")
+            self.current_score = 0
+        
+        return guessed_correctly
+    
+    def show_statistics(self):
+        """Show game statistics."""
+        if self.games_played == 0:
+            print("No games played yet!")
+            return
+        
+        win_rate = (self.games_won / self.games_played) * 100
+        print(f"\n📊 Game Statistics:")
+        print(f"Games Played: {self.games_played}")
+        print(f"Games Won: {self.games_won}")
+        print(f"Win Rate: {win_rate:.1f}%")
+        
+        print(f"\n🏆 High Scores:")
+        for difficulty, score in self.high_scores.items():
+            print(f"{difficulty}: {score}")
+    
+    def play(self):
+        """Main game loop."""
+        print("🎯 Welcome to the Number Guessing Game!")
+        
+        while True:
+            print("\n" + "="*40)
+            print("1. Play Game")
+            print("2. View Statistics")
+            print("3. Quit")
+            
+            try:
+                choice = int(input("Enter your choice (1-3): "))
+                
+                if choice == 1:
+                    self.play_round()
+                elif choice == 2:
+                    self.show_statistics()
+                elif choice == 3:
+                    print("Thanks for playing! Goodbye! 👋")
+                    break
+                else:
+                    print("Please enter 1, 2, or 3.")
+                    
+            except ValueError:
+                print("Please enter a valid number.")
+
+# Run the game
+if __name__ == "__main__":
+    game = GuessingGame()
+    game.play()</code></pre>
+    
+    <h3>Try It Yourself</h3>
+    <div class="editor-container">
+        <div class="editor-header">
+            <div class="editor-tabs">
+                <button class="tab active" data-tab="python">Python</button>
+            </div>
+            <button class="btn btn-run" onclick="runPythonCode('project')">Run Code <i class="fas fa-play"></i></button>
+        </div>
+        <div class="editor-body">
+            <div class="editor-panel active" id="editor-python-project">
+                <textarea id="python-code-project">import random
+
+# Simplified version of the guessing game for the editor
+def simple_guessing_game():
+    """Simplified guessing game for demonstration."""
+    print("🎯 Welcome to the Simple Guessing Game!")
+    print("I'm thinking of a number between 1 and 20")
+    
+    secret_number = random.randint(1, 20)
+    attempts = 0
+    max_attempts = 5
+    
+    while attempts < max_attempts:
+        try:
+            guess = int(input(f"\nAttempt {attempts + 1}/{max_attempts}. Enter your guess: "))
+            attempts += 1
+            
+            if guess == secret_number:
+                print(f"\n🎉 Congratulations! You guessed it in {attempts} attempts!")
+                print(f"The number was {secret_number}")
+                return
+            elif guess < secret_number:
+                print("Too low! Try a higher number.")
+            else:
+                print("Too high! Try a lower number.")
+                
+        except ValueError:
+            print("Please enter a valid number.")
+            attempts -= 1  # Don't count invalid input as an attempt
+    
+    print(f"\n😞 Game Over! The number was {secret_number}")
+
+# Run the simplified game
+simple_guessing_game()
+
+# Additional example: Rock Paper Scissors game
+def rock_paper_scissors():
+    """Simple Rock Paper Scissors game."""
+    print("\n🎮 Rock Paper Scissors Game!")
+    
+    choices = ["rock", "paper", "scissors"]
+    computer_choice = random.choice(choices)
+    
+    while True:
+        player_choice = input("Enter your choice (rock/paper/scissors) or 'quit' to exit: ").lower()
+        
+        if player_choice == 'quit':
+            print("Thanks for playing!")
+            break
+            
+        if player_choice not in choices:
+            print("Invalid choice. Please choose rock, paper, or scissors.")
+            continue
+        
+        print(f"Computer chose: {computer_choice}")
+        print(f"You chose: {player_choice}")
+        
+        if player_choice == computer_choice:
+            print("It's a tie!")
+        elif (player_choice == "rock" and computer_choice == "scissors") or \
+             (player_choice == "paper" and computer_choice == "rock") or \
+             (player_choice == "scissors" and computer_choice == "paper"):
+            print("🎉 You win!")
+        else:
+            print("💻 Computer wins!")
+        
+        # Computer makes a new choice for next round
+        computer_choice = random.choice(choices)
+
+# Uncomment to play Rock Paper Scissors
+# rock_paper_scissors()</textarea>
+            </div>
+        </div>
+    </div>
+    <div class="preview-container">
+        <div class="preview-header">
+            <h3>Output Preview</h3>
+        </div>
+        <div class="preview-content" id="preview-content-project">
+            <p>Click "Run Code" to see the output here.</p>
+        </div>
+    </div>
+</section>
+
+                <!-- Navigation for lessons -->
+                <div class="lesson-footer">
+                    <div class="lesson-navigation">
+                        <button class="btn btn-secondary" disabled><i class="fas fa-arrow-left"></i> Previous</button>
+                        <button class="btn btn-primary" onclick="nextLesson()">Next <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3><i class="fas fa-code"></i> CodeMaster</h3>
+                    <p>Learn to code interactively with our hands-on tutorials and real-time editor.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../courses.html">Courses</a></li>
+                        <li><a href="../tutorial.html">Tutorials</a></li>
+                        <li><a href="../quiz.html">Quiz</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="../about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Subscribe</h4>
+                    <p>Get the latest updates and news.</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 CodeMaster. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="../js/editor.js"></script>
+    <script src="../js/progress.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        // Lesson navigation
+        let currentLesson = 0;
+        const lessons = document.querySelectorAll('.lesson-section');
+        const lessonItems = document.querySelectorAll('.lesson-item');
+        
+        function showLesson(index) {
+            // Hide all lessons
+            lessons.forEach(lesson => {
+                lesson.style.display = 'none';
+            });
+            
+            // Show current lesson
+            if (lessons[index]) {
+                lessons[index].style.display = 'block';
+            }
+            
+            // Update sidebar
+            lessonItems.forEach((item, i) => {
+                if (i === index) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+            
+            // Update progress
+            const progressPercent = ((index + 1) / lessons.length) * 100;
+            document.querySelector('.progress').style.width = `${progressPercent}%`;
+            document.querySelector('.progress-text').textContent = `${index + 1}/${lessons.length} lessons completed`;
+            
+            // Update navigation buttons
+            const prevBtn = document.querySelector('.lesson-navigation .btn-secondary');
+            const nextBtn = document.querySelector('.lesson-navigation .btn-primary');
+            
+            if (index === 0) {
+                prevBtn.disabled = true;
+            } else {
+                prevBtn.disabled = false;
+                prevBtn.onclick = () => prevLesson();
+            }
+            
+            if (index === lessons.length - 1) {
+                nextBtn.innerHTML = 'Complete Course <i class="fas fa-check"></i>';
+            } else {
+                nextBtn.innerHTML = 'Next <i class="fas fa-arrow-right"></i>';
+                nextBtn.onclick = () => nextLesson();
+            }
+            
+            currentLesson = index;
+        }
+        
+        function nextLesson() {
+            if (currentLesson < lessons.length - 1) {
+                showLesson(currentLesson + 1);
+            }
+        }
+        
+        function prevLesson() {
+            if (currentLesson > 0) {
+                showLesson(currentLesson - 1);
+            }
+        }
+        
+        // Initialize first lesson
+        document.addEventListener('DOMContentLoaded', () => {
+            showLesson(0);
+            
+            // Add click events to lesson items
+            lessonItems.forEach((item, index) => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showLesson(index);
+                });
+            });
+        });
+        
+        // Run Python code function (simulated)
+        function runPythonCode(lessonId) {
+            const pythonCode = document.getElementById(`python-code-${lessonId}`).value;
+            const previewContent = document.getElementById(`preview-content-${lessonId}`);
+            
+            // Simulate Python code execution
+            previewContent.innerHTML = "<p>Running Python code simulation...</p>";
+            
+            // In a real implementation, you would use something like Skulpt or Brython
+            // For now, we'll just show the code that would be executed
+            setTimeout(() => {
+                previewContent.innerHTML = `
+                    <p><strong>Python Code:</strong></p>
+                    <pre><code class="language-python">${pythonCode}</code></pre>
+                    <p><strong>Output:</strong></p>
+                    <p>This is a simulation. In a real implementation, this would execute the Python code using a JavaScript-based Python interpreter like Skulpt or Brython.</p>
+                `;
+                Prism.highlightAll();
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

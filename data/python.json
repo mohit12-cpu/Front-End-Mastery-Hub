@@ -1,0 +1,219 @@
+{
+  "course": "Python",
+  "description": "Learn Python programming concepts through interactive examples.",
+  "lessons": [
+    {
+      "id": 1,
+      "title": "Introduction to Python",
+      "content": "Get started with Python programming language."
+    },
+    {
+      "id": 2,
+      "title": "Python Syntax and Variables",
+      "content": "Learn Python syntax and how to work with variables."
+    },
+    {
+      "id": 3,
+      "title": "Data Types and Operators",
+      "content": "Understand Python data types and operators."
+    },
+    {
+      "id": 4,
+      "title": "Control Flow",
+      "content": "Use conditional statements and loops in Python."
+    },
+    {
+      "id": 5,
+      "title": "Loops",
+      "content": "Master different types of loops in Python."
+    },
+    {
+      "id": 6,
+      "title": "Functions and Modules",
+      "content": "Create reusable code with functions and modules."
+    },
+    {
+      "id": 7,
+      "title": "Data Structures",
+      "content": "Work with lists, tuples, dictionaries, and sets."
+    },
+    {
+      "id": 8,
+      "title": "File Handling",
+      "content": "Read from and write to files in Python."
+    },
+    {
+      "id": 9,
+      "title": "Exception Handling",
+      "content": "Handle errors gracefully with exception handling."
+    },
+    {
+      "id": 10,
+      "title": "Object-Oriented Programming",
+      "content": "Implement object-oriented programming concepts in Python."
+    },
+    {
+      "id": 11,
+      "title": "Python Libraries",
+      "content": "Work with popular Python libraries."
+    },
+    {
+      "id": 12,
+      "title": "Mini Project: Guessing Game",
+      "content": "Build a complete guessing game using Python."
+    },
+    {
+      "id": 13,
+      "title": "List Comprehensions",
+      "content": "Create concise and efficient lists with list comprehensions."
+    },
+    {
+      "id": 14,
+      "title": "File I/O and Exception Handling",
+      "content": "Advanced file operations and robust error handling."
+    },
+    {
+      "id": 15,
+      "title": "Functions, Arguments, and Lambda",
+      "content": "Master function parameters, arguments, and lambda functions."
+    },
+    {
+      "id": 16,
+      "title": "OOP (Classes, Objects, Inheritance)",
+      "content": "Deep dive into object-oriented programming concepts."
+    },
+    {
+      "id": 17,
+      "title": "Working with Modules and Packages",
+      "content": "Organize code with modules and packages effectively."
+    },
+    {
+      "id": 18,
+      "title": "Dictionaries and Sets Deep Dive",
+      "content": "Explore advanced features of dictionaries and sets."
+    },
+    {
+      "id": 19,
+      "title": "Virtual Environments (concept only)",
+      "content": "Understand virtual environments for project isolation."
+    },
+    {
+      "id": 20,
+      "title": "Data Visualization (basic overview)",
+      "content": "Introduction to data visualization with Python libraries."
+    },
+    {
+      "id": 21,
+      "title": "Mini Project: Password Generator",
+      "content": "Create a secure password generator application."
+    },
+    {
+      "id": 22,
+      "title": "Mini Project: Guess the Number Game",
+      "content": "Enhance the guessing game with advanced Python features."
+    },
+    {
+      "id": 23,
+      "title": "Mini Project: Expense Tracker",
+      "content": "Build a complete expense tracking application."
+    },
+    {
+      "id": 24,
+      "title": "Data Structures Deep Dive",
+      "content": "Deep dive into advanced data structures like stacks, queues, linked lists, and trees."
+    },
+    {
+      "id": 25,
+      "title": "File Reading/Writing Simulation",
+      "content": "Simulate file operations in the browser environment using JavaScript-based Python interpreters."
+    },
+    {
+      "id": 26,
+      "title": "Exception Handling and Logging",
+      "content": "Implement robust error handling and logging mechanisms for better debugging and monitoring."
+    },
+    {
+      "id": 27,
+      "title": "OOP — Inheritance, Polymorphism, Encapsulation",
+      "content": "Master the three pillars of object-oriented programming with practical examples."
+    },
+    {
+      "id": 28,
+      "title": "List Comprehensions & Generators",
+      "content": "Create efficient and readable code using list comprehensions and generator expressions."
+    },
+    {
+      "id": 29,
+      "title": "Modules & Libraries Overview (os, random, datetime)",
+      "content": "Explore commonly used Python standard library modules for system operations, randomness, and time handling."
+    },
+    {
+      "id": 30,
+      "title": "Functions & Recursion",
+      "content": "Master function design patterns and recursive algorithms for problem-solving."
+    },
+    {
+      "id": 31,
+      "title": "Basic Data Visualization (concept only)",
+      "content": "Understand data visualization concepts and libraries like matplotlib (simulated in browser)."
+    },
+    {
+      "id": 32,
+      "title": "Regex in Python",
+      "content": "Use regular expressions for pattern matching and text processing in Python."
+    },
+    {
+      "id": 33,
+      "title": "Mini Project: BMI Calculator",
+      "content": "Create a BMI calculator with input validation and health recommendations."
+    },
+    {
+      "id": 34,
+      "title": "Mini Project: Password Generator",
+      "content": "Build an advanced password generator with customizable options and security features."
+    },
+    {
+      "id": 35,
+      "title": "Mini Project: Quiz Game",
+      "content": "Develop a complete quiz game with multiple categories, scoring, and persistent high scores."
+    }
+  ],
+  "quiz": {
+    "title": "Python Final Quiz",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Which keyword is used to define a function in Python?",
+        "options": [
+          "function",
+          "def",
+          "fun",
+          "define"
+        ],
+        "correct": 1
+      },
+      {
+        "id": 2,
+        "question": "Which data type is mutable in Python?",
+        "options": [
+          "Tuple",
+          "String",
+          "List",
+          "Integer"
+        ],
+        "correct": 2
+      },
+      {
+        "id": 3,
+        "question": "How do you start a comment in Python?",
+        "options": [
+          "//",
+          "/*",
+          "#",
+          "<!--"
+        ],
+        "correct": 2
+      }
+    ]
+  }
+}

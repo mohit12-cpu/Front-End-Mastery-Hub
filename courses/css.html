@@ -1,0 +1,3026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Course - CodeMaster</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/courses.css">
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h2><i class="fas fa-code"></i> CodeMaster</h2>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../courses.html">Courses</a></li>
+                    <li><a href="../tutorial.html">Tutorials</a></li>
+                    <li><a href="../quiz.html">Quiz</a></li>
+                    <li><a href="../courses/projects.html">Projects</a></li>
+                    <li><a href="../dashboard.html">Dashboard</a></li>
+                    <li><a href="../profile.html">Profile</a></li>
+                    <li><a href="../settings.html">Settings</a></li>
+                    <li><a href="../help.html">Help</a></li>
+                    <li><a href="../about.html">About</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="btn btn-primary">Sign Up</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">Home</a> / <a href="../courses.html">Courses</a> / <span>CSS</span>
+        </div>
+    </section>
+
+    <div class="tutorial-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>CSS Course</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 0%;"></div>
+                </div>
+                <p class="progress-text">0/13 lessons completed</p>
+            </div>
+            <ul class="lessons-list">
+                <li class="lesson-item">
+                    <a href="#intro">
+                        <span class="lesson-number">1</span>
+                        <span class="lesson-title">Introduction to CSS</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#syntax">
+                        <span class="lesson-number">2</span>
+                        <span class="lesson-title">CSS Syntax and Selectors</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#colors">
+                        <span class="lesson-number">3</span>
+                        <span class="lesson-title">Colors, Fonts, and Text</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#boxmodel">
+                        <span class="lesson-number">4</span>
+                        <span class="lesson-title">Box Model and Spacing</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#flexbox">
+                        <span class="lesson-number">5</span>
+                        <span class="lesson-title">Flexbox Layout</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#grid">
+                        <span class="lesson-number">6</span>
+                        <span class="lesson-title">Grid Layout</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#backgrounds">
+                        <span class="lesson-number">7</span>
+                        <span class="lesson-title">Backgrounds and Borders</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#transitions">
+                        <span class="lesson-number">8</span>
+                        <span class="lesson-title">Transitions and Animations</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#pseudo">
+                        <span class="lesson-number">9</span>
+                        <span class="lesson-title">Pseudo-classes and Elements</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#responsive">
+                        <span class="lesson-number">10</span>
+                        <span class="lesson-title">Responsive Design</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#variables">
+                        <span class="lesson-number">11</span>
+                        <span class="lesson-title">CSS Variables</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#project">
+                        <span class="lesson-number">12</span>
+                        <span class="lesson-title">Mini Project: Landing Page</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="css-quiz.html">
+                        <span class="lesson-number">13</span>
+                        <span class="lesson-title">Final Quiz</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="tutorial-content">
+            <div class="lesson-header">
+                <h1>CSS Course</h1>
+                <div class="lesson-navigation">
+                    <button class="btn btn-secondary" disabled><i class="fas fa-arrow-left"></i> Previous</button>
+                    <button class="btn btn-primary" onclick="nextLesson()">Next <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <div class="lesson-body">
+                <!-- Lesson 1: Introduction to CSS -->
+                <section id="intro" class="lesson-section">
+                    <h2>1. Introduction to CSS</h2>
+                    <p>CSS (Cascading Style Sheets) is used to style and layout web pages — for example, to alter the font, color, size, and spacing of your content, split it into multiple columns, or add animations and other decorative features.</p>
+                    
+                    <h3>What is CSS?</h3>
+                    <p>CSS is a stylesheet language that describes how HTML elements should be displayed on screen, paper, or in other media.</p>
+                    
+                    <h3>Ways to Add CSS</h3>
+                    <p>There are three ways to add CSS to HTML:</p>
+                    <ol>
+                        <li><strong>Inline CSS</strong> - Using the style attribute in HTML elements</li>
+                        <li><strong>Internal CSS</strong> - Using a &lt;style&gt; element in the &lt;head&gt; section</li>
+                        <li><strong>External CSS</strong> - Using a &lt;link&gt; element to link to an external CSS file</li>
+                    </ol>
+                    
+                    <h3>Example</h3>
+                    <pre><code class="language-css">/* External CSS file */
+body {
+    background-color: lightblue;
+}
+
+h1 {
+    color: navy;
+    margin-left: 20px;
+}</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                                <button class="tab" data-tab="css">CSS</button>
+                            </div>
+                            <button class="btn btn-run" onclick="runCode('intro')">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-intro">
+                                <textarea id="html-code-intro">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;CSS Introduction&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;My First Heading&lt;/h1&gt;
+    &lt;p&gt;My first paragraph.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                            <div class="editor-panel" id="editor-css-intro">
+                                <textarea id="css-code-intro">body {
+    background-color: lightblue;
+}
+
+h1 {
+    color: navy;
+    margin-left: 20px;
+}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-intro" title="CSS introduction preview"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 2: CSS Syntax and Selectors -->
+                <section id="syntax" class="lesson-section" style="display: none;">
+                    <h2>2. CSS Syntax and Selectors</h2>
+                    <p>A CSS rule consists of a selector and a declaration block.</p>
+                    
+                    <h3>CSS Syntax</h3>
+                    <pre><code class="language-css">selector {
+    property: value;
+    property: value;
+}</code></pre>
+                    
+                    <h3>Basic Selectors</h3>
+                    <pre><code class="language-css">/* Element selector */
+p {
+    color: blue;
+}
+
+/* Class selector */
+.intro {
+    font-size: 20px;
+}
+
+/* ID selector */
+#header {
+    background-color: #333;
+}
+
+/* Universal selector */
+* {
+    margin: 0;
+    padding: 0;
+}</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                                <button class="tab" data-tab="css">CSS</button>
+                            </div>
+                            <button class="btn btn-run" onclick="runCode('syntax')">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-syntax">
+                                <textarea id="html-code-syntax">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;CSS Selectors&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1 id="main-heading"&gt;Main Heading&lt;/h1&gt;
+    &lt;p class="intro"&gt;This is an introduction paragraph.&lt;/p&gt;
+    &lt;p&gt;This is a regular paragraph.&lt;/p&gt;
+    &lt;div class="container"&gt;
+        &lt;p&gt;This paragraph is inside a container.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                            <div class="editor-panel" id="editor-css-syntax">
+                                <textarea id="css-code-syntax">/* Element selector */
+h1 {
+    color: navy;
+}
+
+/* Class selector */
+.intro {
+    font-size: 18px;
+    color: green;
+}
+
+/* ID selector */
+#main-heading {
+    text-align: center;
+}
+
+/* Universal selector */
+* {
+    font-family: Arial, sans-serif;
+}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-syntax" title="CSS syntax preview"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 3: Colors, Fonts, and Text -->
+                <section id="colors" class="lesson-section" style="display: none;">
+                    <h2>3. Colors, Fonts, and Text</h2>
+                    <p>CSS provides many properties to style text and define colors.</p>
+                    
+                    <h3>Color Values</h3>
+                    <pre><code class="language-css">/* Color names */
+h1 {
+    color: red;
+}
+
+/* Hex codes */
+p {
+    color: #ff0000;
+}
+
+/* RGB values */
+div {
+    color: rgb(255, 0, 0);
+}
+
+/* HSL values */
+span {
+    color: hsl(0, 100%, 50%);
+}</code></pre>
+                    
+                    <h3>Font Properties</h3>
+                    <pre><code class="language-css">p {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    text-decoration: underline;
+    line-height: 1.5;
+}</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                                <button class="tab" data-tab="css">CSS</button>
+                            </div>
+                            <button class="btn btn-run" onclick="runCode('colors')">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-colors">
+                                <textarea id="html-code-colors">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Colors and Fonts&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Heading with Color&lt;/h1&gt;
+    &lt;p class="styled-text"&gt;This paragraph has styled text.&lt;/p&gt;
+    &lt;p&gt;This is a regular paragraph.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                            <div class="editor-panel" id="editor-css-colors">
+                                <textarea id="css-code-colors">body {
+    background-color: #f0f8ff;
+    font-family: Georgia, serif;
+}
+
+h1 {
+    color: #8a2be2;
+    text-align: center;
+}
+
+.styled-text {
+    color: #ff6347;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    text-decoration: underline;
+}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-colors" title="CSS colors preview"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 4: Box Model and Spacing -->
+                <section id="boxmodel" class="lesson-section" style="display: none;">
+                    <h2>4. Box Model and Spacing</h2>
+                    <p>Understanding the CSS box model is fundamental to layout and spacing in CSS.</p>
+                    
+                    <h3>What is the Box Model?</h3>
+                    <p>Every HTML element is a rectangular box with four areas: content, padding, border, and margin.</p>
+                    
+                    <div class="box-model-diagram">
+                        <style>
+                            .box-model {
+                                width: 200px;
+                                height: 100px;
+                                padding: 20px;
+                                border: 10px solid #333;
+                                margin: 20px;
+                                background-color: #f0f8ff;
+                                text-align: center;
+                                line-height: 100px;
+                            }
+                            .box-label {
+                                position: absolute;
+                                background: rgba(255, 255, 255, 0.8);
+                                padding: 2px 5px;
+                                font-size: 12px;
+                            }
+                        </style>
+                        <div style="position: relative; margin: 50px auto; width: 300px;">
+                            <div class="box-model">Content</div>
+                            <div class="box-label" style="top: 0; left: 100px;">Margin</div>
+                            <div class="box-label" style="top: 40px; left: 120px;">Border</div>
+                            <div class="box-label" style="top: 80px; left: 140px;">Padding</div>
+                        </div>
+                    </div>
+                    
+                    <h3>Box Model Properties</h3>
+                    <pre><code class="language-css">.box {
+    /* Content dimensions */
+    width: 200px;
+    height: 100px;
+    
+    /* Padding - space inside the border */
+    padding: 20px;
+    padding-top: 10px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    
+    /* Border - the edge around the content and padding */
+    border: 5px solid #333;
+    border-width: 5px 10px 5px 10px;
+    border-style: solid;
+    border-color: #333;
+    
+    /* Margin - space outside the border */
+    margin: 20px;
+    margin-top: 10px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+}</code></pre>
+                    
+                    <h3>Box Sizing</h3>
+                    <pre><code class="language-css">/* Default box-sizing */
+.content-box {
+    box-sizing: content-box; /* width and height apply to content only */
+    width: 200px;
+    padding: 20px;
+    border: 10px solid #333;
+    /* Total width: 200 + 20 + 20 + 10 + 10 = 260px */
+}
+
+/* Border-box sizing */
+.border-box {
+    box-sizing: border-box; /* width and height include padding and border */
+    width: 200px;
+    padding: 20px;
+    border: 10px solid #333;
+    /* Total width: 200px (includes padding and border) */
+}
+
+/* Apply to all elements */
+*, *::before, *::after {
+    box-sizing: border-box;
+}</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                                <button class="tab" data-tab="css">CSS</button>
+                            </div>
+                            <button class="btn btn-run" onclick="runCode('boxmodel')">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-boxmodel">
+                                <textarea id="html-code-boxmodel">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Box Model Example&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;CSS Box Model&lt;/h1&gt;
+    
+    &lt;div class="box content-box"&gt;
+        Content Box
+    &lt;/div&gt;
+    
+    &lt;div class="box border-box"&gt;
+        Border Box
+    &lt;/div&gt;
+    
+    &lt;div class="box spacing-example"&gt;
+        Spacing Example
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                            <div class="editor-panel" id="editor-css-boxmodel">
+                                <textarea id="css-code-boxmodel">body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.box {
+    width: 200px;
+    height: 100px;
+    margin: 20px;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+}
+
+.content-box {
+    box-sizing: content-box;
+    width: 200px;
+    padding: 20px;
+    border: 10px solid #3498db;
+    background-color: #e3f2fd;
+}
+
+.border-box {
+    box-sizing: border-box;
+    width: 200px;
+    padding: 20px;
+    border: 10px solid #e74c3c;
+    background-color: #fadbd8;
+}
+
+.spacing-example {
+    width: 200px;
+    height: 100px;
+    padding: 30px;
+    border: 5px solid #2ecc71;
+    margin: 40px;
+    background-color: #d5f5e3;
+}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-boxmodel" title="Box model preview"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 5: Flexbox Layout -->
+                <section id="flexbox" class="lesson-section" style="display: none;">
+                    <h2>5. Flexbox Layout</h2>
+                    <p>Flexbox is a one-dimensional layout method for arranging items in rows or columns.</p>
+                    
+                    <h3>Basic Flexbox Concepts</h3>
+                    <p>Flexbox involves a flex container and flex items. The container controls the layout of its items.</p>
+                    
+                    <h3>Creating a Flex Container</h3>
+                    <pre><code class="language-css">.flex-container {
+    display: flex;
+}</code></pre>
+                    
+                    <h3>Flex Container Properties</h3>
+                    <pre><code class="language-css">.flex-container {
+    display: flex;
+    
+    /* Direction of flex items */
+    flex-direction: row | row-reverse | column | column-reverse;
+    
+    /* Wrapping of flex items */
+    flex-wrap: nowrap | wrap | wrap-reverse;
+    
+    /* Shorthand for direction and wrap */
+    flex-flow: row wrap;
+    
+    /* Alignment of items along the main axis */
+    justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly;
+    
+    /* Alignment of items along the cross axis */
+    align-items: stretch | flex-start | flex-end | center | baseline;
+    
+    /* Alignment of lines when there are multiple lines */
+    align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+}</code></pre>
+                    
+                    <h3>Flex Item Properties</h3>
+                    <pre><code class="language-css">.flex-item {
+    /* How much the item should grow relative to others */
+    flex-grow: 0;
+    
+    /* How much the item should shrink relative to others */
+    flex-shrink: 1;
+    
+    /* Default size of the item */
+    flex-basis: auto;
+    
+    /* Shorthand for grow, shrink, and basis */
+    flex: 0 1 auto;
+    
+    /* Alignment for individual item */
+    align-self: auto | flex-start | flex-end | center | baseline | stretch;
+    
+    /* Order of the item */
+    order: 0;
+}</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                                <button class="tab" data-tab="css">CSS</button>
+                            </div>
+                            <button class="btn btn-run" onclick="runCode('flexbox')">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-flexbox">
+                                <textarea id="html-code-flexbox">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Flexbox Example&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Flexbox Layout Examples&lt;/h1&gt;
+    
+    &lt;h2&gt;Basic Flexbox&lt;/h2&gt;
+    &lt;div class="flex-container basic"&gt;
+        &lt;div class="flex-item"&gt;Item 1&lt;/div&gt;
+        &lt;div class="flex-item"&gt;Item 2&lt;/div&gt;
+        &lt;div class="flex-item"&gt;Item 3&lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;h2&gt;Centered Flexbox&lt;/h2&gt;
+    &lt;div class="flex-container centered"&gt;
+        &lt;div class="flex-item"&gt;Centered Item&lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;h2&gt;Navigation Bar&lt;/h2&gt;
+    &lt;nav class="navbar"&gt;
+        &lt;div class="nav-brand"&gt;Logo&lt;/div&gt;
+        &lt;div class="nav-links"&gt;
+            &lt;a href="#"&gt;Home&lt;/a&gt;
+            &lt;a href="#"&gt;About&lt;/a&gt;
+            &lt;a href="#"&gt;Services&lt;/a&gt;
+            &lt;a href="#"&gt;Contact&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                            <div class="editor-panel" id="editor-css-flexbox">
+                                <textarea id="css-code-flexbox">body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.flex-container {
+    display: flex;
+    margin-bottom: 30px;
+    padding: 10px;
+    background-color: #e3f2fd;
+    border: 1px solid #3498db;
+}
+
+.flex-item {
+    padding: 20px;
+    margin: 5px;
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+}
+
+.basic .flex-item {
+    flex: 1;
+}
+
+.centered {
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.centered .flex-item {
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #2c3e50;
+    color: white;
+}
+
+.nav-brand {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-flexbox" title="Flexbox preview"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 6: Grid Layout -->
+                <section id="grid" class="lesson-section" style="display: none;">
+                    <h2>6. Grid Layout</h2>
+                    <p>CSS Grid is a two-dimensional layout system that allows you to create complex layouts with rows and columns.</p>
+                    
+                    <h3>Basic Grid Concepts</h3>
+                    <p>Grid layout involves a grid container and grid items. The container defines the grid structure.</p>
+                    
+                    <h3>Creating a Grid Container</h3>
+                    <pre><code class="language-css">.grid-container {
+    display: grid;
+}</code></pre>
+                    
+                    <h3>Grid Container Properties</h3>
+                    <pre><code class="language-css">.grid-container {
+    display: grid;
+    
+    /* Define columns */
+    grid-template-columns: 100px 1fr 2fr;
+    grid-template-columns: repeat(3, 1fr);
+    
+    /* Define rows */
+    grid-template-rows: 100px auto 100px;
+    grid-template-rows: repeat(3, 100px);
+    
+    /* Shorthand for rows and columns */
+    grid-template: 
+        "header header header" 100px
+        "sidebar main main" auto
+        "footer footer footer" 50px
+        / 200px 1fr 1fr;
+    
+    /* Gap between grid items */
+    gap: 10px;
+    column-gap: 20px;
+    row-gap: 15px;
+    
+    /* Alignment of grid items */
+    justify-items: start | end | center | stretch;
+    align-items: start | end | center | stretch;
+    
+    /* Alignment of the entire grid */
+    justify-content: start | end | center | stretch | space-around | space-between | space-evenly;
+    align-content: start | end | center | stretch | space-around | space-between | space-evenly;
+}</code></pre>
+                    
+                    <h3>Grid Item Properties</h3>
+                    <pre><code class="language-css">.grid-item {
+    /* Grid area assignment */
+    grid-column: 1 / 3;
+    grid-row: 2 / 4;
+    
+    /* Shorthand for column and row */
+    grid-area: 2 / 1 / 4 / 3;
+    
+    /* Alignment for individual items */
+    justify-self: start | end | center | stretch;
+    align-self: start | end | center | stretch;
+}</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                                <button class="tab" data-tab="css">CSS</button>
+                            </div>
+                            <button class="btn btn-run" onclick="runCode('grid')">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-grid">
+                                <textarea id="html-code-grid">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Grid Layout Example&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;CSS Grid Layout&lt;/h1&gt;
+    
+    &lt;h2&gt;Basic Grid&lt;/h2&gt;
+    &lt;div class="grid-container basic"&gt;
+        &lt;div class="grid-item"&gt;1&lt;/div&gt;
+        &lt;div class="grid-item"&gt;2&lt;/div&gt;
+        &lt;div class="grid-item"&gt;3&lt;/div&gt;
+        &lt;div class="grid-item"&gt;4&lt;/div&gt;
+        &lt;div class="grid-item"&gt;5&lt;/div&gt;
+        &lt;div class="grid-item"&gt;6&lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;h2&gt;Complex Layout&lt;/h2&gt;
+    &lt;div class="grid-container layout"&gt;
+        &lt;header class="header"&gt;Header&lt;/header&gt;
+        &lt;nav class="sidebar"&gt;Sidebar&lt;/nav&gt;
+        &lt;main class="main"&gt;Main Content&lt;/main&gt;
+        &lt;footer class="footer"&gt;Footer&lt;/footer&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                            <div class="editor-panel" id="editor-css-grid">
+                                <textarea id="css-code-grid">body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.grid-container {
+    display: grid;
+    margin-bottom: 30px;
+    background-color: #e3f2fd;
+    padding: 10px;
+}
+
+.grid-item {
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.basic {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 100px);
+    gap: 10px;
+}
+
+.layout {
+    grid-template-areas: 
+        "header header header"
+        "sidebar main main"
+        "footer footer footer";
+    grid-template-columns: 200px 1fr 1fr;
+    grid-template-rows: 80px 1fr 60px;
+    gap: 10px;
+    height: 300px;
+}
+
+.header {
+    grid-area: header;
+    background-color: #e74c3c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #2ecc71;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main {
+    grid-area: main;
+    background-color: #f39c12;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #9b59b6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-grid" title="Grid layout preview"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 7: Backgrounds and Borders -->
+                <section id="backgrounds" class="lesson-section" style="display: none;">
+                    <h2>7. Backgrounds and Borders</h2>
+                    <p>Learn how to style backgrounds and borders to enhance the visual appeal of your web pages.</p>
+                    
+                    <h3>Background Properties</h3>
+                    <pre><code class="language-css">.background-example {
+    /* Solid color background */
+    background-color: #3498db;
+    
+    /* Background image */
+    background-image: url('image.jpg');
+    
+    /* Background repeat */
+    background-repeat: repeat | no-repeat | repeat-x | repeat-y;
+    
+    /* Background position */
+    background-position: top left | center center | 20px 30px;
+    
+    /* Background attachment */
+    background-attachment: scroll | fixed;
+    
+    /* Background size */
+    background-size: auto | cover | contain | 100px 50px;
+    
+    /* Shorthand */
+    background: #3498db url('image.jpg') no-repeat center/cover;
+}</code></pre>
+                    
+                    <h3>Border Properties</h3>
+                    <pre><code class="language-css">.border-example {
+    /* Border width */
+    border-width: 1px | thin | medium | thick;
+    
+    /* Border style */
+    border-style: solid | dashed | dotted | double | groove | ridge | inset | outset | none;
+    
+    /* Border color */
+    border-color: #3498db;
+    
+    /* Shorthand */
+    border: 2px solid #3498db;
+    
+    /* Individual sides */
+    border-top: 1px solid red;
+    border-right: 2px dashed blue;
+    border-bottom: 3px dotted green;
+    border-left: 4px double purple;
+    
+    /* Border radius for rounded corners */
+    border-radius: 10px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 15px;
+}</code></pre>
+                    
+                    <h3>Advanced Background Techniques</h3>
+                    <pre><code class="language-css">.advanced-background {
+    /* Multiple backgrounds */
+    background-image: url('top-image.png'), url('bottom-image.png');
+    background-position: top left, bottom right;
+    background-repeat: no-repeat, repeat;
+    
+    /* Linear gradient */
+    background: linear-gradient(to right, #3498db, #e74c3c);
+    background: linear-gradient(45deg, #3498db 0%, #e74c3c 100%);
+    
+    /* Radial gradient */
+    background: radial-gradient(circle, #3498db, #e74c3c);
+    background: radial-gradient(ellipse at center, #3498db 0%, #e74c3c 100%);
+    
+    /* Conic gradient */
+    background: conic-gradient(#3498db, #e74c3c, #2ecc71);
+}</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                                <button class="tab" data-tab="css">CSS</button>
+                            </div>
+                            <button class="btn btn-run" onclick="runCode('backgrounds')">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-backgrounds">
+                                <textarea id="html-code-backgrounds">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Backgrounds and Borders Example&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Backgrounds and Borders&lt;/h1&gt;
+    
+    &lt;div class="box gradient"&gt;
+        Gradient Background
+    &lt;/div&gt;
+    
+    &lt;div class="box image-bg"&gt;
+        Image Background
+    &lt;/div&gt;
+    
+    &lt;div class="box rounded"&gt;
+        Rounded Corners
+    &lt;/div&gt;
+    
+    &lt;div class="box complex"&gt;
+        Complex Border
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                            <div class="editor-panel" id="editor-css-backgrounds">
+                                <textarea id="css-code-backgrounds">body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.box {
+    width: 200px;
+    height: 100px;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    float: left;
+}
+
+.gradient {
+    background: linear-gradient(45deg, #3498db, #e74c3c);
+    border: 2px solid #2c3e50;
+}
+
+.image-bg {
+    background: url('https://via.placeholder.com/200x100/3498db/ffffff') no-repeat center/cover;
+    border: 3px dashed #e74c3c;
+}
+
+.rounded {
+    background-color: #2ecc71;
+    border: 2px solid #27ae60;
+    border-radius: 20px;
+}
+
+.complex {
+    background: radial-gradient(circle, #9b59b6, #8e44ad);
+    border: 5px double #f39c12;
+    border-radius: 15px 0 15px 0;
+}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-backgrounds" title="Backgrounds preview"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 8: Transitions and Animations -->
+                <section id="transitions" class="lesson-section" style="display: none;">
+                    <h2>8. Transitions and Animations</h2>
+                    <p>Add smooth transitions and animations to create engaging user experiences.</p>
+                    
+                    <h3>CSS Transitions</h3>
+                    <p>Transitions allow you to change property values smoothly over a given duration.</p>
+                    
+                    <pre><code class="language-css">.transition-example {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    
+    /* Transition properties */
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    
+    /* Shorthand */
+    transition: all 0.3s ease 0s;
+}
+
+.transition-example:hover {
+    width: 200px;
+    background-color: #e74c3c;
+    transform: rotate(45deg);
+}</code></pre>
+                    
+                    <h3>CSS Animations</h3>
+                    <p>Animations allow you to create more complex effects using keyframes.</p>
+                    
+                    <pre><code class="language-css">/* Define keyframes */
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Apply animation */
+.animated-element {
+    animation-name: slideIn;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    
+    /* Shorthand */
+    animation: slideIn 1s ease-out 0s 1 normal;
+}</code></pre>
+                    
+                    <h3>Animation Properties</h3>
+                    <pre><code class="language-css">.animation-properties {
+    /* Animation name */
+    animation-name: bounce;
+    
+    /* Duration */
+    animation-duration: 2s;
+    
+    /* Timing function */
+    animation-timing-function: ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier(0.1, 0.7, 1.0, 0.1);
+    
+    /* Delay */
+    animation-delay: 0.5s;
+    
+    /* Iteration count */
+    animation-iteration-count: infinite | 3 | 5;
+    
+    /* Direction */
+    animation-direction: normal | reverse | alternate | alternate-reverse;
+    
+    /* Fill mode */
+    animation-fill-mode: none | forwards | backwards | both;
+    
+    /* Play state */
+    animation-play-state: running | paused;
+}</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                                <button class="tab" data-tab="css">CSS</button>
+                            </div>
+                            <button class="btn btn-run" onclick="runCode('transitions')">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-transitions">
+                                <textarea id="html-code-transitions">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Transitions and Animations Example&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Transitions and Animations&lt;/h1&gt;
+    
+    &lt;h2&gt;Hover Transition&lt;/h2&gt;
+    &lt;div class="box transition"&gt;
+        Hover Me
+    &lt;/div&gt;
+    
+    &lt;h2&gt;Animated Element&lt;/h2&gt;
+    &lt;div class="box animated"&gt;
+        I'm Animated
+    &lt;/div&gt;
+    
+    &lt;h2&gt;Bouncing Ball&lt;/h2&gt;
+    &lt;div class="ball"&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                            <div class="editor-panel" id="editor-css-transitions">
+                                <textarea id="css-code-transitions">body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    float: left;
+}
+
+.transition {
+    background-color: #3498db;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.transition:hover {
+    background-color: #e74c3c;
+    border-radius: 50%;
+    transform: scale(1.2);
+}
+
+.animated {
+    background-color: #2ecc71;
+    border-radius: 10px;
+    animation: slideIn 1s ease-out;
+}
+
+.ball {
+    width: 50px;
+    height: 50px;
+    background-color: #f39c12;
+    border-radius: 50%;
+    margin: 100px auto;
+    animation: bounce 1s infinite;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-100px);
+    }
+    60% {
+        transform: translateY(-50px);
+    }
+}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-transitions" title="Transitions preview"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 9: Pseudo-classes and Elements -->
+                <section id="pseudo" class="lesson-section" style="display: none;">
+                    <h2>9. Pseudo-classes and Elements</h2>
+                    <p>Use pseudo-classes and pseudo-elements to style elements based on their state or position.</p>
+                    
+                    <h3>Pseudo-classes</h3>
+                    <p>Pseudo-classes select elements based on their state or position in the document.</p>
+                    
+                    <pre><code class="language-css">/* State-based pseudo-classes */
+a:hover {
+    color: #e74c3c;
+}
+
+a:active {
+    color: #3498db;
+}
+
+a:visited {
+    color: #9b59b6;
+}
+
+input:focus {
+    border: 2px solid #3498db;
+    outline: none;
+}
+
+/* Position-based pseudo-classes */
+li:first-child {
+    font-weight: bold;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+li:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+li:nth-child(2n) {
+    background-color: #e3f2fd;
+}
+
+/* Form-related pseudo-classes */
+input:required {
+    border: 2px solid #e74c3c;
+}
+
+input:valid {
+    border: 2px solid #2ecc71;
+}
+
+input:invalid {
+    border: 2px solid #e74c3c;
+}</code></pre>
+                    
+                    <h3>Pseudo-elements</h3>
+                    <p>Pseudo-elements create virtual elements that can be styled.</p>
+                    
+                    <pre><code class="language-css">/* Before and after pseudo-elements */
+.quote::before {
+    content: "";
+    font-size: 2em;
+    color: #3498db;
+}
+
+.quote::after {
+    content: "";
+    font-size: 2em;
+    color: #3498db;
+}
+
+/* First letter and line */
+p::first-letter {
+    font-size: 2em;
+    font-weight: bold;
+    float: left;
+    margin-right: 5px;
+}
+
+p::first-line {
+    font-weight: bold;
+    color: #3498db;
+}
+
+/* Selection */
+::selection {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Placeholder */
+input::placeholder {
+    color: #95a5a6;
+}</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                                <button class="tab" data-tab="css">CSS</button>
+                            </div>
+                            <button class="btn btn-run" onclick="runCode('pseudo')">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-pseudo">
+                                <textarea id="html-code-pseudo">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Pseudo-classes and Elements Example&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Pseudo-classes and Elements&lt;/h1&gt;
+    
+    &lt;h2&gt;Link States&lt;/h2&gt;
+    &lt;p&gt;&lt;a href="#"&gt;This is a link&lt;/a&gt;&lt;/p&gt;
+    
+    &lt;h2&gt;List with nth-child&lt;/h2&gt;
+    &lt;ul class="styled-list"&gt;
+        &lt;li&gt;First item&lt;/li&gt;
+        &lt;li&gt;Second item&lt;/li&gt;
+        &lt;li&gt;Third item&lt;/li&gt;
+        &lt;li&gt;Fourth item&lt;/li&gt;
+        &lt;li&gt;Fifth item&lt;/li&gt;
+    &lt;/ul&gt;
+    
+    &lt;h2&gt;Quote with Pseudo-elements&lt;/h2&gt;
+    &lt;p class="quote"&gt;This is an inspiring quote that will be styled with pseudo-elements.&lt;/p&gt;
+    
+    &lt;h2&gt;Form Validation&lt;/h2&gt;
+    &lt;form class="validation-form"&gt;
+        &lt;input type="email" placeholder="Enter your email" required&gt;
+        &lt;input type="text" placeholder="Enter your name" required minlength="3"&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                            <div class="editor-panel" id="editor-css-pseudo">
+                                <textarea id="css-code-pseudo">body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+/* Link states */
+a:link {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #9b59b6;
+}
+
+a:hover {
+    color: #e74c3c;
+    text-decoration: underline;
+}
+
+a:active {
+    color: #f39c12;
+}
+
+/* Styled list */
+.styled-list {
+    list-style: none;
+    padding: 0;
+    max-width: 300px;
+}
+
+.styled-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.styled-list li:first-child {
+    font-weight: bold;
+    background-color: #3498db;
+    color: white;
+    border-radius: 5px 5px 0 0;
+}
+
+.styled-list li:last-child {
+    border-radius: 0 0 5px 5px;
+    border-bottom: none;
+}
+
+.styled-list li:nth-child(odd) {
+    background-color: #e3f2fd;
+}
+
+.styled-list li:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* Quote with pseudo-elements */
+.quote {
+    font-style: italic;
+    padding: 20px;
+    background-color: #e3f2fd;
+    border-left: 5px solid #3498db;
+    position: relative;
+}
+
+.quote::before {
+    content: "";
+    font-size: 4em;
+    color: #3498db;
+    opacity: 0.3;
+    position: absolute;
+    top: -10px;
+    left: 10px;
+}
+
+.quote::after {
+    content: "";
+    font-size: 4em;
+    color: #3498db;
+    opacity: 0.3;
+    position: absolute;
+    bottom: -40px;
+    right: 10px;
+}
+
+/* Form validation */
+.validation-form {
+    max-width: 300px;
+}
+
+.validation-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+}
+
+.validation-form input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.validation-form input:valid {
+    border-color: #2ecc71;
+}
+
+.validation-form input:invalid {
+    border-color: #e74c3c;
+}
+
+.validation-form input:placeholder-shown {
+    border-color: #95a5a6;
+}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-pseudo" title="Pseudo classes preview"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 10: Responsive Design -->
+                <section id="responsive" class="lesson-section" style="display: none;">
+                    <h2>10. Responsive Design</h2>
+                    <p>Create websites that look great on all devices using responsive design techniques.</p>
+                    
+                    <h3>Media Queries</h3>
+                    <p>Media queries allow you to apply different styles based on device characteristics.</p>
+                    
+                    <pre><code class="language-css">/* Basic media query syntax */
+@media screen and (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+/* Common breakpoints */
+/* Mobile first approach */
+.container {
+    width: 100%;
+    padding: 20px;
+}
+
+/* Tablets */
+@media screen and (min-width: 768px) {
+    .container {
+        width: 750px;
+        margin: 0 auto;
+    }
+}
+
+/* Desktops */
+@media screen and (min-width: 1024px) {
+    .container {
+        width: 1000px;
+    }
+}
+
+/* Large screens */
+@media screen and (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}</code></pre>
+                    
+                    <h3>Viewport Meta Tag</h3>
+                    <p>Always include the viewport meta tag in your HTML for proper mobile rendering.</p>
+                    
+                    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Responsive Design&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Content --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    
+                    <h3>Responsive Units</h3>
+                    <pre><code class="language-css">/* Relative units for responsive design */
+.responsive-units {
+    /* Percentages */
+    width: 50%; /* 50% of parent width */
+    
+    /* Viewport units */
+    width: 50vw; /* 50% of viewport width */
+    height: 50vh; /* 50% of viewport height */
+    font-size: 5vw; /* Font size relative to viewport width */
+    
+    /* em and rem */
+    font-size: 1.2em; /* 1.2 times the parent's font size */
+    margin: 1rem; /* 1 times the root font size */
+    
+    /* Flexible units */
+    flex: 1 1 auto; /* Flexible sizing in flexbox */
+    grid-template-columns: 1fr 2fr 1fr; /* Fractional units in grid */
+}</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                                <button class="tab" data-tab="css">CSS</button>
+                            </div>
+                            <button class="btn btn-run" onclick="runCode('responsive')">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-responsive">
+                                <textarea id="html-code-responsive">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Responsive Design Example&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header class="header"&gt;
+        &lt;h1&gt;Responsive Website&lt;/h1&gt;
+        &lt;nav class="nav"&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Services&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    
+    &lt;main class="main"&gt;
+        &lt;section class="content"&gt;
+            &lt;h2&gt;Main Content&lt;/h2&gt;
+            &lt;p&gt;This is the main content area that will adapt to different screen sizes.&lt;/p&gt;
+            &lt;div class="cards"&gt;
+                &lt;div class="card"&gt;Card 1&lt;/div&gt;
+                &lt;div class="card"&gt;Card 2&lt;/div&gt;
+                &lt;div class="card"&gt;Card 3&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        
+        &lt;aside class="sidebar"&gt;
+            &lt;h3&gt;Sidebar&lt;/h3&gt;
+            &lt;p&gt;This sidebar will move below the main content on smaller screens.&lt;/p&gt;
+        &lt;/aside&gt;
+    &lt;/main&gt;
+    
+    &lt;footer class="footer"&gt;
+        &lt;p&gt;&amp;copy; 2023 Responsive Website. All rights reserved.&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                            <div class="editor-panel" id="editor-css-responsive">
+                                <textarea id="css-code-responsive">* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav li {
+    margin: 0 1rem;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+}
+
+.nav a:hover {
+    background-color: #34495e;
+    border-radius: 4px;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content {
+    flex: 3;
+    min-width: 300px;
+    padding: 1rem;
+    background-color: white;
+    margin-right: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.sidebar {
+    flex: 1;
+    min-width: 250px;
+    padding: 1rem;
+    background-color: #e3f2fd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.card {
+    flex: 1;
+    min-width: 200px;
+    padding: 1rem;
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.footer {
+    background-color: #34495e;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+/* Tablet styles */
+@media screen and (max-width: 768px) {
+    .nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav li {
+        margin: 0.5rem 0;
+    }
+    
+    .main {
+        flex-direction: column;
+    }
+    
+    .content {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 480px) {
+    .cards {
+        flex-direction: column;
+    }
+    
+    .card {
+        min-width: auto;
+    }
+}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-responsive" title="Responsive design preview"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 11: CSS Variables -->
+                <section id="variables" class="lesson-section" style="display: none;">
+                    <h2>11. CSS Variables</h2>
+                    <p>Use CSS custom properties (variables) to make your stylesheets more maintainable and flexible.</p>
+                    
+                    <h3>Defining CSS Variables</h3>
+                    <p>CSS variables are defined using custom property notation and accessed with the var() function.</p>
+                    
+                    <pre><code class="language-css">/* Define variables in :root (global scope) */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #e74c3c;
+    --font-size-large: 24px;
+    --font-size-medium: 18px;
+    --font-size-small: 14px;
+    --border-radius: 8px;
+    --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Define variables in specific selectors (local scope) */
+.card {
+    --card-bg: #f8f9fa;
+    --card-padding: 20px;
+    
+    background-color: var(--card-bg);
+    padding: var(--card-padding);
+    border-radius: var(--border-radius);
+}</code></pre>
+                    
+                    <h3>Using CSS Variables</h3>
+                    <pre><code class="language-css">.button {
+    background-color: var(--primary-color);
+    color: white;
+    font-size: var(--font-size-medium);
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Using variables with fallback values */
+.text {
+    color: var(--text-color, #333); /* Fallback to #333 if --text-color is not defined */
+    font-size: var(--font-size, 16px);
+}</code></pre>
+                    
+                    <h3>Dynamic Variables with JavaScript</h3>
+                    <pre><code class="language-javascript">// Get a CSS variable value
+const primaryColor = getComputedStyle(document.documentElement)
+    .getPropertyValue('--primary-color');
+
+// Set a CSS variable value
+document.documentElement.style
+    .setProperty('--primary-color', '#2ecc71');
+
+// Example: Theme switcher
+function toggleTheme() {
+    const root = document.documentElement;
+    const isDark = root.style.getPropertyValue('--bg-color') === '#333';
+    
+    if (isDark) {
+        // Switch to light theme
+        root.style.setProperty('--bg-color', '#fff');
+        root.style.setProperty('--text-color', '#333');
+    } else {
+        // Switch to dark theme
+        root.style.setProperty('--bg-color', '#333');
+        root.style.setProperty('--text-color', '#fff');
+    }
+}</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                                <button class="tab" data-tab="css">CSS</button>
+                                <button class="tab" data-tab="js">JavaScript</button>
+                            </div>
+                            <button class="btn btn-run" onclick="runCode('variables')">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-variables">
+                                <textarea id="html-code-variables">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;CSS Variables Example&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;h1&gt;CSS Variables Demo&lt;/h1&gt;
+        
+        &lt;div class="controls"&gt;
+            &lt;button id="theme-toggle"&gt;Toggle Theme&lt;/button&gt;
+            &lt;button id="color-change"&gt;Change Color&lt;/button&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="card"&gt;
+            &lt;h2&gt;Card Title&lt;/h2&gt;
+            &lt;p&gt;This card uses CSS variables for its styling. Try changing the theme or colors!&lt;/p&gt;
+            &lt;button class="btn"&gt;Click Me&lt;/button&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="card"&gt;
+            &lt;h2&gt;Another Card&lt;/h2&gt;
+            &lt;p&gt;All cards share the same variable-based styles, making them easy to update.&lt;/p&gt;
+            &lt;button class="btn"&gt;Click Me Too&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                            <div class="editor-panel" id="editor-css-variables">
+                                <textarea id="css-code-variables">:root {
+    --primary-color: #3498db;
+    --secondary-color: #e74c3c;
+    --bg-color: #f8f9fa;
+    --text-color: #333;
+    --card-bg: white;
+    --border-radius: 8px;
+    --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --spacing: 20px;
+}
+
+[data-theme="dark"] {
+    --primary-color: #5dade2;
+    --secondary-color: #ec7063;
+    --bg-color: #2c3e50;
+    --text-color: #ecf0f1;
+    --card-bg: #34495e;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing);
+}
+
+.controls {
+    margin-bottom: var(--spacing);
+    text-align: center;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: calc(var(--spacing) * 1.5);
+    margin-bottom: var(--spacing);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h2 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+}</textarea>
+                            </div>
+                            <div class="editor-panel" id="editor-js-variables">
+                                <textarea id="js-code-variables">document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const colorChange = document.getElementById('color-change');
+    const root = document.documentElement;
+    
+    // Toggle theme
+    themeToggle.addEventListener('click', function() {
+        const currentTheme = document.body.getAttribute('data-theme');
+        if (currentTheme === 'dark') {
+            document.body.removeAttribute('data-theme');
+        } else {
+            document.body.setAttribute('data-theme', 'dark');
+        }
+    });
+    
+    // Change primary color
+    colorChange.addEventListener('click', function() {
+        const colors = ['#3498db', '#2ecc71', '#e74c3c', '#f39c12', '#9b59b6'];
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        root.style.setProperty('--primary-color', randomColor);
+    });
+});</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-variables" title="CSS variables preview"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 12: Mini Project - Landing Page -->
+                <section id="project" class="lesson-section" style="display: none;">
+                    <h2>12. Mini Project: Landing Page</h2>
+                    <p>Apply everything you've learned to create a complete responsive landing page.</p>
+                    
+                    <h3>Project Requirements</h3>
+                    <ul>
+                        <li>Create a responsive layout using Flexbox or Grid</li>
+                        <li>Use CSS variables for consistent styling</li>
+                        <li>Implement hover effects and transitions</li>
+                        <li>Add media queries for mobile responsiveness</li>
+                        <li>Style navigation, hero section, features, and footer</li>
+                        <li>Use pseudo-elements and pseudo-classes</li>
+                    </ul>
+                    
+                    <h3>Complete Landing Page Example</h3>
+                    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Landing Page&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Your landing page content here --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                                <button class="tab" data-tab="css">CSS</button>
+                            </div>
+                            <button class="btn btn-run" onclick="runCode('project')">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-project">
+                                <textarea id="html-code-project">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;TechCorp - Innovative Solutions&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header class="header"&gt;
+        &lt;div class="container"&gt;
+            &lt;div class="logo"&gt;
+                &lt;h2&gt;&lt;i class="fas fa-rocket"&gt;&lt;/i&gt; TechCorp&lt;/h2&gt;
+            &lt;/div&gt;
+            &lt;nav class="nav"&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#features"&gt;Features&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/nav&gt;
+            &lt;div class="header-actions"&gt;
+                &lt;button class="btn btn-outline"&gt;Sign In&lt;/button&gt;
+                &lt;button class="btn btn-primary"&gt;Get Started&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+    
+    &lt;section class="hero" id="home"&gt;
+        &lt;div class="container"&gt;
+            &lt;div class="hero-content"&gt;
+                &lt;h1 class="hero-title"&gt;Transform Your Business with Innovative Solutions&lt;/h1&gt;
+                &lt;p class="hero-subtitle"&gt;TechCorp provides cutting-edge technology solutions to help your business grow and succeed in the digital world.&lt;/p&gt;
+                &lt;div class="hero-buttons"&gt;
+                    &lt;button class="btn btn-primary btn-large"&gt;Get Started&lt;/button&gt;
+                    &lt;button class="btn btn-outline btn-large"&gt;Learn More&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="hero-image"&gt;
+                &lt;img src="https://via.placeholder.com/600x400/3498db/ffffff" alt="Tech Solutions"&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    
+    &lt;section class="features" id="features"&gt;
+        &lt;div class="container"&gt;
+            &lt;h2 class="section-title"&gt;Our Features&lt;/h2&gt;
+            &lt;p class="section-subtitle"&gt;Discover what makes us different&lt;/p&gt;
+            &lt;div class="features-grid"&gt;
+                &lt;div class="feature-card"&gt;
+                    &lt;div class="feature-icon"&gt;
+                        &lt;i class="fas fa-bolt"&gt;&lt;/i&gt;
+                    &lt;/div&gt;
+                    &lt;h3&gt;Lightning Fast&lt;/h3&gt;
+                    &lt;p&gt;Our solutions are optimized for maximum performance and speed.&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="feature-card"&gt;
+                    &lt;div class="feature-icon"&gt;
+                        &lt;i class="fas fa-shield-alt"&gt;&lt;/i&gt;
+                    &lt;/div&gt;
+                    &lt;h3&gt;Secure &amp; Reliable&lt;/h3&gt;
+                    &lt;p&gt;Enterprise-grade security to protect your data and privacy.&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="feature-card"&gt;
+                    &lt;div class="feature-icon"&gt;
+                        &lt;i class="fas fa-sync"&gt;&lt;/i&gt;
+                    &lt;/div&gt;
+                    &lt;h3&gt;Always Updated&lt;/h3&gt;
+                    &lt;p&gt;Regular updates and improvements to keep you ahead.&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    
+    &lt;section class="about" id="about"&gt;
+        &lt;div class="container"&gt;
+            &lt;div class="about-content"&gt;
+                &lt;h2 class="section-title"&gt;About TechCorp&lt;/h2&gt;
+                &lt;p&gt;Founded in 2010, TechCorp has been at the forefront of technological innovation, helping businesses transform their operations and reach new heights.&lt;/p&gt;
+                &lt;p&gt;Our team of experts combines deep technical knowledge with industry insights to deliver solutions that drive real business value.&lt;/p&gt;
+                &lt;ul class="about-list"&gt;
+                    &lt;li&gt;&lt;i class="fas fa-check"&gt;&lt;/i&gt; 500+ Happy Clients&lt;/li&gt;
+                    &lt;li&gt;&lt;i class="fas fa-check"&gt;&lt;/i&gt; 99.9% Uptime Guarantee&lt;/li&gt;
+                    &lt;li&gt;&lt;i class="fas fa-check"&gt;&lt;/i&gt; 24/7 Support&lt;/li&gt;
+                    &lt;li&gt;&lt;i class="fas fa-check"&gt;&lt;/i&gt; ISO 27001 Certified&lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;button class="btn btn-primary"&gt;Learn More About Us&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class="about-image"&gt;
+                &lt;img src="https://via.placeholder.com/500x400/2ecc71/ffffff" alt="Our Team"&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    
+    &lt;section class="contact" id="contact"&gt;
+        &lt;div class="container"&gt;
+            &lt;h2 class="section-title"&gt;Get In Touch&lt;/h2&gt;
+            &lt;p class="section-subtitle"&gt;Ready to transform your business?&lt;/p&gt;
+            &lt;div class="contact-content"&gt;
+                &lt;div class="contact-info"&gt;
+                    &lt;div class="contact-item"&gt;
+                        &lt;i class="fas fa-map-marker-alt"&gt;&lt;/i&gt;
+                        &lt;div&gt;
+                            &lt;h4&gt;Our Location&lt;/h4&gt;
+                            &lt;p&gt;123 Tech Street, San Francisco, CA 94103&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="contact-item"&gt;
+                        &lt;i class="fas fa-phone"&gt;&lt;/i&gt;
+                        &lt;div&gt;
+                            &lt;h4&gt;Phone Number&lt;/h4&gt;
+                            &lt;p&gt;+1 (555) 123-4567&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="contact-item"&gt;
+                        &lt;i class="fas fa-envelope"&gt;&lt;/i&gt;
+                        &lt;div&gt;
+                            &lt;h4&gt;Email Address&lt;/h4&gt;
+                            &lt;p&gt;info@techcorp.com&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;form class="contact-form"&gt;
+                    &lt;div class="form-group"&gt;
+                        &lt;input type="text" placeholder="Your Name" required&gt;
+                    &lt;/div&gt;
+                    &lt;div class="form-group"&gt;
+                        &lt;input type="email" placeholder="Your Email" required&gt;
+                    &lt;/div&gt;
+                    &lt;div class="form-group"&gt;
+                        &lt;textarea placeholder="Your Message" rows="5" required&gt;&lt;/textarea&gt;
+                    &lt;/div&gt;
+                    &lt;button type="submit" class="btn btn-primary btn-block"&gt;Send Message&lt;/button&gt;
+                &lt;/form&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    
+    &lt;footer class="footer"&gt;
+        &lt;div class="container"&gt;
+            &lt;div class="footer-grid"&gt;
+                &lt;div class="footer-col"&gt;
+                    &lt;h3&gt;&lt;i class="fas fa-rocket"&gt;&lt;/i&gt; TechCorp&lt;/h3&gt;
+                    &lt;p&gt;Innovative solutions for modern businesses.&lt;/p&gt;
+                    &lt;div class="social-links"&gt;
+                        &lt;a href="#"&gt;&lt;i class="fab fa-facebook-f"&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href="#"&gt;&lt;i class="fab fa-twitter"&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href="#"&gt;&lt;i class="fab fa-instagram"&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href="#"&gt;&lt;i class="fab fa-linkedin-in"&gt;&lt;/i&gt;&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="footer-col"&gt;
+                    &lt;h4&gt;Quick Links&lt;/h4&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#features"&gt;Features&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class="footer-col"&gt;
+                    &lt;h4&gt;Services&lt;/h4&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Web Development&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Mobile Apps&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Cloud Solutions&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Consulting&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class="footer-col"&gt;
+                    &lt;h4&gt;Newsletter&lt;/h4&gt;
+                    &lt;p&gt;Subscribe to our newsletter for updates.&lt;/p&gt;
+                    &lt;form class="subscribe-form"&gt;
+                        &lt;input type="email" placeholder="Your Email"&gt;
+                        &lt;button type="submit"&gt;&lt;i class="fas fa-paper-plane"&gt;&lt;/i&gt;&lt;/button&gt;
+                    &lt;/form&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="footer-bottom"&gt;
+                &lt;p&gt;&amp;copy; 2023 TechCorp. All rights reserved.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                            <div class="editor-panel" id="editor-css-project">
+                                <textarea id="css-code-project">:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --accent-color: #e74c3c;
+    --dark-color: #2c3e50;
+    --light-color: #ecf0f1;
+    --gray-color: #95a5a6;
+    --dark-gray: #7f8c8d;
+    --bg-color: #f8f9fa;
+    --border-color: #ddd;
+    --border-radius: 8px;
+    --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: var(--bg-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-family: var(--font-main);
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-large {
+    padding: 15px 30px;
+    font-size: 18px;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+/* Header Styles */
+.header {
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo h2 {
+    color: var(--primary-color);
+    font-size: 24px;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav li {
+    margin: 0 15px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav a:hover {
+    color: var(--primary-color);
+}
+
+.header-actions .btn {
+    margin-left: 10px;
+}
+
+/* Hero Section */
+.hero {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #3498db 0%, #8e44ad 100%);
+    color: white;
+    text-align: center;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+}
+
+.hero-title {
+    font-size: 48px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.hero-buttons .btn {
+    margin: 0 10px;
+}
+
+.hero-image {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+}
+
+.hero-image img {
+    max-width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Features Section */
+.features {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: var(--dark-color);
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 18px;
+    color: var(--dark-gray);
+    margin-bottom: 50px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: var(--bg-color);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: var(--box-shadow);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+    font-size: 48px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: var(--dark-color);
+}
+
+/* About Section */
+.about {
+    padding: 80px 0;
+    background-color: var(--bg-color);
+}
+
+.about .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-content {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.about-list {
+    list-style: none;
+    margin: 30px 0;
+}
+
+.about-list li {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+}
+
+.about-list i {
+    color: var(--secondary-color);
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+/* Contact Section */
+.contact {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-item {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.contact-item i {
+    font-size: 24px;
+    color: var(--primary-color);
+    margin-right: 20px;
+    min-width: 30px;
+}
+
+.contact-item h4 {
+    margin-bottom: 5px;
+    color: var(--dark-color);
+}
+
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+    background-color: var(--bg-color);
+    padding: 30px;
+    border-radius: var(--border-radius);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-family: var(--font-main);
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-col h3,
+.footer-col h4 {
+    margin-bottom: 20px;
+    color: white;
+}
+
+.footer-col p {
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col li {
+    margin-bottom: 12px;
+}
+
+.footer-col a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-col a:hover {
+    color: white;
+    padding-left: 5px;
+}
+
+.subscribe-form {
+    display: flex;
+}
+
+.subscribe-form input {
+    flex: 1;
+    padding: 12px 15px;
+    border: none;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    font-family: var(--font-main);
+}
+
+.subscribe-form button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0 15px;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.subscribe-form button:hover {
+    background-color: #2980b9;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero .container,
+    .about .container {
+        flex-direction: column;
+    }
+    
+    .hero-title {
+        font-size: 36px;
+    }
+    
+    .hero-subtitle {
+        font-size: 18px;
+    }
+    
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .hero-buttons .btn {
+        margin: 5px 0;
+    }
+    
+    .section-title {
+        font-size: 32px;
+    }
+    
+    .contact-content {
+        flex-direction: column;
+    }
+    
+    .header .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nav li {
+        margin: 5px 10px;
+    }
+    
+    .header-actions {
+        display: flex;
+        gap: 10px;
+    }
+    
+    .header-actions .btn {
+        margin: 0;
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero {
+        padding: 50px 0;
+    }
+    
+    .hero-title {
+        font-size: 28px;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .feature-card,
+    .contact-form {
+        padding: 20px;
+    }
+}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-project" title="CSS project preview"></iframe>
+                    </div>
+                </section>
+
+                <!-- Navigation for lessons -->
+                <div class="lesson-footer">
+                    <div class="lesson-navigation">
+                        <button class="btn btn-secondary" disabled><i class="fas fa-arrow-left"></i> Previous</button>
+                        <button class="btn btn-primary" onclick="nextLesson()">Next <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3><i class="fas fa-code"></i> CodeMaster</h3>
+                    <p>Learn to code interactively with our hands-on tutorials and real-time editor.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../courses.html">Courses</a></li>
+                        <li><a href="../tutorial.html">Tutorials</a></li>
+                        <li><a href="../quiz.html">Quiz</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="../about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Subscribe</h4>
+                    <p>Get the latest updates and news.</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 CodeMaster. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="../js/editor.js"></script>
+    <script src="../js/progress.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        // Lesson navigation
+        let currentLesson = 0;
+        const lessons = document.querySelectorAll('.lesson-section');
+        const lessonItems = document.querySelectorAll('.lesson-item');
+        
+        function showLesson(index) {
+            // Hide all lessons
+            lessons.forEach(lesson => {
+                lesson.style.display = 'none';
+            });
+            
+            // Show current lesson
+            if (lessons[index]) {
+                lessons[index].style.display = 'block';
+            }
+            
+            // Update sidebar
+            lessonItems.forEach((item, i) => {
+                if (i === index) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+            
+            // Update progress
+            const progressPercent = ((index + 1) / lessons.length) * 100;
+            document.querySelector('.progress').style.width = `${progressPercent}%`;
+            document.querySelector('.progress-text').textContent = `${index + 1}/${lessons.length} lessons completed`;
+            
+            // Update navigation buttons
+            const prevBtn = document.querySelector('.lesson-navigation .btn-secondary');
+            const nextBtn = document.querySelector('.lesson-navigation .btn-primary');
+            
+            if (index === 0) {
+                prevBtn.disabled = true;
+            } else {
+                prevBtn.disabled = false;
+                prevBtn.onclick = () => prevLesson();
+            }
+            
+            if (index === lessons.length - 1) {
+                nextBtn.innerHTML = 'Complete Course <i class="fas fa-check"></i>';
+            } else {
+                nextBtn.innerHTML = 'Next <i class="fas fa-arrow-right"></i>';
+                nextBtn.onclick = () => nextLesson();
+            }
+            
+            currentLesson = index;
+        }
+        
+        function nextLesson() {
+            if (currentLesson < lessons.length - 1) {
+                showLesson(currentLesson + 1);
+            }
+        }
+        
+        function prevLesson() {
+            if (currentLesson > 0) {
+                showLesson(currentLesson - 1);
+            }
+        }
+        
+        // Initialize first lesson
+        document.addEventListener('DOMContentLoaded', () => {
+            showLesson(0);
+            
+            // Add click events to lesson items
+            lessonItems.forEach((item, index) => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showLesson(index);
+                });
+            });
+            
+            // Tab switching
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const tabName = tab.dataset.tab;
+                    const parent = tab.closest('.editor-container');
+                    
+                    // Remove active class from all tabs and panels
+                    parent.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    parent.querySelectorAll('.editor-panel').forEach(p => p.classList.remove('active'));
+                    
+                    // Add active class to clicked tab and corresponding panel
+                    tab.classList.add('active');
+                    parent.querySelector(`#editor-${tabName}-intro`).classList.add('active');
+                });
+            });
+        });
+        
+        // Run code function for each lesson
+        function runCode(lessonId) {
+            const htmlCode = document.getElementById(`html-code-${lessonId}`).value;
+            const cssCode = document.getElementById(`css-code-${lessonId}`) ? document.getElementById(`css-code-${lessonId}`).value : '';
+            const previewFrame = document.getElementById(`preview-frame-${lessonId}`);
+            const previewDocument = previewFrame.contentDocument || previewFrame.contentWindow.document;
+            
+            previewDocument.open();
+            previewDocument.write(`
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <style>${cssCode}</style>
+                </head>
+                <body>
+                    ${htmlCode}
+                </body>
+                </html>
+            `);
+            previewDocument.close();
+        }
+    </script>
+</body>
+</html>

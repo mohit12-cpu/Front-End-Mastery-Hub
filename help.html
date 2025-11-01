@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help & Support - CodeMaster</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/courses.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h2><i class="fas fa-code"></i> CodeMaster</h2>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="tutorial.html">Tutorials</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="courses/projects.html">Projects</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                    <li><a href="help.html" class="active">Help</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="btn btn-primary">Sign Up</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> / <span>Help & Support</span>
+        </div>
+    </section>
+
+    <!-- Help Section -->
+    <section class="help">
+        <div class="container">
+            <h1 class="section-title">Help & Support</h1>
+            
+            <div class="help-container">
+                <div class="help-sidebar">
+                    <ul class="help-menu">
+                        <li class="active"><a href="#getting-started">Getting Started</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#tutorials">Tutorials</a></li>
+                        <li><a href="#quizzes">Quizzes</a></li>
+                        <li><a href="#progress">Progress Tracking</a></li>
+                        <li><a href="#troubleshooting">Troubleshooting</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="help-content">
+                    <!-- Getting Started -->
+                    <div id="getting-started" class="help-section active">
+                        <h2>Getting Started</h2>
+                        
+                        <div class="help-item">
+                            <h3>How do I create an account?</h3>
+                            <p>CodeMaster is a completely free platform that works in your browser. No account creation is required to start learning. All your progress is automatically saved in your browser's local storage.</p>
+                        </div>
+                        
+                        <div class="help-item">
+                            <h3>How do I start learning?</h3>
+                            <p>Visit the <a href="courses.html">Courses</a> page to browse available courses. Click on any course to begin learning. Each course is divided into lessons that you can complete at your own pace.</p>
+                        </div>
+                        
+                        <div class="help-item">
+                            <h3>Is there a mobile app?</h3>
+                            <p>CodeMaster works on all devices with a modern web browser, including smartphones and tablets. There is currently no dedicated mobile app, but the website is fully responsive and mobile-friendly.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Courses -->
+                    <div id="courses" class="help-section">
+                        <h2>Courses</h2>
+                        
+                        <div class="help-item">
+                            <h3>What courses are available?</h3>
+                            <p>CodeMaster currently offers courses in HTML, CSS, JavaScript, and Python. Each course includes interactive tutorials, coding exercises, and quizzes to test your knowledge.</p>
+                        </div>
+                        
+                        <div class="help-item">
+                            <h3>How are courses structured?</h3>
+                            <p>Each course is divided into lessons that build upon each other. Lessons include explanations, examples, and interactive coding exercises. Courses conclude with a final project and quiz.</p>
+                        </div>
+                        
+                        <div class="help-item">
+                            <h3>Can I skip lessons?</h3>
+                            <p>Yes, you can navigate to any lesson in a course. However, we recommend following the structured order for the best learning experience.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Tutorials -->
+                    <div id="tutorials" class="help-section">
+                        <h2>Tutorials</h2>
+                        
+                        <div class="help-item">
+                            <h3>How do the interactive tutorials work?</h3>
+                            <p>Each tutorial includes a code editor where you can write and test code in real-time. The output is displayed immediately, allowing you to see the results of your code.</p>
+                        </div>
+                        
+                        <div class="help-item">
+                            <h3>Can I save my code?</h3>
+                            <p>Your code is automatically saved in your browser's local storage as you type. When you return to a lesson, your previous code will be restored.</p>
+                        </div>
+                        
+                        <div class="help-item">
+                            <h3>What programming languages are supported?</h3>
+                            <p>The tutorials support HTML, CSS, and JavaScript. Python tutorials display code examples but do not include an interactive editor due to browser limitations.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Quizzes -->
+                    <div id="quizzes" class="help-section">
+                        <h2>Quizzes</h2>
+                        
+                        <div class="help-item">
+                            <h3>How do quizzes work?</h3>
+                            <p>Each course concludes with a quiz to test your knowledge. Quizzes consist of multiple-choice questions. Your scores are saved and can be viewed in your dashboard.</p>
+                        </div>
+                        
+                        <div class="help-item">
+                            <h3>Can I retake quizzes?</h3>
+                            <p>Yes, you can retake any quiz as many times as you like. Only your highest score is saved.</p>
+                        </div>
+                        
+                        <div class="help-item">
+                            <h3>What happens if I fail a quiz?</h3>
+                            <p>There's no passing or failing - quizzes are designed to help you identify areas where you may need additional study. Review the course material and try again.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Progress Tracking -->
+                    <div id="progress" class="help-section">
+                        <h2>Progress Tracking</h2>
+                        
+                        <div class="help-item">
+                            <h3>How is my progress tracked?</h3>
+                            <p>Your progress is automatically saved in your browser's local storage. You can view your progress on the <a href="dashboard.html">Dashboard</a> and <a href="profile.html">Profile</a> pages.</p>
+                        </div>
+                        
+                        <div class="help-item">
+                            <h3>Can I reset my progress?</h3>
+                            <p>Yes, you can reset your progress from the <a href="profile.html">Profile</a> page. This will clear all saved data, including completed lessons and quiz scores.</p>
+                        </div>
+                        
+                        <div class="help-item">
+                            <h3>Is my progress synced across devices?</h3>
+                            <p>Progress is stored locally in your browser. To sync across devices, you would need to use the same browser and ensure local storage is not cleared.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Troubleshooting -->
+                    <div id="troubleshooting" class="help-section">
+                        <h2>Troubleshooting</h2>
+                        
+                        <div class="help-item">
+                            <h3>My progress isn't saving</h3>
+                            <p>Ensure your browser is not blocking local storage. Try refreshing the page or clearing your browser cache. If issues persist, try a different browser.</p>
+                        </div>
+                        
+                        <div class="help-item">
+                            <h3>The code editor isn't working</h3>
+                            <p>Make sure you're using a modern browser (Chrome, Firefox, Safari, or Edge). Try refreshing the page or clearing your browser cache.</p>
+                        </div>
+                        
+                        <div class="help-item">
+                            <h3>Some features aren't loading</h3>
+                            <p>Check your internet connection and ensure JavaScript is enabled in your browser. Try refreshing the page or clearing your browser cache.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Us -->
+                    <div id="contact" class="help-section">
+                        <h2>Contact Us</h2>
+                        
+                        <div class="help-item">
+                            <h3>Feedback and Suggestions</h3>
+                            <p>We'd love to hear your feedback! Email us at <a href="mailto:feedback@codemaster.example">feedback@codemaster.example</a> with your suggestions for improving CodeMaster.</p>
+                        </div>
+                        
+                        <div class="help-item">
+                            <h3>Report a Bug</h3>
+                            <p>If you encounter any issues, please report them to <a href="mailto:bugs@codemaster.example">bugs@codemaster.example</a> with details about the problem and your browser information.</p>
+                        </div>
+                        
+                        <div class="help-item">
+                            <h3>General Inquiries</h3>
+                            <p>For general questions, contact us at <a href="mailto:info@codemaster.example">info@codemaster.example</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3><i class="fas fa-code"></i> CodeMaster</h3>
+                    <p>Learn to code interactively with our hands-on tutorials and real-time editor.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="tutorial.html">Tutorials</a></li>
+                        <li><a href="quiz.html">Quiz</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Subscribe</h4>
+                    <p>Get the latest updates and news.</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 CodeMaster. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Help functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add event listeners for help menu
+            document.querySelectorAll('.help-menu a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    showHelpSection(this.getAttribute('href').substring(1));
+                });
+            });
+        });
+        
+        // Show help section
+        function showHelpSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.help-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Update menu active state
+            document.querySelectorAll('.help-menu li').forEach(li => {
+                li.classList.remove('active');
+            });
+            event.target.parentElement.classList.add('active');
+        }
+    </script>
+</body>
+</html>

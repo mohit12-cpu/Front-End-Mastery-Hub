@@ -1,0 +1,204 @@
+{
+  "course": "CSS",
+  "description": "Master CSS to style and layout your web pages beautifully.",
+  "lessons": [
+    {
+      "id": 1,
+      "title": "CSS Syntax and Selectors",
+      "content": "Learn the basic syntax of CSS and how to select elements."
+    },
+    {
+      "id": 2,
+      "title": "Colors, Fonts, and Text",
+      "content": "Style text with colors, fonts, and text properties."
+    },
+    {
+      "id": 3,
+      "title": "Box Model and Spacing",
+      "content": "Understand the CSS box model and how to control spacing."
+    },
+    {
+      "id": 4,
+      "title": "Flexbox Layout",
+      "content": "Create flexible layouts with the Flexbox model."
+    },
+    {
+      "id": 5,
+      "title": "Grid Layout",
+      "content": "Build complex layouts with CSS Grid."
+    },
+    {
+      "id": 6,
+      "title": "Backgrounds and Borders",
+      "content": "Style backgrounds and borders to enhance your designs."
+    },
+    {
+      "id": 7,
+      "title": "Transitions and Animations",
+      "content": "Add smooth transitions and animations to your elements."
+    },
+    {
+      "id": 8,
+      "title": "Pseudo-classes and Elements",
+      "content": "Use pseudo-classes and pseudo-elements for advanced styling."
+    },
+    {
+      "id": 9,
+      "title": "Responsive Design",
+      "content": "Create websites that work on all device sizes."
+    },
+    {
+      "id": 10,
+      "title": "CSS Variables",
+      "content": "Use CSS custom properties for more maintainable stylesheets."
+    },
+    {
+      "id": 11,
+      "title": "CSS Frameworks",
+      "content": "Work with popular CSS frameworks like Bootstrap."
+    },
+    {
+      "id": 12,
+      "title": "Mini Project: Landing Page",
+      "content": "Build a complete responsive landing page."
+    },
+    {
+      "id": 13,
+      "title": "Advanced Selectors and Specificity",
+      "content": "Master complex selectors and understand CSS specificity rules."
+    },
+    {
+      "id": 14,
+      "title": "Positioning (absolute, relative, sticky, fixed)",
+      "content": "Control element positioning with advanced CSS positioning techniques."
+    },
+    {
+      "id": 15,
+      "title": "CSS Grid Projects",
+      "content": "Build complex layouts with practical CSS Grid projects."
+    },
+    {
+      "id": 16,
+      "title": "Flexbox Deep Dive",
+      "content": "Explore advanced Flexbox concepts and practical applications."
+    },
+    {
+      "id": 17,
+      "title": "Responsive Web Design (Fluid Layouts)",
+      "content": "Create fluid layouts that adapt to any screen size."
+    },
+    {
+      "id": 18,
+      "title": "CSS Variables and Custom Properties",
+      "content": "Use CSS variables for dynamic and maintainable styles."
+    },
+    {
+      "id": 19,
+      "title": "Animations and Keyframes",
+      "content": "Create complex animations with CSS keyframes."
+    },
+    {
+      "id": 20,
+      "title": "Transitions and Hover Effects",
+      "content": "Add smooth transitions and interactive hover effects."
+    },
+    {
+      "id": 21,
+      "title": "Pseudo-elements & Pseudo-classes",
+      "content": "Leverage pseudo-elements and pseudo-classes for advanced styling."
+    },
+    {
+      "id": 22,
+      "title": "Mini Project: Animated Landing Page",
+      "content": "Create an animated landing page showcasing advanced CSS techniques."
+    },
+    {
+      "id": 23,
+      "title": "CSS Architecture (BEM, OOCSS concepts)",
+      "content": "Learn CSS architecture methodologies like BEM and OOCSS for scalable, maintainable stylesheets."
+    },
+    {
+      "id": 24,
+      "title": "Custom Fonts and Variable Fonts",
+      "content": "Implement custom fonts and leverage variable fonts for dynamic typography control."
+    },
+    {
+      "id": 25,
+      "title": "Clip-path, Masking, and Filters",
+      "content": "Create advanced visual effects using clip-path, masking techniques, and CSS filters."
+    },
+    {
+      "id": 26,
+      "title": "Advanced Animations (keyframes, transform, transition)",
+      "content": "Master complex animations with keyframes, transforms, and transitions for engaging user experiences."
+    },
+    {
+      "id": 27,
+      "title": "Grid Template Areas and Complex Layouts",
+      "content": "Use CSS Grid template areas to create complex, responsive layouts with named grid areas."
+    },
+    {
+      "id": 28,
+      "title": "Responsive Typography (clamp, min, max)",
+      "content": "Implement fluid typography using CSS functions like clamp(), min(), and max() for responsive text."
+    },
+    {
+      "id": 29,
+      "title": "CSS Functions (calc, var, attr)",
+      "content": "Utilize CSS functions like calc(), var(), and attr() for dynamic styling and calculations."
+    },
+    {
+      "id": 30,
+      "title": "Scroll Animations and Parallax Effects",
+      "content": "Create scroll-triggered animations and parallax effects for immersive web experiences."
+    },
+    {
+      "id": 31,
+      "title": "CSS for Print and Media Types",
+      "content": "Optimize your stylesheets for print and different media types to ensure consistent output across mediums."
+    },
+    {
+      "id": 32,
+      "title": "Mini Project: Animated Portfolio Layout",
+      "content": "Build a responsive portfolio layout with advanced CSS techniques including grid, animations, and custom properties."
+    }
+  ],
+  "quiz": {
+    "title": "CSS Final Quiz",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What does CSS stand for?",
+        "options": [
+          "Computer Style Sheets",
+          "Creative Style Sheets",
+          "Cascading Style Sheets",
+          "Colorful Style Sheets"
+        ],
+        "correct": 2
+      },
+      {
+        "id": 2,
+        "question": "Which property is used to change the background color?",
+        "options": [
+          "color",
+          "bgcolor",
+          "background-color",
+          "background"
+        ],
+        "correct": 2
+      },
+      {
+        "id": 3,
+        "question": "How do you select an element with id 'header'?",
+        "options": [
+          ".header",
+          "#header",
+          "*header",
+          "header"
+        ],
+        "correct": 1
+      }
+    ]
+  }
+}

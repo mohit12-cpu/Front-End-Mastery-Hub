@@ -1,0 +1,119 @@
+{
+  "course": "Bootstrap",
+  "description": "Learn Bootstrap to quickly build responsive websites with pre-designed components.",
+  "lessons": [
+    {
+      "id": 1,
+      "title": "Introduction to Bootstrap",
+      "content": "Understand what Bootstrap is and how to include it in your projects."
+    },
+    {
+      "id": 2,
+      "title": "Grid System",
+      "content": "Master Bootstrap's grid system for responsive layouts."
+    },
+    {
+      "id": 3,
+      "title": "Components",
+      "content": "Use Bootstrap's pre-designed components like buttons, cards, and navbars."
+    },
+    {
+      "id": 4,
+      "title": "Utilities",
+      "content": "Apply Bootstrap utility classes for quick styling."
+    },
+    {
+      "id": 5,
+      "title": "Customization",
+      "content": "Customize Bootstrap to match your design requirements."
+    },
+    {
+      "id": 6,
+      "title": "Responsive Design",
+      "content": "Create fully responsive websites with Bootstrap."
+    },
+    {
+      "id": 7,
+      "title": "JavaScript Components",
+      "content": "Use Bootstrap's JavaScript-powered components."
+    },
+    {
+      "id": 8,
+      "title": "Mini Project: Responsive Portfolio",
+      "content": "Build a complete responsive portfolio using Bootstrap."
+    },
+    {
+      "id": 9,
+      "title": "Advanced Grid System",
+      "content": "Deep dive into Bootstrap's advanced grid features including flexbox utilities and responsive breakpoints."
+    },
+    {
+      "id": 10,
+      "title": "Custom Components and Extensions",
+      "content": "Create custom components and extend Bootstrap's functionality with additional plugins."
+    },
+    {
+      "id": 11,
+      "title": "Theming and Sass Integration",
+      "content": "Learn how to theme Bootstrap using Sass variables and mixins for custom designs."
+    },
+    {
+      "id": 12,
+      "title": "Bootstrap 5 New Features",
+      "content": "Explore new features and improvements in Bootstrap 5 including CSS Grid, RTL support, and updated components."
+    },
+    {
+      "id": 13,
+      "title": "Performance Optimization",
+      "content": "Optimize Bootstrap performance by customizing builds and using only required components."
+    },
+    {
+      "id": 14,
+      "title": "Accessibility Features",
+      "content": "Implement accessibility best practices with Bootstrap's built-in accessibility features."
+    },
+    {
+      "id": 15,
+      "title": "Mini Project: E-commerce Dashboard",
+      "content": "Build a complete e-commerce dashboard using advanced Bootstrap components and layouts."
+    }
+  ],
+  "quiz": {
+    "title": "Bootstrap Final Quiz",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What is Bootstrap?",
+        "options": [
+          "A programming language",
+          "A CSS framework",
+          "A JavaScript library",
+          "A database system"
+        ],
+        "correct": 1
+      },
+      {
+        "id": 2,
+        "question": "Which class is used to create a responsive grid layout in Bootstrap?",
+        "options": [
+          ".grid",
+          ".container",
+          ".row",
+          ".flex"
+        ],
+        "correct": 2
+      },
+      {
+        "id": 3,
+        "question": "How do you make a button look like a primary button in Bootstrap?",
+        "options": [
+          ".btn",
+          ".btn-primary",
+          ".button-primary",
+          ".primary-btn"
+        ],
+        "correct": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "course": "HTML",
+  "description": "Learn the fundamentals of HTML, the backbone of web development.",
+  "lessons": [
+    {
+      "id": 1,
+      "title": "Introduction to HTML",
+      "content": "HTML (HyperText Markup Language) is the standard markup language for documents designed to be displayed in a web browser."
+    },
+    {
+      "id": 2,
+      "title": "HTML Page Structure",
+      "content": "Every HTML document has a specific structure including DOCTYPE, html, head, and body elements."
+    },
+    {
+      "id": 3,
+      "title": "Text Formatting & Headings",
+      "content": "Learn how to format text and create headings using HTML tags."
+    },
+    {
+      "id": 4,
+      "title": "Links and Images",
+      "content": "Discover how to add hyperlinks and images to your web pages."
+    },
+    {
+      "id": 5,
+      "title": "Lists and Tables",
+      "content": "Create ordered, unordered lists and tables to organize content."
+    },
+    {
+      "id": 6,
+      "title": "Forms and Inputs",
+      "content": "Build interactive forms with various input types for user data collection."
+    },
+    {
+      "id": 7,
+      "title": "Semantic Tags",
+      "content": "Use semantic HTML tags to improve accessibility and SEO."
+    },
+    {
+      "id": 8,
+      "title": "Audio & Video Embedding",
+      "content": "Embed multimedia content directly into your web pages."
+    },
+    {
+      "id": 9,
+      "title": "Iframes and Embedding",
+      "content": "Embed external content using iframes and other embedding techniques."
+    },
+    {
+      "id": 10,
+      "title": "HTML5 APIs",
+      "content": "Explore modern HTML5 features like Canvas, Geolocation, and Web Storage."
+    },
+    {
+      "id": 11,
+      "title": "Interactive Elements",
+      "content": "Create interactive web elements using HTML5 features."
+    },
+    {
+      "id": 12,
+      "title": "Mini Project: Portfolio Page",
+      "content": "Build a complete personal portfolio page using all HTML concepts learned."
+    },
+    {
+      "id": 13,
+      "title": "Meta Tags and SEO Basics",
+      "content": "Learn how to use meta tags to improve search engine optimization."
+    },
+    {
+      "id": 14,
+      "title": "Accessibility (ARIA, alt text, semantics)",
+      "content": "Implement accessibility features to make your websites usable by everyone."
+    },
+    {
+      "id": 15,
+      "title": "Forms with Validation Attributes",
+      "content": "Use HTML5 form validation attributes to improve user experience."
+    },
+    {
+      "id": 16,
+      "title": "Custom Data Attributes (data-*)",
+      "content": "Store custom data in HTML elements using data-* attributes."
+    },
+    {
+      "id": 17,
+      "title": "HTML5 APIs (Canvas, Web Storage, Drag & Drop, Geolocation)",
+      "content": "Deep dive into advanced HTML5 APIs for creating rich web applications."
+    },
+    {
+      "id": 18,
+      "title": "SVG Graphics and Embedding",
+      "content": "Work with Scalable Vector Graphics for crisp, scalable images."
+    },
+    {
+      "id": 19,
+      "title": "Responsive Images (<picture>, srcset)",
+      "content": "Implement responsive images that adapt to different screen sizes."
+    },
+    {
+      "id": 20,
+      "title": "Creating Templates and Layout Structures",
+      "content": "Build reusable templates and complex layout structures."
+    },
+    {
+      "id": 21,
+      "title": "Using Iframes and Embedded Media Safely",
+      "content": "Learn best practices for embedding external content securely."
+    },
+    {
+      "id": 22,
+      "title": "Mini Project: Build a Blog Article Page",
+      "content": "Create a complete blog article page with all advanced HTML features."
+    },
+    {
+      "id": 23,
+      "title": "Semantic HTML5 Best Practices",
+      "content": "Learn how to use semantic HTML5 elements to create well-structured, accessible web pages that improve SEO."
+    },
+    {
+      "id": 24,
+      "title": "Metadata for SEO & Social Sharing (Open Graph, meta tags)",
+      "content": "Master the use of meta tags for search engine optimization and social media sharing, including Open Graph and Twitter Cards."
+    },
+    {
+      "id": 25,
+      "title": "Forms: Validation, Input Types, Autocomplete, Accessibility",
+      "content": "Create advanced forms with HTML5 validation, custom input types, autocomplete attributes, and accessibility features."
+    },
+    {
+      "id": 26,
+      "title": "HTML Templates and Shadow DOM",
+      "content": "Understand HTML templates and how they work with the Shadow DOM to create encapsulated components."
+    },
+    {
+      "id": 27,
+      "title": "Custom Elements (Web Components)",
+      "content": "Learn to create custom HTML elements using the Web Components API for reusable UI components."
+    },
+    {
+      "id": 28,
+      "title": "HTML5 Canvas Drawing and Animations",
+      "content": "Create dynamic graphics and animations using the HTML5 Canvas API for games and data visualization."
+    },
+    {
+      "id": 29,
+      "title": "LocalStorage and SessionStorage (HTML5 APIs)",
+      "content": "Store data locally in the browser using LocalStorage and SessionStorage APIs for persistent user experiences."
+    },
+    {
+      "id": 30,
+      "title": "Microdata and Schema.org Basics",
+      "content": "Implement structured data using microdata and Schema.org vocabulary to enhance search engine results."
+    },
+    {
+      "id": 31,
+      "title": "Accessibility and Screen Readers",
+      "content": "Deep dive into web accessibility principles and how to make your HTML work better with screen readers."
+    },
+    {
+      "id": 32,
+      "title": "Mini Project: Build a Contact Form Page",
+      "content": "Create a fully accessible contact form with validation, autocomplete, and proper semantic structure."
+    }
+  ],
+  "quiz": {
+    "title": "HTML Final Quiz",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What does HTML stand for?",
+        "options": [
+          "Hyper Text Markup Language",
+          "Home Tool Markup Language",
+          "Hyperlinks and Text Markup Language",
+          "None of the above"
+        ],
+        "correct": 0
+      },
+      {
+        "id": 2,
+        "question": "Which tag is used to define an internal style sheet?",
+        "options": [
+          "<script>",
+          "<css>",
+          "<style>",
+          "<link>"
+        ],
+        "correct": 2
+      },
+      {
+        "id": 3,
+        "question": "Which attribute is used to define inline styles?",
+        "options": [
+          "class",
+          "styles",
+          "style",
+          "font"
+        ],
+        "correct": 2
+      }
+    ]
+  }
+}

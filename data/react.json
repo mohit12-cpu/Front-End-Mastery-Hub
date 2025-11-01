@@ -1,0 +1,134 @@
+{
+  "course": "React",
+  "description": "Learn React concepts and build modern user interfaces with this popular JavaScript library.",
+  "lessons": [
+    {
+      "id": 1,
+      "title": "Introduction to React",
+      "content": "React is a JavaScript library for building user interfaces. Learn what React is and why it's so popular.",
+      "exampleCode": "function Welcome(props) {\n  return <h1>Hello, {props.name}!</h1>;\n}"
+    },
+    {
+      "id": 2,
+      "title": "Components and Props",
+      "content": "Components let you split the UI into independent, reusable pieces. Props are how components communicate.",
+      "exampleCode": "function App() {\n  return (\n    <div>\n      <Welcome name=\"Alice\" />\n      <Welcome name=\"Bob\" />\n    </div>\n  );\n}"
+    },
+    {
+      "id": 3,
+      "title": "State and Events",
+      "content": "State is how React components manage data that can change over time. Events allow components to respond to user interactions.",
+      "exampleCode": "function Counter() {\n  const [count, setCount] = useState(0);\n  \n  return (\n    <div>\n      <p>Count: {count}</p>\n      <button onClick={() => setCount(count + 1)}>\n        Increment\n      </button>\n    </div>\n  );\n}"
+    },
+    {
+      "id": 4,
+      "title": "Conditional Rendering",
+      "content": "Conditional rendering allows you to display different components or elements based on certain conditions.",
+      "exampleCode": "function Greeting(props) {\n  const isLoggedIn = props.isLoggedIn;\n  \n  if (isLoggedIn) {\n    return <h1>Welcome back!</h1>;\n  }\n  return <h1>Please sign up.</h1>;\n}"
+    },
+    {
+      "id": 5,
+      "title": "Lists and Keys",
+      "content": "React allows you to transform arrays into lists of elements using the map() function.",
+      "exampleCode": "function NumberList(props) {\n  const numbers = props.numbers;\n  const listItems = numbers.map((number) =>\n    <li key={number.toString()}>\n      {number}\n    </li>\n  );\n  \n  return (\n    <ul>{listItems}</ul>\n  );\n}"
+    },
+    {
+      "id": 6,
+      "title": "Simple JSX Examples",
+      "content": "JSX is a syntax extension for JavaScript that looks similar to HTML. It allows you to write HTML-like code in your JavaScript files.",
+      "exampleCode": "const element = (\n  <h1 className=\"greeting\">\n    Hello, {formatName(user)}!\n  </h1>\n);"
+    },
+    {
+      "id": 7,
+      "title": "Virtual DOM Explanation",
+      "content": "The Virtual DOM is a programming concept where a virtual representation of the UI is kept in memory and synced with the real DOM.",
+      "exampleCode": "// React creates a virtual DOM tree\n// Compares with previous tree (diffing)\n// Calculates most efficient updates (reconciliation)\n// Only updates what's necessary in real DOM"
+    },
+    {
+      "id": 8,
+      "title": "Mini Project: Counter App",
+      "content": "Build a complete counter application using React concepts you've learned.",
+      "exampleCode": "function CounterApp() {\n  const [count, setCount] = React.useState(0);\n  \n  return (\n    <div>\n      <h1>Counter: {count}</h1>\n      <button onClick={() => setCount(count + 1)}>+1</button>\n      <button onClick={() => setCount(count - 1)}>-1</button>\n      <button onClick={() => setCount(0)}>Reset</button>\n    </div>\n  );\n}"
+    },
+    {
+      "id": 9,
+      "title": "Component Reuse and Props Drilling",
+      "content": "Learn how to create reusable components and understand the challenges of props drilling in component hierarchies.",
+      "exampleCode": "function UserCard({ user, onEdit, onDelete }) {\n  return (\n    <div className=\"user-card\">\n      <h3>{user.name}</h3>\n      <p>{user.email}</p>\n      <button onClick={() => onEdit(user)}>Edit</button>\n      <button onClick={() => onDelete(user.id)}>Delete</button>\n    </div>\n  );\n}"
+    },
+    {
+      "id": 10,
+      "title": "useState, useEffect (concept only)",
+      "content": "Deep dive into React hooks for state management and side effects in functional components.",
+      "exampleCode": "function UserProfile({ userId }) {\n  const [user, setUser] = useState(null);\n  const [loading, setLoading] = useState(true);\n  \n  useEffect(() => {\n    fetchUser(userId).then(userData => {\n      setUser(userData);\n      setLoading(false);\n    });\n  }, [userId]);\n  \n  if (loading) return <div>Loading...</div>;\n  return <UserProfileView user={user} />;\n}"
+    },
+    {
+      "id": 11,
+      "title": "Event Handling",
+      "content": "Handle user interactions and events in React components with proper event handling patterns.",
+      "exampleCode": "function FormComponent() {\n  const [formData, setFormData] = useState({ name: '', email: '' });\n  \n  const handleChange = (e) => {\n    setFormData({\n      ...formData,\n      [e.target.name]: e.target.value\n    });\n  };\n  \n  const handleSubmit = (e) => {\n    e.preventDefault();\n    console.log('Form submitted:', formData);\n  };\n  \n  return (\n    <form onSubmit={handleSubmit}>\n      <input name=\"name\" value={formData.name} onChange={handleChange} />\n      <input name=\"email\" value={formData.email} onChange={handleChange} />\n      <button type=\"submit\">Submit</button>\n    </form>\n  );\n}"
+    },
+    {
+      "id": 12,
+      "title": "Conditional Rendering",
+      "content": "Implement advanced conditional rendering techniques for dynamic UIs.",
+      "exampleCode": "function Notification({ message, type, isVisible }) {\n  return (\n    isVisible && (\n      <div className={`notification notification--${type}`}>\n        {message}\n        {type === 'error' && <ErrorDetails />}\n      </div>\n    )\n  );\n}"
+    },
+    {
+      "id": 13,
+      "title": "Props vs State (explained visually)",
+      "content": "Understand the key differences between props and state with visual examples and use cases.",
+      "exampleCode": "// Props: Read-only data passed from parent to child\n// State: Mutable data managed within a component\n\nfunction Parent() {\n  const [count, setCount] = useState(0);\n  \n  return (\n    <div>\n      <ChildComponent count={count} /> // Props\n      <button onClick={() => setCount(count + 1)}>\n        Update State\n      </button>\n    </div>\n  );\n}"
+    },
+    {
+      "id": 14,
+      "title": "JSX Expressions",
+      "content": "Master JSX expressions for dynamic content rendering and complex UI logic.",
+      "exampleCode": "function ProductCard({ product }) {\n  return (\n    <div className=\"product-card\">\n      <h2>{product.name}</h2>\n      <p className=\"price ${product.onSale ? 'sale' : ''}\">\n        ${product.price}\n        {product.onSale && (\n          <span className=\"original-price\">\n            ${product.originalPrice}\n          </span>\n        )}\n      </p>\n      <button\n        disabled={!product.inStock}\n        className={`btn ${!product.inStock ? 'btn--disabled' : 'btn--primary'}`}\n      >\n        {product.inStock ? 'Add to Cart' : 'Out of Stock'}\n      </button>\n    </div>\n  );\n}"
+    },
+    {
+      "id": 15,
+      "title": "Mini Project: React-like Counter Concept Demo (using Vanilla JS)",
+      "content": "Create a React-like counter component using vanilla JavaScript to understand React concepts.",
+      "exampleCode": "function createCounter(initialValue = 0) {\n  let state = initialValue;\n  const listeners = [];\n  \n  function setState(newState) {\n    state = newState;\n    listeners.forEach(listener => listener(state));\n  }\n  \n  function subscribe(listener) {\n    listeners.push(listener);\n    return () => {\n      const index = listeners.indexOf(listener);\n      if (index > -1) listeners.splice(index, 1);\n    };\n  }\n  \n  return { getState: () => state, setState, subscribe };\n}"
+    }
+  ],
+  "quiz": {
+    "title": "React Final Quiz",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What is React?",
+        "options": [
+          "A JavaScript library for building user interfaces",
+          "A CSS framework",
+          "A backend framework",
+          "A database management system"
+        ],
+        "correct": 0
+      },
+      {
+        "id": 2,
+        "question": "What is JSX?",
+        "options": [
+          "A JavaScript extension that allows HTML-like syntax",
+          "A new programming language",
+          "A CSS preprocessor",
+          "A testing framework"
+        ],
+        "correct": 0
+      },
+      {
+        "id": 3,
+        "question": "What hook is used to manage state in functional components?",
+        "options": [
+          "useState",
+          "useEffect",
+          "useContext",
+          "useReducer"
+        ],
+        "correct": 0
+      }
+    ]
+  }
+}

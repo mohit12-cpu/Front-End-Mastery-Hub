@@ -1,0 +1,2133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Course - CodeMaster</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/courses.css">
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h2><i class="fas fa-code"></i> CodeMaster</h2>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../courses.html">Courses</a></li>
+                    <li><a href="../tutorial.html">Tutorials</a></li>
+                    <li><a href="../quiz.html">Quiz</a></li>
+                    <li><a href="../courses/projects.html">Projects</a></li>
+                    <li><a href="../dashboard.html">Dashboard</a></li>
+                    <li><a href="../profile.html">Profile</a></li>
+                    <li><a href="../settings.html">Settings</a></li>
+                    <li><a href="../help.html">Help</a></li>
+                    <li><a href="../about.html">About</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="btn btn-primary">Sign Up</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">Home</a> / <a href="../courses.html">Courses</a> / <span>HTML</span>
+        </div>
+    </section>
+
+    <div class="tutorial-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>HTML Course</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 0%;"></div>
+                </div>
+                <p class="progress-text">0/13 lessons completed</p>
+            </div>
+            <ul class="lessons-list">
+                <li class="lesson-item">
+                    <a href="#intro">
+                        <span class="lesson-number">1</span>
+                        <span class="lesson-title">Introduction to HTML</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#structure">
+                        <span class="lesson-number">2</span>
+                        <span class="lesson-title">HTML Page Structure</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#text">
+                        <span class="lesson-number">3</span>
+                        <span class="lesson-title">Text Formatting & Headings</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#links">
+                        <span class="lesson-number">4</span>
+                        <span class="lesson-title">Links and Images</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#lists">
+                        <span class="lesson-number">5</span>
+                        <span class="lesson-title">Lists and Tables</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#forms">
+                        <span class="lesson-number">6</span>
+                        <span class="lesson-title">Forms and Inputs</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#semantic">
+                        <span class="lesson-number">7</span>
+                        <span class="lesson-title">Semantic Tags</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#media">
+                        <span class="lesson-number">8</span>
+                        <span class="lesson-title">Audio & Video Embedding</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#iframe">
+                        <span class="lesson-number">9</span>
+                        <span class="lesson-title">Iframes and Embedding</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#apis">
+                        <span class="lesson-number">10</span>
+                        <span class="lesson-title">HTML5 APIs</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#interactive">
+                        <span class="lesson-number">11</span>
+                        <span class="lesson-title">Interactive Elements</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#project">
+                        <span class="lesson-number">12</span>
+                        <span class="lesson-title">Mini Project: Portfolio</span>
+                    </a>
+                </li>
+                <li class="lesson-item">
+                    <a href="html-quiz.html">
+                        <span class="lesson-number">13</span>
+                        <span class="lesson-title">Final Quiz</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="tutorial-content">
+            <div class="lesson-header">
+                <h1>HTML Course</h1>
+                <div class="lesson-navigation">
+                    <button class="btn btn-secondary" disabled><i class="fas fa-arrow-left"></i> Previous</button>
+                    <button class="btn btn-primary" onclick="nextLesson()">Next <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <div class="lesson-body">
+                <!-- Lesson 1: Introduction to HTML -->
+                <section id="intro" class="lesson-section">
+                    <h2>1. Introduction to HTML</h2>
+                    <p>HTML (HyperText Markup Language) is the standard markup language for documents designed to be displayed in a web browser. It defines the meaning and structure of web content.</p>
+                    
+                    <h3>What is HTML?</h3>
+                    <p>HTML is a markup language that uses tags to define elements within a document. These elements form the building blocks of web pages.</p>
+                    
+                    <h3>Basic HTML Document</h3>
+                    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;My First Heading&lt;/h1&gt;
+    &lt;p&gt;My first paragraph.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    
+                    <button class="btn btn-secondary expand-topic" data-topic="html-intro">Expand Topic</button>
+                    <div id="expanded-html-intro" class="expanded-content" style="display: none;"></div>
+                    
+                    <h3>Code Playground</h3>
+                    <div class="playground-container">
+                        <div class="playground-header">
+                            <h4>Experiment with HTML</h4>
+                            <button class="btn btn-primary" onclick="runPlayground()">Run Code</button>
+                        </div>
+                        <div class="playground-editor">
+                            <textarea id="playground-code" class="code-editor">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My Playground&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to the HTML Playground!&lt;/h1&gt;
+    &lt;p&gt;Try editing this code and see the results.&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Add more elements&lt;/li&gt;
+        &lt;li&gt;Change the text&lt;/li&gt;
+        &lt;li&gt;Experiment with tags&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                        </div>
+                        <div class="playground-preview">
+                            <iframe id="playground-preview-frame" title="Playground preview"></iframe>
+                        </div>
+                    </div>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                            </div>
+                            <button class="btn btn-run" data-run-code="intro">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-intro">
+                                <textarea id="html-code-intro">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My First Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello World!&lt;/h1&gt;
+    &lt;p&gt;This is my first webpage.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-intro" title="HTML introduction preview"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 2: HTML Page Structure -->
+                <section id="structure" class="lesson-section" style="display: none;">
+                    <h2>2. HTML Page Structure</h2>
+                    <p>Every HTML document has a specific structure that tells the browser how to display the content.</p>
+                    
+                    <h3>Document Type Declaration</h3>
+                    <pre><code class="language-html">&lt;!DOCTYPE html&gt;</code></pre>
+                    <p>This declaration defines the document type and version of HTML.</p>
+                    
+                    <h3>HTML Root Element</h3>
+                    <pre><code class="language-html">&lt;html&gt;
+    &lt;!-- Page content goes here --&gt;
+&lt;/html&gt;</code></pre>
+                    <p>The &lt;html&gt; element is the root element of an HTML page.</p>
+                    
+                    <h3>Head Section</h3>
+                    <pre><code class="language-html">&lt;head&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;/head&gt;</code></pre>
+                    <p>The &lt;head&gt; element contains meta information about the document.</p>
+                    
+                    <h3>Body Section</h3>
+                    <pre><code class="language-html">&lt;body&gt;
+    &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+    &lt;p&gt;This is the visible content.&lt;/p&gt;
+&lt;/body&gt;</code></pre>
+                    <p>The &lt;body&gt; element contains the visible page content.</p>
+                    
+                    <h3>Complete Structure</h3>
+                    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My Website&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome&lt;/h1&gt;
+    &lt;p&gt;Hello, world!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                            </div>
+                            <button class="btn btn-run" data-run-code="structure">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-structure">
+                                <textarea id="html-code-structure">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My Structured Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;My Website&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;p&gt;This page has a proper structure.&lt;/p&gt;
+    &lt;/main&gt;
+    &lt;footer&gt;
+        &lt;p&gt;Footer content&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-structure" title="HTML structure preview"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 3: Text Formatting & Headings -->
+                <section id="text" class="lesson-section" style="display: none;">
+                    <h2>3. Text Formatting & Headings</h2>
+                    <p>HTML provides various elements to format text and create headings.</p>
+                    
+                    <h3>Headings</h3>
+                    <pre><code class="language-html">&lt;h1&gt;Main Heading&lt;/h1&gt;
+&lt;h2&gt;Subheading&lt;/h2&gt;
+&lt;h3&gt;Sub-subheading&lt;/h3&gt;
+&lt;h4&gt;Level 4 Heading&lt;/h4&gt;
+&lt;h5&gt;Level 5 Heading&lt;/h5&gt;
+&lt;h6&gt;Level 6 Heading&lt;/h6&gt;</code></pre>
+                    
+                    <h3>Paragraphs</h3>
+                    <pre><code class="language-html">&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;p&gt;This is another paragraph.&lt;/p&gt;</code></pre>
+                    
+                    <h3>Text Formatting</h3>
+                    <pre><code class="language-html">&lt;b&gt;Bold text&lt;/b&gt;
+&lt;strong&gt;Important text&lt;/strong&gt;
+&lt;i&gt;Italic text&lt;/i&gt;
+&lt;em&gt;Emphasized text&lt;/em&gt;
+&lt;mark&gt;Marked text&lt;/mark&gt;
+&lt;small&gt;Smaller text&lt;/small&gt;
+&lt;del&gt;Deleted text&lt;/del&gt;
+&lt;ins&gt;Inserted text&lt;/ins&gt;
+&lt;sub&gt;Subscript text&lt;/sub&gt;
+&lt;sup&gt;Superscript text&lt;/sup&gt;</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                            </div>
+                            <button class="btn btn-run" data-run-code="text">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-text">
+                                <textarea id="html-code-text">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Text Formatting&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Main Heading&lt;/h1&gt;
+    &lt;h2&gt;Subheading&lt;/h2&gt;
+    &lt;p&gt;This is a &lt;b&gt;bold&lt;/b&gt; word and this is &lt;i&gt;italic&lt;/i&gt;.&lt;/p&gt;
+    &lt;p&gt;This text is &lt;mark&gt;highlighted&lt;/mark&gt;.&lt;/p&gt;
+    &lt;p&gt;This is &lt;sub&gt;subscript&lt;/sub&gt; and this is &lt;sup&gt;superscript&lt;/sup&gt;.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-text" title="Text formatting preview"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 4: Links and Images -->
+                <section id="links" class="lesson-section" style="display: none;">
+                    <h2>4. Links and Images</h2>
+                    <p>Learn how to add hyperlinks and images to your web pages.</p>
+                    
+                    <h3>Creating Links</h3>
+                    <pre><code class="language-html">&lt;!-- Link to another page on your site --&gt;
+&lt;a href="about.html"&gt;About Us&lt;/a&gt;
+
+&lt;!-- Link to an external website --&gt;
+&lt;a href="https://www.example.com"&gt;Visit Example.com&lt;/a&gt;
+
+&lt;!-- Link that opens in a new tab --&gt;
+&lt;a href="https://www.example.com" target="_blank"&gt;Visit Example.com&lt;/a&gt;</code></pre>
+                    
+                    <h3>Adding Images</h3>
+                    <pre><code class="language-html">&lt;!-- Basic image --&gt;
+&lt;img src="image.jpg" alt="Description of image"&gt;
+
+&lt;!-- Image with specified dimensions --&gt;
+&lt;img src="image.jpg" alt="Description" width="300" height="200"&gt;
+
+&lt;!-- Image as a link --&gt;
+&lt;a href="https://www.example.com"&gt;
+    &lt;img src="image.jpg" alt="Description"&gt;
+&lt;/a&gt;</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                            </div>
+                            <button class="btn btn-run" data-run-code="links">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-links">
+                                <textarea id="html-code-links">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Links and Images&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Links and Images Example&lt;/h1&gt;
+    
+    &lt;h2&gt;Links&lt;/h2&gt;
+    &lt;p&gt;Visit &lt;a href="https://www.google.com" target="_blank"&gt;Google&lt;/a&gt; in a new tab.&lt;/p&gt;
+    
+    &lt;h2&gt;Images&lt;/h2&gt;
+    &lt;img src="https://via.placeholder.com/300x200" alt="Placeholder Image"&gt;
+    
+    &lt;h2&gt;Image as Link&lt;/h2&gt;
+    &lt;a href="https://www.example.com"&gt;
+        &lt;img src="https://via.placeholder.com/150x100" alt="Linked Image"&gt;
+    &lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-links" title="Links and images preview"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 5: Lists and Tables -->
+                <section id="lists" class="lesson-section" style="display: none;">
+                    <h2>5. Lists and Tables</h2>
+                    <p>Organize content using lists and tables in HTML.</p>
+                    
+                    <h3>Lists</h3>
+                    <pre><code class="language-html">&lt;!-- Unordered List --&gt;
+&lt;ul&gt;
+    &lt;li&gt;First item&lt;/li&gt;
+    &lt;li&gt;Second item&lt;/li&gt;
+    &lt;li&gt;Third item&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Ordered List --&gt;
+&lt;ol&gt;
+    &lt;li&gt;First step&lt;/li&gt;
+    &lt;li&gt;Second step&lt;/li&gt;
+    &lt;li&gt;Third step&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!-- Description List --&gt;
+&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;HyperText Markup Language&lt;/dd&gt;
+    &lt;dt&gt;CSS&lt;/dt&gt;
+    &lt;dd&gt;Cascading Style Sheets&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+                    
+                    <h3>Tables</h3>
+                    <pre><code class="language-html">&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Name&lt;/th&gt;
+            &lt;th&gt;Age&lt;/th&gt;
+            &lt;th&gt;City&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;John&lt;/td&gt;
+            &lt;td&gt;25&lt;/td&gt;
+            &lt;td&gt;New York&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Jane&lt;/td&gt;
+            &lt;td&gt;30&lt;/td&gt;
+            &lt;td&gt;London&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                            </div>
+                            <button class="btn btn-run" data-run-code="lists">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-lists">
+                                <textarea id="html-code-lists">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Lists and Tables&lt;/title&gt;
+    &lt;style&gt;
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Lists and Tables Example&lt;/h1&gt;
+    
+    &lt;h2&gt;Shopping List&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Milk&lt;/li&gt;
+        &lt;li&gt;Eggs&lt;/li&gt;
+        &lt;li&gt;Bread&lt;/li&gt;
+        &lt;li&gt;Fruits&lt;/li&gt;
+    &lt;/ul&gt;
+    
+    &lt;h2&gt;Recipe Steps&lt;/h2&gt;
+    &lt;ol&gt;
+        &lt;li&gt;Preheat the oven&lt;/li&gt;
+        &lt;li&gt;Mix the ingredients&lt;/li&gt;
+        &lt;li&gt;Bake for 30 minutes&lt;/li&gt;
+        &lt;li&gt;Let it cool&lt;/li&gt;
+    &lt;/ol&gt;
+    
+    &lt;h2&gt;Student Grades&lt;/h2&gt;
+    &lt;table&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Student&lt;/th&gt;
+                &lt;th&gt;Subject&lt;/th&gt;
+                &lt;th&gt;Grade&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Alice&lt;/td&gt;
+                &lt;td&gt;Math&lt;/td&gt;
+                &lt;td&gt;A&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Bob&lt;/td&gt;
+                &lt;td&gt;Science&lt;/td&gt;
+                &lt;td&gt;B&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Charlie&lt;/td&gt;
+                &lt;td&gt;English&lt;/td&gt;
+                &lt;td&gt;A&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-lists" title="Lists and tables preview"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 6: Forms and Inputs -->
+                <section id="forms" class="lesson-section" style="display: none;">
+                    <h2>6. Forms and Inputs</h2>
+                    <p>Create interactive forms to collect user input.</p>
+                    
+                    <h3>Basic Form Structure</h3>
+                    <pre><code class="language-html">&lt;form action="/submit" method="post"&gt;
+    &lt;!-- Form elements go here --&gt;
+&lt;/form&gt;</code></pre>
+                    
+                    <h3>Common Input Types</h3>
+                    <pre><code class="language-html">&lt;!-- Text Input --&gt;
+&lt;label for="name"&gt;Name:&lt;/label&gt;
+&lt;input type="text" id="name" name="name"&gt;
+
+&lt;!-- Email Input --&gt;
+&lt;label for="email"&gt;Email:&lt;/label&gt;
+&lt;input type="email" id="email" name="email"&gt;
+
+&lt;!-- Password Input --&gt;
+&lt;label for="password"&gt;Password:&lt;/label&gt;
+&lt;input type="password" id="password" name="password"&gt;
+
+&lt;!-- Textarea --&gt;
+&lt;label for="message"&gt;Message:&lt;/label&gt;
+&lt;textarea id="message" name="message" rows="5"&gt;&lt;/textarea&gt;
+
+&lt;!-- Radio Buttons --&gt;
+&lt;p&gt;Gender:&lt;/p&gt;
+&lt;input type="radio" id="male" name="gender" value="male"&gt;
+&lt;label for="male"&gt;Male&lt;/label&gt;
+&lt;input type="radio" id="female" name="gender" value="female"&gt;
+&lt;label for="female"&gt;Female&lt;/label&gt;
+
+&lt;!-- Checkboxes --&gt;
+&lt;p&gt;Interests:&lt;/p&gt;
+&lt;input type="checkbox" id="sports" name="interests" value="sports"&gt;
+&lt;label for="sports"&gt;Sports&lt;/label&gt;
+&lt;input type="checkbox" id="music" name="interests" value="music"&gt;
+&lt;label for="music"&gt;Music&lt;/label&gt;
+
+&lt;!-- Select Dropdown --&gt;
+&lt;label for="country"&gt;Country:&lt;/label&gt;
+&lt;select id="country" name="country"&gt;
+    &lt;option value="usa"&gt;United States&lt;/option&gt;
+    &lt;option value="uk"&gt;United Kingdom&lt;/option&gt;
+    &lt;option value="ca"&gt;Canada&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;!-- Submit Button --&gt;
+&lt;input type="submit" value="Submit"&gt;</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                            </div>
+                            <button class="btn btn-run" data-run-code="forms">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-forms">
+                                <textarea id="html-code-forms">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Forms Example&lt;/title&gt;
+    &lt;style&gt;
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            width: auto;
+        }
+        .checkbox-group, .radio-group {
+            display: flex;
+            gap: 15px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Registration Form&lt;/h1&gt;
+    
+    &lt;form action="#" method="post"&gt;
+        &lt;label for="name"&gt;Full Name:&lt;/label&gt;
+        &lt;input type="text" id="name" name="name" required&gt;
+        
+        &lt;label for="email"&gt;Email:&lt;/label&gt;
+        &lt;input type="email" id="email" name="email" required&gt;
+        
+        &lt;label for="password"&gt;Password:&lt;/label&gt;
+        &lt;input type="password" id="password" name="password" required&gt;
+        
+        &lt;label for="dob"&gt;Date of Birth:&lt;/label&gt;
+        &lt;input type="date" id="dob" name="dob"&gt;
+        
+        &lt;label&gt;Gender:&lt;/label&gt;
+        &lt;div class="radio-group"&gt;
+            &lt;input type="radio" id="male" name="gender" value="male"&gt;
+            &lt;label for="male"&gt;Male&lt;/label&gt;
+            
+            &lt;input type="radio" id="female" name="gender" value="female"&gt;
+            &lt;label for="female"&gt;Female&lt;/label&gt;
+        &lt;/div&gt;
+        
+        &lt;label for="country"&gt;Country:&lt;/label&gt;
+        &lt;select id="country" name="country"&gt;
+            &lt;option value=""&gt;Select Country&lt;/option&gt;
+            &lt;option value="usa"&gt;United States&lt;/option&gt;
+            &lt;option value="uk"&gt;United Kingdom&lt;/option&gt;
+            &lt;option value="ca"&gt;Canada&lt;/option&gt;
+            &lt;option value="au"&gt;Australia&lt;/option&gt;
+        &lt;/select&gt;
+        
+        &lt;label&gt;Interests:&lt;/label&gt;
+        &lt;div class="checkbox-group"&gt;
+            &lt;input type="checkbox" id="sports" name="interests" value="sports"&gt;
+            &lt;label for="sports"&gt;Sports&lt;/label&gt;
+            
+            &lt;input type="checkbox" id="music" name="interests" value="music"&gt;
+            &lt;label for="music"&gt;Music&lt;/label&gt;
+            
+            &lt;input type="checkbox" id="travel" name="interests" value="travel"&gt;
+            &lt;label for="travel"&gt;Travel&lt;/label&gt;
+        &lt;/div&gt;
+        
+        &lt;label for="bio"&gt;Biography:&lt;/label&gt;
+        &lt;textarea id="bio" name="bio" rows="4" placeholder="Tell us about yourself..."&gt;&lt;/textarea&gt;
+        
+        &lt;input type="submit" value="Register"&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-forms" title="Forms preview"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 7: Semantic Tags -->
+                <section id="semantic" class="lesson-section" style="display: none;">
+                    <h2>7. Semantic Tags</h2>
+                    <p>Use semantic HTML tags to create meaningful and accessible web pages.</p>
+                    
+                    <h3>What are Semantic Tags?</h3>
+                    <p>Semantic tags clearly describe their meaning in a human- and machine-readable way. They help search engines and assistive technologies understand the content structure.</p>
+                    
+                    <h3>Common Semantic Elements</h3>
+                    <pre><code class="language-html">&lt;header&gt;
+    &lt;!-- Page or section header content --&gt;
+&lt;/header&gt;
+
+&lt;nav&gt;
+    &lt;!-- Navigation links --&gt;
+&lt;/nav&gt;
+
+&lt;main&gt;
+    &lt;!-- Main content of the page --&gt;
+&lt;/main&gt;
+
+&lt;article&gt;
+    &lt;!-- Independent, self-contained content --&gt;
+&lt;/article&gt;
+
+&lt;section&gt;
+    &lt;!-- Thematic grouping of content --&gt;
+&lt;/section&gt;
+
+&lt;aside&gt;
+    &lt;!-- Content tangentially related to the main content --&gt;
+&lt;/aside&gt;
+
+&lt;footer&gt;
+    &lt;!-- Page or section footer content --&gt;
+&lt;/footer&gt;</code></pre>
+                    
+                    <h3>Complete Semantic Page Example</h3>
+                    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Semantic HTML Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;My Website&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;header&gt;
+                &lt;h2&gt;Article Title&lt;/h2&gt;
+                &lt;p&gt;Published on &lt;time datetime="2023-01-01"&gt;January 1, 2023&lt;/time&gt;&lt;/p&gt;
+            &lt;/header&gt;
+            &lt;p&gt;Article content goes here...&lt;/p&gt;
+        &lt;/article&gt;
+        
+        &lt;section&gt;
+            &lt;h2&gt;Related Content&lt;/h2&gt;
+            &lt;p&gt;More content in this section...&lt;/p&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+    
+    &lt;aside&gt;
+        &lt;h3&gt;Sidebar&lt;/h3&gt;
+        &lt;p&gt;Additional information...&lt;/p&gt;
+    &lt;/aside&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;&amp;copy; 2023 My Website. All rights reserved.&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                            </div>
+                            <button class="btn btn-run" data-run-code="semantic">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-semantic">
+                                <textarea id="html-code-semantic">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Semantic HTML Example&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 1rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+        main {
+            display: flex;
+            padding: 1rem;
+            gap: 1rem;
+        }
+        article {
+            flex: 3;
+            background-color: #f9f9f9;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+        aside {
+            flex: 1;
+            background-color: #e9e9e9;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Tech Blog&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Articles&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Tutorials&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;header&gt;
+                &lt;h2&gt;Introduction to HTML5 Semantic Tags&lt;/h2&gt;
+                &lt;p&gt;Published on &lt;time datetime="2023-06-15"&gt;June 15, 2023&lt;/time&gt; by John Doe&lt;/p&gt;
+            &lt;/header&gt;
+            &lt;p&gt;Semantic HTML tags are important for accessibility and SEO. They provide meaning to web content...&lt;/p&gt;
+            &lt;p&gt;Using semantic tags helps search engines understand your content better and improves accessibility for users with disabilities.&lt;/p&gt;
+        &lt;/article&gt;
+        
+        &lt;aside&gt;
+            &lt;h3&gt;Popular Posts&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;CSS Flexbox Guide&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;JavaScript ES6 Features&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Responsive Design Tips&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            
+            &lt;h3&gt;Categories&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;HTML&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;CSS&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;JavaScript&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/aside&gt;
+    &lt;/main&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;&amp;copy; 2023 Tech Blog. All rights reserved.&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-semantic" title="Semantic tags preview"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 8: Audio & Video Embedding -->
+                <section id="media" class="lesson-section" style="display: none;">
+                    <h2>8. Audio & Video Embedding</h2>
+                    <p>Learn how to embed audio and video content in your web pages.</p>
+                    
+                    <h3>Embedding Audio</h3>
+                    <pre><code class="language-html">&lt;!-- Basic audio player --&gt;
+&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+    &lt;source src="audio.ogg" type="audio/ogg"&gt;
+    Your browser does not support the audio element.
+&lt;/audio&gt;
+
+&lt;!-- Audio with additional attributes --&gt;
+&lt;audio controls autoplay muted loop&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+    &lt;a href="audio.mp3"&gt;Download audio&lt;/a&gt;
+&lt;/audio&gt;</code></pre>
+                    
+                    <h3>Embedding Video</h3>
+                    <pre><code class="language-html">&lt;!-- Basic video player --&gt;
+&lt;video width="320" height="240" controls&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;source src="video.webm" type="video/webm"&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;
+
+&lt;!-- Video with poster and additional attributes --&gt;
+&lt;video width="640" height="480" controls poster="thumbnail.jpg" autoplay muted loop&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;track src="captions.vtt" kind="subtitles" srclang="en" label="English"&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                            </div>
+                            <button class="btn btn-run" data-run-code="media">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-media">
+                                <textarea id="html-code-media">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Audio & Video Example&lt;/title&gt;
+    &lt;style&gt;
+        video, audio {
+            margin: 10px 0;
+            width: 100%;
+            max-width: 600px;
+        }
+        .media-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="media-container"&gt;
+        &lt;h1&gt;Media Examples&lt;/h1&gt;
+        
+        &lt;h2&gt;Audio Player&lt;/h2&gt;
+        &lt;audio controls&gt;
+            &lt;source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg"&gt;
+            Your browser does not support the audio element.
+        &lt;/audio&gt;
+        
+        &lt;h2&gt;Video Player&lt;/h2&gt;
+        &lt;video width="400" height="300" controls&gt;
+            &lt;source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"&gt;
+            Your browser does not support the video tag.
+        &lt;/video&gt;
+        
+        &lt;h2&gt;Video with Poster&lt;/h2&gt;
+        &lt;video width="400" height="300" controls poster="https://via.placeholder.com/400x300"&gt;
+            &lt;source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"&gt;
+            Your browser does not support the video tag.
+        &lt;/video&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-media" title="Media embedding preview"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 9: Iframes and Embedding External Content -->
+                <section id="iframe" class="lesson-section" style="display: none;">
+                    <h2>9. Iframes and Embedding External Content</h2>
+                    <p>Embed external content like maps, videos, and other web pages using iframes.</p>
+                    
+                    <h3>What is an iframe?</h3>
+                    <p>An iframe (inline frame) is an HTML element that allows you to embed another HTML document within the current document.</p>
+                    
+                    <h3>Basic iframe Usage</h3>
+                    <pre><code class="language-html">&lt;!-- Basic iframe --&gt;
+&lt;iframe src="https://www.example.com"&gt;&lt;/iframe&gt;
+
+&lt;!-- iframe with dimensions --&gt;
+&lt;iframe src="https://www.example.com" width="600" height="400"&gt;&lt;/iframe&gt;
+
+&lt;!-- iframe with additional attributes --&gt;
+&lt;iframe src="https://www.example.com" 
+        width="600" 
+        height="400" 
+        frameborder="0" 
+        allowfullscreen&gt;
+&lt;/iframe&gt;</code></pre>
+                    
+                    <h3>Embedding YouTube Videos</h3>
+                    <pre><code class="language-html">&lt;iframe width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/VIDEO_ID" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen&gt;
+&lt;/iframe&gt;</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                            </div>
+                            <button class="btn btn-run" data-run-code="iframe">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-iframe">
+                                <textarea id="html-code-iframe">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Iframe Example&lt;/title&gt;
+    &lt;style&gt;
+        .iframe-container {
+            margin: 20px 0;
+        }
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .example-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="example-container"&gt;
+        &lt;h1&gt;Iframe Examples&lt;/h1&gt;
+        
+        &lt;h2&gt;Embedded Website&lt;/h2&gt;
+        &lt;div class="iframe-container"&gt;
+            &lt;iframe src="https://example.com" title="Example Website"&gt;
+                &lt;p&gt;Your browser does not support iframes.&lt;/p&gt;
+            &lt;/iframe&gt;
+        &lt;/div&gt;
+        
+        &lt;h2&gt;Embedded Map&lt;/h2&gt;
+        &lt;div class="iframe-container"&gt;
+            &lt;iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.184133404672!2d-73.987574924525!3d40.758028871388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1623123456789!5m2!1sen!2sus" 
+                    width="600" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy"&gt;
+            &lt;/iframe&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-iframe" title="Iframe embedding preview"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 10: HTML5 APIs -->
+                <section id="apis" class="lesson-section" style="display: none;">
+                    <h2>10. HTML5 APIs</h2>
+                    <p>Explore powerful HTML5 APIs that enable advanced functionality in web applications.</p>
+                    
+                    <h3>Canvas API</h3>
+                    <pre><code class="language-html">&lt;canvas id="myCanvas" width="200" height="100"&gt;&lt;/canvas&gt;
+&lt;script&gt;
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+    
+    // Draw a rectangle
+    ctx.fillStyle = '#FF0000';
+    ctx.fillRect(0, 0, 150, 75);
+&lt;/script&gt;</code></pre>
+                    
+                    <h3>Geolocation API</h3>
+                    <pre><code class="language-html">&lt;button onclick="getLocation()"&gt;Get Location&lt;/button&gt;
+&lt;p id="location"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            document.getElementById("location").innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+    
+    function showPosition(position) {
+        document.getElementById("location").innerHTML = 
+            "Latitude: " + position.coords.latitude + 
+            "&lt;br&gt;Longitude: " + position.coords.longitude;
+    }
+&lt;/script&gt;</code></pre>
+                    
+                    <h3>Web Storage API</h3>
+                    <pre><code class="language-html">&lt;script&gt;
+    // Local Storage
+    localStorage.setItem('username', 'JohnDoe');
+    const username = localStorage.getItem('username');
+    localStorage.removeItem('username');
+    
+    // Session Storage
+    sessionStorage.setItem('theme', 'dark');
+    const theme = sessionStorage.getItem('theme');
+    sessionStorage.removeItem('theme');
+&lt;/script&gt;</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                                <button class="tab" data-tab="js">JavaScript</button>
+                            </div>
+                            <button class="btn btn-run" data-run-code="apis">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-apis">
+                                <textarea id="html-code-apis">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;HTML5 APIs Example&lt;/title&gt;
+    &lt;style&gt;
+        .api-example {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        canvas {
+            border: 1px solid #ccc;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #location, #storage-demo {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;HTML5 APIs Examples&lt;/h1&gt;
+    
+    &lt;div class="api-example"&gt;
+        &lt;h2&gt;Canvas API&lt;/h2&gt;
+        &lt;canvas id="myCanvas" width="300" height="150"&gt;
+            Your browser does not support the canvas element.
+        &lt;/canvas&gt;
+        &lt;br&gt;
+        &lt;button onclick="drawOnCanvas()"&gt;Draw on Canvas&lt;/button&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="api-example"&gt;
+        &lt;h2&gt;Geolocation API&lt;/h2&gt;
+        &lt;button onclick="getLocation()"&gt;Get My Location&lt;/button&gt;
+        &lt;div id="location"&gt;Click the button to get your location.&lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="api-example"&gt;
+        &lt;h2&gt;Web Storage API&lt;/h2&gt;
+        &lt;button onclick="saveToStorage()"&gt;Save to Storage&lt;/button&gt;
+        &lt;button onclick="loadFromStorage()"&gt;Load from Storage&lt;/button&gt;
+        &lt;button onclick="clearStorage()"&gt;Clear Storage&lt;/button&gt;
+        &lt;div id="storage-demo"&gt;Storage demo area.&lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                            <div class="editor-panel" id="editor-js-apis">
+                                <textarea id="js-code-apis">function drawOnCanvas() {
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+    
+    // Clear canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    // Draw rectangle
+    ctx.fillStyle = '#FF0000';
+    ctx.fillRect(10, 10, 100, 50);
+    
+    // Draw circle
+    ctx.beginPath();
+    ctx.arc(200, 40, 30, 0, 2 * Math.PI);
+    ctx.fillStyle = '#00FF00';
+    ctx.fill();
+    
+    // Draw text
+    ctx.font = '20px Arial';
+    ctx.fillStyle = '#000000';
+    ctx.fillText('HTML5 Canvas', 80, 120);
+}
+
+function getLocation() {
+    const locationDiv = document.getElementById('location');
+    
+    if (navigator.geolocation) {
+        locationDiv.innerHTML = 'Getting location...';
+        navigator.geolocation.getCurrentPosition(
+            function(position) {
+                locationDiv.innerHTML = 
+                    'Latitude: ' + position.coords.latitude + 
+                    '&lt;br&gt;Longitude: ' + position.coords.longitude;
+            },
+            function(error) {
+                locationDiv.innerHTML = 'Error getting location: ' + error.message;
+            }
+        );
+    } else {
+        locationDiv.innerHTML = 'Geolocation is not supported by this browser.';
+    }
+}
+
+function saveToStorage() {
+    const data = {
+        name: 'John Doe',
+        timestamp: new Date().toISOString()
+    };
+    localStorage.setItem('demoData', JSON.stringify(data));
+    document.getElementById('storage-demo').innerHTML = 'Data saved to localStorage!';
+}
+
+function loadFromStorage() {
+    const data = localStorage.getItem('demoData');
+    if (data) {
+        const parsed = JSON.parse(data);
+        document.getElementById('storage-demo').innerHTML = 
+            'Loaded data: ' + parsed.name + ' (saved at ' + new Date(parsed.timestamp).toLocaleString() + ')';
+    } else {
+        document.getElementById('storage-demo').innerHTML = 'No data found in localStorage.';
+    }
+}
+
+function clearStorage() {
+    localStorage.removeItem('demoData');
+    document.getElementById('storage-demo').innerHTML = 'Storage cleared.';
+}
+
+// Draw initial canvas content
+window.onload = function() {
+    const canvas = document.getElementById('myCanvas');
+    if (canvas.getContext) {
+        const ctx = canvas.getContext('2d');
+        ctx.font = '16px Arial';
+        ctx.fillStyle = '#999999';
+        ctx.fillText('Click "Draw on Canvas" button', 30, 80);
+    }
+};</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-apis" title="HTML5 APIs preview"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 11: Interactive Elements -->
+                <section id="interactive" class="lesson-section" style="display: none;">
+                    <h2>11. Interactive Elements</h2>
+                    <p>Learn about HTML5 interactive elements that enhance user experience.</p>
+                    
+                    <h3>Details and Summary</h3>
+                    <pre><code class="language-html">&lt;details&gt;
+    &lt;summary&gt;Click to expand&lt;/summary&gt;
+    &lt;p&gt;This content is hidden by default.&lt;/p&gt;
+    &lt;p&gt;It becomes visible when the user clicks the summary.&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+                    
+                    <h3>Progress Bar</h3>
+                    <pre><code class="language-html">&lt;!-- Indeterminate progress bar --&gt;
+&lt;progress&gt;&lt;/progress&gt;
+
+&lt;!-- Determinate progress bar --&gt;
+&lt;progress value="70" max="100"&gt;70%&lt;/progress&gt;</code></pre>
+                    
+                    <h3>Meter Element</h3>
+                    <pre><code class="language-html">&lt;!-- Basic meter --&gt;
+&lt;meter value="0.6"&gt;60%&lt;/meter&gt;
+
+&lt;!-- Meter with min, max, and optimal values --&gt;
+&lt;meter value="80" min="0" max="100" low="30" high="70" optimum="90"&gt;80/100&lt;/meter&gt;</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                            </div>
+                            <button class="btn btn-run" data-run-code="interactive">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-interactive">
+                                <textarea id="html-code-interactive">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Interactive Elements Example&lt;/title&gt;
+    &lt;style&gt;
+        .interactive-example {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        details {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+        }
+        progress, meter {
+            width: 100%;
+            margin: 10px 0;
+        }
+        .controls {
+            margin: 10px 0;
+        }
+        button {
+            padding: 8px 12px;
+            margin: 5px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Interactive HTML Elements&lt;/h1&gt;
+    
+    &lt;div class="interactive-example"&gt;
+        &lt;h2&gt;Details and Summary&lt;/h2&gt;
+        &lt;details&gt;
+            &lt;summary&gt;What is HTML?&lt;/summary&gt;
+            &lt;p&gt;HTML (HyperText Markup Language) is the standard markup language for documents designed to be displayed in a web browser.&lt;/p&gt;
+        &lt;/details&gt;
+        
+        &lt;details&gt;
+            &lt;summary&gt;HTML5 Features&lt;/summary&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Semantic elements (&amp;lt;header&amp;gt;, &amp;lt;footer&amp;gt;, &amp;lt;article&amp;gt;, etc.)&lt;/li&gt;
+                &lt;li&gt;Canvas for graphics&lt;/li&gt;
+                &lt;li&gt;Audio and video support&lt;/li&gt;
+                &lt;li&gt;Local storage&lt;/li&gt;
+                &lt;li&gt;Form enhancements&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/details&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="interactive-example"&gt;
+        &lt;h2&gt;Progress Bar&lt;/h2&gt;
+        &lt;label for="file-progress"&gt;File upload progress:&lt;/label&gt;
+        &lt;progress id="file-progress" value="0" max="100"&gt;0%&lt;/progress&gt;
+        &lt;div class="controls"&gt;
+            &lt;button onclick="increaseProgress()"&gt;Increase Progress&lt;/button&gt;
+            &lt;button onclick="resetProgress()"&gt;Reset&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="interactive-example"&gt;
+        &lt;h2&gt;Meter Element&lt;/h2&gt;
+        &lt;label for="disk-usage"&gt;Disk Usage:&lt;/label&gt;
+        &lt;meter id="disk-usage" value="60" min="0" max="100" low="30" high="70" optimum="80"&gt;60%&lt;/meter&gt;
+        &lt;p&gt;60% of disk space used&lt;/p&gt;
+        
+        &lt;label for="temperature"&gt;Temperature:&lt;/label&gt;
+        &lt;meter id="temperature" value="25" min="0" max="50" low="10" high="35" optimum="20"&gt;25°C&lt;/meter&gt;
+        &lt;p&gt;Current temperature: 25°C&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;script&gt;
+        function increaseProgress() {
+            const progress = document.getElementById('file-progress');
+            if (progress.value &lt; 100) {
+                progress.value += 10;
+            }
+        }
+        
+        function resetProgress() {
+            document.getElementById('file-progress').value = 0;
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-interactive" title="Interactive elements preview"></iframe>
+                    </div>
+                </section>
+
+                <!-- Lesson 12: Mini Project - Portfolio Page -->
+                <section id="project" class="lesson-section" style="display: none;">
+                    <h2>12. Mini Project: Portfolio Page</h2>
+                    <p>Apply everything you've learned to create a complete portfolio page.</p>
+                    
+                    <h3>Project Requirements</h3>
+                    <ul>
+                        <li>Use semantic HTML tags</li>
+                        <li>Include navigation, header, main content, and footer</li>
+                        <li>Add images, links, and lists</li>
+                        <li>Use appropriate headings and text formatting</li>
+                        <li>Include a contact form</li>
+                        <li>Make it visually appealing with CSS</li>
+                    </ul>
+                    
+                    <h3>Complete Portfolio Example</h3>
+                    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My Portfolio&lt;/title&gt;
+    &lt;style&gt;
+        /* Add your CSS styles here */
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Your portfolio content here --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    
+                    <h3>Try It Yourself</h3>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <div class="editor-tabs">
+                                <button class="tab active" data-tab="html">HTML</button>
+                                <button class="tab" data-tab="css">CSS</button>
+                            </div>
+                            <button class="btn btn-run" data-run-code="project">Run Code <i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="editor-body">
+                            <div class="editor-panel active" id="editor-html-project">
+                                <textarea id="html-code-project">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Alex Johnson - Web Developer&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;div class="container"&gt;
+            &lt;h1&gt;Alex Johnson&lt;/h1&gt;
+            &lt;p&gt;Front-End Web Developer&lt;/p&gt;
+            &lt;nav&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#skills"&gt;Skills&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#projects"&gt;Projects&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/nav&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+    
+    &lt;main&gt;
+        &lt;section id="about" class="container"&gt;
+            &lt;h2&gt;About Me&lt;/h2&gt;
+            &lt;img src="https://via.placeholder.com/150" alt="Alex Johnson" class="profile-img"&gt;
+            &lt;p&gt;I'm a passionate front-end web developer with 3 years of experience creating responsive and user-friendly websites. I specialize in HTML, CSS, and JavaScript, and I love turning complex problems into simple, beautiful designs.&lt;/p&gt;
+            &lt;p&gt;When I'm not coding, you can find me hiking, reading tech blogs, or experimenting with new web technologies.&lt;/p&gt;
+        &lt;/section&gt;
+        
+        &lt;section id="skills" class="container"&gt;
+            &lt;h2&gt;Skills&lt;/h2&gt;
+            &lt;ul class="skills-list"&gt;
+                &lt;li&gt;HTML5 &amp; Semantic Markup&lt;/li&gt;
+                &lt;li&gt;CSS3 &amp; Flexbox/Grid&lt;/li&gt;
+                &lt;li&gt;JavaScript (ES6+)&lt;/li&gt;
+                &lt;li&gt;Responsive Design&lt;/li&gt;
+                &lt;li&gt;Accessibility (a11y)&lt;/li&gt;
+                &lt;li&gt;Version Control (Git)&lt;/li&gt;
+                &lt;li&gt;Build Tools (Webpack)&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/section&gt;
+        
+        &lt;section id="projects" class="container"&gt;
+            &lt;h2&gt;Projects&lt;/h2&gt;
+            &lt;div class="project-grid"&gt;
+                &lt;div class="project-card"&gt;
+                    &lt;img src="https://via.placeholder.com/300x200" alt="Project 1"&gt;
+                    &lt;h3&gt;E-commerce Website&lt;/h3&gt;
+                    &lt;p&gt;A fully responsive e-commerce site built with HTML, CSS, and JavaScript.&lt;/p&gt;
+                    &lt;a href="#" class="btn"&gt;View Project&lt;/a&gt;
+                &lt;/div&gt;
+                &lt;div class="project-card"&gt;
+                    &lt;img src="https://via.placeholder.com/300x200" alt="Project 2"&gt;
+                    &lt;h3&gt;Task Manager App&lt;/h3&gt;
+                    &lt;p&gt;A productivity app that helps users manage their daily tasks.&lt;/p&gt;
+                    &lt;a href="#" class="btn"&gt;View Project&lt;/a&gt;
+                &lt;/div&gt;
+                &lt;div class="project-card"&gt;
+                    &lt;img src="https://via.placeholder.com/300x200" alt="Project 3"&gt;
+                    &lt;h3&gt;Weather Dashboard&lt;/h3&gt;
+                    &lt;p&gt;A weather application that displays current conditions and forecasts.&lt;/p&gt;
+                    &lt;a href="#" class="btn"&gt;View Project&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        
+        &lt;section id="contact" class="container"&gt;
+            &lt;h2&gt;Contact Me&lt;/h2&gt;
+            &lt;form id="contact-form"&gt;
+                &lt;div class="form-group"&gt;
+                    &lt;label for="name"&gt;Name:&lt;/label&gt;
+                    &lt;input type="text" id="name" name="name" required&gt;
+                &lt;/div&gt;
+                &lt;div class="form-group"&gt;
+                    &lt;label for="email"&gt;Email:&lt;/label&gt;
+                    &lt;input type="email" id="email" name="email" required&gt;
+                &lt;/div&gt;
+                &lt;div class="form-group"&gt;
+                    &lt;label for="message"&gt;Message:&lt;/label&gt;
+                    &lt;textarea id="message" name="message" rows="5" required&gt;&lt;/textarea&gt;
+                &lt;/div&gt;
+                &lt;button type="submit" class="btn"&gt;Send Message&lt;/button&gt;
+            &lt;/form&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+    
+    &lt;footer&gt;
+        &lt;div class="container"&gt;
+            &lt;p&gt;&amp;copy; 2023 Alex Johnson. All rights reserved.&lt;/p&gt;
+            &lt;div class="social-links"&gt;
+                &lt;a href="#"&gt;LinkedIn&lt;/a&gt;
+                &lt;a href="#"&gt;GitHub&lt;/a&gt;
+                &lt;a href="#"&gt;Twitter&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+    
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                            </div>
+                            <div class="editor-panel" id="editor-css-project">
+                                <textarea id="css-code-project">/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header styles */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin-top: 1rem;
+}
+
+nav li {
+    margin-right: 2rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+nav a:hover {
+    opacity: 0.7;
+}
+
+/* Main content styles */
+main {
+    padding: 2rem 0;
+}
+
+section {
+    background-color: white;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.profile-img {
+    float: right;
+    margin: 0 0 1rem 1rem;
+    border-radius: 50%;
+    border: 3px solid #2c3e50;
+}
+
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    list-style: none;
+}
+
+.skills-list li {
+    background-color: #e8f4f8;
+    padding: 0.8rem;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    padding: 1rem 1rem 0.5rem;
+    color: #2c3e50;
+}
+
+.project-card p {
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    margin: 0 1rem 1rem;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+/* Form styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+/* Footer styles */
+footer {
+    background-color: #34495e;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: white;
+    margin: 0 1rem;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    opacity: 0.7;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav li {
+        margin: 0.5rem 0;
+    }
+    
+    .profile-img {
+        float: none;
+        display: block;
+        margin: 0 auto 1rem;
+    }
+    
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>Output Preview</h3>
+                        </div>
+                        <iframe id="preview-frame-project" title="Portfolio project preview"></iframe>
+                    </div>
+                </section>
+
+                <!-- Navigation for lessons -->
+                <div class="lesson-footer">
+                    <div class="lesson-navigation">
+                        <button class="btn btn-secondary" disabled><i class="fas fa-arrow-left"></i> Previous</button>
+                        <button class="btn btn-primary">Next <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3><i class="fas fa-code"></i> CodeMaster</h3>
+                    <p>Learn to code interactively with our hands-on tutorials and real-time editor.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../courses.html">Courses</a></li>
+                        <li><a href="../tutorial.html">Tutorials</a></li>
+                        <li><a href="../quiz.html">Quiz</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="../about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Subscribe</h4>
+                    <p>Get the latest updates and news.</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 CodeMaster. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="../js/editor.js"></script>
+    <script src="../js/progress.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        // Lesson navigation
+        let currentLesson = 0;
+        const lessons = document.querySelectorAll('.lesson-section');
+        const lessonItems = document.querySelectorAll('.lesson-item');
+        
+        // Expand topic functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const expandButtons = document.querySelectorAll('.expand-topic');
+            expandButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const topic = this.getAttribute('data-topic');
+                    expandTopic(topic);
+                });
+            });
+            
+            // Run playground on initial load
+            runPlayground();
+            
+            // Add event listeners for run code buttons
+            document.querySelectorAll('[data-run-code]').forEach(button => {
+                button.addEventListener('click', function() {
+                    const lessonId = this.getAttribute('data-run-code');
+                    runCode(lessonId);
+                });
+            });
+            
+            // Add event listener for next lesson button
+            document.querySelector('.lesson-navigation .btn-primary').addEventListener('click', nextLesson);
+        });
+        
+        function expandTopic(topic) {
+            const expandedContent = document.getElementById('expanded-' + topic);
+            const button = document.querySelector('[data-topic="' + topic + '"]');
+            
+            if (expandedContent.style.display === 'none') {
+                // Load content dynamically
+                fetch('../data/html.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        const lesson = data.lessons.find(l => l.title.includes('Introduction to HTML'));
+                        if (lesson) {
+                            expandedContent.innerHTML = 
+                                '<h3>Expanded Content: ' + lesson.title + '</h3>' +
+                                '<p>' + lesson.content + '</p>' +
+                                '<pre><code class="language-html">' + (lesson.exampleCode || '// No example code available') + '</code></pre>';
+                            expandedContent.style.display = 'block';
+                            button.textContent = 'Collapse Topic';
+                            Prism.highlightAll();
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error loading topic:', error);
+                        expandedContent.innerHTML = '<p>Error loading content. Please try again.</p>';
+                        expandedContent.style.display = 'block';
+                    });
+            } else {
+                // Collapse content
+                expandedContent.style.display = 'none';
+                button.textContent = 'Expand Topic';
+            }
+        }
+        
+        function runPlayground() {
+            const code = document.getElementById('playground-code').value;
+            const previewFrame = document.getElementById('playground-preview-frame');
+            const previewDocument = previewFrame.contentDocument || previewFrame.contentWindow.document;
+            
+            let fullHtml = '<!DOCTYPE html>' +
+                '<html>' +
+                '<head>' +
+                    '<style>' +
+                        'body {' +
+                            'font-family: Arial, sans-serif;' +
+                            'margin: 20px;' +
+                            'background-color: #f5f5f5;' +
+                        '}' +
+                    '</style>' +
+                '</head>' +
+                '<body>' +
+                    code +
+                '</body>' +
+                '</html>';
+            
+            previewDocument.open();
+            previewDocument.write(fullHtml);
+            previewDocument.close();
+        }
+        
+        function showLesson(index) {
+            // Hide all lessons
+            lessons.forEach(lesson => {
+                lesson.style.display = 'none';
+            });
+            
+            // Show current lesson
+            if (lessons[index]) {
+                lessons[index].style.display = 'block';
+            }
+            
+            // Update sidebar
+            lessonItems.forEach((item, i) => {
+                if (i === index) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+            
+            // Update progress
+            const progressPercent = ((index + 1) / lessons.length) * 100;
+            document.querySelector('.progress').style.width = `${progressPercent}%`;
+            document.querySelector('.progress-text').textContent = `${index + 1}/${lessons.length} lessons completed`;
+            
+            // Update navigation buttons
+            const prevBtn = document.querySelector('.lesson-navigation .btn-secondary');
+            const nextBtn = document.querySelector('.lesson-navigation .btn-primary');
+            
+            if (index === 0) {
+                prevBtn.disabled = true;
+            } else {
+                prevBtn.disabled = false;
+                prevBtn.onclick = () => prevLesson();
+            }
+            
+            if (index === lessons.length - 1) {
+                nextBtn.innerHTML = 'Complete Course <i class="fas fa-check"></i>';
+            } else {
+                nextBtn.innerHTML = 'Next <i class="fas fa-arrow-right"></i>';
+                nextBtn.onclick = () => nextLesson();
+            }
+            
+            currentLesson = index;
+        }
+        
+        function nextLesson() {
+            if (currentLesson < lessons.length - 1) {
+                showLesson(currentLesson + 1);
+            }
+        }
+        
+        function prevLesson() {
+            if (currentLesson > 0) {
+                showLesson(currentLesson - 1);
+            }
+        }
+        
+        // Initialize first lesson
+        document.addEventListener('DOMContentLoaded', () => {
+            showLesson(0);
+            
+            // Add click events to lesson items
+            lessonItems.forEach((item, index) => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showLesson(index);
+                });
+            });
+        });
+        
+        // Run code function for each lesson
+        function runCode(lessonId) {
+            const htmlCode = document.getElementById('html-code-' + lessonId).value;
+            const previewFrame = document.getElementById('preview-frame-' + lessonId);
+            const previewDocument = previewFrame.contentDocument || previewFrame.contentWindow.document;
+            
+            let fullHtml = '<!DOCTYPE html>' +
+                '<html>' +
+                '<head>' +
+                    '<style>' +
+                        'body {' +
+                            'font-family: Arial, sans-serif;' +
+                            'margin: 20px;' +
+                            'background-color: #f5f5f5;' +
+                        '}' +
+                    '</style>' +
+                '</head>' +
+                '<body>' +
+                    htmlCode +
+                '</body>' +
+                '</html>';
+            
+            previewDocument.open();
+            previewDocument.write(fullHtml);
+            previewDocument.close();
+        }
+    </script>
+</body>
+</html>
