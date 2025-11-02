@@ -9,15 +9,37 @@
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #4361ee;
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 0 0 4px 4px;
+            z-index: 1000;
+            transition: top 0.3s;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
+    </style>
 </head>
 <body>
+    <!-- Skip Links for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#footer" class="skip-link">Skip to footer</a>
+
     <!-- Header -->
-    <header class="header">
+    <header class="header" role="banner">
         <div class="container">
             <div class="logo">
                 <h2><i class="fas fa-code"></i> CodeMaster</h2>
             </div>
-            <nav class="nav">
+            <nav class="nav" role="navigation" aria-label="Main navigation">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="courses.html">Courses</a></li>
@@ -31,7 +53,7 @@
                 </ul>
             </nav>
             <div class="header-actions">
-                <button id="theme-toggle" class="theme-toggle">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
                     <i class="fas fa-moon"></i>
                 </button>
             </div>
@@ -39,75 +61,71 @@
     </header>
 
     <!-- Breadcrumb -->
-    <section class="breadcrumb">
+    <section class="breadcrumb" aria-label="Breadcrumb">
         <div class="container">
             <a href="index.html">Home</a> / <span>Quiz</span>
         </div>
     </section>
 
     <!-- Quiz Section -->
-    <section class="quiz-section">
+    <section class="quiz-section" id="main-content" role="main">
         <div class="container">
             <div class="quiz-container">
                 <div class="quiz-header">
-                    <h1>HTML Fundamentals Quiz</h1>
-                    <div class="quiz-progress">
-                        <div class="progress-bar">
-                            <div class="progress" id="quiz-progress" style="width: 0%;"></div>
-                        </div>
-                        <p class="progress-text">Question <span id="current-question">1</span> of <span id="total-questions">10</span></p>
-                    </div>
+                    <h1>Programming Quiz</h1>
+                    <p>Test your knowledge with our interactive quizzes</p>
                 </div>
                 
                 <div class="quiz-body">
-                    <div class="question-container" id="question-container">
-                        <h2 class="question-text" id="question-text">What does HTML stand for?</h2>
-                        <div class="options-container" id="options-container">
-                            <div class="option" data-option="A">
-                                <span class="option-letter">A</span>
-                                <span class="option-text">Hyper Text Markup Language</span>
-                            </div>
-                            <div class="option" data-option="B">
-                                <span class="option-letter">B</span>
-                                <span class="option-text">High Tech Modern Language</span>
-                            </div>
-                            <div class="option" data-option="C">
-                                <span class="option-letter">C</span>
-                                <span class="option-text">Home Tool Markup Language</span>
-                            </div>
-                            <div class="option" data-option="D">
-                                <span class="option-letter">D</span>
-                                <span class="option-text">Hyperlink and Text Markup Language</span>
-                            </div>
+                    <div class="course-selection">
+                        <h2>Select a Course</h2>
+                        <div class="courses-grid">
+                            <a href="courses/html-quiz.html" class="course-card" aria-label="HTML quiz">
+                                <div class="course-image">
+                                    <i class="fab fa-html5"></i>
+                                </div>
+                                <div class="course-content">
+                                    <h3>HTML Quiz</h3>
+                                    <p>Test your HTML knowledge</p>
+                                </div>
+                            </a>
+                            
+                            <a href="courses/css-quiz.html" class="course-card" aria-label="CSS quiz">
+                                <div class="course-image">
+                                    <i class="fab fa-css3-alt"></i>
+                                </div>
+                                <div class="course-content">
+                                    <h3>CSS Quiz</h3>
+                                    <p>Test your CSS knowledge</p>
+                                </div>
+                            </a>
+                            
+                            <a href="courses/javascript-quiz.html" class="course-card" aria-label="JavaScript quiz">
+                                <div class="course-image">
+                                    <i class="fab fa-js"></i>
+                                </div>
+                                <div class="course-content">
+                                    <h3>JavaScript Quiz</h3>
+                                    <p>Test your JavaScript knowledge</p>
+                                </div>
+                            </a>
+                            
+                            <a href="courses/python-quiz.html" class="course-card" aria-label="Python quiz">
+                                <div class="course-image">
+                                    <i class="fab fa-python"></i>
+                                </div>
+                                <div class="course-content">
+                                    <h3>Python Quiz</h3>
+                                    <p>Test your Python knowledge</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
                     
-                    <div class="quiz-navigation">
-                        <button class="btn btn-secondary" id="prev-btn" disabled><i class="fas fa-arrow-left"></i> Previous</button>
-                        <button class="btn btn-primary" id="next-btn">Next <i class="fas fa-arrow-right"></i></button>
-                        <button class="btn btn-success" id="submit-btn" style="display: none;">Submit Quiz</button>
-                    </div>
-                </div>
-                
-                <div class="quiz-result" id="quiz-result" style="display: none;">
-                    <div class="result-content">
-                        <h2>Quiz Completed!</h2>
-                        <div class="score-container">
-                            <div class="score-circle">
-                                <span class="score" id="score">0</span>
-                                <span class="score-total">/10</span>
-                            </div>
-                            <p class="score-text" id="score-text">You did great!</p>
-                        </div>
-                        <div class="result-details">
-                            <p>Correct Answers: <span id="correct-answers">0</span></p>
-                            <p>Wrong Answers: <span id="wrong-answers">0</span></p>
-                            <p>Unanswered: <span id="unanswered">0</span></p>
-                        </div>
-                        <div class="result-actions">
-                            <button class="btn btn-primary" id="restart-quiz">Restart Quiz</button>
-                            <a href="courses.html" class="btn btn-secondary">View Courses</a>
-                        </div>
+                    <div class="general-quiz">
+                        <h2>General Programming Quiz</h2>
+                        <p>Take a comprehensive quiz covering all programming topics</p>
+                        <a href="courses/html-quiz.html" class="btn btn-primary btn-lg" aria-label="Start general programming quiz">Start General Quiz</a>
                     </div>
                 </div>
             </div>
@@ -115,17 +133,17 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" id="footer" role="contentinfo">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
                     <h3><i class="fas fa-code"></i> CodeMaster</h3>
                     <p>Learn to code interactively with our hands-on tutorials and real-time editor.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -150,8 +168,8 @@
                     <h4>Subscribe</h4>
                     <p>Get the latest updates and news.</p>
                     <form class="subscribe-form">
-                        <input type="email" placeholder="Your Email">
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        <input type="email" placeholder="Your Email" aria-label="Enter your email address">
+                        <button type="submit" aria-label="Subscribe to newsletter"><i class="fas fa-paper-plane"></i></button>
                     </form>
                 </div>
             </div>
@@ -161,8 +179,6 @@
         </div>
     </footer>
 
-    <script src="js/quiz.js"></script>
-    <script src="js/achievements.js"></script>
     <script src="js/main.js"></script>
     <script src="js/user.js"></script>
 </body>

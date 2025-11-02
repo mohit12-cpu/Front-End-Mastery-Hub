@@ -1,14 +1,37 @@
 // Progress tracking functionality for courses
 
+// Ensure this script runs after DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize progress tracking for any course page
+    const courseScript = document.querySelector('script[src*="course.js"]');
+    if (courseScript) {
+        // Get course ID from the current page
+        const path = window.location.pathname;
+        const fileName = path.substring(path.lastIndexOf('/') + 1);
+        const courseId = fileName.replace('.html', '').replace('-quiz', '');
+        
+        // Initialize progress tracking
+        if (typeof initializeProgressTracking === 'function') {
+            initializeProgressTracking(courseId);
+        }
+    }
+});
+
 // Get user ID for personalized data storage
 function getUserId() {
-    // Try to get existing user ID from cookie
-    let userId = getCookie('userId');
+    // Try to get existing user ID from localStorage first (more reliable)
+    let userId = localStorage.getItem('userId');
     
-    // If no user ID exists, create a new one
+    // If no user ID exists, try to get from cookie
+    if (!userId) {
+        userId = getCookie('userId');
+    }
+    
+    // If still no user ID exists, create a new one
     if (!userId) {
         userId = 'user_' + Math.random().toString(36).substr(2, 9) + Date.now().toString(36);
-        // Store user ID in cookie for 365 days
+        // Store user ID in both localStorage and cookie for compatibility
+        localStorage.setItem('userId', userId);
         setCookie('userId', userId, 365);
     }
     
@@ -40,27 +63,46 @@ function getCookie(name) {
 
 // Save lesson progress
 function saveLessonProgress(course, lessonIndex) {
-    // Get user ID
-    const userId = getUserId();
-    
-    // Get existing progress or initialize empty array
-    const progress = JSON.parse(localStorage.getItem(userId + '_courseProgress')) || {};
-    
-    // Initialize course progress if not exists
-    if (!progress[course]) {
-        progress[course] = [];
+    try {
+        // Validate inputs
+        if (!course || lessonIndex === undefined || lessonIndex < 0) {
+            console.warn('Invalid course or lesson index for progress saving');
+            return;
+        }
+        
+        // Get user ID
+        const userId = getUserId();
+        
+        // Get existing progress or initialize empty array
+        const progress = JSON.parse(localStorage.getItem(userId + '_courseProgress')) || {};
+        
+        // Initialize course progress if not exists
+        if (!progress[course]) {
+            progress[course] = [];
+        }
+        
+        // Add lesson to completed lessons if not already there
+        if (!progress[course].includes(lessonIndex)) {
+            progress[course].push(lessonIndex);
+            
+            // Sort the array to keep it organized
+            progress[course].sort((a, b) => a - b);
+        }
+        
+        // Save to localStorage with user ID prefix
+        localStorage.setItem(userId + '_courseProgress', JSON.stringify(progress));
+        
+        // Update UI
+        updateProgressUI(course, progress[course]);
+        
+        // Dispatch a custom event for other parts of the app to listen to
+        const progressEvent = new CustomEvent('lessonProgressUpdated', {
+            detail: { course, lessonIndex, progress: progress[course] }
+        });
+        document.dispatchEvent(progressEvent);
+    } catch (error) {
+        console.error('Error saving lesson progress:', error);
     }
-    
-    // Add lesson to completed lessons if not already there
-    if (!progress[course].includes(lessonIndex)) {
-        progress[course].push(lessonIndex);
-    }
-    
-    // Save to localStorage with user ID prefix
-    localStorage.setItem(userId + '_courseProgress', JSON.stringify(progress));
-    
-    // Update UI
-    updateProgressUI(course, progress[course]);
 }
 
 // Load lesson progress
@@ -79,8 +121,21 @@ function updateProgressUI(course, completedLessons) {
     const progressText = document.querySelector('.progress-text');
     
     if (progressBar && progressText) {
-        // Count total lessons (excluding quiz which is the last item)
-        const totalLessons = document.querySelectorAll('.lesson-item').length - 1;
+        // Get total lessons from the course data if available, otherwise count lesson items
+        let totalLessons = 0;
+        let courseLessonCount = 0;
+        
+        // Try to get course data to determine actual lesson count
+        const courseScript = document.querySelector('script[src*="course.js"]');
+        if (typeof courseManager !== 'undefined' && courseManager.lessons) {
+            courseLessonCount = courseManager.lessons.length;
+        }
+        
+        // Fallback to counting lesson items
+        const lessonItemCount = document.querySelectorAll('.lesson-item').length - 1; // Exclude quiz
+        
+        // Use course lesson count if available, otherwise use item count
+        totalLessons = courseLessonCount > 0 ? courseLessonCount : lessonItemCount;
         const completedCount = completedLessons ? completedLessons.length : 0;
         
         // Calculate percentage
@@ -94,61 +149,52 @@ function updateProgressUI(course, completedLessons) {
     // Mark completed lessons in sidebar
     const lessonItems = document.querySelectorAll('.lesson-item');
     lessonItems.forEach((item, index) => {
-        if (completedLessons && completedLessons.includes(index)) {
+        // Only mark actual lessons as completed, not the quiz item
+        const isQuizItem = index === lessonItems.length - 1;
+        if (!isQuizItem && completedLessons && completedLessons.includes(index)) {
             item.classList.add('completed');
-        } else {
+        } else if (!isQuizItem) {
             item.classList.remove('completed');
         }
     });
 }
 
 // Mark current lesson as completed
-function markCurrentLessonCompleted() {
-    // Get current course from URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const course = urlParams.get('course') || 'html';
-    
-    // Get current lesson index (based on active lesson in sidebar)
-    const activeLesson = document.querySelector('.lesson-item.active');
-    if (activeLesson) {
-        const lessonItems = document.querySelectorAll('.lesson-item');
-        const lessonIndex = Array.from(lessonItems).indexOf(activeLesson);
+function markCurrentLessonCompleted(course, lessonIndex) {
+    // If course and lessonIndex are not provided, try to get them from URL and UI
+    if (!course || lessonIndex === undefined) {
+        // Get current course from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        course = course || urlParams.get('course') || 'html';
         
-        // Save progress
+        // Get current lesson index (based on active lesson in sidebar)
+        const activeLesson = document.querySelector('.lesson-item.active');
+        if (activeLesson) {
+            const lessonItems = document.querySelectorAll('.lesson-item');
+            lessonIndex = lessonIndex !== undefined ? lessonIndex : Array.from(lessonItems).indexOf(activeLesson);
+        }
+    }
+    
+    // Save progress
+    if (course && lessonIndex !== undefined) {
         saveLessonProgress(course, lessonIndex);
     }
 }
 
-// Initialize progress tracking
-document.addEventListener('DOMContentLoaded', () => {
-    // Get course from URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const course = urlParams.get('course') || 'html';
-    
+// Initialize progress tracking when called by course manager
+function initializeProgressTracking(course) {
     // Load and display progress
     const completedLessons = loadLessonProgress(course);
     updateProgressUI(course, completedLessons);
     
-    // Add click event to lesson items
-    const lessonItems = document.querySelectorAll('.lesson-item a');
-    lessonItems.forEach((item, index) => {
-        // Skip the quiz item (last item)
-        if (index < lessonItems.length - 1) {
-            item.addEventListener('click', () => {
-                // Small delay to ensure navigation happens first
-                setTimeout(() => {
-                    saveLessonProgress(course, index);
-                }, 100);
-            });
-        }
-    });
-    
     // Add event listener for manual progress marking
     const markCompleteBtn = document.getElementById('mark-complete');
     if (markCompleteBtn) {
-        markCompleteBtn.addEventListener('click', markCurrentLessonCompleted);
+        markCompleteBtn.addEventListener('click', () => {
+            markCurrentLessonCompleted(course);
+        });
     }
-});
+}
 
 // Reset progress for a course
 function resetCourseProgress(course) {

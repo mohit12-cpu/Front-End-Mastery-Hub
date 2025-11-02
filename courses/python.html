@@ -57,84 +57,7 @@
                 <p class="progress-text">0/13 lessons completed</p>
             </div>
             <ul class="lessons-list">
-                <li class="lesson-item">
-                    <a href="#intro">
-                        <span class="lesson-number">1</span>
-                        <span class="lesson-title">Introduction to Python</span>
-                    </a>
-                </li>
-                <li class="lesson-item">
-                    <a href="#syntax">
-                        <span class="lesson-number">2</span>
-                        <span class="lesson-title">Python Syntax and Variables</span>
-                    </a>
-                </li>
-                <li class="lesson-item">
-                    <a href="#datatypes">
-                        <span class="lesson-number">3</span>
-                        <span class="lesson-title">Data Types and Operators</span>
-                    </a>
-                </li>
-                <li class="lesson-item">
-                    <a href="#control">
-                        <span class="lesson-number">4</span>
-                        <span class="lesson-title">Control Flow</span>
-                    </a>
-                </li>
-                <li class="lesson-item">
-                    <a href="#loops">
-                        <span class="lesson-number">5</span>
-                        <span class="lesson-title">Loops</span>
-                    </a>
-                </li>
-                <li class="lesson-item">
-                    <a href="#functions">
-                        <span class="lesson-number">6</span>
-                        <span class="lesson-title">Functions and Modules</span>
-                    </a>
-                </li>
-                <li class="lesson-item">
-                    <a href="#datastructures">
-                        <span class="lesson-number">7</span>
-                        <span class="lesson-title">Data Structures</span>
-                    </a>
-                </li>
-                <li class="lesson-item">
-                    <a href="#filehandling">
-                        <span class="lesson-number">8</span>
-                        <span class="lesson-title">File Handling</span>
-                    </a>
-                </li>
-                <li class="lesson-item">
-                    <a href="#exceptions">
-                        <span class="lesson-number">9</span>
-                        <span class="lesson-title">Exception Handling</span>
-                    </a>
-                </li>
-                <li class="lesson-item">
-                    <a href="#oop">
-                        <span class="lesson-number">10</span>
-                        <span class="lesson-title">Object-Oriented Programming</span>
-                    </a>
-                </li>
-                <li class="lesson-item">
-                    <a href="#libraries">
-                        <span class="lesson-number">11</span>
-                        <span class="lesson-title">Python Libraries</span>
-                    </a>
-                </li>
-                <li class="lesson-item">
-                    <a href="#project">
-                        <span class="lesson-number">12</span>
-                        <span class="lesson-title">Mini Project: Interactive Guessing Game</span>
-                    </a>
-                </li>
-                <li class="lesson-item">
-                    <a href="python-quiz.html">
-                        <span class="lesson-number">13</span>
-                        <span class="lesson-title">Final Quiz</span>
-                    </a>
-                </li>
+                <!-- Lessons will be populated by JavaScript -->
             </ul>
         </aside>
 
@@ -142,9 +65,12 @@
         <main class="tutorial-content">
             <div class="lesson-header">
                 <h1>Python Course</h1>
+                <div class="lesson-actions">
+                    <button id="mark-complete" class="btn btn-success">Mark as Complete</button>
+                </div>
                 <div class="lesson-navigation">
                     <button class="btn btn-secondary" disabled><i class="fas fa-arrow-left"></i> Previous</button>
-                    <button class="btn btn-primary" onclick="nextLesson()">Next <i class="fas fa-arrow-right"></i></button>
+                    <button class="btn btn-primary">Next <i class="fas fa-arrow-right"></i></button>
                 </div>
             </div>
 
@@ -2453,6 +2379,10 @@ def rock_paper_scissors():
             }, 1000);
         }
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="../js/editor.js"></script>
+    <script src="../js/course.js"></script>
     <script src="../js/main.js"></script>
     <script src="../js/user.js"></script>
 </body>

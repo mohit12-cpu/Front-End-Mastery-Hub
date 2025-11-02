@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Quiz - CodeMaster</title>
+    <title>Git Quiz - CodeMaster</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/courses.css">
     <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
@@ -23,6 +23,7 @@
                     <li><a href="../courses.html">Courses</a></li>
                     <li><a href="../tutorial.html">Tutorials</a></li>
                     <li><a href="../quiz.html">Quiz</a></li>
+                    <li><a href="../courses/projects.html">Projects</a></li>
                     <li><a href="../dashboard.html">Dashboard</a></li>
                     <li><a href="../settings.html">Settings</a></li>
                     <li><a href="../help.html">Help</a></li>
@@ -40,16 +41,16 @@
     <!-- Breadcrumb -->
     <section class="breadcrumb">
         <div class="container">
-            <a href="../index.html">Home</a> / <a href="../courses.html">Courses</a> / <a href="html.html">HTML</a> / <span>Quiz</span>
+            <a href="../index.html">Home</a> / <a href="../courses.html">Courses</a> / <a href="git.html">Git</a> / <span>Quiz</span>
         </div>
     </section>
 
     <!-- Quiz Section -->
     <section class="quiz-section">
         <div class="container">
-            <div class="quiz-container">
+            <div class="quiz-container" id="quiz-container">
                 <div class="quiz-header">
-                    <h1>HTML Fundamentals Quiz</h1>
+                    <h1>Git Fundamentals Quiz</h1>
                     <div class="quiz-progress">
                         <div class="progress-bar">
                             <div class="progress" id="quiz-progress" style="width: 0%;"></div>
@@ -60,23 +61,23 @@
                 
                 <div class="quiz-body">
                     <div class="question-container" id="question-container">
-                        <h2 class="question-text" id="question-text">What does HTML stand for?</h2>
+                        <h2 class="question-text" id="question-text">What is Git?</h2>
                         <div class="options-container" id="options-container">
                             <div class="option" data-option="A">
                                 <span class="option-letter">A</span>
-                                <span class="option-text">Hyper Text Markup Language</span>
+                                <span class="option-text">A programming language</span>
                             </div>
                             <div class="option" data-option="B">
                                 <span class="option-letter">B</span>
-                                <span class="option-text">High Tech Modern Language</span>
+                                <span class="option-text">A version control system</span>
                             </div>
                             <div class="option" data-option="C">
                                 <span class="option-letter">C</span>
-                                <span class="option-text">Home Tool Markup Language</span>
+                                <span class="option-text">A database management system</span>
                             </div>
                             <div class="option" data-option="D">
                                 <span class="option-letter">D</span>
-                                <span class="option-text">Hyperlink and Text Markup Language</span>
+                                <span class="option-text">A web framework</span>
                             </div>
                         </div>
                     </div>
@@ -105,7 +106,7 @@
                         </div>
                         <div class="result-actions">
                             <button class="btn btn-primary" id="restart-quiz">Restart Quiz</button>
-                            <a href="html.html" class="btn btn-secondary">Back to Course</a>
+                            <a href="git.html" class="btn btn-secondary">Back to Course</a>
                         </div>
                     </div>
                 </div>

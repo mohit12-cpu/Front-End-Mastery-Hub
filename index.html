@@ -9,15 +9,37 @@
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #4361ee;
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 0 0 4px 4px;
+            z-index: 1000;
+            transition: top 0.3s;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
+    </style>
 </head>
 <body>
+    <!-- Skip Links for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#footer" class="skip-link">Skip to footer</a>
+
     <!-- Header -->
-    <header class="header">
+    <header class="header" role="banner">
         <div class="container">
             <div class="logo">
                 <h2><i class="fas fa-code"></i> CodeMaster</h2>
             </div>
-            <nav class="nav">
+            <nav class="nav" role="navigation" aria-label="Main navigation">
                 <ul>
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="courses.html">Courses</a></li>
@@ -32,7 +54,7 @@
                 </ul>
             </nav>
             <div class="header-actions">
-                <button id="theme-toggle" class="theme-toggle">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
                     <i class="fas fa-moon"></i>
                 </button>
             </div>
@@ -40,24 +62,24 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="main-content" role="main">
         <div class="container">
             <div class="hero-content">
                 <h1>Learn to Code Interactively</h1>
                 <p>Master HTML, CSS, JavaScript, Python and more with our hands-on tutorials and real-time code editor.</p>
                 <div class="hero-buttons">
-                    <a href="courses.html" class="btn btn-primary btn-lg">Start Learning</a>
-                    <a href="tutorial.html" class="btn btn-secondary btn-lg">Try Editor</a>
+                    <a href="courses.html" class="btn btn-primary btn-lg" aria-label="Start learning courses">Start Learning</a>
+                    <a href="tutorial.html" class="btn btn-secondary btn-lg" aria-label="Try the code editor">Try Editor</a>
                 </div>
             </div>
             <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Coding">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Person coding on a computer">
             </div>
         </div>
     </section>
 
     <!-- Search Bar -->
-    <section class="search-section">
+    <section class="search-section" aria-label="Search courses and tutorials">
         <div class="container">
             <div class="search-box">
                 <input type="text" id="search-input" placeholder="Search tutorials, courses..." aria-label="Search tutorials and courses">
@@ -77,7 +99,7 @@
                     </div>
                     <h3>HTML</h3>
                     <p>Learn the foundation of web development with HTML.</p>
-                    <a href="courses/html.html" class="btn btn-outline">Start Learning</a>
+                    <a href="courses/html.html" class="btn btn-outline" aria-label="Start HTML course">Start Learning</a>
                 </div>
                 <div class="category-card">
                     <div class="category-icon">
@@ -85,7 +107,7 @@
                     </div>
                     <h3>CSS</h3>
                     <p>Style your websites with modern CSS techniques.</p>
-                    <a href="courses/css.html" class="btn btn-outline">Start Learning</a>
+                    <a href="courses/css.html" class="btn btn-outline" aria-label="Start CSS course">Start Learning</a>
                 </div>
                 <div class="category-card">
                     <div class="category-icon">
@@ -93,7 +115,7 @@
                     </div>
                     <h3>JavaScript</h3>
                     <p>Add interactivity and dynamic features to your sites.</p>
-                    <a href="courses/javascript.html" class="btn btn-outline">Start Learning</a>
+                    <a href="courses/javascript.html" class="btn btn-outline" aria-label="Start JavaScript course">Start Learning</a>
                 </div>
                 <div class="category-card">
                     <div class="category-icon">
@@ -101,7 +123,7 @@
                     </div>
                     <h3>Python</h3>
                     <p>Learn one of the most versatile programming languages.</p>
-                    <a href="courses/python.html" class="btn btn-outline">Start Learning</a>
+                    <a href="courses/python.html" class="btn btn-outline" aria-label="Start Python course">Start Learning</a>
                 </div>
             </div>
         </div>
@@ -145,17 +167,17 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" id="footer" role="contentinfo">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
                     <h3><i class="fas fa-code"></i> CodeMaster</h3>
                     <p>Learn to code interactively with our hands-on tutorials and real-time editor.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -180,8 +202,8 @@
                     <h4>Subscribe</h4>
                     <p>Get the latest updates and news.</p>
                     <form class="subscribe-form">
-                        <input type="email" placeholder="Your Email">
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        <input type="email" placeholder="Your Email" aria-label="Enter your email address">
+                        <button type="submit" aria-label="Subscribe to newsletter"><i class="fas fa-paper-plane"></i></button>
                     </form>
                 </div>
             </div>

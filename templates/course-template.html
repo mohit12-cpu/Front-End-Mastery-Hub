@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Fundamentals - CodeMaster</title>
+    <title>{{COURSE_TITLE}} - CodeMaster</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/courses.css">
     <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
@@ -65,7 +65,7 @@
     <!-- Breadcrumb -->
     <section class="breadcrumb" aria-label="Breadcrumb">
         <div class="container">
-            <a href="../index.html">Home</a> / <a href="../courses.html">Courses</a> / <span>HTML Fundamentals</span>
+            <a href="../index.html">Home</a> / <a href="../courses.html">Courses</a> / <span>{{COURSE_NAME}}</span>
         </div>
     </section>
 
@@ -73,11 +73,11 @@
         <!-- Sidebar -->
         <aside class="sidebar" id="sidebar" role="complementary" aria-label="Course navigation">
             <div class="sidebar-header">
-                <h3>HTML Fundamentals</h3>
+                <h3>{{COURSE_NAME}} Course</h3>
                 <div class="progress-bar" role="progressbar" aria-label="Course progress">
                     <div class="progress" style="width: 0%;"></div>
                 </div>
-                <p class="progress-text">0/13 lessons completed</p>
+                <p class="progress-text">0/12 lessons completed</p>
             </div>
             <ul class="lessons-list">
                 <!-- Lessons will be populated by JavaScript -->
@@ -87,7 +87,10 @@
         <!-- Main Content -->
         <main class="tutorial-content" id="main-content" role="main">
             <div class="lesson-header">
-                <h1>HTML Fundamentals</h1>
+                <h1>{{COURSE_NAME}} Course</h1>
+                <div class="lesson-actions">
+                    <button id="mark-complete" class="btn btn-success" aria-label="Mark current lesson as complete">Mark as Complete</button>
+                </div>
                 <div class="lesson-navigation">
                     <button class="btn btn-secondary" disabled aria-label="Previous lesson"><i class="fas fa-arrow-left"></i> Previous</button>
                     <button class="btn btn-primary" aria-label="Next lesson">Next <i class="fas fa-arrow-right"></i></button>
@@ -95,7 +98,7 @@
             </div>
 
             <div class="lesson-body">
-                <!-- Lesson content will be populated by JavaScript -->
+                <!-- Lessons will be populated by JavaScript -->
             </div>
         </main>
     </div>
@@ -151,7 +154,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
     <script src="../js/editor.js"></script>
     <script src="../js/course.js"></script>
-    <script src="../js/progress.js"></script>
     <script src="../js/main.js"></script>
     <script src="../js/user.js"></script>
 </body>

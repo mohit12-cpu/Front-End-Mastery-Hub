@@ -172,12 +172,19 @@
         .project-actions {
             display: flex;
             gap: 10px;
+            align-items: center;
         }
         
-        .project-actions .btn {
-            flex: 1;
-            text-align: center;
-            padding: 10px;
+        .completion-badge {
+            background-color: #22c55e;
+            color: white;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
             font-size: 14px;
         }
         
@@ -319,16 +326,38 @@
                 grid-template-columns: 1fr;
             }
         }
+        
+        /* Skip link styles */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #4361ee;
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 0 0 4px 4px;
+            z-index: 1000;
+            transition: top 0.3s;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
     </style>
 </head>
 <body>
+    <!-- Skip Links for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#footer" class="skip-link">Skip to footer</a>
+
     <!-- Header -->
-    <header class="header">
+    <header class="header" role="banner">
         <div class="container">
             <div class="logo">
                 <h2><i class="fas fa-code"></i> CodeMaster</h2>
             </div>
-            <nav class="nav">
+            <nav class="nav" role="navigation" aria-label="Main navigation">
                 <ul>
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="../courses.html">Courses</a></li>
@@ -341,7 +370,7 @@
                 </ul>
             </nav>
             <div class="header-actions">
-                <button id="theme-toggle" class="theme-toggle">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
                     <i class="fas fa-moon"></i>
                 </button>
             </div>
@@ -349,14 +378,14 @@
     </header>
 
     <!-- Breadcrumb -->
-    <section class="breadcrumb">
+    <section class="breadcrumb" aria-label="Breadcrumb">
         <div class="container">
             <a href="../index.html">Home</a> / <a href="../courses.html">Courses</a> / <span>Web Projects</span>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section class="courses">
+    <section class="courses" id="main-content" role="main">
         <div class="container">
             <h1 class="section-title">Web Projects</h1>
             <p class="section-subtitle">Build real-world projects to apply your skills</p>
@@ -367,26 +396,26 @@
                     <input type="text" id="searchProjects" placeholder="Search projects..." aria-label="Search projects">
                 </div>
                 <div class="filters">
-                    <button class="filter-btn active" data-category="all">All</button>
-                    <button class="filter-btn" data-category="beginner">Beginner</button>
-                    <button class="filter-btn" data-category="intermediate">Intermediate</button>
-                    <button class="filter-btn" data-category="advanced">Advanced</button>
-                    <button class="filter-btn" data-category="ui design">UI Design</button>
+                    <button class="filter-btn active" data-category="all" aria-label="Filter all projects">All</button>
+                    <button class="filter-btn" data-category="Beginner" aria-label="Filter beginner projects">Beginner</button>
+                    <button class="filter-btn" data-category="Intermediate" aria-label="Filter intermediate projects">Intermediate</button>
+                    <button class="filter-btn" data-category="Advanced" aria-label="Filter advanced projects">Advanced</button>
+                    <button class="filter-btn" data-category="UI Design" aria-label="Filter UI design projects">UI Design</button>
                 </div>
             </div>
             
-            <div class="projects-grid" id="projectsGrid">
+            <div class="projects-grid" id="projectsGrid" role="region" aria-label="Projects grid">
                 <!-- Projects will be loaded here dynamically -->
             </div>
         </div>
     </section>
 
     <!-- Project Preview Modal -->
-    <div id="projectPreviewModal" class="modal">
+    <div id="projectPreviewModal" class="modal" role="dialog" aria-labelledby="previewModalTitle" aria-hidden="true">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title">Project Preview</h2>
-                <button class="close">&times;</button>
+                <h2 class="modal-title" id="previewModalTitle">Project Preview</h2>
+                <button class="close" aria-label="Close preview">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="preview-content">
@@ -397,49 +426,49 @@
     </div>
 
     <!-- Code Viewer Modal -->
-    <div id="codeViewerModal" class="modal">
+    <div id="codeViewerModal" class="modal" role="dialog" aria-labelledby="codeViewerModalTitle" aria-hidden="true">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title">Project Code</h2>
-                <button class="close">&times;</button>
+                <h2 class="modal-title" id="codeViewerModalTitle">Project Code</h2>
+                <button class="close" aria-label="Close code viewer">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="code-tabs">
-                    <button class="tab-button active" data-tab="htmlPanel">HTML</button>
-                    <button class="tab-button" data-tab="cssPanel">CSS</button>
-                    <button class="tab-button" data-tab="jsPanel">JavaScript</button>
+                    <button class="tab-button active" data-tab="htmlPanel" aria-selected="true">HTML</button>
+                    <button class="tab-button" data-tab="cssPanel" aria-selected="false">CSS</button>
+                    <button class="tab-button" data-tab="jsPanel" aria-selected="false">JavaScript</button>
                 </div>
                 
-                <div id="htmlPanel" class="code-panel active">
+                <div id="htmlPanel" class="code-panel active" role="tabpanel" aria-labelledby="htmlPanel">
                     <div class="code-content" id="htmlCode"></div>
-                    <button class="copy-button" data-code="html">Copy HTML</button>
+                    <button class="copy-button" data-code="html" aria-label="Copy HTML code">Copy HTML</button>
                 </div>
                 
-                <div id="cssPanel" class="code-panel">
+                <div id="cssPanel" class="code-panel" role="tabpanel" aria-labelledby="cssPanel">
                     <div class="code-content" id="cssCode"></div>
-                    <button class="copy-button" data-code="css">Copy CSS</button>
+                    <button class="copy-button" data-code="css" aria-label="Copy CSS code">Copy CSS</button>
                 </div>
                 
-                <div id="jsPanel" class="code-panel">
+                <div id="jsPanel" class="code-panel" role="tabpanel" aria-labelledby="jsPanel">
                     <div class="code-content" id="jsCode"></div>
-                    <button class="copy-button" data-code="js">Copy JavaScript</button>
+                    <button class="copy-button" data-code="js" aria-label="Copy JavaScript code">Copy JavaScript</button>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" id="footer" role="contentinfo">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
                     <h3><i class="fas fa-code"></i> CodeMaster</h3>
                     <p>Learn to code interactively with our hands-on tutorials and real-time editor.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -464,8 +493,8 @@
                     <h4>Subscribe</h4>
                     <p>Get the latest updates and news.</p>
                     <form class="subscribe-form">
-                        <input type="email" placeholder="Your Email">
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        <input type="email" placeholder="Your Email" aria-label="Enter your email address">
+                        <button type="submit" aria-label="Subscribe to newsletter"><i class="fas fa-paper-plane"></i></button>
                     </form>
                 </div>
             </div>

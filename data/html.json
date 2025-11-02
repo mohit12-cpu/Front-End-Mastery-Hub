@@ -1,6 +1,6 @@
 {
-  "course": "HTML",
-  "description": "Learn the fundamentals of HTML, the backbone of web development.",
+  "course": "HTML Fundamentals",
+  "description": "Learn the building blocks of web development with HTML.",
   "lessons": [
     {
       "id": 1,

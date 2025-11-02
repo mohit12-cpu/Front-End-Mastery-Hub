@@ -3,21 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses - CodeMaster</title>
+    <title>All Courses - CodeMaster</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/courses.css">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #4361ee;
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 0 0 4px 4px;
+            z-index: 1000;
+            transition: top 0.3s;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
+    </style>
 </head>
 <body>
+    <!-- Skip Links for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#footer" class="skip-link">Skip to footer</a>
+
     <!-- Header -->
-    <header class="header">
+    <header class="header" role="banner">
         <div class="container">
             <div class="logo">
                 <h2><i class="fas fa-code"></i> CodeMaster</h2>
             </div>
-            <nav class="nav">
+            <nav class="nav" role="navigation" aria-label="Main navigation">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="courses.html" class="active">Courses</a></li>
@@ -27,12 +49,11 @@
                     <li><a href="dashboard.html">Dashboard</a></li>
                     <li><a href="settings.html">Settings</a></li>
                     <li><a href="help.html">Help</a></li>
-                    <li><a href="blog.html">Blog</a></li>
                     <li><a href="about.html">About</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
-                <button id="theme-toggle" class="theme-toggle">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
                     <i class="fas fa-moon"></i>
                 </button>
             </div>
@@ -40,44 +61,212 @@
     </header>
 
     <!-- Breadcrumb -->
-    <section class="breadcrumb">
+    <section class="breadcrumb" aria-label="Breadcrumb">
         <div class="container">
             <a href="index.html">Home</a> / <span>Courses</span>
         </div>
     </section>
 
-    <!-- Search and Filter Section -->
+    <!-- Search Section -->
     <section class="course-search">
         <div class="container">
             <div class="search-container">
                 <input type="text" id="course-search" placeholder="Search courses..." aria-label="Search courses">
-                <button aria-label="Search"><i class="fas fa-search"></i></button>
+                <button aria-label="Search courses"><i class="fas fa-search"></i></button>
             </div>
         </div>
     </section>
 
     <!-- Courses Section -->
-    <section class="courses">
+    <section class="courses" id="main-content" role="main">
         <div class="container">
             <h1 class="section-title">All Courses</h1>
-            <div class="courses-grid" id="courses-container">
-                <!-- Course cards will be populated by JavaScript -->
+            <p class="section-subtitle">Choose from our comprehensive collection of programming courses</p>
+            
+            <div class="courses-grid" id="coursesGrid" role="region" aria-label="Courses grid">
+                <div class="course-card">
+                    <div class="course-image">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3>HTML Fundamentals</h3>
+                        <p>Learn the building blocks of web development with HTML.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 12 Lessons</span>
+                            <span><i class="fas fa-signal"></i> Beginner</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <p class="progress-text">0% Complete</p>
+                        </div>
+                        <a href="courses/html.html" class="btn btn-primary" aria-label="Start HTML course">Start Course</a>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-image">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3>CSS Styling</h3>
+                        <p>Style your websites with modern CSS techniques.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 12 Lessons</span>
+                            <span><i class="fas fa-signal"></i> Beginner</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <p class="progress-text">0% Complete</p>
+                        </div>
+                        <a href="courses/css.html" class="btn btn-primary" aria-label="Start CSS course">Start Course</a>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-image">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3>JavaScript Essentials</h3>
+                        <p>Add interactivity and dynamic features to your sites.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 12 Lessons</span>
+                            <span><i class="fas fa-signal"></i> Intermediate</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <p class="progress-text">0% Complete</p>
+                        </div>
+                        <a href="courses/javascript.html" class="btn btn-primary" aria-label="Start JavaScript course">Start Course</a>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-image">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3>Python Programming</h3>
+                        <p>Learn one of the most versatile programming languages.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 12 Lessons</span>
+                            <span><i class="fas fa-signal"></i> Beginner</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <p class="progress-text">0% Complete</p>
+                        </div>
+                        <a href="courses/python.html" class="btn btn-primary" aria-label="Start Python course">Start Course</a>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-image">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3>React Development</h3>
+                        <p>Build modern web applications with React.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 15 Lessons</span>
+                            <span><i class="fas fa-signal"></i> Advanced</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <p class="progress-text">0% Complete</p>
+                        </div>
+                        <a href="courses/react.html" class="btn btn-primary" aria-label="Start React course">Start Course</a>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-image">
+                        <i class="fab fa-git-alt"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3>Git & GitHub</h3>
+                        <p>Master version control with Git and GitHub.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 10 Lessons</span>
+                            <span><i class="fas fa-signal"></i> Intermediate</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <p class="progress-text">0% Complete</p>
+                        </div>
+                        <a href="courses/git.html" class="btn btn-primary" aria-label="Start Git course">Start Course</a>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-image">
+                        <i class="fab fa-bootstrap"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3>Bootstrap Framework</h3>
+                        <p>Build responsive websites quickly with Bootstrap.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 8 Lessons</span>
+                            <span><i class="fas fa-signal"></i> Beginner</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <p class="progress-text">0% Complete</p>
+                        </div>
+                        <a href="courses/bootstrap.html" class="btn btn-primary" aria-label="Start Bootstrap course">Start Course</a>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-image">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3>Web Design Principles</h3>
+                        <p>Learn UI/UX design principles for modern web applications.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 12 Lessons</span>
+                            <span><i class="fas fa-signal"></i> Intermediate</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <p class="progress-text">0% Complete</p>
+                        </div>
+                        <a href="courses/webdesign.html" class="btn btn-primary" aria-label="Start Web Design course">Start Course</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" id="footer" role="contentinfo">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
                     <h3><i class="fas fa-code"></i> CodeMaster</h3>
                     <p>Learn to code interactively with our hands-on tutorials and real-time editor.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -102,8 +291,8 @@
                     <h4>Subscribe</h4>
                     <p>Get the latest updates and news.</p>
                     <form class="subscribe-form">
-                        <input type="email" placeholder="Your Email">
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        <input type="email" placeholder="Your Email" aria-label="Enter your email address">
+                        <button type="submit" aria-label="Subscribe to newsletter"><i class="fas fa-paper-plane"></i></button>
                     </form>
                 </div>
             </div>
@@ -113,142 +302,7 @@
         </div>
     </footer>
 
-    <script src="js/data.js"></script>
-    <script src="js/progress.js"></script>
     <script src="js/main.js"></script>
     <script src="js/user.js"></script>
-    <script>
-        // Populate courses when data is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            // Wait a bit for data to load
-            setTimeout(populateCourses, 500);
-        });
-
-        function populateCourses() {
-            const coursesContainer = document.getElementById('courses-container');
-            const courses = [
-                {
-                    id: 'html',
-                    title: 'HTML Fundamentals',
-                    description: 'Learn the building blocks of web development with HTML.',
-                    icon: 'fab fa-html5',
-                    duration: '15 hours',
-                    level: 'Beginner',
-                    link: 'courses/html.html'
-                },
-                {
-                    id: 'css',
-                    title: 'CSS Styling',
-                    description: 'Style your websites with modern CSS techniques.',
-                    icon: 'fab fa-css3-alt',
-                    duration: '20 hours',
-                    level: 'Beginner',
-                    link: 'courses/css.html'
-                },
-                {
-                    id: 'javascript',
-                    title: 'JavaScript Essentials',
-                    description: 'Add interactivity and dynamic features to your sites.',
-                    icon: 'fab fa-js',
-                    duration: '30 hours',
-                    level: 'Intermediate',
-                    link: 'courses/javascript.html'
-                },
-                {
-                    id: 'python',
-                    title: 'Python Programming',
-                    description: 'Learn one of the most versatile programming languages.',
-                    icon: 'fab fa-python',
-                    duration: '35 hours',
-                    level: 'Beginner',
-                    link: 'courses/python.html'
-                },
-                {
-                    id: 'react',
-                    title: 'React Concepts',
-                    description: 'Build modern user interfaces with the popular JavaScript library.',
-                    icon: 'fab fa-react',
-                    duration: '25 hours',
-                    level: 'Intermediate',
-                    link: 'courses/react.html'
-                },
-                {
-                    id: 'git',
-                    title: 'Git & GitHub',
-                    description: 'Master version control and collaboration tools.',
-                    icon: 'fas fa-code-branch',
-                    duration: '10 hours',
-                    level: 'Beginner',
-                    link: 'courses/git.html'
-                },
-                {
-                    id: 'bootstrap',
-                    title: 'Bootstrap Framework',
-                    description: 'Quickly build responsive websites with Bootstrap.',
-                    icon: 'fas fa-bootstrap',
-                    duration: '12 hours',
-                    level: 'Beginner',
-                    link: 'courses/bootstrap.html'
-                },
-                {
-                    id: 'webdesign',
-                    title: 'Web Design Principles',
-                    description: 'Master design fundamentals for creating beautiful websites.',
-                    icon: 'fas fa-paint-brush',
-                    duration: '18 hours',
-                    level: 'Beginner',
-                    link: 'courses/webdesign.html'
-                }
-            ];
-
-            coursesContainer.innerHTML = '';
-
-            courses.forEach(course => {
-                // Get progress from localStorage
-                const progress = getCourseProgress(course.id);
-                
-                const courseCard = document.createElement('div');
-                courseCard.className = 'course-card';
-                courseCard.innerHTML = `
-                    <div class="course-image">
-                        <i class="${course.icon}"></i>
-                    </div>
-                    <div class="course-content">
-                        <h3>${course.title}</h3>
-                        <p>${course.description}</p>
-                        <div class="course-meta">
-                            <span><i class="fas fa-clock"></i> ${course.duration}</span>
-                            <span><i class="fas fa-signal"></i> ${course.level}</span>
-                        </div>
-                        <div class="progress-container">
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: ${progress}%"></div>
-                            </div>
-                            <span class="progress-text">${progress}% Complete</span>
-                        </div>
-                        <a href="${course.link}" class="btn btn-primary">Start Course</a>
-                    </div>
-                `;
-                coursesContainer.appendChild(courseCard);
-            });
-        }
-
-        // Simple search functionality
-        document.getElementById('course-search').addEventListener('input', function() {
-            const searchTerm = this.value.toLowerCase();
-            const courseCards = document.querySelectorAll('.course-card');
-            
-            courseCards.forEach(card => {
-                const title = card.querySelector('h3').textContent.toLowerCase();
-                const description = card.querySelector('p').textContent.toLowerCase();
-                
-                if (title.includes(searchTerm) || description.includes(searchTerm)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-    </script>
 </body>
 </html>

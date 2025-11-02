@@ -32,20 +32,24 @@ if (themeToggle) {
 }
 
 // Mobile Navigation Toggle
-const mobileToggle = document.createElement('button');
-mobileToggle.classList.add('mobile-toggle');
-mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
-mobileToggle.setAttribute('aria-label', 'Toggle navigation');
+document.addEventListener('DOMContentLoaded', () => {
+    const mobileToggle = document.createElement('button');
+    mobileToggle.classList.add('mobile-toggle');
+    mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+    mobileToggle.setAttribute('aria-label', 'Toggle navigation');
 
-const headerContainer = document.querySelector('.header .container');
-if (headerContainer) {
-    headerContainer.appendChild(mobileToggle);
-    
-    const nav = document.querySelector('.nav');
-    mobileToggle.addEventListener('click', () => {
-        nav.classList.toggle('active');
-    });
-}
+    const headerContainer = document.querySelector('.header .container');
+    if (headerContainer) {
+        headerContainer.appendChild(mobileToggle);
+        
+        const nav = document.querySelector('.nav');
+        if (nav) {
+            mobileToggle.addEventListener('click', () => {
+                nav.classList.toggle('active');
+            });
+        }
+    }
+});
 
 // Search Functionality
 const searchInput = document.getElementById('search-input');
@@ -186,7 +190,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Add animation to elements when they come into view
 document.addEventListener('DOMContentLoaded', () => {
-    const animateOnScroll = function() {
+    // Debounce function to limit scroll event frequency
+    const debounce = (func, wait) => {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    };
+    
+    const animateOnScroll = debounce(function() {
         const elements = document.querySelectorAll('.category-card, .feature-card, .course-card');
         
         elements.forEach(element => {
@@ -198,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 element.style.transform = 'translateY(0)';
             }
         });
-    };
+    }, 100); // Only run once every 100ms
     
     // Set initial state for animated elements
     document.querySelectorAll('.category-card, .feature-card, .course-card').forEach(el => {
@@ -212,53 +229,75 @@ document.addEventListener('DOMContentLoaded', () => {
     animateOnScroll();
 });
 
-// Utility function to handle inline onclick events
+// Utility function to handle inline onclick events using event delegation
 function handleInlineClickEvents() {
-    // Handle all onclick attributes for nextLesson
-    const nextButtons = document.querySelectorAll('[onclick*="nextLesson()"]');
-    nextButtons.forEach(button => {
-        const onclickAttr = button.getAttribute('onclick');
-        button.removeAttribute('onclick');
-        // Reattach the inline function as an event listener
-        button.addEventListener('click', () => {
-            // Try to call nextLesson function from the global scope
+    // Use event delegation for better performance
+    document.addEventListener('click', (e) => {
+        const target = e.target;
+        
+        // Handle next lesson buttons
+        if (target.closest('[onclick*="nextLesson()"]') || 
+            (target.closest('.lesson-navigation') && target.closest('.btn-primary'))) {
+            e.preventDefault();
             if (typeof nextLesson === 'function') {
                 nextLesson();
+            } else if (typeof courseManager !== 'undefined' && typeof courseManager.nextLesson === 'function') {
+                courseManager.nextLesson();
             }
-        });
-    });
-    
-    // Handle all onclick attributes for prevLesson
-    const prevButtons = document.querySelectorAll('[onclick*="prevLesson()"]');
-    prevButtons.forEach(button => {
-        const onclickAttr = button.getAttribute('onclick');
-        button.removeAttribute('onclick');
-        // Reattach the inline function as an event listener
-        button.addEventListener('click', () => {
-            // Try to call prevLesson function from the global scope
+            return;
+        }
+        
+        // Handle previous lesson buttons
+        if (target.closest('[onclick*="prevLesson()"]') || 
+            (target.closest('.lesson-navigation') && target.closest('.btn-secondary'))) {
+            e.preventDefault();
             if (typeof prevLesson === 'function') {
                 prevLesson();
+            } else if (typeof courseManager !== 'undefined' && typeof courseManager.previousLesson === 'function') {
+                courseManager.previousLesson();
             }
-        });
-    });
-    
-    // Handle all onclick attributes for runCode
-    const runButtons = document.querySelectorAll('[onclick*="runCode"]');
-    runButtons.forEach(button => {
-        const onclickAttr = button.getAttribute('onclick');
-        button.removeAttribute('onclick');
-        const match = onclickAttr.match(/runCode\('([^']+)'\)/);
-        if (match) {
-            const lessonId = match[1];
-            button.addEventListener('click', () => {
-                // Try to call runCode function from the global scope
+            return;
+        }
+        
+        // Handle run code buttons
+        const runButton = target.closest('[onclick*="runCode"], [data-run-code]');
+        if (runButton) {
+            e.preventDefault();
+            let lessonId = runButton.getAttribute('data-run-code');
+            
+            // If no data-run-code, try to extract from onclick attribute
+            if (!lessonId) {
+                const onclickAttr = runButton.getAttribute('onclick');
+                if (onclickAttr) {
+                    const match = onclickAttr.match(/runCode\('([^']+)'\\)/);
+                    lessonId = match ? match[1] : null;
+                }
+            }
+            
+            if (lessonId) {
                 if (typeof runCode === 'function') {
                     runCode(lessonId);
+                } else if (typeof courseManager !== 'undefined' && typeof courseManager.runCode === 'function') {
+                    courseManager.runCode(lessonId);
                 }
-            });
+            }
+            return;
+        }
+        
+        // Handle mark complete buttons
+        if (target.id === 'mark-complete' || target.closest('#mark-complete')) {
+            e.preventDefault();
+            if (typeof markCurrentLessonCompleted === 'function') {
+                markCurrentLessonCompleted();
+            } else if (typeof courseManager !== 'undefined' && typeof courseManager.markLessonComplete === 'function') {
+                courseManager.markLessonComplete();
+            }
+            return;
         }
     });
 }
 
-// Call the function to handle inline events
-document.addEventListener('DOMContentLoaded', handleInlineClickEvents);
+// Initialize event handling on DOM load
+document.addEventListener('DOMContentLoaded', () => {
+    handleInlineClickEvents();
+});

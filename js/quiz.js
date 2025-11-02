@@ -1,5 +1,9 @@
 // Quiz Questions Data
-const quizQuestions = [
+// This will be populated based on the current course
+let currentQuizQuestions = [];
+
+// General quiz questions (fallback)
+const generalQuizQuestions = [
     {
         question: "What does HTML stand for?",
         options: [
@@ -464,26 +468,9 @@ const courseQuizzes = {
 
 // Quiz State
 let currentQuestionIndex = 0;
-let userAnswers = Array(quizQuestions.length).fill(null);
+let userAnswers = [];
 let score = 0;
 let shuffledQuestions = [];
-
-// DOM Elements
-const questionText = document.getElementById('question-text');
-const optionsContainer = document.getElementById('options-container');
-const currentQuestionEl = document.getElementById('current-question');
-const totalQuestionsEl = document.getElementById('total-questions');
-const quizProgress = document.getElementById('quiz-progress');
-const prevBtn = document.getElementById('prev-btn');
-const nextBtn = document.getElementById('next-btn');
-const submitBtn = document.getElementById('submit-btn');
-const quizResult = document.getElementById('quiz-result');
-const scoreEl = document.getElementById('score');
-const scoreText = document.getElementById('score-text');
-const correctAnswersEl = document.getElementById('correct-answers');
-const wrongAnswersEl = document.getElementById('wrong-answers');
-const unansweredEl = document.getElementById('unanswered');
-const restartQuizBtn = document.getElementById('restart-quiz');
 
 // Get user ID for personalized data storage
 function getUserId() {
@@ -524,27 +511,95 @@ function getCookie(name) {
 }
 
 // Initialize Quiz
-document.addEventListener('DOMContentLoaded', () => {
+function initializeQuiz() {
+    // Determine the current course from URL or default to general
+    const urlParams = new URLSearchParams(window.location.search);
+    const course = urlParams.get('course') || 'general';
+    
+    // Select appropriate questions based on course
+    let availableQuestions = [];
+    if (course !== 'general' && courseQuizzes[course]) {
+        availableQuestions = courseQuizzes[course];
+    } else {
+        availableQuestions = generalQuizQuestions;
+    }
+    
+    // Limit to a reasonable number of questions (e.g., 10) for better user experience
+    const maxQuestions = Math.min(10, availableQuestions.length);
+    
+    // Randomly select questions if we have more than the max
+    if (availableQuestions.length > maxQuestions) {
+        // Create a copy and shuffle
+        const shuffledAvailable = shuffleArray([...availableQuestions]);
+        currentQuizQuestions = shuffledAvailable.slice(0, maxQuestions);
+    } else {
+        currentQuizQuestions = [...availableQuestions];
+    }
+    
+    // Initialize user answers array
+    userAnswers = Array(currentQuizQuestions.length).fill(null);
+    
     // Shuffle questions
-    shuffledQuestions = shuffleArray(quizQuestions);
-    totalQuestionsEl.textContent = shuffledQuestions.length;
+    shuffledQuestions = shuffleArray(currentQuizQuestions);
+    
+    // Get DOM elements
+    const totalQuestionsEl = document.getElementById('total-questions');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const submitBtn = document.getElementById('submit-btn');
+    const restartQuizBtn = document.getElementById('restart-quiz');
+    
+    // Update UI
+    if (totalQuestionsEl) {
+        totalQuestionsEl.textContent = shuffledQuestions.length;
+    }
+    
+    // Load first question
     loadQuestion();
     
-    // Event Listeners
-    prevBtn.addEventListener('click', goToPreviousQuestion);
-    nextBtn.addEventListener('click', goToNextQuestion);
-    submitBtn.addEventListener('click', submitQuiz);
-    restartQuizBtn.addEventListener('click', restartQuiz);
-});
+    // Set up event listeners if elements exist
+    if (prevBtn) prevBtn.addEventListener('click', goToPreviousQuestion);
+    if (nextBtn) nextBtn.addEventListener('click', goToNextQuestion);
+    if (submitBtn) submitBtn.addEventListener('click', submitQuiz);
+    if (restartQuizBtn) restartQuizBtn.addEventListener('click', restartQuiz);
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', initializeQuiz);
+
+// Export functions for use in other modules
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+        initializeQuiz,
+        loadQuestion,
+        selectOption,
+        goToPreviousQuestion,
+        goToNextQuestion,
+        submitQuiz,
+        restartQuiz,
+        shuffleArray
+    };
+}
 
 // Load Question
 function loadQuestion() {
+    // Make sure we have DOM elements
+    const questionText = document.getElementById('question-text');
+    const optionsContainer = document.getElementById('options-container');
+    const currentQuestionEl = document.getElementById('current-question');
+    const quizProgress = document.getElementById('quiz-progress');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const submitBtn = document.getElementById('submit-btn');
+    
+    if (!questionText || !optionsContainer) return;
+    
     const question = shuffledQuestions[currentQuestionIndex];
     
     // Update UI
     questionText.textContent = question.question;
-    currentQuestionEl.textContent = currentQuestionIndex + 1;
-    quizProgress.style.width = `${((currentQuestionIndex + 1) / shuffledQuestions.length) * 100}%`;
+    if (currentQuestionEl) currentQuestionEl.textContent = currentQuestionIndex + 1;
+    if (quizProgress) quizProgress.style.width = `${((currentQuestionIndex + 1) / shuffledQuestions.length) * 100}%`;
     
     // Clear previous options
     optionsContainer.innerHTML = '';
@@ -582,14 +637,16 @@ function loadQuestion() {
     });
     
     // Update button states
-    prevBtn.disabled = currentQuestionIndex === 0;
+    if (prevBtn) prevBtn.disabled = currentQuestionIndex === 0;
     
-    if (currentQuestionIndex === shuffledQuestions.length - 1) {
-        nextBtn.style.display = 'none';
-        submitBtn.style.display = 'block';
-    } else {
-        nextBtn.style.display = 'block';
-        submitBtn.style.display = 'none';
+    if (nextBtn && submitBtn) {
+        if (currentQuestionIndex === shuffledQuestions.length - 1) {
+            nextBtn.style.display = 'none';
+            submitBtn.style.display = 'block';
+        } else {
+            nextBtn.style.display = 'block';
+            submitBtn.style.display = 'none';
+        }
     }
 }
 
@@ -620,7 +677,7 @@ function goToPreviousQuestion() {
 
 // Go to Next Question
 function goToNextQuestion() {
-    if (currentQuestionIndex < quizQuestions.length - 1) {
+    if (currentQuestionIndex < shuffledQuestions.length - 1) {
         currentQuestionIndex++;
         loadQuestion();
     }
@@ -644,16 +701,25 @@ function submitQuiz() {
     // Save quiz score
     saveQuizScore(score, shuffledQuestions.length);
     
+    // Get DOM elements
+    const scoreEl = document.getElementById('score');
+    const scoreText = document.getElementById('score-text');
+    const correctAnswersEl = document.getElementById('correct-answers');
+    const wrongAnswersEl = document.getElementById('wrong-answers');
+    const unansweredEl = document.getElementById('unanswered');
+    const quizResult = document.getElementById('quiz-result');
+    
     // Update result UI
-    scoreEl.textContent = score;
-    scoreText.textContent = `You scored ${score} out of ${shuffledQuestions.length}`;
-    correctAnswersEl.textContent = correctAnswers;
-    wrongAnswersEl.textContent = wrongAnswers;
-    unansweredEl.textContent = unanswered;
+    if (scoreEl) scoreEl.textContent = score;
+    if (scoreText) scoreText.textContent = `You scored ${score} out of ${shuffledQuestions.length}`;
+    if (correctAnswersEl) correctAnswersEl.textContent = correctAnswers;
+    if (wrongAnswersEl) wrongAnswersEl.textContent = wrongAnswers;
+    if (unansweredEl) unansweredEl.textContent = unanswered;
     
     // Show result, hide quiz
-    document.getElementById('quiz-container').style.display = 'none';
-    quizResult.style.display = 'block';
+    const quizContainer = document.getElementById('quiz-container');
+    if (quizContainer) quizContainer.style.display = 'none';
+    if (quizResult) quizResult.style.display = 'block';
 }
 
 // Save quiz score
@@ -702,11 +768,13 @@ function restartQuiz() {
     score = 0;
     
     // Shuffle questions again
-    shuffledQuestions = shuffleArray(quizQuestions);
+    shuffledQuestions = shuffleArray(currentQuizQuestions);
     
     // Hide result, show quiz
-    quizResult.style.display = 'none';
-    document.getElementById('quiz-container').style.display = 'block';
+    const quizResult = document.getElementById('quiz-result');
+    const quizContainer = document.getElementById('quiz-container');
+    if (quizResult) quizResult.style.display = 'none';
+    if (quizContainer) quizContainer.style.display = 'block';
     
     // Load first question
     loadQuestion();
